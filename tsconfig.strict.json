@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true
+    // NOTE: exactOptionalPropertyTypes отключено - требует значительных изменений типов
+    // Tracked in technical debt backlog (требуется рефакторинг типов с явным | undefined)
+  }
+}

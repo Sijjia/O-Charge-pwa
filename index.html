@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- PWA основные мета-теги -->
+    <meta name="application-name" content="Red Petroleum EV">
+    <meta name="description" content="Red Petroleum EV — зарядка электромобилей в Кыргызстане. Найдите ближайшую станцию, начните зарядку через QR-код.">
+    <meta name="theme-color" content="#050507" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Red Petroleum">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-TileColor" content="#050507">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+
+    <!-- Иконки -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Red Petroleum EV — Зарядные станции для электромобилей">
+    <meta property="og:description" content="Red Petroleum EV — найдите ближайшую зарядную станцию, начните зарядку через QR-код">
+    <meta property="og:image" content="https://redpetroleum.duckdns.org/icons/icon-512x512.png">
+    <meta property="og:url" content="https://redpetroleum.duckdns.org">
+    <meta property="og:site_name" content="Red Petroleum EV">
+    <title>Red Petroleum EV — Зарядные станции</title>
+  </head>
+  <body>
+    <script>
+      // Zero-flash: apply theme from localStorage before React loads
+      (function(){
+        try {
+          var s = localStorage.getItem('rp-theme');
+          var m = s ? JSON.parse(s).state.mode : 'dark';
+          var isDark = m === 'dark' || (m === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (!isDark) document.documentElement.classList.remove('dark');
+        } catch(e) {}
+      })();
+    </script>
+    <div id="root"></div>
+    <script>
+      // Deploy version — при изменении форсируем очистку кеша
+      var DEPLOY_VER='v9';
+      var DEPLOY_KEY='_deploy_ver';
+      var RECOVERY_KEY='_sw_recovery';
+
+      // Если версия изменилась — чистим всё сразу
+      if(localStorage.getItem(DEPLOY_KEY)!==DEPLOY_VER){
+        localStorage.setItem(DEPLOY_KEY,DEPLOY_VER);
+        if(navigator.serviceWorker){
+          navigator.serviceWorker.getRegistrations().then(function(regs){
+            regs.forEach(function(r){r.unregister()});
+          });
+        }
+        if(window.caches){
+          caches.keys().then(function(names){
+            names.forEach(function(n){caches.delete(n)});
+          });
+        }
+      }
+
+      function autoRecover(){
+        if(sessionStorage.getItem(RECOVERY_KEY))return;
+        sessionStorage.setItem(RECOVERY_KEY,'1');
+        var root=document.getElementById('root');
+        if(root)root.innerHTML='<p style="color:#4ade80;background:#111;padding:40px;font-family:monospace;font-size:16px">Обновление кеша... Страница перезагрузится автоматически.</p>';
+        Promise.all([
+          navigator.serviceWorker?navigator.serviceWorker.getRegistrations().then(function(regs){return Promise.all(regs.map(function(r){return r.unregister()}))}):Promise.resolve(),
+          window.caches?caches.keys().then(function(names){return Promise.all(names.map(function(n){return caches.delete(n)}))}):Promise.resolve()
+        ]).then(function(){
+          location.reload();
+        }).catch(function(){
+          location.reload();
+        });
+      }
+      window.addEventListener('load',function(){sessionStorage.removeItem(RECOVERY_KEY)});
+      window.addEventListener('error',function(e){
+        if(e.target&&e.target.tagName==='SCRIPT'){autoRecover()}
+      },true);
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

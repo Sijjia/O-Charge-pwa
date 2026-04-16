@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Petroleum EV — Integration Guide</title>
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1f2937;--text:#e5e7eb;--muted:#9ca3af;--accent:#ef4444;--green:#22c55e;--blue:#3b82f6;--yellow:#eab308;--cyan:#06b6d4;--purple:#a855f7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:40px 24px}
+.header{text-align:center;padding:48px 0 32px;border-bottom:1px solid var(--border);margin-bottom:40px}
+.header h1{font-size:26px;color:#fff;margin-bottom:6px}
+.header p{color:var(--muted);font-size:15px}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:6px;margin-top:12px}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,14,23,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:10px 24px;margin:0 -24px 32px}
+nav .inner{display:flex;gap:6px;overflow-x:auto;max-width:900px;margin:0 auto}
+nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:5px 12px;border-radius:6px;white-space:nowrap;transition:.2s}
+nav a:hover{background:var(--card);color:#fff}
+section{margin-bottom:48px}
+h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:flex;align-items:center;gap:10px}
+h2 .n{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+h3{font-size:16px;color:#fff;margin:20px 0 10px;font-weight:600}
+p,li{color:var(--text);font-size:14px;margin-bottom:8px}
+ul{padding-left:20px;margin-bottom:12px}
+pre{background:#0d1117;border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-family:'SF Mono',Monaco,monospace;font-size:12.5px;overflow-x:auto;margin:10px 0 16px;line-height:1.5;color:#e6edf3}
+code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px;font-family:'SF Mono',Monaco,monospace;font-size:13px}
+.k{color:var(--blue)}.s{color:var(--green)}.c{color:#6b7280}.n{color:var(--cyan)}.r{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:13px}
+th{text-align:left;padding:8px 14px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+td code{font-size:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:12px 0}
+.card h4{color:#fff;font-size:14px;margin-bottom:8px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;font-family:monospace}
+.tag.get{background:rgba(34,197,94,.12);color:var(--green)}
+.tag.post{background:rgba(59,130,246,.12);color:var(--blue)}
+.tag.del{background:rgba(239,68,68,.12);color:var(--accent)}
+.tag.put{background:rgba(234,179,8,.12);color:var(--yellow)}
+.info{padding:12px 16px;border-radius:8px;margin:14px 0;font-size:13px}
+.info.warn{background:rgba(234,179,8,.07);border-left:3px solid var(--yellow)}
+.info.tip{background:rgba(34,197,94,.07);border-left:3px solid var(--green)}
+.info.note{background:rgba(59,130,246,.07);border-left:3px solid var(--blue)}
+.sb{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;font-family:monospace}
+.sb.g{background:rgba(34,197,94,.12);color:var(--green)}
+.sb.b{background:rgba(59,130,246,.12);color:var(--blue)}
+.sb.y{background:rgba(234,179,8,.12);color:var(--yellow)}
+.sb.r{background:rgba(239,68,68,.12);color:var(--accent)}
+.sb.gr{background:rgba(156,163,175,.12);color:var(--muted)}
+.sb.p{background:rgba(168,85,247,.12);color:var(--purple)}
+.footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px;margin-top:32px}
+.ep{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:13px}
+.ep .tag{flex-shrink:0;width:42px;text-align:center}
+.ep code{background:none;padding:0;font-size:13px;color:var(--text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+<h1>Red Petroleum EV</h1>
+<p>Руководство по интеграции</p>
+<div class="badge">v1.1</div>
+</div>
+
+<nav><div class="inner">
+<a href="#account">Аккаунт</a>
+<a href="#simulator">Симулятор</a>
+<a href="#webhooks">Колбэки</a>
+<a href="#params">Станции</a>
+<a href="#methods">Зарядка</a>
+<a href="#statuses">Статусы</a>
+<a href="#limits">Ограничения</a>
+</div></nav>
+
+<!-- ====== 1 ====== -->
+<section id="account">
+<h2><span class="n">1</span> Сервисный аккаунт</h2>
+
+<div class="card">
+<h4>Тестовые данные</h4>
+<table>
+<tr><td style="width:180px;color:var(--muted)">API URL</td><td><code>https://ocpp.charge.redpay.kg</code></td></tr>
+<tr><td style="color:var(--muted)">Account ID</td><td><code>api-client-bester</code></td></tr>
+<tr><td style="color:var(--muted)">Role</td><td><code>admin</code> (полный доступ)</td></tr>
+<tr><td style="color:var(--muted)">Документация</td><td><a href="https://ocpp.charge.redpay.kg/scalar" style="color:var(--blue)">ocpp.charge.redpay.kg/scalar</a> (193 эндпоинта)</td></tr>
+</table>
+</div>
+
+<h3>Получение токена</h3>
+<pre><span class="c"># 1. Получить CSRF-токен</span>
+CSRF=$(<span class="k">curl</span> -s -c cookies.txt https://ocpp.charge.redpay.kg/api/v1/auth/csrf | <span class="k">jq</span> -r .csrf_token)
+
+<span class="c"># 2. Авторизоваться</span>
+<span class="k">curl</span> -b cookies.txt -c cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"user_id": "api-client-bester"}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/auth/dev-login
+
+<span class="c"># 3. Готово — cookies содержат токен, используйте во всех запросах</span>
+<span class="k">curl</span> -b cookies.txt https://ocpp.charge.redpay.kg/api/v1/admin/stations</pre>
+
+<div class="info note">Токен <code>evp_access</code> живёт 24 часа. <code>evp_refresh</code> — 7 дней. Обновление: <code>POST /api/v1/auth/refresh</code> с cookie.</div>
+</section>
+
+<!-- ====== 2 ====== -->
+<section id="simulator">
+<h2><span class="n">2</span> OCPP Симулятор</h2>
+
+<p>Виртуальная зарядная станция, которая подключается по OCPP 1.6J как настоящая. Создаёт реальные сессии, считает энергию и стоимость.</p>
+
+<div class="info tip">Веб-интерфейс: <a href="https://redp.charge.redpay.kg/admin/simulator" style="color:var(--green)">redp.charge.redpay.kg/admin/simulator</a></div>
+
+<div class="info note"><strong>Авто-старт:</strong> При вызове <code>POST /charging/start</code> клиентом &mdash; симулятор автоматически подключает EV и начинает зарядку. Ручные шаги (plug-in, start-charging) нужны только для пошагового тестирования.</div>
+
+<h3>API</h3>
+<table>
+<tr><th>Шаг</th><th>Метод</th><th>Endpoint</th><th>Описание</th></tr>
+<tr><td>1. Запуск</td><td><span class="tag post">POST</span></td><td><code>/api/v1/admin/simulator/start</code></td><td>Создаёт станцию, подключает по WebSocket</td></tr>
+<tr><td>2. Кабель</td><td><span class="tag post">POST</span></td><td><code>/api/v1/admin/simulator/plug-in</code></td><td>Имитация подключения EV (автоматически при RemoteStart)</td></tr>
+<tr><td>3. Старт</td><td><span class="tag post">POST</span></td><td><code>/api/v1/admin/simulator/start-charging</code></td><td>StartTransaction, счётчик энергии растёт (автоматически при RemoteStart)</td></tr>
+<tr><td>4. Стоп</td><td><span class="tag post">POST</span></td><td><code>/api/v1/admin/simulator/stop-charging</code></td><td>StopTransaction, расчёт стоимости</td></tr>
+<tr><td>5. Выкл</td><td><span class="tag post">POST</span></td><td><code>/api/v1/admin/simulator/stop</code></td><td>Отключает станцию</td></tr>
+<tr><td>&mdash;</td><td><span class="tag get">GET</span></td><td><code>/api/v1/admin/simulator/status</code></td><td>Текущее состояние</td></tr>
+<tr><td>&mdash;</td><td><span class="tag get">GET</span></td><td><code>/api/v1/admin/simulator/log</code></td><td>Лог OCPP-сообщений</td></tr>
+<tr><td>&mdash;</td><td><span class="tag get">GET</span></td><td><code>/api/v1/charging/active</code></td><td>Активная сессия текущего пользователя (новый)</td></tr>
+</table>
+
+<h3>Пример</h3>
+<pre><span class="c"># Запустить симулятор</span>
+<span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"station_id": "SIM-TEST", "connectors": 2}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/admin/simulator/start
+
+<span class="c"># Подключить кабель</span>
+<span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"connector_id": 1}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/admin/simulator/plug-in
+
+<span class="c"># Начать зарядку</span>
+<span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"connector_id": 1, "id_tag": "SIM-USER-001"}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/admin/simulator/start-charging</pre>
+</section>
+
+<!-- ====== 3 ====== -->
+<section id="webhooks">
+<h2><span class="n">3</span> Webhooks (колбэки)</h2>
+
+<p>Система отправляет HTTP POST на ваш URL при каждом событии зарядки или изменении статуса.</p>
+
+<h3>Регистрация webhook</h3>
+<pre><span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{
+    "name": "My Production Webhook",
+    "url": "https://your-server.com/webhook/redpetroleum",
+    "secret": "your-hmac-secret-min-8-chars",
+    "events": [
+      "connector.status_changed",
+      "charging.started",
+      "charging.progress",
+      "charging.completed",
+      "charging.error",
+      "station.online",
+      "station.offline"
+    ]
+  }'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/admin/webhooks</pre>
+
+<h3>Формат POST на ваш URL</h3>
+<pre>{
+  <span class="s">"event"</span>: <span class="s">"charging.started"</span>,
+  <span class="s">"timestamp"</span>: <span class="s">"2026-03-25T10:00:00+00:00"</span>,
+  <span class="s">"data"</span>: {
+    <span class="s">"station_id"</span>: <span class="s">"st-001"</span>,
+    <span class="s">"connector_id"</span>: <span class="n">1</span>,
+    <span class="s">"session_id"</span>: <span class="s">"uuid-session"</span>,
+    <span class="s">"transaction_id"</span>: <span class="n">12345</span>,
+    <span class="s">"meter_start"</span>: <span class="n">1000</span>
+  }
+}</pre>
+
+<h3>Заголовки</h3>
+<table>
+<tr><th>Заголовок</th><th>Значение</th></tr>
+<tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr>
+<tr><td><code>X-Webhook-Event</code></td><td>Тип события (например <code>charging.started</code>)</td></tr>
+<tr><td><code>X-Webhook-Signature-256</code></td><td><code>sha256={HMAC-SHA256 hex digest}</code></td></tr>
+</table>
+
+<h3>Верификация подписи</h3>
+<pre><span class="c"># Python</span>
+<span class="k">import</span> hmac, hashlib
+
+signature = hmac.new(
+    <span class="s">b"your-hmac-secret"</span>,
+    request.body,
+    hashlib.sha256
+).hexdigest()
+
+expected = request.headers[<span class="s">"X-Webhook-Signature-256"</span>].replace(<span class="s">"sha256="</span>, <span class="s">""</span>)
+
+<span class="k">if</span> <span class="k">not</span> hmac.compare_digest(signature, expected):
+    <span class="k">return</span> <span class="n">403</span></pre>
+
+<h3>Retry и throttling</h3>
+<ul>
+<li><strong>Retry:</strong> 3 попытки с exponential backoff (1с → 5с → 25с)</li>
+<li><strong>Успех:</strong> HTTP 2xx = доставлено, иначе retry</li>
+<li><strong>Throttle:</strong> <code>charging.progress</code> отправляется не чаще 1 раза в 30 секунд</li>
+</ul>
+
+<h3>Все события</h3>
+<table>
+<tr><th>Событие</th><th>Когда</th><th>Ключевые поля в data</th></tr>
+<tr><td><code>connector.status_changed</code></td><td>Статус коннектора изменился</td><td>station_id, connector_id, status, error_code</td></tr>
+<tr><td><code>charging.started</code></td><td>Зарядка началась</td><td>station_id, connector_id, session_id, transaction_id, meter_start</td></tr>
+<tr><td><code>charging.progress</code></td><td>Обновление показаний</td><td>station_id, session_id, energy_kwh, power_kw</td></tr>
+<tr><td><code>charging.completed</code></td><td>Зарядка завершена</td><td>station_id, session_id, energy_kwh, meter_stop, reason</td></tr>
+<tr><td><code>charging.error</code></td><td>Ошибка OCPP</td><td>station_id, connector_id, error_code, info</td></tr>
+<tr><td><code>station.online</code></td><td>Станция в сети</td><td>station_id, serial_number</td></tr>
+<tr><td><code>station.offline</code></td><td>Станция оффлайн</td><td>station_id, serial_number</td></tr>
+</table>
+
+<h3>Управление</h3>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/admin/webhooks</code> — список подписок</div>
+<div class="ep"><span class="tag post">POST</span><code>/api/v1/admin/webhooks</code> — создать подписку</div>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/admin/webhooks/{id}</code> — детали</div>
+<div class="ep"><span class="tag put">PUT</span><code>/api/v1/admin/webhooks/{id}</code> — обновить</div>
+<div class="ep"><span class="tag del">DEL</span><code>/api/v1/admin/webhooks/{id}</code> — удалить</div>
+<div class="ep"><span class="tag post">POST</span><code>/api/v1/admin/webhooks/{id}/test</code> — тестовая отправка</div>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/admin/webhooks/{id}/logs</code> — логи доставки</div>
+</section>
+
+<!-- ====== 4 ====== -->
+<section id="params">
+<h2><span class="n">4</span> Станции и коннекторы</h2>
+
+<div class="info note"><strong>Авторизация не требуется</strong> для <code>/api/v1/stations</code>, <code>/api/v1/stations/{id}</code>, <code>/api/v1/station/status/{id}</code> и <code>/api/v1/locations</code>.</div>
+
+<h3>Список станций</h3>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/stations</code></div>
+<pre><span class="k">curl</span> https://ocpp.charge.redpay.kg/api/v1/stations</pre>
+
+<h3>Ответ</h3>
+<pre>{
+  <span class="s">"success"</span>: <span class="k">true</span>,
+  <span class="s">"data"</span>: [
+    {
+      <span class="s">"id"</span>: <span class="s">"st-001"</span>,
+      <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
+      <span class="s">"max_power"</span>: <span class="n">22.0</span>,
+      <span class="s">"tariff_per_kwh"</span>: <span class="n">10.0</span>,
+      <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+      <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
+      <span class="s">"location_coordinates"</span>: {
+        <span class="s">"lat"</span>: <span class="n">42.850861</span>,
+        <span class="s">"lng"</span>: <span class="n">74.547404</span>
+      },
+      <span class="s">"is_online"</span>: <span class="k">false</span>,
+      <span class="s">"total_connectors"</span>: <span class="n">2</span>,
+      <span class="s">"occupied_connectors"</span>: <span class="n">0</span>,
+      <span class="s">"available_connectors"</span>: <span class="n">2</span>,
+      <span class="s">"faulted_connectors"</span>: <span class="n">0</span>
+    },
+    {
+      <span class="s">"id"</span>: <span class="s">"st-003"</span>,
+      <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
+      <span class="s">"max_power"</span>: <span class="n">120.0</span>,
+      <span class="s">"tariff_per_kwh"</span>: <span class="n">14.0</span>,
+      <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+      <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
+      <span class="s">"location_coordinates"</span>: {
+        <span class="s">"lat"</span>: <span class="n">42.850861</span>,
+        <span class="s">"lng"</span>: <span class="n">74.547404</span>
+      },
+      <span class="s">"is_online"</span>: <span class="k">true</span>,
+      <span class="s">"total_connectors"</span>: <span class="n">2</span>,
+      <span class="s">"occupied_connectors"</span>: <span class="n">1</span>,
+      <span class="s">"available_connectors"</span>: <span class="n">1</span>,
+      <span class="s">"faulted_connectors"</span>: <span class="n">0</span>
+    }
+  ]
+}</pre>
+
+<h3>Детали станции с коннекторами</h3>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/stations/{station_id}</code></div>
+<pre><span class="k">curl</span> https://ocpp.charge.redpay.kg/api/v1/stations/st-001</pre>
+
+<h3>Ответ</h3>
+<pre>{
+  <span class="s">"success"</span>: <span class="k">true</span>,
+  <span class="s">"data"</span>: {
+    <span class="s">"id"</span>: <span class="s">"st-001"</span>,
+    <span class="s">"station_display_name"</span>: <span class="s">"RP-БИШ-0001"</span>,
+    <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
+    <span class="s">"max_power"</span>: <span class="n">22.0</span>,
+    <span class="s">"tariff_per_kwh"</span>: <span class="n">10.0</span>,
+    <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+    <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
+    <span class="s">"location_coordinates"</span>: {
+      <span class="s">"lat"</span>: <span class="n">42.850861</span>,
+      <span class="s">"lng"</span>: <span class="n">74.547404</span>
+    },
+    <span class="s">"is_online"</span>: <span class="k">true</span>,
+    <span class="s">"total_connectors"</span>: <span class="n">2</span>,
+    <span class="s">"occupied_connectors"</span>: <span class="n">1</span>,
+    <span class="s">"available_connectors"</span>: <span class="n">1</span>,
+    <span class="s">"faulted_connectors"</span>: <span class="n">0</span>,
+    <span class="s">"connectors"</span>: [
+      {
+        <span class="s">"connector_number"</span>: <span class="n">1</span>,
+        <span class="s">"connector_type"</span>: <span class="s">"Type2"</span>,
+        <span class="s">"max_power"</span>: <span class="n">22.0</span>,
+        <span class="s">"status_name"</span>: <span class="s">"Свободен"</span>,
+        <span class="s">"status"</span>: <span class="s">"Available"</span>,
+        <span class="s">"current_progress"</span>: <span class="k">null</span>
+      },
+      {
+        <span class="s">"connector_number"</span>: <span class="n">2</span>,
+        <span class="s">"connector_type"</span>: <span class="s">"Type2"</span>,
+        <span class="s">"max_power"</span>: <span class="n">22.0</span>,
+        <span class="s">"status_name"</span>: <span class="s">"Идет зарядка"</span>,
+        <span class="s">"status"</span>: <span class="s">"Charging"</span>,
+        <span class="s">"current_progress"</span>: <span class="n">86</span>          <span class="c">// SoC батареи EV (%)</span>
+      }
+    ]
+  }
+}</pre>
+
+<div class="info tip"><strong>current_progress</strong> — процент заряда батареи EV (SoC, 0-100). Доступен только если станция передаёт SoC через OCPP MeterValues. Если нет — <code>null</code>.</div>
+
+<h3>Статус станции (расширенный)</h3>
+<div class="ep"><span class="tag get">GET</span><code>/api/v1/station/status/{station_id}</code></div>
+<pre><span class="k">curl</span> https://ocpp.charge.redpay.kg/api/v1/station/status/st-001</pre>
+
+<h3>Ответ</h3>
+<pre>{
+  <span class="s">"success"</span>: <span class="k">true</span>,
+  <span class="s">"station_id"</span>: <span class="s">"st-001"</span>,
+  <span class="s">"serial_number"</span>: <span class="s">"RP-001"</span>,
+  <span class="s">"model"</span>: <span class="s">"AC Max"</span>,
+  <span class="s">"manufacturer"</span>: <span class="s">"Delta"</span>,
+  <span class="s">"online"</span>: <span class="k">true</span>,
+  <span class="s">"station_status"</span>: <span class="s">"active"</span>,
+  <span class="s">"available_for_charging"</span>: <span class="k">true</span>,
+  <span class="s">"location_name"</span>: <span class="s">"АЗС #001"</span>,
+  <span class="s">"location_address"</span>: <span class="s">"г. Бишкек, ул. Ленина 123"</span>,
+  <span class="s">"location_coordinates"</span>: { <span class="s">"lat"</span>: <span class="n">42.85</span>, <span class="s">"lng"</span>: <span class="n">74.55</span> },
+  <span class="s">"station_display_name"</span>: <span class="s">"RP-001"</span>,
+  <span class="s">"connectors"</span>: [
+    {
+      <span class="s">"connector_number"</span>: <span class="n">1</span>,
+      <span class="s">"connector_type"</span>: <span class="s">"Type2"</span>,
+      <span class="s">"max_power"</span>: <span class="n">22.0</span>,
+      <span class="s">"status"</span>: <span class="s">"Свободен"</span>,
+      <span class="s">"status_name"</span>: <span class="s">"Свободен"</span>,
+      <span class="s">"current_progress"</span>: <span class="k">null</span>,
+      <span class="s">"available"</span>: <span class="k">true</span>,
+      <span class="s">"error"</span>: <span class="k">null</span>
+    },
+    {
+      <span class="s">"connector_number"</span>: <span class="n">2</span>,
+      <span class="s">"connector_type"</span>: <span class="s">"CCS2"</span>,
+      <span class="s">"max_power"</span>: <span class="n">50.0</span>,
+      <span class="s">"status"</span>: <span class="s">"Идет зарядка"</span>,
+      <span class="s">"status_name"</span>: <span class="s">"Идет зарядка"</span>,
+      <span class="s">"current_progress"</span>: <span class="n">72</span>,
+      <span class="s">"available"</span>: <span class="k">false</span>,
+      <span class="s">"error"</span>: <span class="k">null</span>
+    }
+  ],
+  <span class="s">"total_connectors"</span>: <span class="n">2</span>,
+  <span class="s">"available_connectors"</span>: <span class="n">1</span>,
+  <span class="s">"occupied_connectors"</span>: <span class="n">1</span>,
+  <span class="s">"faulted_connectors"</span>: <span class="n">0</span>,
+  <span class="s">"tariff_per_kwh"</span>: <span class="n">12.5</span>,
+  <span class="s">"currency"</span>: <span class="s">"KGS"</span>
+}</pre>
+
+<h3>Параметры станции (список и детали)</h3>
+<table>
+<tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
+<tr><td><code>id</code></td><td>string</td><td>Уникальный ID станции</td></tr>
+<tr><td><code>station_display_name</code></td><td>string</td><td>Отображаемое имя (серийный номер)</td></tr>
+<tr><td><code>location_id</code></td><td>string</td><td>ID локации</td></tr>
+<tr><td><code>max_power</code></td><td>float</td><td>Макс. мощность (кВт)</td></tr>
+<tr><td><code>tariff_per_kwh</code></td><td>float|null</td><td>Тариф за кВт·ч (KGS). null если не задан</td></tr>
+<tr><td><code>location_name</code></td><td>string</td><td>Название локации</td></tr>
+<tr><td><code>location_address</code></td><td>string</td><td>Адрес</td></tr>
+<tr><td><code>location_coordinates</code></td><td>object</td><td><code>{ lat, lng }</code> — координаты</td></tr>
+<tr><td><code>is_online</code></td><td>bool</td><td>Станция на связи (heartbeat &lt; 5 мин)</td></tr>
+<tr><td><code>total_connectors</code></td><td>int</td><td>Всего коннекторов</td></tr>
+<tr><td><code>available_connectors</code></td><td>int</td><td>Свободных</td></tr>
+<tr><td><code>occupied_connectors</code></td><td>int</td><td>Занятых</td></tr>
+<tr><td><code>faulted_connectors</code></td><td>int</td><td>Неисправных</td></tr>
+</table>
+
+<h3>Параметры коннектора</h3>
+<table>
+<tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
+<tr><td><code>connector_number</code></td><td>int</td><td>Порядковый номер (1-10)</td></tr>
+<tr><td><code>connector_type</code></td><td>string</td><td>Type2, CCS2, CHAdeMO, GBT</td></tr>
+<tr><td><code>max_power</code></td><td>float</td><td>Макс. мощность (кВт)</td></tr>
+<tr><td><code>status</code></td><td>string</td><td>Available, Charging, Occupied, Faulted, Unavailable</td></tr>
+<tr><td><code>status_name</code></td><td>string</td><td>Локализованное название: Свободен, Идет зарядка, Занят, Неисправен, Недоступен</td></tr>
+<tr><td><code>current_progress</code></td><td>int|null</td><td>Процент заряда батареи EV (SoC, 0-100%). <code>null</code> если станция не передаёт SoC</td></tr>
+<tr><td><code>available</code></td><td>bool</td><td>Доступен для зарядки</td></tr>
+<tr><td><code>error</code></td><td>string|null</td><td>Код ошибки OCPP (null если нет)</td></tr>
+</table>
+
+<h3>Параметры сессии зарядки</h3>
+<table>
+<tr><th>Поле</th><th>Тип</th><th>Когда</th><th>Описание</th></tr>
+<tr><td><code>session_id</code></td><td>string</td><td>start/status/stop</td><td>UUID сессии</td></tr>
+<tr><td><code>energy_consumed</code></td><td>float</td><td>status/stop</td><td>Потреблено кВт*ч</td></tr>
+<tr><td><code>current_cost</code></td><td>float</td><td>status</td><td>Текущая стоимость (KGS)</td></tr>
+<tr><td><code>power_kw</code></td><td>float</td><td>status</td><td>Текущая мощность зарядки</td></tr>
+<tr><td><code>progress_percent</code></td><td>float</td><td>status</td><td>Прогресс (0-100%)</td></tr>
+<tr><td><code>ev_battery_soc</code></td><td>int</td><td>status</td><td>Уровень заряда батареи (%)</td></tr>
+<tr><td><code>reserved_amount</code></td><td>float</td><td>start/status</td><td>Зарезервировано на балансе (KGS)</td></tr>
+<tr><td><code>actual_cost</code></td><td>float</td><td>stop</td><td>Итоговая стоимость (KGS)</td></tr>
+<tr><td><code>refund_amount</code></td><td>float</td><td>stop</td><td>Возврат на баланс (KGS)</td></tr>
+<tr><td><code>rate_per_kwh</code></td><td>float</td><td>start/stop</td><td>Тариф за кВт*ч (KGS)</td></tr>
+<tr><td><code>night_tariff_applied</code></td><td>bool</td><td>start</td><td>Применён ночной тариф (-20%)</td></tr>
+</table>
+</section>
+
+<!-- ====== 5 ====== -->
+<section id="methods">
+<h2><span class="n">5</span> Методы зарядки</h2>
+
+<h3>Запуск зарядки</h3>
+<pre><span class="k">POST</span> /api/v1/charging/start
+
+{
+  <span class="s">"station_id"</span>: <span class="s">"st-001"</span>,       <span class="c">// ID станции или серийный номер</span>
+  <span class="s">"connector_id"</span>: <span class="n">1</span>,             <span class="c">// номер коннектора (1-10)</span>
+  <span class="s">"energy_kwh"</span>: <span class="n">20.0</span>,            <span class="c">// лимит энергии (опционально)</span>
+  <span class="s">"amount_som"</span>: <span class="n">500.0</span>,           <span class="c">// лимит суммы (опционально)</span>
+  <span class="s">"promo_code"</span>: <span class="k">null</span>             <span class="c">// промокод (опционально)</span>
+}</pre>
+
+<h3>Статус сессии</h3>
+<pre><span class="k">GET</span> /api/v1/charging/status/{session_id}
+
+<span class="c">// Поллинг: рекомендуемый интервал 10-30 секунд</span>
+<span class="c">// Или используйте webhook charging.progress</span></pre>
+
+<h3>Остановка зарядки</h3>
+<pre><span class="k">POST</span> /api/v1/charging/stop
+
+{
+  <span class="s">"session_id"</span>: <span class="s">"uuid-из-ответа-start"</span>
+}</pre>
+
+<h3>Полный цикл</h3>
+<pre><span class="c"># 1. Старт</span>
+<span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"station_id":"SIM-TEST","connector_id":1,"energy_kwh":10}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/charging/start
+<span class="c"># → {"success":true, "session_id":"uuid-xxx", ...}</span>
+
+<span class="c"># 2. Мониторинг</span>
+<span class="k">curl</span> -b cookies.txt https://ocpp.charge.redpay.kg/api/v1/charging/status/uuid-xxx
+
+<span class="c"># 3. Стоп</span>
+<span class="k">curl</span> -b cookies.txt -X POST \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
+  -d <span class="s">'{"session_id":"uuid-xxx"}'</span> \
+  https://ocpp.charge.redpay.kg/api/v1/charging/stop
+<span class="c"># → {"success":true, "actual_cost":125.0, "refund_amount":375.0, ...}</span></pre>
+</section>
+
+<!-- ====== 6 ====== -->
+<section id="statuses">
+<h2><span class="n">6</span> Статусы</h2>
+
+<h3>Станция</h3>
+<table>
+<tr><th>Статус</th><th>Описание</th><th>Зарядка возможна</th></tr>
+<tr><td><span class="sb g">active</span></td><td>Работает</td><td>Да (если online + есть свободный коннектор)</td></tr>
+<tr><td><span class="sb gr">inactive</span></td><td>Отключена</td><td>Нет</td></tr>
+<tr><td><span class="sb y">maintenance</span></td><td>Обслуживание</td><td>Нет</td></tr>
+</table>
+
+<h3>Коннектор</h3>
+<table>
+<tr><th>Статус</th><th>Описание</th><th>Действия</th></tr>
+<tr><td><span class="sb g">available</span></td><td>Свободен</td><td>Старт зарядки, бронирование</td></tr>
+<tr><td><span class="sb b">occupied</span></td><td>Занят (зарядка)</td><td>Мониторинг, стоп</td></tr>
+<tr><td><span class="sb p">reserved</span></td><td>Забронирован</td><td>Ожидание (макс 30 мин)</td></tr>
+<tr><td><span class="sb gr">unavailable</span></td><td>Недоступен</td><td>Ожидание восстановления</td></tr>
+<tr><td><span class="sb r">faulted</span></td><td>Неисправен</td><td>Требуется обслуживание</td></tr>
+</table>
+
+<h3>Онлайн-статус</h3>
+<table>
+<tr><th>Поле</th><th>Описание</th></tr>
+<tr><td><code>online: true</code></td><td>Heartbeat &lt; 5 мин назад</td></tr>
+<tr><td><code>online: false</code></td><td>Нет heartbeat &gt; 5 мин</td></tr>
+<tr><td><code>last_heartbeat</code></td><td>ISO 8601 — время последнего heartbeat</td></tr>
+</table>
+</section>
+
+<!-- ====== 7 ====== -->
+<section id="limits">
+<h2><span class="n">7</span> Ограничения</h2>
+
+<table>
+<tr><th>Правило</th><th>Значение</th></tr>
+<tr><td>Активных сессий на клиента</td><td><strong>1</strong></td></tr>
+<tr><td>Макс. сумма резервирования</td><td><strong>100,000 KGS</strong></td></tr>
+<tr><td>Номер коннектора</td><td><strong>1 — 10</strong></td></tr>
+<tr><td>Бронирование</td><td>макс <strong>30 минут</strong></td></tr>
+<tr><td>Одновременных броней на клиента</td><td><strong>1</strong></td></tr>
+<tr><td>Ночной тариф</td><td><strong>23:00 — 06:00</strong>, скидка 20%</td></tr>
+<tr><td>Webhook retry</td><td>3 попытки (1с, 5с, 25с)</td></tr>
+<tr><td>Webhook throttle (progress)</td><td>1 раз в 30 сек на станцию</td></tr>
+<tr><td>Токен <code>evp_access</code></td><td>24 часа</td></tr>
+<tr><td>Токен <code>evp_refresh</code></td><td>7 дней</td></tr>
+<tr><td>station_id</td><td>Принимает <strong>ID</strong> или <strong>serial_number</strong></td></tr>
+<tr><td>Валюта</td><td><strong>KGS</strong> (Кыргызский сом)</td></tr>
+<tr><td>Энергия</td><td><strong>кВт*ч</strong></td></tr>
+</table>
+</section>
+
+<!-- ====== 8 ====== -->
+<section id="qa">
+<h2><span class="n">8</span> QA — Проверка готовности</h2>
+
+<p>Полная проверка всех компонентов системы проведена 26.03.2026.</p>
+
+<h3>Frontend — 49 страниц</h3>
+<div class="card">
+<table>
+<tr><th>Группа</th><th>Страниц</th><th>Статус</th></tr>
+<tr><td>Клиент (карта, зарядка, история, баланс, профиль)</td><td>12</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Owner Panel (станции, локации, тарифы, сессии, выручка)</td><td>9</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Admin Panel (клиенты, партнёры, аналитика, оборудование)</td><td>10</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Partner Panel (дашборд, станции, сессии, выручка)</td><td>4</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Corporate Panel (дашборд, сотрудники)</td><td>2</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Website (главная, карта, тарифы, B2B, FAQ, контакты)</td><td>6</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Guest, Auth, Scalar, Health</td><td>6</td><td><span class="sb g">OK</span></td></tr>
+<tr><td><strong>Итого</strong></td><td><strong>49</strong></td><td><span class="sb g">49/49 OK</span></td></tr>
+</table>
+</div>
+
+<h3>Backend API — 40 эндпоинтов</h3>
+<div class="card">
+<table>
+<tr><th>Группа</th><th>Эндпоинтов</th><th>Статус</th></tr>
+<tr><td>Публичные (health, locations, station status, csrf, openapi)</td><td>5</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Admin (stations, locations, sessions, partners, analytics, webhooks...)</td><td>21</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Client (balance, history, profile, favorites, booking, notifications)</td><td>9</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Partner (dashboard, stations, sessions, revenue)</td><td>4</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Corporate (dashboard, profile)</td><td>2</td><td><span class="sb g">OK</span> <span style="font-size:11px;color:var(--muted)">* profile доступен только для корпоративных аккаунтов</span></td></tr>
+<tr><td><strong>Итого</strong></td><td><strong>40</strong></td><td><span class="sb g">40/40 OK</span></td></tr>
+</table>
+</div>
+
+<h3>Webhook-система</h3>
+<div class="card">
+<table>
+<tr><th>Проверка</th><th>Статус</th></tr>
+<tr><td>Регистрация подписки</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Отправка <code>connector.status_changed</code> при изменении статуса</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Отправка <code>charging.started</code> при старте зарядки</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>HMAC-SHA256 подпись в заголовке</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Retry (3 попытки, exponential backoff)</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Логирование доставки</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Тестовая отправка через <code>/test</code></td><td><span class="sb g">OK</span></td></tr>
+</table>
+</div>
+
+<h3>OCPP Симулятор</h3>
+<div class="card">
+<table>
+<tr><th>Шаг</th><th>Статус</th></tr>
+<tr><td>Запуск виртуальной станции SIM-TEST</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Станция видна в публичном API (online: true)</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Plug-in (подключение кабеля)</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Start charging (коннектор → occupied)</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Webhooks отправляются при событиях</td><td><span class="sb g">OK</span></td></tr>
+<tr><td>Stop simulator</td><td><span class="sb g">OK</span></td></tr>
+</table>
+</div>
+
+<h3>Соответствие ТЗ (Приложения №3 и №4)</h3>
+<div class="card">
+<table>
+<tr><th>Категория</th><th>Требований</th><th>Выполнено</th></tr>
+<tr><td>Модули бэкенда (Прил. №3)</td><td>8</td><td><span class="sb g">8/8 (100%)</span></td></tr>
+<tr><td>Функции управления (Прил. №4)</td><td>42</td><td><span class="sb g">42/42 (100%)</span></td></tr>
+<tr><td>OCPP команды</td><td>16</td><td><span class="sb g">16/16 (100%)</span></td></tr>
+<tr><td>Технические характеристики</td><td>7</td><td><span class="sb g">7/7 (100%)</span></td></tr>
+<tr><td>API эндпоинты</td><td>124</td><td><span class="sb g">193 (156%)</span></td></tr>
+</table>
+</div>
+
+<h3>Бонусные модули (сверх договора)</h3>
+<div class="card">
+<table>
+<tr><th>Модуль</th><th>Описание</th></tr>
+<tr><td>OCPP 2.0.1</td><td>В ТЗ только 1.6 — реализованы оба протокола</td></tr>
+<tr><td>Webhook-система</td><td>7 типов событий, HMAC подпись, retry, логирование</td></tr>
+<tr><td>Гостевая зарядка</td><td>Без регистрации, по номеру телефона</td></tr>
+<tr><td>OCPP Симулятор</td><td>Виртуальная станция для тестирования</td></tr>
+<tr><td>Партнёрский кабинет</td><td>Дашборд, станции, выручка</td></tr>
+<tr><td>Корпоративный кабинет</td><td>Группы, сотрудники, лимиты, биллинг</td></tr>
+</table>
+</div>
+</section>
+
+</div>
+
+<div class="footer">
+Red Petroleum EV &mdash; Integration Guide<br>
+<a href="https://ocpp.charge.redpay.kg/scalar" style="color:var(--blue)">ocpp.charge.redpay.kg/scalar</a> &mdash; полная документация (193 эндпоинта)<br>
+QA проверка: 26.03.2026 &mdash; 89/89 компонентов работают &mdash; 0 блокирующих багов
+</div>
+
+</body>
+</html>

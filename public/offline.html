@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Petroleum EV — оффлайн</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+        background: #0A0E17; color: #e4e4e7; display: grid; place-items: center; min-height: 100dvh;
+        padding: 16px;
+      }
+      .card {
+        width: min(440px, 100%);
+        background: #111621; border: 1px solid #27272a; border-radius: 20px; padding: 32px 24px;
+        text-align: center;
+      }
+      .logo {
+        width: 56px; height: 56px; border-radius: 14px; background: #DC2626;
+        display: inline-flex; align-items: center; justify-content: center;
+        margin-bottom: 20px;
+      }
+      .logo svg { width: 28px; height: 28px; fill: white; }
+      .title { font-size: 18px; font-weight: 700; color: #fafafa; margin-bottom: 8px; }
+      .desc { color: #71717a; line-height: 1.6; font-size: 14px; margin-bottom: 20px; }
+      .badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        border-radius: 9999px; padding: 6px 14px; font-weight: 600; font-size: 12px;
+        background: rgba(220,38,38,0.1); color: #ef4444; border: 1px solid rgba(220,38,38,0.2);
+        margin-bottom: 20px;
+      }
+      .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; }
+      .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 10px 18px; border-radius: 12px; border: 1px solid #27272a; background: #18181b; color: #e4e4e7;
+        text-decoration: none; font-weight: 600; font-size: 14px; cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn:hover { background: #27272a; }
+      .btn-primary { background: #DC2626; border-color: #DC2626; color: white; }
+      .btn-primary:hover { background: #b91c1c; }
+      .hint { margin-top: 16px; font-size: 13px; color: #52525b; }
+    </style>
+  </head>
+  <body>
+    <div class="card" role="region" aria-label="Оффлайн">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h1 class="title">Нет подключения к интернету</h1>
+      <p class="desc">Вы оффлайн. Некоторые функции недоступны. Попробуйте обновить страницу после восстановления соединения.</p>
+      <div><span class="badge">Оффлайн режим</span></div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="location.reload()">Обновить</button>
+        <a class="btn" href="/" rel="nofollow">На главную</a>
+      </div>
+      <p class="hint">Убедитесь, что у вас включены мобильные данные или Wi-Fi.</p>
+    </div>
+  </body>
+</html>

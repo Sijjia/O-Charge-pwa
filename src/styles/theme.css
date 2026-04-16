@@ -1,0 +1,391 @@
+/* ===========================================
+   Red Petroleum EV Design System v3.0
+   Dark theme, red accents
+
+   Единая дизайн-система для всего приложения.
+   Все компоненты должны использовать эти переменные.
+   =========================================== */
+
+:root {
+  /* ========== ЦВЕТОВАЯ ПАЛИТРА ========== */
+
+  /* Primary Brand Color - зелёный (legacy, для станций) */
+  --ev-green-50: #ecfdf5;
+  --ev-green-100: #d1fae5;
+  --ev-green-200: #a7f3d0;
+  --ev-green-300: #6ee7b7;
+  --ev-green-400: #34d399;
+  --ev-green-500: #10b981;
+  /* Main */
+  --ev-green-600: #059669;
+  --ev-green-700: #047857;
+
+  /* Accent Color - cyan */
+  --ev-cyan-50: #ecfeff;
+  --ev-cyan-100: #cffafe;
+  --ev-cyan-400: #22d3ee;
+  --ev-cyan-500: #06b6d4;
+  /* Main */
+  --ev-cyan-600: #0891b2;
+
+  /* Accent - Red (new primary) */
+  --ev-accent: #dc2626;
+  --ev-accent-hover: #ef4444;
+  --ev-accent-glow: rgba(220, 38, 38, 0.2);
+
+  /* Status Colors - для коннекторов и станций */
+  --ev-status-available: #10b981;
+  /* Зелёный - свободно */
+  --ev-status-charging: #3b82f6;
+  /* Синий - идёт зарядка */
+  --ev-status-occupied: #f59e0b;
+  /* Жёлтый - занято (ожидание) */
+  --ev-status-offline: #9ca3af;
+  /* Серый - офлайн */
+  --ev-status-faulted: #ef4444;
+  /* Красный - ошибка */
+  --ev-status-maintenance: #8b5cf6;
+  /* Фиолетовый - обслуживание */
+
+  /* Neutral Colors */
+  --ev-gray-50: #f9fafb;
+  --ev-gray-100: #f3f4f6;
+  --ev-gray-200: #e5e7eb;
+  --ev-gray-300: #d1d5db;
+  --ev-gray-400: #9ca3af;
+  --ev-gray-500: #6b7280;
+  --ev-gray-600: #4b5563;
+  --ev-gray-700: #374151;
+  --ev-gray-800: #1f2937;
+  --ev-gray-900: #111827;
+
+  /* ========== СЕМАНТИЧЕСКИЕ ЦВЕТА (DARK THEME) ========== */
+
+  /* Backgrounds */
+  --ev-bg-primary: #0A0E17;
+  /* Основной фон страниц */
+  --ev-bg-secondary: #111621;
+  /* Фон карточек */
+  --ev-bg-tertiary: #1c1c1f;
+  /* Фон вложенных элементов */
+  --ev-bg-card: rgba(24, 24, 27, 0.4);
+  /* Glass panels */
+
+  /* Text */
+  --ev-text-primary: #ffffff;
+  /* Основной текст */
+  --ev-text-secondary: rgba(255, 255, 255, 0.55);
+  /* Вторичный текст — повышен для WCAG AA (≥4.5:1) */
+  --ev-text-tertiary: rgba(255, 255, 255, 0.25);
+  /* Подсказки, мета */
+  --ev-text-inverse: #ffffff;
+  /* Текст на цветном фоне */
+
+  /* Borders */
+  --ev-border-light: rgba(255, 255, 255, 0.05);
+  --ev-border-default: #1c1c1f;
+
+  /* ========== SPACING (base 4px) ========== */
+  --ev-space-0: 0;
+  --ev-space-1: 4px;
+  --ev-space-2: 8px;
+  --ev-space-3: 12px;
+  --ev-space-4: 16px;
+  --ev-space-5: 20px;
+  --ev-space-6: 24px;
+  --ev-space-8: 32px;
+  --ev-space-10: 40px;
+  --ev-space-12: 48px;
+
+  /* ========== BORDER RADIUS ========== */
+  --ev-radius-sm: 6px;
+  --ev-radius-md: 8px;
+  --ev-radius-lg: 12px;
+  --ev-radius-xl: 16px;
+  --ev-radius-2xl: 20px;
+  --ev-radius-full: 9999px;
+
+  /* ========== SHADOWS ========== */
+  --ev-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --ev-shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --ev-shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --ev-shadow-card:
+    0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+
+  /* ========== TYPOGRAPHY ========== */
+  --ev-font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --ev-font-display: "Manrope", "Inter", system-ui, sans-serif;
+  --ev-font-mono: "JetBrains Mono", monospace;
+
+  /* Font sizes */
+  --ev-text-xs: 12px;
+  --ev-text-sm: 14px;
+  --ev-text-base: 16px;
+  --ev-text-lg: 18px;
+  --ev-text-xl: 20px;
+  --ev-text-2xl: 24px;
+
+  /* Font weights */
+  --ev-font-normal: 400;
+  --ev-font-medium: 500;
+  --ev-font-semibold: 600;
+  --ev-font-bold: 700;
+
+  /* Line heights */
+  --ev-leading-tight: 1.25;
+  --ev-leading-normal: 1.5;
+  --ev-leading-relaxed: 1.625;
+
+  /* ========== TRANSITIONS ========== */
+  --ev-transition-fast: 150ms ease;
+  --ev-transition-base: 200ms ease;
+  --ev-transition-slow: 300ms ease;
+
+  /* ========== Z-INDEX ========== */
+  --ev-z-dropdown: 10;
+  --ev-z-sticky: 20;
+  --ev-z-fixed: 30;
+  --ev-z-modal-backdrop: 40;
+  --ev-z-modal: 50;
+  --ev-z-tooltip: 60;
+
+  /* ========== КОМПОНЕНТЫ ========== */
+
+  /* Cards */
+  --ev-card-padding: var(--ev-space-3);
+  --ev-card-padding-lg: var(--ev-space-4);
+  --ev-card-radius: var(--ev-radius-lg);
+  --ev-card-shadow: var(--ev-shadow-card);
+
+  /* Buttons */
+  --ev-btn-height-sm: 32px;
+  --ev-btn-height-md: 40px;
+  --ev-btn-height-lg: 48px;
+  --ev-btn-radius: var(--ev-radius-lg);
+
+  /* Inputs */
+  --ev-input-height: 44px;
+  --ev-input-radius: var(--ev-radius-lg);
+
+  /* Bottom Navigation */
+  --ev-bottomnav-height: 64px;
+
+  /* ========== LEGACY COMPATIBILITY ========== */
+  --primary-green: var(--ev-green-500);
+  --primary-yellow: #fcd34d;
+  --primary-blue: var(--ev-cyan-500);
+  --bg-main: var(--ev-bg-primary);
+  --bg-card: var(--ev-bg-secondary);
+  --text-primary: var(--ev-text-primary);
+  --text-secondary: var(--ev-text-secondary);
+  --status-available: var(--ev-status-available);
+  --status-occupied: var(--ev-status-occupied);
+  --status-offline: var(--ev-status-offline);
+  --status-maintenance: var(--ev-status-maintenance);
+  --shadow-sm: var(--ev-shadow-sm);
+  --shadow-md: var(--ev-shadow-md);
+  --radius-sm: var(--ev-radius-sm);
+  --radius-md: var(--ev-radius-md);
+  --radius-lg: var(--ev-radius-lg);
+}
+
+/* ========== LIGHT MODE OVERRIDES ========== */
+:root:not(.dark) {
+  --ev-bg-primary: #F9FAFB;
+  --ev-bg-secondary: #FFFFFF;
+  --ev-bg-tertiary: #F3F4F6;
+  --ev-bg-card: rgba(255, 255, 255, 0.9);
+
+  --ev-text-primary: #111827;
+  --ev-text-secondary: rgba(17, 24, 39, 0.6);
+  --ev-text-tertiary: rgba(17, 24, 39, 0.4);
+  --ev-text-inverse: #ffffff;
+
+  --ev-border-light: rgba(0, 0, 0, 0.06);
+  --ev-border-default: #E5E7EB;
+
+  --ev-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ev-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --ev-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --ev-shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+
+  --bg-main: var(--ev-bg-primary);
+  --bg-card: var(--ev-bg-secondary);
+  --text-primary: var(--ev-text-primary);
+  --text-secondary: var(--ev-text-secondary);
+}
+
+/* ========== ГЛОБАЛЬНЫЕ СТИЛИ ========== */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--ev-font-family);
+  background-color: var(--ev-bg-primary);
+  color: var(--ev-text-primary);
+  line-height: var(--ev-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== УТИЛИТЫ ========== */
+
+/* Компактные карточки */
+.ev-card {
+  background: var(--ev-bg-secondary);
+  border-radius: var(--ev-card-radius);
+  padding: var(--ev-card-padding);
+  box-shadow: var(--ev-card-shadow);
+  border: 1px solid var(--ev-border-default);
+}
+
+.ev-card-compact {
+  padding: var(--ev-space-3);
+}
+
+/* Status dots */
+.ev-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ev-status-dot--available {
+  background-color: var(--ev-status-available);
+}
+
+.ev-status-dot--charging {
+  background-color: var(--ev-status-charging);
+}
+
+.ev-status-dot--occupied {
+  background-color: var(--ev-status-occupied);
+}
+
+.ev-status-dot--offline {
+  background-color: var(--ev-status-offline);
+}
+
+.ev-status-dot--faulted {
+  background-color: var(--ev-status-faulted);
+}
+
+/* Filter chips */
+.ev-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--ev-radius-full);
+  font-size: var(--ev-text-sm);
+  font-weight: var(--ev-font-medium);
+  transition: var(--ev-transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.ev-chip--default {
+  background: var(--ev-bg-secondary);
+  border-color: var(--ev-border-default);
+  color: var(--ev-text-secondary);
+}
+
+.ev-chip--default:hover {
+  background: var(--ev-bg-tertiary);
+  border-color: var(--ev-border-default);
+}
+
+.ev-chip--active {
+  background: var(--ev-accent);
+  color: var(--ev-text-inverse);
+}
+
+/* Buttons */
+.ev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ev-space-2);
+  padding: 0 var(--ev-space-4);
+  height: var(--ev-btn-height-md);
+  border-radius: var(--ev-btn-radius);
+  font-size: var(--ev-text-sm);
+  font-weight: var(--ev-font-medium);
+  transition: var(--ev-transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.ev-btn--primary {
+  background: var(--ev-accent);
+  color: var(--ev-text-inverse);
+}
+
+.ev-btn--primary:hover {
+  background: var(--ev-accent-hover);
+}
+
+.ev-btn--primary:disabled {
+  background: var(--ev-bg-tertiary);
+  color: var(--ev-text-secondary);
+  cursor: not-allowed;
+}
+
+.ev-btn--secondary {
+  background: var(--ev-bg-tertiary);
+  color: var(--ev-text-primary);
+}
+
+.ev-btn--secondary:hover {
+  background: var(--ev-border-default);
+}
+
+.ev-btn--sm {
+  height: var(--ev-btn-height-sm);
+  padding: 0 var(--ev-space-3);
+  font-size: var(--ev-text-xs);
+}
+
+/* Input (dark theme) */
+.ev-input {
+  width: 100%;
+  height: var(--ev-input-height);
+  padding: 0 var(--ev-space-4);
+  background: var(--ev-bg-secondary);
+  border: 1px solid var(--ev-border-default);
+  border-radius: var(--ev-input-radius);
+  color: var(--ev-text-primary);
+  font-size: var(--ev-text-base);
+  transition: var(--ev-transition-fast);
+  outline: none;
+}
+
+.ev-input::placeholder {
+  color: var(--ev-text-tertiary);
+}
+
+.ev-input:focus {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+
+/* Touch targets - минимум 44px для мобильных */
+.ev-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Скрыть скроллбар но оставить функциональность */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
