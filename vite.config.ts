@@ -31,7 +31,7 @@ export default defineConfig(() => {
           orientation: "portrait",
           scope: "/",
           start_url: "/",
-          id: "kg.redpetroleum.app",
+          id: "kg.ocharge.app",
           categories: ["utilities", "transportation"],
           icons: [
             {

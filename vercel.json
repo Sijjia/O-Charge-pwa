@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://ocpp.charge.redpay.kg/api/:path*"
+      "destination": "https://ocpp.asystem.kg/api/:path*"
     },
     {
       "source": "/(.*)",

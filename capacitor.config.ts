@@ -1,12 +1,12 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "kg.redpetroleum.app",
-  appName: "Red Petroleum",
+  appId: "kg.ocharge.app",
+  appName: "O!Charge",
   webDir: "dist",
   server: {
     // В dev-режиме можно указать URL для live-reload:
-    // url: "https://redpetroleum.duckdns.org",
+    // url: "https://o.asystem.kg",
     androidScheme: "https",
   },
   plugins: {
