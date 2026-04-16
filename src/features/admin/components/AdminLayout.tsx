@@ -76,7 +76,7 @@ const navGroups: NavGroup[] = [
       { to: "/admin/server-logs", icon: "solar:terminal-bold-duotone", label: "Логи сервера" },
       { to: "/admin/error-guide", icon: "solar:book-bookmark-bold-duotone", label: "Справочник ошибок" },
       { to: "/admin/system-map", icon: "solar:diagram-up-bold-duotone", label: "Карта системы" },
-      { to: "#scalar", icon: "solar:code-bold-duotone", label: "API Документация", href: `${import.meta.env.VITE_API_URL || "https://ocpp.charge.redpay.kg"}/scalar` },
+      { to: "#scalar", icon: "solar:code-bold-duotone", label: "API Документация", href: `${import.meta.env.VITE_API_URL || "https://ocpp.asystem.kg"}/scalar` },
     ],
   },
 ];
@@ -173,7 +173,7 @@ export function AdminLayout() {
             </div>
             <div>
               <h1 className="text-base font-bold text-zinc-900 dark:text-white leading-tight">
-                Red Charge
+                O!Charge
               </h1>
               <p className="text-[10px] text-zinc-400 dark:text-zinc-500 font-medium uppercase tracking-wider">
                 Admin Panel <span className="font-mono text-zinc-300 dark:text-zinc-600">v{APP_VERSION}</span>
@@ -234,7 +234,7 @@ export function AdminLayout() {
               <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
             </div>
             <div>
-              <h1 className="text-sm font-bold text-zinc-900 dark:text-white">Red Charge</h1>
+              <h1 className="text-sm font-bold text-zinc-900 dark:text-white">O!Charge</h1>
               <p className="text-[10px] text-zinc-400 dark:text-zinc-500 -mt-0.5">Admin Panel <span className="font-mono text-zinc-300 dark:text-zinc-600">v{APP_VERSION}</span></p>
             </div>
           </div>
@@ -278,7 +278,7 @@ export function AdminLayout() {
                   <div className="w-8 h-8 rounded-xl overflow-hidden bg-red-600 flex items-center justify-center">
                     <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
                   </div>
-                  <span className="font-bold text-zinc-900 dark:text-white">Red Charge</span>
+                  <span className="font-bold text-zinc-900 dark:text-white">O!Charge</span>
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}

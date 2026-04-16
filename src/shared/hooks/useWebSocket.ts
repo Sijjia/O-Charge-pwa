@@ -2,7 +2,7 @@
  * WebSocket Hook with Auto-Reconnect and Heartbeat
  *
  * Based on BACKEND_API_REFERENCE.md:
- * - Endpoint: wss://ocpp.charge.redpay.kg/api/v1/locations/ws/locations
+ * - Endpoint: wss://ocpp.asystem.kg/api/v1/locations/ws/locations
  * - No auth required (public access)
  * - Rate limiting: 20 connections/IP, 10/client_id, 10 msg/sec
  * - Ping interval: 30 seconds recommended
@@ -68,7 +68,7 @@ const DEFAULT_CONFIG: Partial<WebSocketConfig> = {
  * @example
  * ```tsx
  * const { lastMessage, sendMessage, isConnected } = useWebSocket(
- *   'wss://ocpp.charge.redpay.kg/api/v1/locations/ws/locations',
+ *   'wss://ocpp.asystem.kg/api/v1/locations/ws/locations',
  *   { clientId: userId }
  * );
  *

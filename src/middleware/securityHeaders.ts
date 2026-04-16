@@ -5,7 +5,7 @@ export const securityHeaders = {
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https: blob:",
     "font-src 'self' data:",
-    "connect-src 'self' https://ocpp.charge.redpay.kg wss://ocpp.charge.redpay.kg https://supabase.asystem.kg wss://supabase.asystem.kg https://api.dengi.o.kg",
+    "connect-src 'self' https://ocpp.asystem.kg wss://ocpp.asystem.kg https://supabase.asystem.kg wss://supabase.asystem.kg https://api.dengi.o.kg",
     "frame-src 'none'",
     "object-src 'none'",
     "base-uri 'self'",

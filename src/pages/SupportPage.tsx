@@ -18,11 +18,11 @@ export function SupportPage() {
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">Контакты</h2>
           <div className="space-y-3">
             <a
-              href="mailto:support@redpetroleum.kg"
+              href="mailto:support@asystem.kg"
               className="flex items-center gap-3 text-zinc-600 dark:text-gray-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
               <Icon icon="solar:letter-linear" width={20} className="text-red-500" />
-              support@redpetroleum.kg
+              support@asystem.kg
             </a>
             <a
               href="tel:+996559974545"
@@ -42,7 +42,7 @@ export function SupportPage() {
             Опишите проблему и укажите номер станции/локации, если возможно.
           </p>
           <a
-            href="mailto:support@redpetroleum.kg?subject=Red%20Petroleum%20—%20Проблема&body=Опишите%20проблему%2C%20ID%20станции%2C%20время%20и%20шаги%20для%20повторения."
+            href="mailto:support@asystem.kg?subject=O!Charge%20—%20Проблема&body=Опишите%20проблему%2C%20ID%20станции%2C%20время%20и%20шаги%20для%20повторения."
             className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
           >
             <Icon icon="solar:chat-square-linear" width={20} />
@@ -64,7 +64,7 @@ export function SupportPage() {
             Установка
           </h2>
           <p className="text-sm text-zinc-500 dark:text-gray-400 mb-4">
-            Установите Red Petroleum как приложение для оффлайн‑режима и быстрого
+            Установите O!Charge как приложение для оффлайн‑режима и быстрого
             доступа.
           </p>
           <Link

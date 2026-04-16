@@ -465,11 +465,11 @@ export function OwnerStationDetailsPage() {
                   <label className="text-xs text-zinc-500 dark:text-zinc-400 block mb-1.5">WebSocket URL</label>
                   <div className="flex items-center gap-2">
                     <div className="flex-1 bg-zinc-50 dark:bg-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-700 dark:text-zinc-300 font-mono break-all border border-zinc-200 dark:border-zinc-700">
-                      {station.ocpp_ws_url || `wss://ocpp.charge.redpay.kg/ws/${station.id}`}
+                      {station.ocpp_ws_url || `wss://ocpp.asystem.kg/ws/${station.id}`}
                     </div>
                     <button
                       onClick={() => {
-                        const url = station.ocpp_ws_url || `wss://ocpp.charge.redpay.kg/ws/${station.id}`;
+                        const url = station.ocpp_ws_url || `wss://ocpp.asystem.kg/ws/${station.id}`;
                         navigator.clipboard.writeText(url);
                         setCopied(true);
                         setTimeout(() => setCopied(false), 2000);

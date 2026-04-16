@@ -1,5 +1,5 @@
 /**
- * Red Petroleum API v1 Service - ЕДИНСТВЕННЫЙ API клиент для всего приложения
+ * O!Charge API v1 Service - ЕДИНСТВЕННЫЙ API клиент для всего приложения
  * Интеграция с бэкендом OCPP сервера (v1.2.4+)
  *
  * ВАЖНО:
@@ -114,7 +114,7 @@ interface SupabaseLocationRow {
 
 const API_VERSION = "/api/v1";
 // API origin: пустая строка = relative URL через proxy (Vercel rewrites / nginx)
-// Для прямого доступа к backend задайте VITE_API_URL=https://ocpp.redpetroleum.kg
+// Для прямого доступа к backend задайте VITE_API_URL=https://ocpp.asystem.kg
 const API_ORIGIN: string = import.meta.env.PROD
   ? (import.meta.env.VITE_API_URL as string | undefined) || ""
   : "";

@@ -5,7 +5,7 @@
 
 const KEYCLOAK_BASE_URL = (import.meta.env["VITE_KEYCLOAK_BASE_URL"] as string) || "https://sso.asystem.kg";
 const KEYCLOAK_REALM = (import.meta.env["VITE_KEYCLOAK_REALM"] as string) || "asystem";
-const KEYCLOAK_CLIENT_ID = (import.meta.env["VITE_KEYCLOAK_CLIENT_ID"] as string) || "redpetroleum";
+const KEYCLOAK_CLIENT_ID = (import.meta.env["VITE_KEYCLOAK_CLIENT_ID"] as string) || "ocharge";
 
 export const SSO_ENABLED = import.meta.env["VITE_SSO_ENABLED"] === "true";
 

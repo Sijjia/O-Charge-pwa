@@ -33,15 +33,15 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
       if (result.success && result.data) {
         // Парсим QR код станции
         // Форматы:
-        // 1. redpetroleum://station/station_001/connector/1
-        // 2. https://app.redpetroleum.kg/charging/station_001?connector=1
+        // 1. ocharge://station/station_001/connector/1
+        // 2. https://o.asystem.kg/charging/station_001?connector=1
 
         let stationId: string | null = null;
         let connectorId: string | null = null;
 
         // Пробуем формат deep link
         const deepLinkMatch = result.data.match(
-          /redpetroleum:\/\/station\/(.+)\/connector\/(.+)/,
+          /(?:redpetroleum|ocharge):\/\/station\/(.+)\/connector\/(.+)/,
         );
         if (deepLinkMatch) {
           stationId = deepLinkMatch[1] ?? null;
@@ -72,7 +72,7 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
           });
         } else {
           const errorMsg =
-            "Неверный QR код. Используйте QR код зарядной станции Red Petroleum.";
+            "Неверный QR код. Используйте QR код зарядной станции O!Charge.";
           setScanError(errorMsg);
           onError?.(errorMsg);
         }

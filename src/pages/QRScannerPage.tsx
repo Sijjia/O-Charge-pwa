@@ -6,13 +6,13 @@ import { logger } from "@/shared/utils/logger";
 /**
  * Parse QR code text to extract station ID.
  * Supported formats:
- *  1. redpetroleum://station/{id}/connector/{n}
- *  2. https://...redpetroleum.../charging/{id}?connector={n}
+ *  1. ocharge://station/{id}/connector/{n}
+ *  2. https://o.asystem.kg/charging/{id}?connector={n}
  *  3. Plain station ID like "SIM-TEST" or "RP-BK-001"
  */
 function parseQRCode(text: string): { stationId: string; connectorId: string } | null {
   // Deep link format
-  const deepLink = text.match(/redpetroleum:\/\/station\/([^/]+)(?:\/connector\/(\d+))?/);
+  const deepLink = text.match(/(?:redpetroleum|ocharge):\/\/station\/([^/]+)(?:\/connector\/(\d+))?/);
   if (deepLink) {
     return { stationId: deepLink[1]!, connectorId: deepLink[2] ?? "1" };
   }
@@ -96,7 +96,7 @@ export const QRScannerPage = () => {
             if (parsed) {
               handleScanResult(parsed.stationId);
             } else {
-              setScanError("QR-код не распознан. Используйте код со станции Red Petroleum.");
+              setScanError("QR-код не распознан. Используйте код со станции O!Charge.");
             }
           },
           () => {

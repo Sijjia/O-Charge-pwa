@@ -196,7 +196,7 @@ export function PushNotificationSettings() {
                 Найдите раздел &ldquo;Уведомления&rdquo; или
                 &ldquo;Разрешения&rdquo;
               </li>
-              <li>Разрешите уведомления для redpetroleum.kg</li>
+              <li>Разрешите уведомления для o.asystem.kg</li>
               <li>Обновите страницу</li>
             </ol>
           </div>

@@ -35,7 +35,7 @@ const SENTRY_CONFIG = {
   environment: import.meta.env.MODE || "development",
 
   // Версия приложения (для tracking релизов)
-  release: `redpetroleum@${import.meta.env["VITE_APP_VERSION"] || "1.0.0"}`,
+  release: `ocharge@${import.meta.env["VITE_APP_VERSION"] || "1.0.0"}`,
 
   // Sample rate (1.0 = 100% ошибок отправляется)
   tracesSampleRate: import.meta.env.PROD ? 0.2 : 1.0,

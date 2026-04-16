@@ -39,10 +39,10 @@ export function AboutPage() {
         <div className="flex flex-col items-center">
           <img
             src="/icons/icon-192x192.png"
-            alt="Red Petroleum EV"
+            alt="O!Charge EV"
             className="w-20 h-20 rounded-2xl shadow-lg shadow-black/20 dark:shadow-black/40 mb-4"
           />
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Red Petroleum EV</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">O!Charge EV</h2>
           <p className="text-sm text-zinc-500 dark:text-gray-500 mt-1">Версия {appVersion}</p>
           <p className="text-sm text-zinc-600 dark:text-gray-400 mt-3 text-center max-w-xs">
             Зарядка электромобилей в Кыргызстане
@@ -67,13 +67,13 @@ export function AboutPage() {
           </div>
         </a>
         <a
-          href="mailto:support@redpetroleum.kg"
+          href="mailto:support@asystem.kg"
           className="flex items-center justify-between px-4 py-3.5 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
         >
           <div className="flex items-center gap-3">
             <Icon icon="solar:letter-linear" width={20} className="text-zinc-500 dark:text-gray-500" />
             <span className="font-medium text-zinc-900 dark:text-white">
-              support@redpetroleum.kg
+              support@asystem.kg
             </span>
           </div>
         </a>
@@ -109,7 +109,7 @@ export function AboutPage() {
       {/* Copyright */}
       <div className="mt-8 text-center">
         <p className="text-xs text-zinc-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Red Petroleum. Все права защищены.
+          © {new Date().getFullYear()} O!Charge. Все права защищены.
         </p>
       </div>
     </div>
