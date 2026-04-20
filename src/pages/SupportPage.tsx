@@ -18,17 +18,17 @@ export function SupportPage() {
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">Контакты</h2>
           <div className="space-y-3">
             <a
-              href="mailto:support@asystem.kg"
+              href="mailto:support@ocharge.kg"
               className="flex items-center gap-3 text-zinc-600 dark:text-gray-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
-              <Icon icon="solar:letter-linear" width={20} className="text-red-500" />
-              support@asystem.kg
+              <Icon icon="solar:letter-linear" width={20} className="text-[#f0047f]" />
+              support@ocharge.kg
             </a>
             <a
               href="tel:+996559974545"
               className="flex items-center gap-3 text-zinc-600 dark:text-gray-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
-              <Icon icon="solar:phone-linear" width={20} className="text-red-500" />
+              <Icon icon="solar:phone-linear" width={20} className="text-[#f0047f]" />
               +996 559 974 545
             </a>
           </div>
@@ -42,8 +42,8 @@ export function SupportPage() {
             Опишите проблему и укажите номер станции/локации, если возможно.
           </p>
           <a
-            href="mailto:support@asystem.kg?subject=O!Charge%20—%20Проблема&body=Опишите%20проблему%2C%20ID%20станции%2C%20время%20и%20шаги%20для%20повторения."
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
+            href="mailto:support@ocharge.kg?subject=Red%20Petroleum%20—%20Проблема&body=Опишите%20проблему%2C%20ID%20станции%2C%20время%20и%20шаги%20для%20повторения."
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg"
           >
             <Icon icon="solar:chat-square-linear" width={20} />
             Написать в поддержку
@@ -69,7 +69,7 @@ export function SupportPage() {
           </p>
           <Link
             to="/install"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg"
           >
             <Icon icon="solar:alt-arrow-down-linear" width={20} />
             Установить приложение

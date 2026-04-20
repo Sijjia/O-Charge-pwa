@@ -149,7 +149,7 @@ export function LocationPickerMap({
             {!mapReady && (
                 <div className="absolute inset-0 flex items-center justify-center bg-zinc-100/80 dark:bg-zinc-800/80 backdrop-blur-sm z-10 rounded-xl">
                     <div className="flex flex-col items-center gap-2">
-                        <div className="w-8 h-8 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />
+                        <div className="w-8 h-8 border-2 border-[#f0047f] border-t-transparent rounded-full animate-spin" />
                         <span className="text-sm font-medium font-mono text-zinc-500">INIT_MAPGL...</span>
                     </div>
                 </div>

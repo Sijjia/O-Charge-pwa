@@ -139,8 +139,8 @@ export function SSOCallbackPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-[#050507] p-6">
         <div className="w-full max-w-sm text-center">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-            <Icon icon="solar:danger-triangle-bold" width={32} className="text-red-500" />
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#ffe0ef] dark:bg-[#5c0030]/30 flex items-center justify-center">
+            <Icon icon="solar:danger-triangle-bold" width={32} className="text-[#f0047f]" />
           </div>
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
             Ошибка авторизации
@@ -163,7 +163,7 @@ export function SSOCallbackPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-[#050507] p-6">
       <div className="text-center">
-        <Icon icon="svg-spinners:ring-resize" width={40} className="text-red-500 mx-auto mb-4" />
+        <Icon icon="svg-spinners:ring-resize" width={40} className="text-[#f0047f] mx-auto mb-4" />
         <p className="text-sm text-zinc-500 dark:text-zinc-400">
           Выполняется вход...
         </p>

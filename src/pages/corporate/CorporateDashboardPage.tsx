@@ -85,8 +85,8 @@ export function CorporateDashboardPage() {
         : "∞",
       sub: dashboard?.current_month.limit ? "до конца месяца" : "без лимита",
       icon: "solar:graph-up-linear",
-      color: "text-red-400",
-      bg: "bg-red-500/10",
+      color: "text-[#f078b7]",
+      bg: "bg-[#f0047f]/10",
     },
   ];
 
@@ -94,7 +94,7 @@ export function CorporateDashboardPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка данных...</p>
         </div>
       </div>
@@ -104,11 +104,11 @@ export function CorporateDashboardPage() {
   if (error) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
           <div>
-            <p className="text-red-400 text-sm font-medium">Ошибка загрузки</p>
-            <p className="text-red-400/70 text-xs mt-1">
+            <p className="text-[#f078b7] text-sm font-medium">Ошибка загрузки</p>
+            <p className="text-[#f078b7]/70 text-xs mt-1">
               {error instanceof Error ? error.message : "Не удалось загрузить данные"}
             </p>
           </div>
@@ -171,7 +171,7 @@ export function CorporateDashboardPage() {
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                    tx.type === "charge" ? "bg-red-500/10" :
+                    tx.type === "charge" ? "bg-[#f0047f]/10" :
                     tx.type === "topup" ? "bg-emerald-500/10" :
                     "bg-blue-500/10"
                   }`}>
@@ -183,7 +183,7 @@ export function CorporateDashboardPage() {
                       }
                       width={16}
                       className={
-                        tx.type === "charge" ? "text-red-400" :
+                        tx.type === "charge" ? "text-[#f078b7]" :
                         tx.type === "topup" ? "text-emerald-400" :
                         "text-blue-400"
                       }
@@ -200,7 +200,7 @@ export function CorporateDashboardPage() {
                 </div>
                 <div className="text-right">
                   <p className={`text-sm font-medium ${
-                    tx.type === "charge" ? "text-red-400" : "text-emerald-400"
+                    tx.type === "charge" ? "text-[#f078b7]" : "text-emerald-400"
                   }`}>
                     {tx.type === "charge" ? "-" : "+"}{Math.round(tx.amount)} с
                   </p>

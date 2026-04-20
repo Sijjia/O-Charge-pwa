@@ -13,7 +13,7 @@ const LEGEND_ITEMS = [
         label: "Занята",
     },
     {
-        color: "bg-red-500",
+        color: "bg-[#f0047f]",
         glow: "shadow-[0_0_8px_rgba(239,68,68,0.6)]",
         label: "Недоступна",
     },
@@ -49,7 +49,7 @@ export function MapLegend() {
                 <span className="flex items-center gap-0.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     <span className="w-2 h-2 rounded-full bg-amber-400" />
-                    <span className="w-2 h-2 rounded-full bg-red-500" />
+                    <span className="w-2 h-2 rounded-full bg-[#f0047f]" />
                 </span>
                 <span>Легенда</span>
             </button>

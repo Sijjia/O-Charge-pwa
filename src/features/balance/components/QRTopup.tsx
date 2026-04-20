@@ -167,7 +167,7 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                       onClick={() => handleAmountSelect(quickAmount)}
                       className={`py-3 px-4 rounded-xl border font-medium transition-colors ${
                         amount === quickAmount && !customAmount
-                          ? "bg-red-600 text-white border-red-600 shadow-lg shadow-red-600/20"
+                          ? "bg-[#f0047f] text-white border-[#f0047f] shadow-lg shadow-[#f0047f]/20"
                           : "bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
                       }`}
                     >
@@ -189,11 +189,11 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                   id="custom-amount"
                   value={customAmount}
                   onChange={handleCustomAmountChange}
-                  className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white text-lg font-medium placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white text-lg font-medium placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:border-transparent"
                   placeholder="Сумма в сомах"
                 />
                 {amount > 0 && amount < 10 && (
-                  <p className="mt-1.5 text-sm text-red-400 flex items-center gap-1.5">
+                  <p className="mt-1.5 text-sm text-[#f078b7] flex items-center gap-1.5">
                     <Icon icon="solar:danger-triangle-linear" width={14} />
                     Минимальная сумма пополнения: 10 сом
                   </p>
@@ -205,23 +205,23 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                   <span className="font-medium text-zinc-600 dark:text-zinc-300">
                     К пополнению:
                   </span>
-                  <span className="text-xl font-bold text-red-400 font-display">
+                  <span className="text-xl font-bold text-[#f078b7] font-display">
                     {amount} сом
                   </span>
                 </div>
               </div>
 
               {error && (
-                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-                  <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-                  <p className="text-red-400 text-sm">{error}</p>
+                <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+                  <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+                  <p className="text-[#f078b7] text-sm">{error}</p>
                 </div>
               )}
 
               <button
                 onClick={handleGenerateQR}
                 disabled={amount < 10 || loading}
-                className="w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 disabled:bg-zinc-200 dark:disabled:bg-zinc-800 disabled:text-zinc-500 dark:disabled:text-zinc-600 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-[#f0047f] text-white py-3 rounded-xl font-semibold hover:bg-[#c00366] disabled:bg-zinc-200 dark:disabled:bg-zinc-800 disabled:text-zinc-500 dark:disabled:text-zinc-600 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -272,7 +272,7 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                 </p>
 
                 {/* Timer */}
-                <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-2 rounded-full text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 bg-[#f0047f]/10 border border-[#f0047f]/20 text-[#f078b7] px-4 py-2 rounded-full text-xs font-semibold">
                   <Icon icon="solar:clock-circle-linear" width={16} />
                   <span className="tabular-nums tracking-wide">
                     Код действителен: {formatTime(timeLeft)}
@@ -289,9 +289,9 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                 )}
 
                 {error && (
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2 justify-center">
-                    <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={14} />
-                    <p className="text-red-400 text-sm">{error}</p>
+                  <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2 justify-center">
+                    <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={14} />
+                    <p className="text-[#f078b7] text-sm">{error}</p>
                   </div>
                 )}
               </div>
@@ -308,13 +308,13 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                     href={qrData.payment_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-colors text-center inline-flex items-center justify-center gap-1.5"
+                    className="flex-1 py-2.5 bg-[#f0047f] text-white rounded-xl font-medium hover:bg-[#c00366] transition-colors text-center inline-flex items-center justify-center gap-1.5"
                   >
                     <Icon icon="solar:link-round-linear" width={16} />
                     Открыть Namba One
                   </a>
                 ) : (
-                  <button onClick={onClose} className="flex-1 py-2.5 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-colors">
+                  <button onClick={onClose} className="flex-1 py-2.5 bg-[#f0047f] text-white rounded-xl font-medium hover:bg-[#c00366] transition-colors">
                     Закрыть
                   </button>
                 )}
@@ -334,7 +334,7 @@ export function QRTopup({ onClose, onSuccess }: QRTopupProps) {
                   Баланс пополнен!
                 </h3>
                 <p className="text-zinc-500 dark:text-zinc-400">
-                  На ваш счет зачислено <span className="text-red-400 font-semibold">{paymentStatus?.amount} сом</span>
+                  На ваш счет зачислено <span className="text-[#f078b7] font-semibold">{paymentStatus?.amount} сом</span>
                 </p>
               </div>
             </div>

@@ -44,7 +44,7 @@ export function CreateTariffPage() {
     }
   };
 
-  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
   const TARIFF_TYPE_LABELS: Record<string, string> = {
     per_kwh: "За кВтч",
@@ -70,9 +70,9 @@ export function CreateTariffPage() {
       </div>
 
       {error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error}</p>
         </div>
       )}
 
@@ -97,7 +97,7 @@ export function CreateTariffPage() {
           <label className="flex items-center gap-3 cursor-pointer">
             <div
               onClick={() => setIsDefault(!isDefault)}
-              className={`w-10 h-6 rounded-full transition-colors relative cursor-pointer ${isDefault ? "bg-red-600" : "bg-zinc-300 dark:bg-zinc-700"}`}
+              className={`w-10 h-6 rounded-full transition-colors relative cursor-pointer ${isDefault ? "bg-[#f0047f]" : "bg-zinc-300 dark:bg-zinc-700"}`}
             >
               <div className={`w-4 h-4 bg-white rounded-full absolute top-1 transition-transform ${isDefault ? "translate-x-5" : "translate-x-1"}`} />
             </div>
@@ -113,7 +113,7 @@ export function CreateTariffPage() {
           {!showRuleForm && (
             <button
               onClick={() => setShowRuleForm(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-red-600 hover:bg-red-500/10 rounded-lg transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors"
             >
               <Icon icon="solar:add-circle-linear" width={16} />
               Добавить правило
@@ -133,9 +133,9 @@ export function CreateTariffPage() {
                 </div>
                 <button
                   onClick={() => handleRemoveRule(idx)}
-                  className="p-1.5 hover:bg-red-500/10 rounded-lg transition-colors"
+                  className="p-1.5 hover:bg-[#f0047f]/10 rounded-lg transition-colors"
                 >
-                  <Icon icon="solar:trash-bin-minimalistic-linear" width={16} className="text-zinc-400 hover:text-red-400" />
+                  <Icon icon="solar:trash-bin-minimalistic-linear" width={16} className="text-zinc-400 hover:text-[#f078b7]" />
                 </button>
               </div>
             ))}
@@ -165,7 +165,7 @@ export function CreateTariffPage() {
         <button
           onClick={handleSubmit}
           disabled={createMutation.isPending}
-          className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
+          className="flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
         >
           {createMutation.isPending && <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />}
           Создать план

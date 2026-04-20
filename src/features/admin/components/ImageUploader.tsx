@@ -150,7 +150,7 @@ export function ImageUploader({
           onClick={() => !uploading && inputRef.current?.click()}
           className={`relative flex flex-col items-center justify-center p-4 border-2 border-dashed rounded-xl cursor-pointer transition-all ${
             dragActive
-              ? "border-red-400 bg-red-500/5"
+              ? "border-[#f078b7] bg-[#f0047f]/5"
               : uploading
                 ? "border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/50 cursor-wait"
                 : "border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 bg-zinc-50 dark:bg-zinc-800/50"
@@ -181,7 +181,7 @@ export function ImageUploader({
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); onChange(""); setStats(null); }}
-                  className="text-xs text-red-500 hover:text-red-600 mt-1"
+                  className="text-xs text-[#f0047f] hover:text-[#f0047f] mt-1"
                 >
                   Удалить
                 </button>
@@ -191,7 +191,7 @@ export function ImageUploader({
             <div className="text-center py-2 w-full">
               <div className="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-2 mb-2">
                 <div
-                  className="bg-red-500 h-2 rounded-full transition-all duration-300"
+                  className="bg-[#f0047f] h-2 rounded-full transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -217,7 +217,7 @@ export function ImageUploader({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="https://example.com/image.png"
-          className="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors text-sm"
+          className="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors text-sm"
         />
       )}
 
@@ -235,7 +235,7 @@ export function ImageUploader({
       )}
 
       {error && (
-        <p className="text-xs text-red-500 flex items-center gap-1">
+        <p className="text-xs text-[#f0047f] flex items-center gap-1">
           <Icon icon="solar:danger-circle-linear" width={14} />
           {error}
         </p>

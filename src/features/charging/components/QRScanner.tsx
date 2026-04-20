@@ -34,14 +34,14 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
         // Парсим QR код станции
         // Форматы:
         // 1. ocharge://station/station_001/connector/1
-        // 2. https://o.asystem.kg/charging/station_001?connector=1
+        // 2. https://app.ocharge.kg/charging/station_001?connector=1
 
         let stationId: string | null = null;
         let connectorId: string | null = null;
 
         // Пробуем формат deep link
         const deepLinkMatch = result.data.match(
-          /(?:redpetroleum|ocharge):\/\/station\/(.+)\/connector\/(.+)/,
+          /ocharge:\/\/station\/(.+)\/connector\/(.+)/,
         );
         if (deepLinkMatch) {
           stationId = deepLinkMatch[1] ?? null;
@@ -113,8 +113,8 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
       </div>
 
       {scanError && (
-        <div className="w-full max-w-sm p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-          <p className="text-sm text-red-600">{scanError}</p>
+        <div className="w-full max-w-sm p-3 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg">
+          <p className="text-sm text-[#f0047f]">{scanError}</p>
         </div>
       )}
 
@@ -123,7 +123,7 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
           <>
             <button
               onClick={handleStartScan}
-              className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] transition-colors flex items-center gap-2"
             >
               <svg
                 className="w-5 h-5"
@@ -152,7 +152,7 @@ export function QRScanner({ onScan, onError, onCancel }: QRScannerProps) {
           </>
         ) : (
           <div className="flex items-center gap-3">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-500"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f0047f]"></div>
             <span className="text-gray-400">Подготовка камеры...</span>
           </div>
         )}

@@ -54,9 +54,9 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center px-4">
           <div className="max-w-md w-full bg-white dark:bg-zinc-900 rounded-lg shadow-md p-6 text-center">
-            <div className="w-16 h-16 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#f0047f]/15 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-8 h-8 text-red-600"
+                className="w-8 h-8 text-[#f0047f]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -81,14 +81,14 @@ export class ErrorBoundary extends Component<Props, State> {
             <div className="space-y-3">
               <button
                 onClick={this.handleReload}
-                className="w-full px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
+                className="w-full px-4 py-2 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:ring-offset-2 transition-colors"
               >
                 Перезагрузить приложение
               </button>
 
               <button
                 onClick={this.handleGoHome}
-                className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-gray-300 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
+                className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-gray-300 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900/50 focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:ring-offset-2 transition-colors"
               >
                 Вернуться на главную
               </button>
@@ -101,7 +101,7 @@ export class ErrorBoundary extends Component<Props, State> {
                   Детали ошибки (только в режиме разработки)
                 </summary>
                 <div className="mt-2 p-3 bg-zinc-100 dark:bg-zinc-800 rounded text-xs font-mono overflow-auto max-h-40">
-                  <div className="text-red-600 font-bold mb-2">
+                  <div className="text-[#f0047f] font-bold mb-2">
                     {this.state.error.name}: {this.state.error.message}
                   </div>
                   <div className="text-zinc-600 dark:text-gray-300">{this.state.error.stack}</div>

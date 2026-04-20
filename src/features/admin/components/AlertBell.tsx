@@ -43,7 +43,7 @@ export function AlertBell() {
       >
         <Icon icon="solar:bell-bold-duotone" width={20} />
         {unack > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-red-600 rounded-full text-[10px] text-white font-bold flex items-center justify-center">
+          <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-[#f0047f] rounded-full text-[10px] text-white font-bold flex items-center justify-center">
             {unack > 99 ? "99+" : unack}
           </span>
         )}
@@ -57,7 +57,7 @@ export function AlertBell() {
             </h3>
             <button
               onClick={() => { setOpen(false); navigate("/admin/alerts"); }}
-              className="text-xs text-red-600 hover:text-red-700"
+              className="text-xs text-[#f0047f] hover:text-[#c00366]"
             >
               Все
             </button>
@@ -83,7 +83,7 @@ export function AlertBell() {
                       width={16}
                       className={
                         alert.severity === "critical"
-                          ? "text-red-500 mt-0.5"
+                          ? "text-[#f0047f] mt-0.5"
                           : alert.severity === "warning"
                             ? "text-amber-500 mt-0.5"
                             : "text-blue-500 mt-0.5"

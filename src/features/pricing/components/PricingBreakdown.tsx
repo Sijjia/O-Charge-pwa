@@ -62,7 +62,7 @@ export function PricingBreakdown({
         <div className="border-t pt-2">
           <div className="flex justify-between">
             <span className="font-medium">Итого:</span>
-            <span className="font-bold text-lg text-red-500">
+            <span className="font-bold text-lg text-[#f0047f]">
               {breakdown.final_amount.toFixed(2)} {breakdown.currency}
             </span>
           </div>
@@ -198,7 +198,7 @@ export function PricingBreakdown({
                   {breakdown.base_amount.toFixed(2)} {breakdown.currency}
                 </p>
               )}
-              <p className="text-2xl font-bold text-red-500">
+              <p className="text-2xl font-bold text-[#f0047f]">
                 {breakdown.final_amount.toFixed(2)} {breakdown.currency}
               </p>
             </div>

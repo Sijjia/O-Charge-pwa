@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Petroleum EV — Integration Guide</title>
+<title>O!Charge — Integration Guide</title>
 <style>
 :root{--bg:#0a0e17;--card:#111827;--border:#1f2937;--text:#e5e7eb;--muted:#9ca3af;--accent:#ef4444;--green:#22c55e;--blue:#3b82f6;--yellow:#eab308;--cyan:#06b6d4;--purple:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -58,7 +58,7 @@ td code{font-size:12px}
 <div class="wrap">
 
 <div class="header">
-<h1>Red Petroleum EV</h1>
+<h1>O!Charge</h1>
 <p>Руководство по интеграции</p>
 <div class="badge">v1.1</div>
 </div>
@@ -162,7 +162,7 @@ CSRF=$(<span class="k">curl</span> -s -c cookies.txt https://ocpp.charge.redpay.
   -H <span class="s">"X-CSRF-Token: $CSRF"</span> \
   -d <span class="s">'{
     "name": "My Production Webhook",
-    "url": "https://your-server.com/webhook/redpetroleum",
+    "url": "https://your-server.com/webhook/ocharge",
     "secret": "your-hmac-secret-min-8-chars",
     "events": [
       "connector.status_changed",
@@ -260,7 +260,7 @@ expected = request.headers[<span class="s">"X-Webhook-Signature-256"</span>].rep
       <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
       <span class="s">"max_power"</span>: <span class="n">22.0</span>,
       <span class="s">"tariff_per_kwh"</span>: <span class="n">10.0</span>,
-      <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+      <span class="s">"location_name"</span>: <span class="s">"АЗС O!Charge #001"</span>,
       <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
       <span class="s">"location_coordinates"</span>: {
         <span class="s">"lat"</span>: <span class="n">42.850861</span>,
@@ -277,7 +277,7 @@ expected = request.headers[<span class="s">"X-Webhook-Signature-256"</span>].rep
       <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
       <span class="s">"max_power"</span>: <span class="n">120.0</span>,
       <span class="s">"tariff_per_kwh"</span>: <span class="n">14.0</span>,
-      <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+      <span class="s">"location_name"</span>: <span class="s">"АЗС O!Charge #001"</span>,
       <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
       <span class="s">"location_coordinates"</span>: {
         <span class="s">"lat"</span>: <span class="n">42.850861</span>,
@@ -305,7 +305,7 @@ expected = request.headers[<span class="s">"X-Webhook-Signature-256"</span>].rep
     <span class="s">"location_id"</span>: <span class="s">"loc-001"</span>,
     <span class="s">"max_power"</span>: <span class="n">22.0</span>,
     <span class="s">"tariff_per_kwh"</span>: <span class="n">10.0</span>,
-    <span class="s">"location_name"</span>: <span class="s">"АЗС Red Petroleum #001"</span>,
+    <span class="s">"location_name"</span>: <span class="s">"АЗС O!Charge #001"</span>,
     <span class="s">"location_address"</span>: <span class="s">"ул. Коенкозова 168"</span>,
     <span class="s">"location_coordinates"</span>: {
       <span class="s">"lat"</span>: <span class="n">42.850861</span>,
@@ -627,7 +627,7 @@ expected = request.headers[<span class="s">"X-Webhook-Signature-256"</span>].rep
 </div>
 
 <div class="footer">
-Red Petroleum EV &mdash; Integration Guide<br>
+O!Charge &mdash; Integration Guide<br>
 <a href="https://ocpp.charge.redpay.kg/scalar" style="color:var(--blue)">ocpp.charge.redpay.kg/scalar</a> &mdash; полная документация (193 эндпоинта)<br>
 QA проверка: 26.03.2026 &mdash; 89/89 компонентов работают &mdash; 0 блокирующих багов
 </div>

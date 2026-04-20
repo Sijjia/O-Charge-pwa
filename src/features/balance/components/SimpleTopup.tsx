@@ -183,7 +183,7 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
                   type="text"
                   value={amount}
                   onChange={handleAmountChange}
-                  className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white text-lg font-medium placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white text-lg font-medium placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:border-transparent"
                   placeholder="Сумма в сомах"
                   autoFocus
                 />
@@ -195,7 +195,7 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
                   <button
                     key={amt}
                     onClick={() => setAmount(amt.toString())}
-                    className="flex-shrink-0 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-700/50 hover:border-red-500/30 transition-colors active:scale-95"
+                    className="flex-shrink-0 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-700/50 hover:border-[#f0047f]/30 transition-colors active:scale-95"
                   >
                     +{amt}
                   </button>
@@ -205,23 +205,23 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
               {numAmount > 0 && (
                 <div className="bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 rounded-xl p-3 text-center">
                   <span className="text-sm text-zinc-500 dark:text-zinc-400">К пополнению: </span>
-                  <span className="text-lg font-bold text-red-400 font-display">
+                  <span className="text-lg font-bold text-[#f078b7] font-display">
                     {numAmount} сом
                   </span>
                 </div>
               )}
 
               {error && (
-                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-                  <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-                  <p className="text-red-400 text-sm">{error}</p>
+                <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+                  <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+                  <p className="text-[#f078b7] text-sm">{error}</p>
                 </div>
               )}
 
               <button
                 onClick={handleGenerateQR}
                 disabled={numAmount < 1 || loading}
-                className="w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 disabled:bg-zinc-200 dark:disabled:bg-zinc-800 disabled:text-zinc-500 dark:disabled:text-zinc-600 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-[#f0047f] text-white py-3 rounded-xl font-semibold hover:bg-[#c00366] disabled:bg-zinc-200 dark:disabled:bg-zinc-800 disabled:text-zinc-500 dark:disabled:text-zinc-600 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -274,9 +274,9 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
 
                 {/* Error message */}
                 {error && step === "qr" && (
-                  <div className="mt-3 p-2.5 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-2">
-                    <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={14} />
-                    <p className="text-red-400 text-xs">{error}</p>
+                  <div className="mt-3 p-2.5 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl flex items-center gap-2">
+                    <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={14} />
+                    <p className="text-[#f078b7] text-xs">{error}</p>
                   </div>
                 )}
 
@@ -291,7 +291,7 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
                         }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[#f078b7] hover:text-[#f078b7] text-sm font-medium transition-colors"
                       >
                         <Icon icon="solar:link-round-linear" width={14} />
                         Открыть в Namba One
@@ -316,7 +316,7 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
                     stopPolling();
                     onClose();
                   }}
-                  className="flex-1 py-2.5 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-colors"
+                  className="flex-1 py-2.5 bg-[#f0047f] text-white rounded-xl font-medium hover:bg-[#c00366] transition-colors"
                 >
                   Закрыть
                 </button>
@@ -336,7 +336,7 @@ export function SimpleTopup({ onClose }: SimpleTopupProps) {
 
                 <p className="text-lg text-zinc-500 dark:text-zinc-400">
                   На сумму:{" "}
-                  <span className="font-bold text-red-400">
+                  <span className="font-bold text-[#f078b7]">
                     {numAmount} сом
                   </span>
                 </p>

@@ -21,7 +21,7 @@ function SessionRow({ session, paddingLeft }: { session: any; paddingLeft: numbe
             className="group hover:bg-zinc-50 dark:hover:bg-white/[0.02] transition-colors text-sm cursor-pointer border-b border-zinc-100 dark:border-white/[0.02] last:border-0"
         >
             <td className="py-3 px-6" style={{ paddingLeft: `${paddingLeft}px` }}>
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 group-hover:text-red-500 transition-colors">
+                <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 group-hover:text-[#f0047f] transition-colors">
                     <Icon icon="solar:history-linear" width={16} />
                     <span>Сессия #{session.id.slice(0, 8)}</span>
                     <Icon icon="solar:arrow-right-up-linear" width={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -103,7 +103,7 @@ function ConnectorRow({ connector, stationId, paddingLeft }: { connector: any; s
                 <td className="py-3 px-6 text-right">
                     <button
                         onClick={(e) => { e.stopPropagation(); navigate(connectorUrl); }}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium text-zinc-500 hover:text-red-500 bg-zinc-50 dark:bg-zinc-800 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium text-zinc-500 hover:text-[#f0047f] bg-zinc-50 dark:bg-zinc-800 hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 transition-colors"
                         title="Подробная информация о порте"
                     >
                         <Icon icon="solar:arrow-right-up-linear" width={14} />
@@ -165,7 +165,7 @@ function StationRow({ station, paddingLeft }: { station: any; paddingLeft: numbe
                         <Link
                             to={`${base}/stations/${station.id}`}
                             onClick={(e) => e.stopPropagation()}
-                            className="font-medium text-zinc-900 dark:text-white hover:text-red-500 transition-colors"
+                            className="font-medium text-zinc-900 dark:text-white hover:text-[#f0047f] transition-colors"
                         >
                             {station.model || `Станция ${station.id.slice(0, 8)}`}
                         </Link>
@@ -189,7 +189,7 @@ function StationRow({ station, paddingLeft }: { station: any; paddingLeft: numbe
                     <Link
                         to={`${base}/stations/${station.id}`}
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium text-zinc-500 hover:text-red-500 bg-zinc-50 dark:bg-zinc-800 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium text-zinc-500 hover:text-[#f0047f] bg-zinc-50 dark:bg-zinc-800 hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 transition-colors"
                     >
                         <Icon icon="solar:arrow-right-up-linear" width={14} />
                         Открыть
@@ -197,7 +197,7 @@ function StationRow({ station, paddingLeft }: { station: any; paddingLeft: numbe
                     <Link
                         to={`${base}/stations/${station.id}/edit`}
                         onClick={(e) => e.stopPropagation()}
-                        className="text-zinc-400 hover:text-red-500 transition-colors"
+                        className="text-zinc-400 hover:text-[#f0047f] transition-colors"
                     >
                         <Icon icon="solar:pen-linear" width={18} />
                     </Link>
@@ -254,12 +254,12 @@ function LocationRow({ location }: { location: OwnerLocation }) {
                             width={20}
                             className={`transition-transform text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 ${expanded ? "rotate-90" : ""}`}
                         />
-                        <Icon icon="solar:map-point-linear" width={24} className="text-red-500" />
+                        <Icon icon="solar:map-point-linear" width={24} className="text-[#f0047f]" />
                         <div>
                             <Link
                                 to={`${base}/locations/${location.id}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className="font-bold text-zinc-900 dark:text-white hover:text-red-500 transition-colors block leading-tight"
+                                className="font-bold text-zinc-900 dark:text-white hover:text-[#f0047f] transition-colors block leading-tight"
                             >
                                 {location.name}
                             </Link>
@@ -285,7 +285,7 @@ function LocationRow({ location }: { location: OwnerLocation }) {
                     <Link
                         to={`${base}/locations/${location.id}/edit`}
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-800 text-zinc-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-800 text-zinc-400 hover:text-[#f0047f] hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 transition-colors"
                     >
                         <Icon icon="solar:pen-linear" width={18} />
                     </Link>
@@ -296,7 +296,7 @@ function LocationRow({ location }: { location: OwnerLocation }) {
             {expanded && isLoading && (
                 <tr>
                     <td colSpan={5} className="py-6 text-center text-sm text-zinc-500">
-                        <Icon icon="solar:refresh-linear" width={24} className="animate-spin text-red-500 mx-auto mb-2" />
+                        <Icon icon="solar:refresh-linear" width={24} className="animate-spin text-[#f0047f] mx-auto mb-2" />
                         Загрузка станций...
                     </td>
                 </tr>

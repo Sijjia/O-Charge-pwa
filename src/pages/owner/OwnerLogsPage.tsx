@@ -12,7 +12,7 @@ import { getOcppError, getSeverityColor } from "@/shared/utils/ocppErrors";
 const SEVERITY_META: Record<string, { bar: string; text: string; bg: string; label: string }> = {
   info: { bar: "bg-sky-500", text: "text-sky-400", bg: "bg-sky-500/5", label: "INFO" },
   warning: { bar: "bg-amber-500", text: "text-amber-400", bg: "bg-amber-500/5", label: "WARN" },
-  error: { bar: "bg-red-500", text: "text-red-400", bg: "bg-red-500/5", label: "ERR" },
+  error: { bar: "bg-[#f0047f]", text: "text-[#f078b7]", bg: "bg-[#f0047f]/5", label: "ERR" },
   critical: { bar: "bg-purple-500", text: "text-purple-400", bg: "bg-purple-500/5", label: "CRIT" },
 };
 
@@ -204,7 +204,7 @@ function LogRow({ log, isExpanded, onToggle }: { log: OcppLog; isExpanded: boole
               <span className="truncate max-w-[110px]">{errInfo.title}</span>
             </span>
           ) : log.error_message ? (
-            <span className="text-[10px] text-red-400 truncate max-w-[130px]">{log.error_message}</span>
+            <span className="text-[10px] text-[#f078b7] truncate max-w-[130px]">{log.error_message}</span>
           ) : null}
         </div>
 
@@ -274,7 +274,7 @@ function LogRow({ log, isExpanded, onToggle }: { log: OcppLog; isExpanded: boole
               <p className="text-zinc-500 font-sans text-[10px] leading-relaxed">{errInfo.description}</p>
               <p className="text-emerald-400 font-sans text-[10px] font-medium">Что делать: <span className="text-zinc-300">{errInfo.action}</span></p>
               {errInfo.callSupport && (
-                <p className="text-red-400 font-sans text-[10px] font-semibold">📞 Требуется обращение в поддержку</p>
+                <p className="text-[#f078b7] font-sans text-[10px] font-semibold">📞 Требуется обращение в поддержку</p>
               )}
             </div>
           )}
@@ -371,7 +371,7 @@ export function OwnerLogsPage() {
     { label: "Всего", value: statsData?.total ?? 0, icon: "solar:document-text-linear", color: "text-blue-500" },
     { label: "Info", value: bySeverity["info"] ?? 0, icon: "solar:info-circle-linear", color: "text-sky-400" },
     { label: "Warning", value: bySeverity["warning"] ?? 0, icon: "solar:danger-triangle-linear", color: "text-amber-400" },
-    { label: "Error", value: (bySeverity["error"] ?? 0) + (bySeverity["critical"] ?? 0), icon: "solar:close-circle-linear", color: "text-red-400" },
+    { label: "Error", value: (bySeverity["error"] ?? 0) + (bySeverity["critical"] ?? 0), icon: "solar:close-circle-linear", color: "text-[#f078b7]" },
   ];
 
   const resetFilters = () => {
@@ -392,7 +392,7 @@ export function OwnerLogsPage() {
   const collapseAll = () => setExpandedIds(new Set());
   const expandAll = () => setExpandedIds(new Set(logs.map((l) => l.id)));
 
-  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-colors";
+  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-[#f0047f] focus:border-[#f0047f] transition-colors";
 
   return (
     <div className="p-6 lg:p-8">
@@ -422,7 +422,7 @@ export function OwnerLogsPage() {
             placeholder="Поиск: станция, событие, ошибка..."
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-            className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500/30 text-zinc-900 dark:text-white placeholder-zinc-400 transition-all"
+            className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 text-zinc-900 dark:text-white placeholder-zinc-400 transition-all"
           />
         </div>
 
@@ -430,7 +430,7 @@ export function OwnerLogsPage() {
         <button
           onClick={() => setShowFilters(!showFilters)}
           className={`flex items-center gap-1.5 px-4 py-2 text-sm rounded-xl border transition-colors ${showFilters
-              ? "bg-red-600 text-white border-red-600"
+              ? "bg-[#f0047f] text-white border-[#f0047f]"
               : "bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800"
             }`}
         >
@@ -440,7 +440,7 @@ export function OwnerLogsPage() {
         </button>
 
         {hasFilters && (
-          <button onClick={resetFilters} className="text-sm text-zinc-500 hover:text-red-500 transition-colors">
+          <button onClick={resetFilters} className="text-sm text-zinc-500 hover:text-[#f0047f] transition-colors">
             Сбросить
           </button>
         )}
@@ -514,15 +514,15 @@ export function OwnerLogsPage() {
       {/* Loading */}
       {isLoading && (
         <div className="flex items-center justify-center py-12">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin" />
         </div>
       )}
 
       {/* Error */}
       {error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error instanceof Error ? error.message : "Не удалось загрузить логи"}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error instanceof Error ? error.message : "Не удалось загрузить логи"}</p>
         </div>
       )}
 

@@ -48,7 +48,7 @@ export function PartnerRevenueChart({ data }: PartnerRevenueChartProps) {
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
                     <div
-                      className="w-full rounded-t-md bg-gradient-to-t from-red-600 to-orange-500 dark:from-red-500 dark:to-orange-400 transition-all duration-200 hover:from-red-700 hover:to-orange-600 dark:hover:from-red-600 dark:hover:to-orange-500 cursor-pointer"
+                      className="w-full rounded-t-md bg-gradient-to-t from-[#f0047f] to-orange-500 dark:from-[#f0047f] dark:to-orange-400 transition-all duration-200 hover:from-[#c00366] hover:to-orange-600 dark:hover:from-[#f0047f] dark:hover:to-orange-500 cursor-pointer"
                       style={{ height: `${normalizedHeight}%` }}
                     />
 

@@ -1,14 +1,14 @@
 {
-  "name": "Red Petroleum EV",
-  "short_name": "Red Petroleum",
-  "description": "Red Petroleum EV — зарядка электромобилей в Кыргызстане. Найдите ближайшую станцию, начните зарядку через QR-код, отслеживайте процесс в реальном времени.",
+  "name": "O!Charge",
+  "short_name": "O!Charge",
+  "description": "O!Charge — зарядка электромобилей в Кыргызстане. Найдите ближайшую станцию, начните зарядку через QR-код, отслеживайте процесс в реальном времени.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#050507",
-  "background_color": "#050507",
-  "id": "kg.redpetroleum.app",
+  "theme_color": "#f0047f",
+  "background_color": "#ffffff",
+  "id": "kg.obank.ocharge",
   "lang": "ru",
   "dir": "ltr",
   "categories": ["utilities", "transportation", "navigation"],
@@ -154,7 +154,7 @@
   },
   "protocol_handlers": [
     {
-      "protocol": "web+redpetroleum",
+      "protocol": "web+ocharge",
       "url": "/station?id=%s"
     }
   ]

@@ -272,7 +272,7 @@ export const ChargingProcessPage = () => {
           <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">{error.message}</p>
           <button
             onClick={() => navigate("/stations")}
-            className="mt-6 px-6 py-3 bg-red-600 text-white rounded-xl font-semibold"
+            className="mt-6 px-6 py-3 bg-[#f0047f] text-white rounded-xl font-semibold"
           >
             К станциям
           </button>
@@ -286,13 +286,13 @@ export const ChargingProcessPage = () => {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#0A0E17] flex items-center justify-center transition-colors duration-300">
         <div className="text-center px-6">
-          <Icon icon="solar:close-circle-linear" className="w-16 h-16 text-red-500 mx-auto" />
+          <Icon icon="solar:close-circle-linear" className="w-16 h-16 text-[#f0047f] mx-auto" />
           <p className="mt-4 text-xl text-zinc-800 dark:text-zinc-100">
             Сессия зарядки не найдена
           </p>
           <button
             onClick={() => navigate("/stations")}
-            className="mt-6 px-6 py-3 bg-red-600 text-white rounded-xl font-semibold"
+            className="mt-6 px-6 py-3 bg-[#f0047f] text-white rounded-xl font-semibold"
           >
             К станциям
           </button>
@@ -373,8 +373,8 @@ export const ChargingProcessPage = () => {
           {/* Background Ripple Effects */}
           {isCharging && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-48 h-48 rounded-full border border-red-600/20 ripple-circle" />
-              <div className="w-48 h-48 rounded-full border border-red-600/10 ripple-circle" style={{ animationDelay: "1s" }} />
+              <div className="w-48 h-48 rounded-full border border-[#f0047f]/20 ripple-circle" />
+              <div className="w-48 h-48 rounded-full border border-[#f0047f]/10 ripple-circle" style={{ animationDelay: "1s" }} />
             </div>
           )}
 
@@ -392,7 +392,7 @@ export const ChargingProcessPage = () => {
             />
             {/* Progress */}
             <circle
-              className="text-red-600 progress-ring__circle"
+              className="text-[#f0047f] progress-ring__circle"
               strokeWidth="6"
               strokeLinecap="round"
               stroke="currentColor"
@@ -411,15 +411,15 @@ export const ChargingProcessPage = () => {
               <span className="text-6xl font-bold font-display tracking-tighter text-zinc-900 dark:text-white dark:drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                 {displayPercent}
               </span>
-              <span className="text-2xl font-medium text-red-500/80">%</span>
+              <span className="text-2xl font-medium text-[#f0047f]/80">%</span>
             </div>
             {/* Status Badge */}
-            <div className="mt-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-500/20">
+            <div className="mt-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fff0f7] dark:bg-[#3d0020]/30 border border-[#ffc2df] dark:border-[#f0047f]/20">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f0047f]" />
               </span>
-              <span className="text-xs font-medium text-red-600 dark:text-red-100 tracking-wide uppercase">
+              <span className="text-xs font-medium text-[#f0047f] dark:text-[#ffe0ef] tracking-wide uppercase">
                 {statusLabel}
               </span>
             </div>
@@ -483,7 +483,7 @@ export const ChargingProcessPage = () => {
           {/* Cost */}
           <div className="bg-white dark:bg-zinc-900/40 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 flex flex-col gap-3 backdrop-blur-sm shadow-sm dark:shadow-none relative overflow-hidden transition-colors duration-300">
             {/* Subtle gradient hint */}
-            <div className="absolute -right-4 -top-4 w-12 h-12 bg-red-500/10 blur-xl rounded-full" />
+            <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#f0047f]/10 blur-xl rounded-full" />
             <div className="flex items-center gap-2 text-zinc-500 dark:text-zinc-400">
               <Icon icon="solar:wallet-money-linear" width={18} />
               <span className="text-xs font-medium">Стоимость</span>
@@ -518,8 +518,8 @@ export const ChargingProcessPage = () => {
 
         {/* Charging Limits Info */}
         {chargingLimits && (
-          <div className="w-full mt-4 p-3 bg-red-50 dark:bg-red-950/20 rounded-2xl border border-red-200 dark:border-red-500/10 relative z-10 transition-colors duration-300">
-            <div className="flex items-center gap-2 text-sm text-red-600/70 dark:text-red-200/70">
+          <div className="w-full mt-4 p-3 bg-[#fff0f7] dark:bg-[#3d0020]/20 rounded-2xl border border-[#ffc2df] dark:border-[#f0047f]/10 relative z-10 transition-colors duration-300">
+            <div className="flex items-center gap-2 text-sm text-[#f0047f]/70 dark:text-[#ffc2df]/70">
               <span className="font-medium">Тип зарядки:</span>
               <span>
                 {chargingLimits.type === "none" && "Полный бак"}
@@ -530,7 +530,7 @@ export const ChargingProcessPage = () => {
               </span>
             </div>
             {chargingLimits.type !== "none" && (
-              <div className="text-xs text-red-400/60 dark:text-red-300/40 mt-1">
+              <div className="text-xs text-[#f078b7]/60 dark:text-[#f078b7]/40 mt-1">
                 Зарядка остановится автоматически при достижении лимита
               </div>
             )}
@@ -578,8 +578,8 @@ export const ChargingProcessPage = () => {
               isStoppingCharging
                 ? "bg-zinc-300 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400 cursor-not-allowed"
                 : stopConfirmStep === 1
-                  ? "bg-red-700 text-white shadow-lg shadow-red-600/30 animate-pulse"
-                  : "bg-red-600 text-white shadow-lg shadow-red-600/20 hover:bg-red-700"
+                  ? "bg-[#c00366] text-white shadow-lg shadow-[#f0047f]/30 animate-pulse"
+                  : "bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/20 hover:bg-[#c00366]"
             }`}
           >
             {isStoppingCharging ? (

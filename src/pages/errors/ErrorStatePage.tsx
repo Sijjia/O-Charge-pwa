@@ -19,11 +19,11 @@ interface ErrorStatePageProps {
 
 const colorMap = {
   red: {
-    glow: "bg-red-500/5 dark:bg-red-500/10",
-    iconBg: "bg-red-50 dark:bg-red-500/10",
-    iconBorder: "border-red-200 dark:border-red-500/20",
-    iconText: "text-red-500",
-    ambient: "bg-red-600/5 dark:bg-red-600/10",
+    glow: "bg-[#f0047f]/5 dark:bg-[#f0047f]/10",
+    iconBg: "bg-[#fff0f7] dark:bg-[#f0047f]/10",
+    iconBorder: "border-[#ffc2df] dark:border-[#f0047f]/20",
+    iconText: "text-[#f0047f]",
+    ambient: "bg-[#f0047f]/5 dark:bg-[#f0047f]/10",
   },
   amber: {
     glow: "bg-amber-500/5 dark:bg-amber-500/10",
@@ -115,7 +115,7 @@ export function ErrorStatePage({
         {/* Primary Action */}
         <button
           onClick={() => handleAction(primaryAction)}
-          className="w-full py-4 bg-red-600 hover:bg-red-500 active:scale-[0.98] rounded-2xl text-white font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-900/20"
+          className="w-full py-4 bg-[#f0047f] hover:bg-[#f0047f] active:scale-[0.98] rounded-2xl text-white font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#5c0030]/20"
         >
           {primaryAction.label}
         </button>

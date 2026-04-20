@@ -30,13 +30,13 @@ export function SwipeToStop({ onStop, isLoading }: SwipeToStopProps) {
         <div
             ref={containerRef}
             className={`relative w-full h-[64px] rounded-2xl overflow-hidden flex items-center justify-center border transition-colors ${isLoading || isUnlocked
-                ? "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800/50"
+                ? "bg-[#fff0f7] dark:bg-[#5c0030]/20 border-[#ffc2df] dark:border-[#7a013f]/50"
                 : "bg-white dark:bg-[#1C212B] border-zinc-200 dark:border-white/10"
                 }`}
         >
             <div className="absolute inset-0 flex items-center justify-center opacity-70">
                 {isLoading ? (
-                    <span className="text-red-600 dark:text-red-500 font-semibold tracking-wide flex items-center gap-2">
+                    <span className="text-[#f0047f] dark:text-[#f0047f] font-semibold tracking-wide flex items-center gap-2">
                         <Icon icon="solar:stop-circle-bold" width={20} className="animate-pulse" />
                         Останавливаем...
                     </span>
@@ -59,7 +59,7 @@ export function SwipeToStop({ onStop, isLoading }: SwipeToStopProps) {
                     dragMomentum={false}
                     onDragEnd={handleDragEnd}
                     animate={controls}
-                    className="absolute left-2 top-2 bottom-2 w-[54px] bg-red-600 rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(220,38,38,0.3)] cursor-grab active:cursor-grabbing hover:bg-red-700 transition-colors z-10"
+                    className="absolute left-2 top-2 bottom-2 w-[54px] bg-[#f0047f] rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(220,38,38,0.3)] cursor-grab active:cursor-grabbing hover:bg-[#c00366] transition-colors z-10"
                 >
                     <Icon icon="solar:double-alt-arrow-right-bold" width={28} className="text-white" />
                 </motion.div>

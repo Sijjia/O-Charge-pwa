@@ -98,7 +98,7 @@ export function HistoryPage() {
           <button
             onClick={() => setActiveTab("charging")}
             className={`flex-1 py-3 px-4 text-sm font-medium transition-colors relative ${activeTab === "charging"
-              ? "text-red-500"
+              ? "text-[#f0047f]"
               : "text-zinc-400 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
               }`}
           >
@@ -107,14 +107,14 @@ export function HistoryPage() {
               <span>Зарядки</span>
             </div>
             {activeTab === "charging" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f0047f]" />
             )}
           </button>
 
           <button
             onClick={() => setActiveTab("transactions")}
             className={`flex-1 py-3 px-4 text-sm font-medium transition-colors relative ${activeTab === "transactions"
-              ? "text-red-500"
+              ? "text-[#f0047f]"
               : "text-zinc-400 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
               }`}
           >
@@ -123,14 +123,14 @@ export function HistoryPage() {
               <span>Платежи</span>
             </div>
             {activeTab === "transactions" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f0047f]" />
             )}
           </button>
 
           <button
             onClick={() => setActiveTab("statistics")}
             className={`flex-1 py-3 px-4 text-sm font-medium transition-colors relative ${activeTab === "statistics"
-              ? "text-red-500"
+              ? "text-[#f0047f]"
               : "text-zinc-400 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
               }`}
           >
@@ -139,7 +139,7 @@ export function HistoryPage() {
               <span>Статистика</span>
             </div>
             {activeTab === "statistics" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f0047f]" />
             )}
           </button>
         </div>
@@ -159,7 +159,7 @@ export function HistoryPage() {
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${activeFilter === f.key
-                  ? "bg-red-50 dark:bg-red-500/15 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-500/20"
+                  ? "bg-[#fff0f7] dark:bg-[#f0047f]/15 text-[#f0047f] dark:text-[#f078b7] border border-[#ffc2df] dark:border-[#f0047f]/20"
                   : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-transparent"
                   }`}
               >
@@ -436,8 +436,8 @@ export function HistoryPage() {
                         Любимая станция
                       </h3>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center">
-                          <Icon icon="solar:bolt-linear" width={20} className="text-red-500" />
+                        <div className="w-10 h-10 bg-[#f0047f]/15 rounded-lg flex items-center justify-center">
+                          <Icon icon="solar:bolt-linear" width={20} className="text-[#f0047f]" />
                         </div>
                         <div className="flex-1">
                           <p className="font-medium text-zinc-900 dark:text-white">
@@ -472,7 +472,7 @@ export function HistoryPage() {
                             </div>
                             <div className="bg-zinc-200 dark:bg-zinc-700 rounded-full h-2 transition-colors">
                               <div
-                                className="bg-red-600 h-2 rounded-full"
+                                className="bg-[#f0047f] h-2 rounded-full"
                                 style={{
                                   width: `${(month.energy / Math.max(...statistics.monthlyData.map((m) => m.energy))) * 100}%`,
                                 }}

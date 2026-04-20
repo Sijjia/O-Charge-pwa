@@ -19,7 +19,7 @@ export const STATUS_COLORS = {
   available: "#10B981", // Зелёный — свободен
   occupied: "#F59E0B", // Жёлтый — занят/заряжается
   offline: "#9CA3AF", // Серый — недоступен
-  faulted: "#EF4444", // Красный — ошибка
+  faulted: "#f078b7", // Красный — ошибка
 } as const;
 
 export type ConnectorStatus = keyof typeof STATUS_COLORS;

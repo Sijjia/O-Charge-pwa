@@ -45,7 +45,7 @@ const stationSchema = z.object({
 
 type StationFormData = z.infer<typeof stationSchema>;
 
-const inputBaseClass = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 text-sm transition-all";
+const inputBaseClass = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-[#f0047f] focus:border-[#f0047f] text-sm transition-all";
 
 export function CreateStationPage() {
   const navigate = useNavigate();
@@ -165,7 +165,7 @@ export function CreateStationPage() {
   };
 
   const getInputClass = (fieldName: string) =>
-    `${inputBaseClass} ${errors[fieldName] ? 'border-red-400 dark:border-red-500/50' : 'border-zinc-200 dark:border-zinc-800'}`;
+    `${inputBaseClass} ${errors[fieldName] ? 'border-[#f078b7] dark:border-[#f0047f]/50' : 'border-zinc-200 dark:border-zinc-800'}`;
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#050507]">
@@ -192,10 +192,10 @@ export function CreateStationPage() {
         <form onSubmit={handleSubmit} className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-none border border-zinc-200 dark:border-zinc-800 p-6">
           {/* Submit Error */}
           {submitError && (
-            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
+            <div className="mb-6 p-4 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl">
               <div className="flex items-start gap-3">
-                <Icon icon="solar:danger-circle-linear" width={20} className="text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-red-600 dark:text-red-400">{submitError}</p>
+                <Icon icon="solar:danger-circle-linear" width={20} className="text-[#f0047f] dark:text-[#f078b7] flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-[#f0047f] dark:text-[#f078b7]">{submitError}</p>
               </div>
             </div>
           )}
@@ -204,7 +204,7 @@ export function CreateStationPage() {
             {/* Serial Number */}
             <div>
               <label htmlFor="serial_number" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                Серийный номер <span className="text-red-500">*</span>
+                Серийный номер <span className="text-[#f0047f]">*</span>
               </label>
               <input
                 type="text"
@@ -216,7 +216,7 @@ export function CreateStationPage() {
                 placeholder="Например: EVP-001"
               />
               {errors['serial_number'] && (
-                <p className="mt-1.5 text-sm text-red-500">{errors['serial_number']}</p>
+                <p className="mt-1.5 text-sm text-[#f0047f]">{errors['serial_number']}</p>
               )}
             </div>
 
@@ -233,7 +233,7 @@ export function CreateStationPage() {
                       setSelectedModelId('');
                     }
                   }}
-                  className="rounded border-zinc-300 dark:border-zinc-600 text-red-600 focus:ring-red-500"
+                  className="rounded border-zinc-300 dark:border-zinc-600 text-[#f0047f] focus:ring-[#f0047f]"
                 />
                 <span className="text-zinc-600 dark:text-zinc-300">Ввести вручную (без справочника)</span>
               </label>
@@ -244,7 +244,7 @@ export function CreateStationPage() {
                 {/* Manufacturer from catalog */}
                 <div>
                   <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                    Производитель <span className="text-red-500">*</span>
+                    Производитель <span className="text-[#f0047f]">*</span>
                   </label>
                   <select
                     value={selectedMfrId}
@@ -282,7 +282,7 @@ export function CreateStationPage() {
                 {/* Model from catalog */}
                 <div>
                   <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                    Модель <span className="text-red-500">*</span>
+                    Модель <span className="text-[#f0047f]">*</span>
                   </label>
                   <select
                     value={selectedModelId}
@@ -312,7 +312,7 @@ export function CreateStationPage() {
                 {/* Manual Model */}
                 <div>
                   <label htmlFor="model" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                    Модель <span className="text-red-500">*</span>
+                    Модель <span className="text-[#f0047f]">*</span>
                   </label>
                   <input
                     type="text"
@@ -323,13 +323,13 @@ export function CreateStationPage() {
                     className={getInputClass('model')}
                     placeholder="Например: DC Fast Charger 50kW"
                   />
-                  {errors['model'] && <p className="mt-1.5 text-sm text-red-500">{errors['model']}</p>}
+                  {errors['model'] && <p className="mt-1.5 text-sm text-[#f0047f]">{errors['model']}</p>}
                 </div>
 
                 {/* Manual Manufacturer */}
                 <div>
                   <label htmlFor="manufacturer" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                    Производитель <span className="text-red-500">*</span>
+                    Производитель <span className="text-[#f0047f]">*</span>
                   </label>
                   <input
                     type="text"
@@ -341,7 +341,7 @@ export function CreateStationPage() {
                     placeholder="Например: ABB, Schneider Electric"
                   />
                   {errors['manufacturer'] && (
-                    <p className="mt-1.5 text-sm text-red-500">{errors['manufacturer']}</p>
+                    <p className="mt-1.5 text-sm text-[#f0047f]">{errors['manufacturer']}</p>
                   )}
                 </div>
               </>
@@ -350,7 +350,7 @@ export function CreateStationPage() {
             {/* Power Capacity */}
             <div>
               <label htmlFor="power_capacity" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                Мощность (кВт) <span className="text-red-500">*</span>
+                Мощность (кВт) <span className="text-[#f0047f]">*</span>
               </label>
               <input
                 type="number"
@@ -364,14 +364,14 @@ export function CreateStationPage() {
                 className={getInputClass('power_capacity')}
               />
               {errors['power_capacity'] && (
-                <p className="mt-1.5 text-sm text-red-500">{errors['power_capacity']}</p>
+                <p className="mt-1.5 text-sm text-[#f0047f]">{errors['power_capacity']}</p>
               )}
             </div>
 
             {/* Connectors Count */}
             <div>
               <label htmlFor="connectors_count" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                Количество разъёмов <span className="text-red-500">*</span>
+                Количество разъёмов <span className="text-[#f0047f]">*</span>
               </label>
               <input
                 type="number"
@@ -385,14 +385,14 @@ export function CreateStationPage() {
                 className={getInputClass('connectors_count')}
               />
               {errors['connectors_count'] && (
-                <p className="mt-1.5 text-sm text-red-500">{errors['connectors_count']}</p>
+                <p className="mt-1.5 text-sm text-[#f0047f]">{errors['connectors_count']}</p>
               )}
             </div>
 
             {/* Location */}
             <div>
               <label htmlFor="location_id" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                Локация <span className="text-red-500">*</span>
+                Локация <span className="text-[#f0047f]">*</span>
               </label>
               <select
                 id="location_id"
@@ -414,14 +414,14 @@ export function CreateStationPage() {
                   ))}
               </select>
               {errors['location_id'] && (
-                <p className="mt-1.5 text-sm text-red-500">{errors['location_id']}</p>
+                <p className="mt-1.5 text-sm text-[#f0047f]">{errors['location_id']}</p>
               )}
               <p className="mt-1.5 text-sm text-zinc-500 dark:text-zinc-400">
                 Если нужной локации нет,{' '}
                 <button
                   type="button"
                   onClick={() => navigate(`${base}/locations/create`)}
-                  className="text-red-500 hover:text-red-400 underline"
+                  className="text-[#f0047f] hover:text-[#f078b7] underline"
                 >
                   создайте новую
                 </button>

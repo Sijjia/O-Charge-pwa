@@ -71,7 +71,7 @@ export function TopupAmountPage() {
   return (
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Ambient Background */}
-      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 dark:bg-red-600/10 blur-[90px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[90px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="px-5 pt-8 pb-4 flex items-center z-20 shrink-0 relative bg-white/80 dark:bg-transparent backdrop-blur-md dark:backdrop-blur-none border-b border-zinc-200 dark:border-transparent transition-colors duration-300">
@@ -123,7 +123,7 @@ export function TopupAmountPage() {
               onClick={() => handlePresetSelect(preset.value)}
               className={`h-14 rounded-xl transition-all duration-300 flex flex-col items-center justify-center gap-0.5 group active:scale-95 ${
                 selectedAmount === preset.value && !isCustom
-                  ? "border border-red-600 bg-red-50 dark:bg-red-500/10"
+                  ? "border border-[#f0047f] bg-[#fff0f7] dark:bg-[#f0047f]/10"
                   : "border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-700 shadow-sm dark:shadow-none"
               }`}
             >
@@ -153,7 +153,7 @@ export function TopupAmountPage() {
               }}
               onFocus={handleCustomFocus}
               placeholder="800"
-              className="w-full bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white text-2xl font-semibold px-4 py-4 rounded-2xl border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600 shadow-sm dark:shadow-none"
+              className="w-full bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white text-2xl font-semibold px-4 py-4 rounded-2xl border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:border-[#f0047f] focus:ring-1 focus:ring-[#f0047f] transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600 shadow-sm dark:shadow-none"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500 font-medium">
               сом
@@ -167,9 +167,9 @@ export function TopupAmountPage() {
 
         {/* Error */}
         {error && (
-          <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-            <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-            <p className="text-red-400 text-sm">{error}</p>
+          <div className="mt-4 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+            <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+            <p className="text-[#f078b7] text-sm">{error}</p>
           </div>
         )}
       </div>
@@ -182,7 +182,7 @@ export function TopupAmountPage() {
           className={`w-full h-14 rounded-xl font-semibold text-base transition-all active:scale-[0.98] flex items-center justify-center gap-2 ${
             !isValid || isLoading
               ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-              : "bg-red-600 hover:bg-red-500 text-white hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+              : "bg-[#f0047f] hover:bg-[#f0047f] text-white hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]"
           }`}
         >
           {isLoading ? (

@@ -98,7 +98,7 @@ export function OwnerStationsListPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400">Загрузка станций...</p>
         </div>
       </div>
@@ -109,12 +109,12 @@ export function OwnerStationsListPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center p-4">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 max-w-md">
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-6 max-w-md">
           <div className="flex items-start gap-3">
-            <Icon icon="solar:danger-circle-linear" width={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+            <Icon icon="solar:danger-circle-linear" width={24} className="text-[#f0047f] flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-red-700 dark:text-red-400 mb-1">Ошибка загрузки</h3>
-              <p className="text-sm text-red-600 dark:text-red-400/80">
+              <h3 className="font-semibold text-[#c00366] dark:text-[#f078b7] mb-1">Ошибка загрузки</h3>
+              <p className="text-sm text-[#f0047f] dark:text-[#f078b7]/80">
                 Не удалось загрузить список станций. Попробуйте обновить страницу.
               </p>
             </div>
@@ -210,7 +210,7 @@ export function OwnerStationsListPage() {
                 {/* Status Badge */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <Icon icon="solar:battery-charge-linear" width={24} className="text-red-500" />
+                    <Icon icon="solar:battery-charge-linear" width={24} className="text-[#f0047f]" />
                     <span className="font-semibold text-zinc-900 dark:text-white">
                       {station.serial_number}
                     </span>

@@ -29,7 +29,7 @@ export function AdminEmptyState({
       {actionLabel && onAction && (
         <button
           onClick={onAction}
-          className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-colors shadow-lg shadow-red-600/20"
+          className="flex items-center gap-2 bg-[#f0047f] hover:bg-[#f0047f] text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-colors shadow-lg shadow-[#f0047f]/20"
         >
           <Icon icon="solar:add-circle-linear" width={18} />
           {actionLabel}

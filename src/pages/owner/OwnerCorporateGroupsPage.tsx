@@ -39,7 +39,7 @@ export function OwnerCorporateGroupsPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка корпоративных клиентов...</p>
         </div>
       </div>
@@ -49,9 +49,9 @@ export function OwnerCorporateGroupsPage() {
   if (error) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error instanceof Error ? error.message : "Не удалось загрузить корпоративных клиентов"}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error instanceof Error ? error.message : "Не удалось загрузить корпоративных клиентов"}</p>
         </div>
       </div>
     );
@@ -90,7 +90,7 @@ export function OwnerCorporateGroupsPage() {
             type="checkbox"
             checked={showInactive}
             onChange={(e) => setShowInactive(e.target.checked)}
-            className="w-4 h-4 rounded border-zinc-300 text-red-600 focus:ring-red-500"
+            className="w-4 h-4 rounded border-zinc-300 text-[#f0047f] focus:ring-[#f0047f]"
           />
           <span className="text-sm text-zinc-600 dark:text-zinc-300 whitespace-nowrap">Заблокированные</span>
         </label>
@@ -179,7 +179,7 @@ export function OwnerCorporateGroupsPage() {
             <p className="text-sm text-zinc-500 max-w-sm mb-6">Создайте первую корпоративную группу для B2B клиентов</p>
             <button
               onClick={() => navigate(`${base}/corporate/create`)}
-              className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
+              className="flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
             >
               <Icon icon="solar:add-circle-linear" width={18} />
               Создать группу

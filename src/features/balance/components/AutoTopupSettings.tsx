@@ -52,7 +52,7 @@ export function AutoTopupSettings() {
     <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-800 p-6 transition-colors">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <Icon icon="solar:refresh-circle-bold-duotone" width={24} className="text-red-500" />
+          <Icon icon="solar:refresh-circle-bold-duotone" width={24} className="text-[#f0047f]" />
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">
             Автопополнение
           </h2>
@@ -63,7 +63,7 @@ export function AutoTopupSettings() {
             setTimeout(() => saveMutation.mutate(), 100);
           }}
           className={`relative w-12 h-7 rounded-full transition-colors ${
-            enabled ? "bg-red-600" : "bg-zinc-300 dark:bg-zinc-700"
+            enabled ? "bg-[#f0047f]" : "bg-zinc-300 dark:bg-zinc-700"
           }`}
         >
           <div
@@ -103,7 +103,7 @@ export function AutoTopupSettings() {
                   onClick={() => setAmount(v)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     amount === v
-                      ? "bg-red-600 text-white"
+                      ? "bg-[#f0047f] text-white"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
                   }`}
                 >
@@ -126,7 +126,7 @@ export function AutoTopupSettings() {
           <button
             onClick={() => saveMutation.mutate()}
             disabled={saveMutation.isPending}
-            className="w-full py-2.5 bg-red-600 hover:bg-red-700 disabled:bg-zinc-400 text-white rounded-lg font-medium text-sm transition-colors"
+            className="w-full py-2.5 bg-[#f0047f] hover:bg-[#c00366] disabled:bg-zinc-400 text-white rounded-lg font-medium text-sm transition-colors"
           >
             {saveMutation.isPending ? "Сохранение..." : "Сохранить настройки"}
           </button>

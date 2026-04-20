@@ -164,8 +164,8 @@ export default function MapHome() {
           animate={{ opacity: 1, scale: 1 }}
           className="text-center"
         >
-          <div className="w-24 h-24 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-600" />
+          <div className="w-24 h-24 bg-[#f0047f]/15 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f0047f]" />
           </div>
           <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
             Ошибка загрузки
@@ -175,7 +175,7 @@ export default function MapHome() {
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="bg-gradient-to-r from-red-600 to-red-500 text-white px-8 py-3 rounded-2xl font-semibold shadow-lg shadow-black/40 hover:shadow-xl transition-all"
+            className="bg-gradient-to-r from-[#f0047f] to-[#f0047f] text-white px-8 py-3 rounded-2xl font-semibold shadow-lg shadow-black/40 hover:shadow-xl transition-all"
           >
             Попробовать снова
           </button>
@@ -195,8 +195,8 @@ export default function MapHome() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600" />
+              <div className="w-16 h-16 bg-[#f0047f]/15 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f0047f]" />
               </div>
               <p className="text-zinc-500 dark:text-gray-400">Загрузка карты...</p>
             </motion.div>
@@ -234,7 +234,7 @@ export default function MapHome() {
                     placeholder="Найти станцию..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-10 py-3 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white dark:focus:bg-zinc-900 transition-colors"
+                    className="w-full pl-10 pr-10 py-3 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:bg-white dark:focus:bg-zinc-900 transition-colors"
                     autoFocus
                     aria-label="Поиск станций"
                   />
@@ -307,7 +307,7 @@ export default function MapHome() {
           <Icon
             icon="solar:wallet-money-bold"
             width={18}
-            className="text-red-500 shrink-0"
+            className="text-[#f0047f] shrink-0"
           />
           <span className="text-sm font-bold text-zinc-900 dark:text-white">
             {balance.balance.toFixed(0)}{" "}
@@ -316,7 +316,7 @@ export default function MapHome() {
           <Icon
             icon="solar:add-circle-bold"
             width={16}
-            className="text-red-400"
+            className="text-[#f078b7]"
           />
         </motion.button>
       )}

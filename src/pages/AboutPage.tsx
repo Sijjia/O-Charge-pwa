@@ -67,13 +67,13 @@ export function AboutPage() {
           </div>
         </a>
         <a
-          href="mailto:support@asystem.kg"
+          href="mailto:support@ocharge.kg"
           className="flex items-center justify-between px-4 py-3.5 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
         >
           <div className="flex items-center gap-3">
             <Icon icon="solar:letter-linear" width={20} className="text-zinc-500 dark:text-gray-500" />
             <span className="font-medium text-zinc-900 dark:text-white">
-              support@asystem.kg
+              support@ocharge.kg
             </span>
           </div>
         </a>

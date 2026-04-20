@@ -61,7 +61,7 @@ export function StatCard({
                   trend.isPositive
                     ? 'text-green-600'
                     : trend.isPositive === false
-                      ? 'text-red-600'
+                      ? 'text-[#f0047f]'
                       : 'text-zinc-500 dark:text-gray-400'
                 }`}
               >
@@ -74,8 +74,8 @@ export function StatCard({
         </div>
 
         {/* Icon */}
-        <div className="w-12 h-12 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-          <Icon className="w-6 h-6 text-red-500" />
+        <div className="w-12 h-12 bg-[#f0047f]/15 rounded-lg flex items-center justify-center flex-shrink-0">
+          <Icon className="w-6 h-6 text-[#f0047f]" />
         </div>
       </div>
     </div>

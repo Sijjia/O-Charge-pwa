@@ -38,7 +38,7 @@ export function PartnerProtectedRoute() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={48} className="text-red-500 animate-spin mx-auto mb-4" />
+          <Icon icon="solar:refresh-linear" width={48} className="text-[#f0047f] animate-spin mx-auto mb-4" />
           <p className="text-gray-400">Проверка авторизации...</p>
         </div>
       </div>
@@ -51,7 +51,7 @@ export function PartnerProtectedRoute() {
       return (
         <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
           <div className="text-center">
-            <Icon icon="solar:refresh-linear" width={48} className="text-red-500 animate-spin mx-auto mb-4" />
+            <Icon icon="solar:refresh-linear" width={48} className="text-[#f0047f] animate-spin mx-auto mb-4" />
             <p className="text-gray-400">Инициализация демо...</p>
           </div>
         </div>

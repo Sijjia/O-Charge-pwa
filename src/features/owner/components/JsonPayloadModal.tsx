@@ -42,7 +42,7 @@ export function JsonPayloadModal({ title, requestPayload, responsePayload, onClo
             onClick={() => setTab("request")}
             className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
               tab === "request"
-                ? "bg-red-600 text-white"
+                ? "bg-[#f0047f] text-white"
                 : "text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800"
             }`}
           >
@@ -52,7 +52,7 @@ export function JsonPayloadModal({ title, requestPayload, responsePayload, onClo
             onClick={() => setTab("response")}
             className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
               tab === "response"
-                ? "bg-red-600 text-white"
+                ? "bg-[#f0047f] text-white"
                 : "text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800"
             }`}
           >

@@ -120,7 +120,7 @@ export function OwnerRevenuePage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400 font-medium">Загрузка аналитики...</p>
         </div>
       </div>
@@ -130,8 +130,8 @@ export function OwnerRevenuePage() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] relative">
       {/* Ambient Background */}
-      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-red-600/10 blur-[100px] rounded-full pointer-events-none z-0" />
-      <div className="fixed bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-800/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#f0047f]/10 blur-[100px] rounded-full pointer-events-none z-0" />
+      <div className="fixed bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#7a013f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="px-5 pt-6 pb-2 flex items-center justify-between z-20 relative shrink-0">
@@ -148,7 +148,7 @@ export function OwnerRevenuePage() {
         >
           <Icon icon="solar:filter-linear" width={24} />
           {hasActiveFilters && (
-            <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-zinc-50 dark:border-[#050507]" />
+            <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-[#f0047f] rounded-full border-2 border-zinc-50 dark:border-[#050507]" />
           )}
         </button>
       </div>
@@ -163,7 +163,7 @@ export function OwnerRevenuePage() {
               onClick={() => setSelectedPeriod(period)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 selectedPeriod === period
-                  ? 'bg-red-600 text-white shadow-lg shadow-red-600/20'
+                  ? 'bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/20'
                   : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
               }`}
             >
@@ -216,8 +216,8 @@ export function OwnerRevenuePage() {
             className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 text-left hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
           >
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
-                <Icon icon="solar:download-minimalistic-bold-duotone" className="text-red-400" width={18} />
+              <div className="w-8 h-8 rounded-lg bg-[#f0047f]/10 flex items-center justify-center">
+                <Icon icon="solar:download-minimalistic-bold-duotone" className="text-[#f078b7]" width={18} />
               </div>
             </div>
             <p className="text-sm font-semibold text-zinc-900 dark:text-white">Экспорт</p>
@@ -233,7 +233,7 @@ export function OwnerRevenuePage() {
               {hasActiveFilters && (
                 <button
                   onClick={resetFilters}
-                  className="flex items-center gap-1.5 text-xs text-red-500 hover:text-red-400 transition-colors"
+                  className="flex items-center gap-1.5 text-xs text-[#f0047f] hover:text-[#f078b7] transition-colors"
                 >
                   <Icon icon="solar:close-circle-linear" width={14} />
                   Сбросить
@@ -250,7 +250,7 @@ export function OwnerRevenuePage() {
                     type="date"
                     value={customStartDate}
                     onChange={(e) => setCustomStartDate(e.target.value)}
-                    className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
@@ -259,7 +259,7 @@ export function OwnerRevenuePage() {
                     type="date"
                     value={customEndDate}
                     onChange={(e) => setCustomEndDate(e.target.value)}
-                    className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-transparent outline-none"
                   />
                 </div>
               </div>
@@ -270,7 +270,7 @@ export function OwnerRevenuePage() {
               onClick={() => setSelectedPeriod(selectedPeriod === 'custom' ? 'month' : 'custom')}
               className={`w-full mb-4 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
                 selectedPeriod === 'custom'
-                  ? 'bg-red-600/15 text-red-500 dark:text-red-400 border border-red-500/20'
+                  ? 'bg-[#f0047f]/15 text-[#f0047f] dark:text-[#f078b7] border border-[#f0047f]/20'
                   : 'bg-white dark:bg-zinc-900 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700'
               }`}
             >
@@ -284,7 +284,7 @@ export function OwnerRevenuePage() {
               <select
                 value={selectedStationId}
                 onChange={(e) => setSelectedStationId(e.target.value)}
-                className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none appearance-none"
+                className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-transparent outline-none appearance-none"
               >
                 <option value="all">Все станции</option>
                 {stations?.map((station) => (
@@ -339,7 +339,7 @@ export function OwnerRevenuePage() {
                     {/* Progress Bar */}
                     <div className="w-full h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-red-500 rounded-full transition-all duration-300"
+                        className="h-full bg-[#f0047f] rounded-full transition-all duration-300"
                         style={{ width: `${Math.min(revenuePercent, 100)}%` }}
                       />
                     </div>

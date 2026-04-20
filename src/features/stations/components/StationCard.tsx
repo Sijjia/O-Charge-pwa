@@ -97,8 +97,8 @@ export const StationCard = memo(function StationCard({
                   width={20}
                   className={`transition-colors ${
                     isFavorite(station.location_id)
-                      ? "text-red-500"
-                      : "text-gray-400 hover:text-red-500"
+                      ? "text-[#f0047f]"
+                      : "text-gray-400 hover:text-[#f0047f]"
                   }`}
                 />
               </button>
@@ -215,7 +215,7 @@ export const StationCard = memo(function StationCard({
           className={`flex-1 py-2 px-4 rounded-lg font-medium text-sm transition-colors ${
             station.status === "inactive" || station.status === "maintenance"
               ? "bg-zinc-800 text-gray-400 cursor-not-allowed"
-              : "bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              : "bg-[#f0047f] text-white hover:bg-[#c00366] focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:ring-offset-2"
           }`}
         >
           {station.status === "active" ? "Выбрать станцию" : "Недоступна"}
@@ -223,7 +223,7 @@ export const StationCard = memo(function StationCard({
 
         <button
           onClick={openInMaps}
-          className="px-4 py-2 border border-zinc-700 rounded-lg text-gray-300 hover:bg-zinc-900/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors"
+          className="px-4 py-2 border border-zinc-700 rounded-lg text-gray-300 hover:bg-zinc-900/50 focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:ring-offset-2 transition-colors"
           title="Открыть в 2ГИС"
         >
           <svg

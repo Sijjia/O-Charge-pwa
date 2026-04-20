@@ -18,7 +18,7 @@ export interface OcppErrorInfo {
   severity: "info" | "warning" | "critical";
   /** Иконка */
   icon: string;
-  /** Нужно ли звонить в поддержку Red Petroleum */
+  /** Нужно ли звонить в поддержку O!Charge */
   callSupport: boolean;
 }
 
@@ -390,7 +390,7 @@ export function getOcppError(code: string | null | undefined): OcppErrorInfo {
  */
 export function getSeverityColor(severity: OcppErrorInfo["severity"]) {
   switch (severity) {
-    case "critical": return { bg: "bg-red-50 dark:bg-red-950/30", text: "text-red-600 dark:text-red-400", border: "border-red-200 dark:border-red-800", dot: "bg-red-500" };
+    case "critical": return { bg: "bg-[#fff0f7] dark:bg-[#3d0020]/30", text: "text-[#f0047f] dark:text-[#f078b7]", border: "border-[#ffc2df] dark:border-[#7a013f]", dot: "bg-[#f0047f]" };
     case "warning": return { bg: "bg-yellow-50 dark:bg-yellow-950/30", text: "text-yellow-600 dark:text-yellow-400", border: "border-yellow-200 dark:border-yellow-800", dot: "bg-yellow-500" };
     case "info": return { bg: "bg-emerald-50 dark:bg-emerald-950/30", text: "text-emerald-600 dark:text-emerald-400", border: "border-emerald-200 dark:border-emerald-800", dot: "bg-emerald-500" };
   }

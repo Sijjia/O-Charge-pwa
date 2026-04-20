@@ -193,7 +193,7 @@ export const StationsList = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Поиск станции..."
-              className="w-full pl-10 pr-10 py-2.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-transparent rounded-xl text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:focus:bg-zinc-900 transition-colors"
+              className="w-full pl-10 pr-10 py-2.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-transparent rounded-xl text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] dark:focus:bg-zinc-900 transition-colors"
             />
             {searchQuery && (
               <button

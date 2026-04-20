@@ -302,8 +302,8 @@ export function PhoneAuthForm({
           <div>
             <div
               className={`group relative bg-white dark:bg-zinc-900/50 rounded-2xl border transition-all duration-300 shadow-sm dark:shadow-none ${error
-                ? "border-red-500/50 shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
-                : "border-zinc-200 dark:border-zinc-800 focus-within:border-red-500/50 focus-within:bg-white dark:focus-within:bg-zinc-900 focus-within:shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
+                ? "border-[#f0047f]/50 shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
+                : "border-zinc-200 dark:border-zinc-800 focus-within:border-[#f0047f]/50 focus-within:bg-white dark:focus-within:bg-zinc-900 focus-within:shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
                 }`}
             >
               <label className="flex items-center h-[72px] px-5 w-full cursor-text">
@@ -344,7 +344,7 @@ export function PhoneAuthForm({
               w-full h-14 text-base font-medium rounded-xl flex items-center justify-center gap-2 px-6 transition-all duration-300 active:scale-[0.98]
               ${isLoading || phone.length < 10
                 ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-900/20"
+                : "bg-[#f0047f] hover:bg-[#f0047f] text-white shadow-lg shadow-[#5c0030]/20"
               }
             `}
           >
@@ -398,7 +398,7 @@ export function PhoneAuthForm({
               w-full h-14 text-base font-medium rounded-xl flex items-center justify-center gap-2 px-6 transition-all duration-300 active:scale-[0.98]
               ${isLoading || otpCode.length !== 6
                 ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-900/20"
+                : "bg-[#f0047f] hover:bg-[#f0047f] text-white shadow-lg shadow-[#5c0030]/20"
               }
             `}
           >

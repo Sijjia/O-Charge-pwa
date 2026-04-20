@@ -35,7 +35,7 @@ export function AdminProtectedRoute() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={48} className="text-red-500 animate-spin mx-auto mb-4" />
+          <Icon icon="solar:refresh-linear" width={48} className="text-[#f0047f] animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-gray-400">Проверка авторизации...</p>
         </div>
       </div>
@@ -44,7 +44,7 @@ export function AdminProtectedRoute() {
 
   // In demo mode, allow access if we have owner data after auto-login
   if (isDemo) {
-    if (!isAuthenticated && !owner) return <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center"><Icon icon="solar:refresh-linear" width={48} className="text-red-500 animate-spin mx-auto mb-4" /></div>;
+    if (!isAuthenticated && !owner) return <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center"><Icon icon="solar:refresh-linear" width={48} className="text-[#f0047f] animate-spin mx-auto mb-4" /></div>;
     return <Outlet />;
   }
 

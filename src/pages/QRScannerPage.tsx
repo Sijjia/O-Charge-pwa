@@ -7,12 +7,12 @@ import { logger } from "@/shared/utils/logger";
  * Parse QR code text to extract station ID.
  * Supported formats:
  *  1. ocharge://station/{id}/connector/{n}
- *  2. https://o.asystem.kg/charging/{id}?connector={n}
+ *  2. https://...ocharge.../charging/{id}?connector={n}
  *  3. Plain station ID like "SIM-TEST" or "RP-BK-001"
  */
 function parseQRCode(text: string): { stationId: string; connectorId: string } | null {
   // Deep link format
-  const deepLink = text.match(/(?:redpetroleum|ocharge):\/\/station\/([^/]+)(?:\/connector\/(\d+))?/);
+  const deepLink = text.match(/ocharge:\/\/station\/([^/]+)(?:\/connector\/(\d+))?/);
   if (deepLink) {
     return { stationId: deepLink[1]!, connectorId: deepLink[2] ?? "1" };
   }
@@ -173,20 +173,20 @@ export const QRScannerPage = () => {
           {/* Loading state */}
           {!cameraReady && !scanError && (
             <div className="flex flex-col items-center gap-4">
-              <div className="animate-spin rounded-full h-10 w-10 border-2 border-white/20 border-t-red-500" />
+              <div className="animate-spin rounded-full h-10 w-10 border-2 border-white/20 border-t-[#f0047f]" />
               <p className="text-neutral-400 text-sm">Запуск камеры...</p>
             </div>
           )}
 
           {/* Error state */}
           {scanError && (
-            <div className="bg-red-500/20 border border-red-500/30 rounded-2xl px-6 py-4 max-w-xs text-center">
+            <div className="bg-[#f0047f]/20 border border-[#f0047f]/30 rounded-2xl px-6 py-4 max-w-xs text-center">
               <Icon
                 icon="solar:danger-triangle-linear"
                 width={32}
-                className="text-red-400 mx-auto mb-2"
+                className="text-[#f078b7] mx-auto mb-2"
               />
-              <p className="text-sm text-red-300">{scanError}</p>
+              <p className="text-sm text-[#f078b7]">{scanError}</p>
             </div>
           )}
 
@@ -203,7 +203,7 @@ export const QRScannerPage = () => {
 
                 {/* Scanning laser animation */}
                 <div
-                  className="absolute left-2 right-2 h-0.5 bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"
+                  className="absolute left-2 right-2 h-0.5 bg-[#f0047f] shadow-[0_0_8px_rgba(239,68,68,0.8)]"
                   style={{
                     animation:
                       "qr-scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite",
@@ -254,14 +254,14 @@ export const QRScannerPage = () => {
                 value={manualCode}
                 onChange={(e) => setManualCode(e.target.value)}
                 placeholder="Введите код станции"
-                className="flex-1 h-14 bg-neutral-800 border border-white/5 rounded-xl px-4 text-white placeholder-neutral-500 text-sm focus:ring-1 focus:ring-red-600/50 focus:border-red-600/50 outline-none"
+                className="flex-1 h-14 bg-neutral-800 border border-white/5 rounded-xl px-4 text-white placeholder-neutral-500 text-sm focus:ring-1 focus:ring-[#f0047f]/50 focus:border-[#f0047f]/50 outline-none"
                 autoFocus
                 onKeyDown={(e) => e.key === "Enter" && handleManualSubmit()}
               />
               <button
                 onClick={handleManualSubmit}
                 disabled={!manualCode.trim()}
-                className="h-14 px-5 bg-red-600 hover:bg-red-500 disabled:opacity-50 rounded-xl text-white font-medium transition-all active:scale-[0.98]"
+                className="h-14 px-5 bg-[#f0047f] hover:bg-[#f0047f] disabled:opacity-50 rounded-xl text-white font-medium transition-all active:scale-[0.98]"
               >
                 <Icon icon="solar:arrow-right-linear" width={20} />
               </button>

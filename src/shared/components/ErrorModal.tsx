@@ -90,8 +90,8 @@ export function ErrorModal({
               {/* Header */}
               <div className="flex items-start justify-between p-6 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-500/15 rounded-full flex items-center justify-center">
-                    <Icon icon="solar:close-circle-linear" width={24} className="text-red-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#f0047f]/15 rounded-full flex items-center justify-center">
+                    <Icon icon="solar:close-circle-linear" width={24} className="text-[#f0047f]" />
                   </div>
                   <h2 className="text-xl font-bold text-white">{title}</h2>
                 </div>
@@ -113,7 +113,7 @@ export function ErrorModal({
               <div className="border-t border-zinc-800 px-6 py-4">
                 <button
                   onClick={onClose}
-                  className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg shadow-black/40 transition-all active:scale-95"
+                  className="w-full bg-gradient-to-r from-[#f0047f] to-[#c00366] text-white py-3 rounded-xl font-semibold hover:shadow-lg shadow-black/40 transition-all active:scale-95"
                 >
                   Понятно
                 </button>

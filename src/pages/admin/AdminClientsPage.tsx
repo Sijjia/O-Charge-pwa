@@ -222,7 +222,7 @@ export function AdminClientsPage() {
       <div className="p-4 md:p-8 space-y-6">
         <AdminPageHeader title="Клиенты" subtitle="Управление клиентами" helpText="База всех зарегистрированных пользователей приложения. Можно посмотреть баланс, историю зарядок, заблокировать или разблокировать аккаунт." />
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 text-center">
-          <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-500 mx-auto mb-4" />
+          <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f0047f] mx-auto mb-4" />
           <p className="text-sm text-zinc-500">
             {error instanceof Error ? error.message : "Не удалось загрузить клиентов"}
           </p>

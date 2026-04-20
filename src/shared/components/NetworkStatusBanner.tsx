@@ -31,7 +31,7 @@ export function NetworkStatusBanner() {
     <div className="fixed top-0 inset-x-0 z-50">
       <div
         className={`mx-auto max-w-screen-md m-2 rounded-xl px-3 py-2 text-sm font-medium shadow-lg shadow-black/40 border
-        ${online ? "bg-green-500/10 text-green-400 border-green-500/20" : "bg-red-500/10 text-red-400 border-red-500/20"}`}
+        ${online ? "bg-green-500/10 text-green-400 border-green-500/20" : "bg-[#f0047f]/10 text-[#f078b7] border-[#f0047f]/20"}`}
         role="status"
         aria-live="polite"
       >

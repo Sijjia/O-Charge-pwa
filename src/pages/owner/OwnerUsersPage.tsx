@@ -39,7 +39,7 @@ const roleIcons: Record<OwnerRole, string> = {
 const roleColors: Record<OwnerRole, string> = {
   operator: "bg-blue-500/15 text-blue-400",
   admin: "bg-purple-500/15 text-purple-400",
-  superadmin: "bg-red-500/15 text-red-400",
+  superadmin: "bg-[#f0047f]/15 text-[#f078b7]",
   partner: "bg-emerald-500/15 text-emerald-400",
 };
 
@@ -135,7 +135,7 @@ export function OwnerUsersPage() {
           </div>
         ) : error ? (
           <div className="text-center py-12">
-            <p className="text-red-600">
+            <p className="text-[#f0047f]">
               {error instanceof Error ? error.message : "Ошибка загрузки"}
             </p>
           </div>
@@ -226,7 +226,7 @@ export function OwnerUsersPage() {
                                 {user.is_active ? (
                                   <button
                                     onClick={() => handleDeactivate(user)}
-                                    className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-500/10"
+                                    className="w-full flex items-center gap-2 px-4 py-2 text-sm text-[#f0047f] hover:bg-[#f0047f]/10"
                                   >
                                     <Icon icon="solar:user-cross-linear" width={16} />
                                     Деактивировать
@@ -234,7 +234,7 @@ export function OwnerUsersPage() {
                                 ) : (
                                   <button
                                     onClick={() => handleActivate(user)}
-                                    className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:bg-red-500/10"
+                                    className="w-full flex items-center gap-2 px-4 py-2 text-sm text-[#f0047f] hover:bg-[#f0047f]/10"
                                   >
                                     <Icon icon="solar:user-check-linear" width={16} />
                                     Активировать
@@ -279,8 +279,8 @@ export function OwnerUsersPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
-                <Icon icon="solar:user-cross-linear" width={24} className="text-red-500" />
+              <div className="w-12 h-12 rounded-full bg-[#f0047f]/10 flex items-center justify-center">
+                <Icon icon="solar:user-cross-linear" width={24} className="text-[#f0047f]" />
               </div>
             </div>
             <h3 className="text-lg font-semibold text-zinc-900 dark:text-white text-center mb-2">Деактивировать?</h3>
@@ -297,7 +297,7 @@ export function OwnerUsersPage() {
               <button
                 onClick={confirmDeactivate}
                 disabled={deleteUserMutation.isPending}
-                className="flex-1 py-2.5 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-500 transition-colors disabled:opacity-50"
+                className="flex-1 py-2.5 rounded-lg bg-[#f0047f] text-white text-sm font-medium hover:bg-[#f0047f] transition-colors disabled:opacity-50"
               >
                 {deleteUserMutation.isPending ? "..." : "Деактивировать"}
               </button>

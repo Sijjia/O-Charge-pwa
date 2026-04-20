@@ -53,13 +53,13 @@ export function TariffRuleForm({ onSubmit, onCancel, initial, isLoading }: Props
     });
   };
 
-  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-[#f0047f]/50 transition-colors";
   const labelCls = "block text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1";
 
   return (
     <div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-xl p-4 space-y-3">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2 text-red-400 text-xs">
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg px-3 py-2 text-[#f078b7] text-xs">
           {error}
         </div>
       )}
@@ -109,7 +109,7 @@ export function TariffRuleForm({ onSubmit, onCancel, initial, isLoading }: Props
         <button
           onClick={handleSubmit}
           disabled={isLoading}
-          className="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
+          className="flex items-center gap-1.5 px-4 py-2 bg-[#f0047f] hover:bg-[#f0047f] text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
         >
           {isLoading && <Icon icon="solar:refresh-linear" width={14} className="animate-spin" />}
           {initial ? "Сохранить" : "Добавить"}

@@ -172,8 +172,8 @@ export const StationCardCompact = memo(function StationCardCompact({
                 width={20}
                 className={`transition-colors ${
                   isFavorite(station.location_id)
-                    ? "text-red-500"
-                    : "text-gray-300 hover:text-red-400"
+                    ? "text-[#f0047f]"
+                    : "text-gray-300 hover:text-[#f078b7]"
                 }`}
               />
             </button>

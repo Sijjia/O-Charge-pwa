@@ -49,7 +49,7 @@ export const MapPage = () => {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="block w-full pl-11 pr-12 py-3.5 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl text-sm text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:ring-1 focus:ring-red-600/50 focus:border-red-600/50 outline-none shadow-xl shadow-zinc-200/50 dark:shadow-black/20 transition-all"
+            className="block w-full pl-11 pr-12 py-3.5 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl text-sm text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:ring-1 focus:ring-[#f0047f]/50 focus:border-[#f0047f]/50 outline-none shadow-xl shadow-zinc-200/50 dark:shadow-black/20 transition-all"
             placeholder="Поиск по названию или адресу..."
           />
           {searchQuery && (
@@ -91,7 +91,7 @@ export const MapPage = () => {
           </div>
         ) : error ? (
           <div className="flex items-center justify-center h-full p-4 text-center">
-            <p className="text-red-600">
+            <p className="text-[#f0047f]">
               Ошибка загрузки станций. Попробуйте позже.
             </p>
           </div>

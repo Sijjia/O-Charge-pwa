@@ -20,9 +20,9 @@ export function GuestPhonePage() {
   };
 
   return (
-    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white h-screen flex flex-col relative overflow-hidden selection:bg-red-500/30 transition-colors duration-300">
+    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white h-screen flex flex-col relative overflow-hidden selection:bg-[#f0047f]/30 transition-colors duration-300">
       {/* Decorative Top Gradient */}
-      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-red-900/5 dark:from-red-900/10 via-zinc-100/5 dark:via-zinc-900/5 to-transparent pointer-events-none select-none" />
+      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-[#5c0030]/5 dark:from-[#5c0030]/10 via-zinc-100/5 dark:via-zinc-900/5 to-transparent pointer-events-none select-none" />
 
       {/* Header */}
       <header className="flex justify-between items-center px-6 py-6 z-20">
@@ -50,7 +50,7 @@ export function GuestPhonePage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 w-fit mb-2">
               <Icon
                 icon="solar:smartphone-linear"
-                className="text-red-500"
+                className="text-[#f0047f]"
                 width={16}
               />
               <span className="text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400">
@@ -70,8 +70,8 @@ export function GuestPhonePage() {
             <div
               className={`group relative bg-white dark:bg-zinc-900/50 rounded-2xl border transition-all duration-300 shadow-sm dark:shadow-none ${
                 error
-                  ? "border-red-500/50 shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
-                  : "border-zinc-200 dark:border-zinc-800 focus-within:border-red-500/50 focus-within:bg-zinc-50 dark:focus-within:bg-zinc-900 focus-within:shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
+                  ? "border-[#f0047f]/50 shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
+                  : "border-zinc-200 dark:border-zinc-800 focus-within:border-[#f0047f]/50 focus-within:bg-zinc-50 dark:focus-within:bg-zinc-900 focus-within:shadow-[0_0_0_1px_rgba(239,68,68,0.2)]"
               }`}
               onClick={() => inputRef.current?.focus()}
             >
@@ -104,7 +104,7 @@ export function GuestPhonePage() {
             </div>
 
             {error && (
-              <p className="text-sm text-red-500 px-2" role="alert">
+              <p className="text-sm text-[#f0047f] px-2" role="alert">
                 {error}
               </p>
             )}
@@ -123,7 +123,7 @@ export function GuestPhonePage() {
             className={`group w-full h-14 text-white text-base font-medium rounded-xl flex items-center justify-center gap-2 px-6 transition-all duration-300 active:scale-[0.98] ${
               !isValid
                 ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-500 shadow-lg shadow-red-900/20"
+                : "bg-[#f0047f] hover:bg-[#f0047f] shadow-lg shadow-[#5c0030]/20"
             }`}
           >
             <span>Далее</span>

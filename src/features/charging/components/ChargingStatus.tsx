@@ -119,7 +119,7 @@ export function ChargingStatus({
       case "finished":
         return "text-gray-400 bg-zinc-900/50";
       case "faulted":
-        return "text-red-600 bg-red-500/10";
+        return "text-[#f0047f] bg-[#f0047f]/10";
       default:
         return "text-gray-400 bg-zinc-900/50";
     }
@@ -209,7 +209,7 @@ export function ChargingStatus({
         <button
           onClick={handleStopCharging}
           disabled={isStoppingCharging}
-          className="w-full mt-6 px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 transition-colors flex items-center justify-center"
+          className="w-full mt-6 px-4 py-3 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] disabled:opacity-50 transition-colors flex items-center justify-center"
         >
           {isStoppingCharging ? (
             <>

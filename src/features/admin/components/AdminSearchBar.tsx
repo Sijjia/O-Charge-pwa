@@ -31,14 +31,14 @@ export function AdminSearchBar({
         <Icon
           icon="solar:magnifer-linear"
           width={18}
-          className="text-zinc-400 group-focus-within:text-red-500 transition-colors"
+          className="text-zinc-400 group-focus-within:text-[#f0047f] transition-colors"
         />
       </div>
       <input
         type="text"
         value={internal}
         onChange={(e) => setInternal(e.target.value)}
-        className="block w-full pl-10 pr-3 py-2.5 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 text-sm transition-all shadow-sm"
+        className="block w-full pl-10 pr-3 py-2.5 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-[#f0047f] focus:border-[#f0047f] text-sm transition-all shadow-sm"
         placeholder={placeholder}
       />
     </div>

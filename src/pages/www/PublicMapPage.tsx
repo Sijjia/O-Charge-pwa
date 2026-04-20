@@ -52,9 +52,9 @@ const statusStyles = {
     text: "text-yellow-600 dark:text-yellow-500",
   },
   busy: {
-    badge: "bg-red-500/10 border-red-500/20",
-    dot: "bg-red-500",
-    text: "text-red-600 dark:text-red-500",
+    badge: "bg-[#f0047f]/10 border-[#f0047f]/20",
+    dot: "bg-[#f0047f]",
+    text: "text-[#f0047f] dark:text-[#f0047f]",
   },
 };
 
@@ -72,10 +72,10 @@ const pinColors = {
     inner: "bg-yellow-600 dark:bg-yellow-500",
   },
   red: {
-    ring: "bg-red-500",
-    outer: "bg-red-100 dark:bg-red-500/20 border-red-500",
+    ring: "bg-[#f0047f]",
+    outer: "bg-[#ffe0ef] dark:bg-[#f0047f]/20 border-[#f0047f]",
     shadow: "",
-    inner: "bg-red-600 dark:bg-red-500",
+    inner: "bg-[#f0047f] dark:bg-[#f0047f]",
   },
 };
 
@@ -158,7 +158,7 @@ export function PublicMapPage() {
                   <input type="checkbox" checked={checkedConnectors[name]} readOnly className="hidden" />
                   <div
                     className={`w-4 h-4 rounded border flex items-center justify-center transition-all ${checkedConnectors[name]
-                        ? "bg-red-600 border-red-600"
+                        ? "bg-[#f0047f] border-[#f0047f]"
                         : "border-zinc-300 dark:border-zinc-700 bg-transparent group-hover:border-zinc-400 dark:group-hover:border-zinc-500"
                       }`}
                   >
@@ -180,11 +180,11 @@ export function PublicMapPage() {
               <button
                 type="button"
                 onClick={() => setOnlyAvailable((v) => !v)}
-                className={`relative inline-flex h-5 w-10 items-center rounded-full transition-colors duration-300 ${onlyAvailable ? "bg-red-600" : "bg-zinc-300 dark:bg-zinc-800"
+                className={`relative inline-flex h-5 w-10 items-center rounded-full transition-colors duration-300 ${onlyAvailable ? "bg-[#f0047f]" : "bg-zinc-300 dark:bg-zinc-800"
                   }`}
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white border-2 transition-all duration-300 ${onlyAvailable ? "translate-x-5 border-red-600" : "translate-x-0.5 border-zinc-200 dark:border-zinc-900"
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white border-2 transition-all duration-300 ${onlyAvailable ? "translate-x-5 border-[#f0047f]" : "translate-x-0.5 border-zinc-200 dark:border-zinc-900"
                     }`}
                 />
               </button>
@@ -206,12 +206,12 @@ export function PublicMapPage() {
                   key={station.id}
                   onClick={() => setSelectedStation(station.id)}
                   className={`rounded-xl p-4 cursor-pointer transition-all relative overflow-hidden group shadow-sm dark:shadow-none ${isSelected
-                      ? "bg-white dark:bg-zinc-900 border border-red-500/30 hover:bg-red-50/50 dark:hover:bg-zinc-900/80"
+                      ? "bg-white dark:bg-zinc-900 border border-[#f0047f]/30 hover:bg-[#fff0f7]/50 dark:hover:bg-zinc-900/80"
                       : "bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:border-zinc-300 dark:hover:border-white/10"
                     }`}
                   style={{ animationDelay: `${idx * 0.05}s` }}
                 >
-                  {isSelected && <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-600" />}
+                  {isSelected && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#f0047f]" />}
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h3

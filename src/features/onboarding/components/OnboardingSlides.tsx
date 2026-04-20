@@ -23,7 +23,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Добро пожаловать в Red Petroleum",
+    title: "Добро пожаловать в O!Charge",
     description: "Зарядка электромобилей — просто и удобно",
     image: slide1,
   },
@@ -124,7 +124,7 @@ export function OnboardingSlides({
           >
             <div className="flex flex-col items-center text-center max-w-sm">
             {/* Image container */}
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden mb-8 shadow-2xl shadow-red-500/10 flex-shrink-0 relative">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden mb-8 shadow-2xl shadow-[#f0047f]/10 flex-shrink-0 relative">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -168,7 +168,7 @@ export function OnboardingSlides({
                 ])
               }
               className={`w-2 h-2 rounded-full transition-all duration-300 ${slideItem.id - 1 === currentSlide
-                  ? "w-6 bg-red-500"
+                  ? "w-6 bg-[#f0047f]"
                   : "bg-gray-600 hover:bg-gray-500"
                 }`}
               aria-label={`Слайд ${slideItem.id}`}
@@ -188,7 +188,7 @@ export function OnboardingSlides({
           )}
           <button
             onClick={goToNext}
-            className={`flex-1 py-4 px-6 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 ${currentSlide === 0 ? "w-full" : ""
+            className={`flex-1 py-4 px-6 rounded-xl bg-[#f0047f] text-white font-semibold hover:bg-[#c00366] transition-colors flex items-center justify-center gap-2 ${currentSlide === 0 ? "w-full" : ""
               }`}
           >
             {isLastSlide ? "Начать" : "Далее"}

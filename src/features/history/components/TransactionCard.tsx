@@ -34,7 +34,7 @@ export const TransactionCard = memo(function TransactionCard({ transaction }: Tr
         break;
       case 'charge':
         iconName = 'solar:alt-arrow-up-linear';
-        amountColor = 'text-red-600';
+        amountColor = 'text-[#f0047f]';
         break;
       case 'refund':
         iconName = 'solar:refresh-linear';
@@ -71,7 +71,7 @@ export const TransactionCard = memo(function TransactionCard({ transaction }: Tr
     return {
       className: transaction.status === 'pending'
         ? 'bg-yellow-500/15 text-yellow-400'
-        : 'bg-red-500/15 text-red-400',
+        : 'bg-[#f0047f]/15 text-[#f078b7]',
       text: transaction.status === 'pending' ? 'В обработке' : 'Ошибка'
     };
   }, [transaction.status]);

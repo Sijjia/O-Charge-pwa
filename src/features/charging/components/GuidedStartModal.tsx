@@ -60,13 +60,13 @@ export function GuidedStartModal({
         <div className="space-y-4">
           {/* Issues / Warnings */}
           {hasIssues && (
-            <div className="p-4 bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 rounded-[20px] flex items-start gap-3">
-              <Icon icon="solar:danger-triangle-linear" width={18} className="text-red-500 dark:text-red-400 shrink-0 mt-0.5" />
+            <div className="p-4 bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 rounded-[20px] flex items-start gap-3">
+              <Icon icon="solar:danger-triangle-linear" width={18} className="text-[#f0047f] dark:text-[#f078b7] shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-semibold text-red-600 dark:text-red-400 mb-1">
+                <p className="text-sm font-semibold text-[#f0047f] dark:text-[#f078b7] mb-1">
                   Проблемы для старта
                 </p>
-                <ul className="list-disc pl-4 text-sm text-red-600 dark:text-red-400 space-y-0.5">
+                <ul className="list-disc pl-4 text-sm text-[#f0047f] dark:text-[#f078b7] space-y-0.5">
                   {issues.map((it) => (
                     <li key={it}>{it}</li>
                   ))}
@@ -252,7 +252,7 @@ export function GuidedStartModal({
               onChange={(e) => setCableConnected(e.target.checked)}
             />
             <div
-              className="w-6 h-6 rounded-lg border-[1.5px] border-zinc-300 dark:border-zinc-600 bg-white dark:bg-transparent peer-checked:bg-red-600 peer-checked:border-red-600 flex items-center justify-center transition-all group-hover:border-zinc-400 dark:group-hover:border-zinc-500"
+              className="w-6 h-6 rounded-lg border-[1.5px] border-zinc-300 dark:border-zinc-600 bg-white dark:bg-transparent peer-checked:bg-[#f0047f] peer-checked:border-[#f0047f] flex items-center justify-center transition-all group-hover:border-zinc-400 dark:group-hover:border-zinc-500"
               style={{
                 transition:
                   "transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s, border-color 0.2s",
@@ -276,7 +276,7 @@ export function GuidedStartModal({
         <button
           className={`w-full py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2.5 group overflow-hidden relative transition-all duration-300 ${
             canStart
-              ? "bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]"
+              ? "bg-[#f0047f] hover:bg-[#f0047f] active:scale-[0.98] text-white shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]"
               : "bg-zinc-200 dark:bg-zinc-700 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
           }`}
           disabled={!canStart}

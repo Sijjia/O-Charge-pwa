@@ -39,7 +39,7 @@ const STATUS_COLORS: Record<ConnectorStatusType, string> = {
   charging: "bg-ev-status-charging", // #3B82F6 - синий
   occupied: "bg-ev-status-occupied", // #F59E0B - жёлтый
   offline: "bg-ev-status-offline", // #9CA3AF - серый
-  faulted: "bg-ev-status-faulted", // #EF4444 - красный
+  faulted: "bg-ev-status-faulted", // #f078b7 - красный
 };
 
 /**

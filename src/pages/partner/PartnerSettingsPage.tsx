@@ -88,7 +88,7 @@ export function PartnerSettingsPage() {
               <div className="mt-4 space-y-2">
                 {[
                   { label: "Версия", value: "1.0.0" },
-                  { label: "Платформа", value: "Red Charge" },
+                  { label: "Платформа", value: "O!Charge" },
                 ].map((item) => (
                   <div
                     key={item.label}

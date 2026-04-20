@@ -228,7 +228,7 @@ export function AdminReservesPage() {
         {/* Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 text-center">
-            <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-500 mx-auto mb-4" />
+            <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f0047f] mx-auto mb-4" />
             <p className="text-sm text-zinc-500">
               {error instanceof Error ? error.message : "Не удалось загрузить бронирования"}
             </p>

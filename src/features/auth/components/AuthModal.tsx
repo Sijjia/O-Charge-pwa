@@ -119,8 +119,8 @@ export function AuthModal({
 
               {/* Icon */}
               <div className="flex justify-center mb-5">
-                <div className="w-16 h-16 rounded-full bg-red-600/10 border border-red-600/20 flex items-center justify-center">
-                  <Icon icon="solar:lock-keyhole-linear" width={32} className="text-red-500" />
+                <div className="w-16 h-16 rounded-full bg-[#f0047f]/10 border border-[#f0047f]/20 flex items-center justify-center">
+                  <Icon icon="solar:lock-keyhole-linear" width={32} className="text-[#f0047f]" />
                 </div>
               </div>
 
@@ -135,7 +135,7 @@ export function AuthModal({
               {/* Login button */}
               <button
                 onClick={handleLogin}
-                className="w-full py-3.5 bg-red-600 hover:bg-red-500 text-white rounded-xl font-semibold text-base transition-colors active:scale-[0.98]"
+                className="w-full py-3.5 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-semibold text-base transition-colors active:scale-[0.98]"
               >
                 Войти / Зарегистрироваться
               </button>

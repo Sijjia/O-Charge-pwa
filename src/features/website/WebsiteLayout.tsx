@@ -26,7 +26,7 @@ export function WebsiteLayout() {
 
   const activeLinkClass = "text-zinc-900 dark:text-white font-medium";
   const inactiveLinkClass =
-    "text-zinc-500 dark:text-white/60 hover:text-red-600 dark:hover:text-white font-medium text-[13px]";
+    "text-zinc-500 dark:text-white/60 hover:text-[#f0047f] dark:hover:text-white font-medium text-[13px]";
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#0A0E17] transition-colors">
@@ -35,11 +35,11 @@ export function WebsiteLayout() {
         <div className="flex h-16 max-w-7xl mx-auto px-6 items-center justify-between">
           {/* Logo */}
           <Link to="/www" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl overflow-hidden bg-red-600 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl overflow-hidden bg-[#f0047f] flex items-center justify-center">
               <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
             </div>
             <span className="text-[15px] font-bold text-zinc-900 dark:text-white tracking-tight">
-              Red Charge
+              O!Charge
             </span>
           </Link>
 
@@ -78,13 +78,13 @@ export function WebsiteLayout() {
               <div className="hidden sm:flex items-center gap-3">
                 <Link
                   to="/auth"
-                  className="text-[13px] font-bold text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors"
+                  className="text-[13px] font-bold text-zinc-900 dark:text-white hover:text-[#f0047f] dark:hover:text-[#f0047f] transition-colors"
                 >
                   Войти
                 </Link>
                 <Link
                   to="/install"
-                  className="shine-button h-8 px-4 rounded-full bg-red-600 hover:bg-red-500 text-[13px] font-semibold text-white transition-all items-center shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] flex"
+                  className="shine-button h-8 px-4 rounded-full bg-[#f0047f] hover:bg-[#f0047f] text-[13px] font-semibold text-white transition-all items-center shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] flex"
                 >
                   Приложение
                 </Link>
@@ -143,7 +143,7 @@ export function WebsiteLayout() {
                   <Link
                     to="/install"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-red-600 font-semibold"
+                    className="block py-2 text-sm text-[#f0047f] font-semibold"
                   >
                     Скачать приложение
                   </Link>
@@ -172,11 +172,11 @@ export function WebsiteLayout() {
             {/* Logo & Description */}
             <div className="col-span-2">
               <Link to="/www" className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 rounded-xl overflow-hidden bg-red-600 flex items-center justify-center">
+                <div className="w-9 h-9 rounded-xl overflow-hidden bg-[#f0047f] flex items-center justify-center">
                   <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
                 </div>
                 <span className="text-[15px] font-bold text-zinc-900 dark:text-white tracking-tight">
-                  Red Charge
+                  O!Charge
                 </span>
               </Link>
               <p className="text-[13px] text-zinc-500 dark:text-white/40 max-w-xs leading-relaxed font-medium">
@@ -195,7 +195,7 @@ export function WebsiteLayout() {
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="hover:text-red-600 dark:hover:text-white transition-colors"
+                      className="hover:text-[#f0047f] dark:hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -249,14 +249,14 @@ export function WebsiteLayout() {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-200 dark:border-zinc-800">
             <div className="text-[12px] text-zinc-400 dark:text-white/30 mb-4 md:mb-0 font-medium">
-              &copy; 2026 Red Charge by Red Petroleum. Все права защищены.
+              &copy; 2026 O!Charge by O!Charge. Все права защищены.
             </div>
             <div className="flex items-center gap-6">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-400 dark:text-white/40 hover:text-red-600 dark:hover:text-white transition-colors"
+                className="text-zinc-400 dark:text-white/40 hover:text-[#f0047f] dark:hover:text-white transition-colors"
               >
                 <Icon icon="simple-icons:instagram" width={18} />
               </a>
@@ -264,7 +264,7 @@ export function WebsiteLayout() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-400 dark:text-white/40 hover:text-red-600 dark:hover:text-white transition-colors"
+                className="text-zinc-400 dark:text-white/40 hover:text-[#f0047f] dark:hover:text-white transition-colors"
               >
                 <Icon icon="simple-icons:facebook" width={18} />
               </a>
@@ -272,7 +272,7 @@ export function WebsiteLayout() {
                 href="https://t.me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-400 dark:text-white/40 hover:text-red-600 dark:hover:text-white transition-colors"
+                className="text-zinc-400 dark:text-white/40 hover:text-[#f0047f] dark:hover:text-white transition-colors"
               >
                 <Icon icon="simple-icons:telegram" width={18} />
               </a>

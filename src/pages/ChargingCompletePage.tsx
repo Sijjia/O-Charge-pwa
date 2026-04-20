@@ -148,7 +148,7 @@ export const ChargingCompletePage = () => {
       if ('share' in navigator) {
         await navigator.share({
           title: "Зарядка завершена",
-          text: `Я зарядил свой электромобиль на станции Red Petroleum!\nОбъем: ${sessionData?.energyDelivered.toFixed(1)} кВтч\nСтоимость: ${sessionData?.totalCost.toFixed(0)} сом`,
+          text: `Я зарядил свой электромобиль на станции O!Charge!\nОбъем: ${sessionData?.energyDelivered.toFixed(1)} кВтч\nСтоимость: ${sessionData?.totalCost.toFixed(0)} сом`,
         });
       } else {
         logger.info("Web Share API not supported");
@@ -268,7 +268,7 @@ export const ChargingCompletePage = () => {
             Зарядка завершена!
           </h2>
           <p className="text-zinc-500 dark:text-zinc-400 text-xs text-center">
-            Спасибо, что выбрали Red Petroleum
+            Спасибо, что выбрали O!Charge
           </p>
         </div>
 

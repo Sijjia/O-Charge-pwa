@@ -54,7 +54,7 @@ export function EditProfilePage() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
       {/* Ambient glows */}
-      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-red-600/5 dark:bg-red-600/10 blur-[100px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[100px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="px-5 pt-6 pb-2 flex items-center justify-between z-20 relative shrink-0">
@@ -76,11 +76,11 @@ export function EditProfilePage() {
         <div className="flex justify-center mb-8">
           <div className="relative">
             <div className="w-24 h-24 rounded-full p-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden flex items-center justify-center shadow-sm dark:shadow-none transition-colors">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#f0047f] to-[#c00366] flex items-center justify-center">
                 <Icon icon="solar:user-bold" width={40} className="text-white" />
               </div>
             </div>
-            <div className="absolute inset-0 bg-red-600/20 blur-xl rounded-full z-[-1] transform translate-y-2" />
+            <div className="absolute inset-0 bg-[#f0047f]/20 blur-xl rounded-full z-[-1] transform translate-y-2" />
           </div>
         </div>
 
@@ -91,7 +91,7 @@ export function EditProfilePage() {
             <label className="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2 px-1">
               Имя
             </label>
-            <div className="group relative bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 focus-within:border-red-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
+            <div className="group relative bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 focus-within:border-[#f0047f]/50 transition-all duration-300 shadow-sm dark:shadow-none">
               <label className="flex items-center h-[56px] px-4 w-full cursor-text">
                 <div className="text-zinc-400 dark:text-zinc-500 mr-3">
                   <Icon icon="solar:user-linear" width={20} />
@@ -116,7 +116,7 @@ export function EditProfilePage() {
             <label className="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2 px-1">
               Email
             </label>
-            <div className="group relative bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 focus-within:border-red-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
+            <div className="group relative bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 focus-within:border-[#f0047f]/50 transition-all duration-300 shadow-sm dark:shadow-none">
               <label className="flex items-center h-[56px] px-4 w-full cursor-text">
                 <div className="text-zinc-400 dark:text-zinc-500 mr-3">
                   <Icon icon="solar:letter-linear" width={20} />
@@ -161,9 +161,9 @@ export function EditProfilePage() {
 
         {/* Error */}
         {error && (
-          <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-            <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-            <p className="text-red-400 text-sm">{error}</p>
+          <div className="mt-4 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+            <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+            <p className="text-[#f078b7] text-sm">{error}</p>
           </div>
         )}
 
@@ -185,7 +185,7 @@ export function EditProfilePage() {
             className={`w-full py-4 rounded-2xl text-base font-semibold transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2 ${
               !hasChanges || isLoading
                 ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-900/20"
+                : "bg-[#f0047f] hover:bg-[#f0047f] text-white shadow-lg shadow-[#5c0030]/20"
             }`}
           >
             {isLoading ? (

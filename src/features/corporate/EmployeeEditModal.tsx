@@ -54,7 +54,7 @@ export function EmployeeEditModal({ employee, onClose, onSuccess }: Props) {
     }
   };
 
-  const inputCls = "w-full px-3 py-2.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-3 py-2.5 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
@@ -76,7 +76,7 @@ export function EmployeeEditModal({ employee, onClose, onSuccess }: Props) {
         {/* Body */}
         <div className="px-6 py-5 space-y-4">
           {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2 text-red-400 text-sm">
+            <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl px-3 py-2 text-[#f078b7] text-sm">
               {error}
             </div>
           )}
@@ -119,7 +119,7 @@ export function EmployeeEditModal({ employee, onClose, onSuccess }: Props) {
           <button
             onClick={handleSubmit}
             disabled={isLoading}
-            className="flex items-center gap-1.5 px-5 py-2.5 bg-red-600 hover:bg-red-500 text-white text-sm font-medium rounded-xl transition-colors disabled:opacity-50"
+            className="flex items-center gap-1.5 px-5 py-2.5 bg-[#f0047f] hover:bg-[#f0047f] text-white text-sm font-medium rounded-xl transition-colors disabled:opacity-50"
           >
             {isLoading && <Icon icon="solar:refresh-linear" width={14} className="animate-spin" />}
             Сохранить

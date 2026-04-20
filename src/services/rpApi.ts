@@ -114,7 +114,7 @@ interface SupabaseLocationRow {
 
 const API_VERSION = "/api/v1";
 // API origin: пустая строка = relative URL через proxy (Vercel rewrites / nginx)
-// Для прямого доступа к backend задайте VITE_API_URL=https://ocpp.asystem.kg
+// Для прямого доступа к backend задайте VITE_API_URL=https://ocpp.ocharge.kg
 const API_ORIGIN: string = import.meta.env.PROD
   ? (import.meta.env.VITE_API_URL as string | undefined) || ""
   : "";

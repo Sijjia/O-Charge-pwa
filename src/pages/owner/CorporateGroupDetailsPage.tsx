@@ -61,7 +61,7 @@ export function CorporateGroupDetailsPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка...</p>
         </div>
       </div>
@@ -71,9 +71,9 @@ export function CorporateGroupDetailsPage() {
   if (error || !group) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error instanceof Error ? error.message : "Группа не найдена"}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error instanceof Error ? error.message : "Группа не найдена"}</p>
         </div>
       </div>
     );
@@ -141,7 +141,7 @@ export function CorporateGroupDetailsPage() {
     } catch { /* error handled by mutation */ }
   };
 
-  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
   const employees = group.employees || [];
   const report = reportData?.data;
@@ -167,13 +167,13 @@ export function CorporateGroupDetailsPage() {
               {group.billing_type}
             </span>
             <span className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full ${
-              group.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400"
+              group.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-[#f0047f]/10 text-[#f078b7]"
             }`}>
               {group.is_active ? "Активен" : "Заблокирован"}
             </span>
           </div>
           {group.blocked_reason && (
-            <p className="text-xs text-red-400 mt-1">Причина: {group.blocked_reason}</p>
+            <p className="text-xs text-[#f078b7] mt-1">Причина: {group.blocked_reason}</p>
           )}
         </div>
       </div>
@@ -190,14 +190,14 @@ export function CorporateGroupDetailsPage() {
               <button
                 onClick={saveEdit}
                 disabled={updateGroup.isPending}
-                className="flex items-center gap-1 px-3 py-1.5 text-xs bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center gap-1 px-3 py-1.5 text-xs bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-lg transition-colors disabled:opacity-50"
               >
                 {updateGroup.isPending && <Icon icon="solar:refresh-linear" width={12} className="animate-spin" />}
                 Сохранить
               </button>
             </div>
           ) : (
-            <button onClick={startEdit} className="flex items-center gap-1 px-3 py-1.5 text-xs text-red-600 hover:bg-red-500/10 rounded-lg transition-colors">
+            <button onClick={startEdit} className="flex items-center gap-1 px-3 py-1.5 text-xs text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors">
               <Icon icon="solar:pen-linear" width={14} />
               Изменить
             </button>
@@ -282,7 +282,7 @@ export function CorporateGroupDetailsPage() {
             onClick={() => setShowBlock(true)}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all active:scale-[0.98] ${
               group.is_active
-                ? "bg-red-600 hover:bg-red-500 text-white"
+                ? "bg-[#f0047f] hover:bg-[#f0047f] text-white"
                 : "bg-emerald-600 hover:bg-emerald-500 text-white"
             }`}
           >
@@ -298,7 +298,7 @@ export function CorporateGroupDetailsPage() {
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">Сотрудники ({employees.length})</h2>
           <button
             onClick={() => setShowAddEmployee(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-red-600 hover:bg-red-500/10 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors"
           >
             <Icon icon="solar:add-circle-linear" width={16} />
             Добавить
@@ -358,7 +358,7 @@ export function CorporateGroupDetailsPage() {
                         <td className="px-4 py-3 text-sm text-zinc-700 dark:text-zinc-300">{(emp.current_month_spent || 0).toLocaleString()}</td>
                         <td className="px-4 py-3">
                           <span className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full ${
-                            emp.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400"
+                            emp.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-[#f0047f]/10 text-[#f078b7]"
                           }`}>{emp.is_active ? "Актив." : "Неакт."}</span>
                         </td>
                         <td className="px-4 py-3">
@@ -391,7 +391,7 @@ export function CorporateGroupDetailsPage() {
                         <td className="px-4 py-3 text-sm text-zinc-700 dark:text-zinc-300">{(emp.current_month_spent || 0).toLocaleString()}</td>
                         <td className="px-4 py-3">
                           <span className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full ${
-                            emp.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400"
+                            emp.is_active ? "bg-emerald-500/10 text-emerald-400" : "bg-[#f0047f]/10 text-[#f078b7]"
                           }`}>{emp.is_active ? "Актив." : "Неакт."}</span>
                         </td>
                         <td className="px-4 py-3">
@@ -400,7 +400,7 @@ export function CorporateGroupDetailsPage() {
                               <button
                                 onClick={() => handleRemoveEmployee(emp.id)}
                                 disabled={removeEmployee.isPending}
-                                className="p-1 hover:bg-red-500/10 rounded text-red-500 text-xs"
+                                className="p-1 hover:bg-[#f0047f]/10 rounded text-[#f0047f] text-xs"
                               >
                                 <Icon icon="solar:check-circle-linear" width={16} />
                               </button>
@@ -413,7 +413,7 @@ export function CorporateGroupDetailsPage() {
                               <button onClick={() => startEmpEdit(emp as CorporateEmployee)} className="p-1 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-400">
                                 <Icon icon="solar:pen-linear" width={14} />
                               </button>
-                              <button onClick={() => setConfirmDelete(emp.id)} className="p-1 hover:bg-red-500/10 rounded text-zinc-400 hover:text-red-400">
+                              <button onClick={() => setConfirmDelete(emp.id)} className="p-1 hover:bg-[#f0047f]/10 rounded text-zinc-400 hover:text-[#f078b7]">
                                 <Icon icon="solar:trash-bin-minimalistic-linear" width={14} />
                               </button>
                             </div>

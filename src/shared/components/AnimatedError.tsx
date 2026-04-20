@@ -18,7 +18,7 @@ export function AnimatedError({ error, className = "", icon = true }: AnimatedEr
                     transition={{ duration: 0.2 }}
                     className={`overflow-hidden ${className}`}
                 >
-                    <div className="flex items-start gap-1.5 mt-1.5 text-sm text-red-600 dark:text-red-400">
+                    <div className="flex items-start gap-1.5 mt-1.5 text-sm text-[#f0047f] dark:text-[#f078b7]">
                         {icon && (
                             <Icon
                                 icon="solar:danger-circle-linear"

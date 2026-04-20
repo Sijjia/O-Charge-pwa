@@ -242,7 +242,7 @@ function DemoLoginSection() {
         onClick={() => loginAs("admin")}
         className="w-full flex items-center gap-3 px-4 py-3 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-xl text-zinc-900 dark:text-white transition-colors active:scale-[0.98]"
       >
-        <Icon icon="solar:shield-user-linear" width={20} className="text-red-400" />
+        <Icon icon="solar:shield-user-linear" width={20} className="text-[#f078b7]" />
         <div className="text-left">
           <p className="font-medium">Системный администратор</p>
           <p className="text-xs text-zinc-500 dark:text-gray-400">Вся сеть: 35 станций · 20 локаций · 3 города</p>
@@ -276,11 +276,11 @@ function GuestFlowSection() {
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
           placeholder="Код станции"
-          className="flex-1 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+          className="flex-1 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0047f]"
         />
         <button
           onClick={() => navigate(`/guest/${code}`)}
-          className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
+          className="px-4 py-2 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg font-medium transition-colors"
         >
           Открыть
         </button>
@@ -303,7 +303,7 @@ function FeaturesDemo() {
         onClick={() => navigate("/settings#notifications")}
         className="w-full flex items-center gap-3 px-4 py-3 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-xl text-zinc-900 dark:text-white transition-colors active:scale-[0.98]"
       >
-        <Icon icon="solar:bell-linear" width={20} className="text-red-400" />
+        <Icon icon="solar:bell-linear" width={20} className="text-[#f078b7]" />
         <div className="text-left">
           <p className="font-medium">Push Notifications UI</p>
           <p className="text-xs text-zinc-500 dark:text-gray-400">6 типов, тихие часы, история, тест</p>
@@ -405,7 +405,7 @@ function RealLoginSection() {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="+996XXXXXXXXX"
-          className="flex-1 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-red-500 text-sm"
+          className="flex-1 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0047f] text-sm"
         />
         <button
           onClick={goToLogin}
@@ -435,12 +435,12 @@ export function SandboxPage() {
       <div className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 px-4 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#f0047f] rounded-xl flex items-center justify-center">
               <Icon icon="solar:test-tube-linear" width={24} className="text-white" />
             </div>
             <div>
               <h1 className="text-xl font-bold">Sandbox</h1>
-              <p className="text-xs text-zinc-500 dark:text-gray-400">Red Petroleum EV — Dev Tools</p>
+              <p className="text-xs text-zinc-500 dark:text-gray-400">O!Charge EV — Dev Tools</p>
             </div>
           </div>
           <div className="flex items-center gap-2 text-sm">
@@ -469,7 +469,7 @@ export function SandboxPage() {
         {/* A) Quick Navigation */}
         <section>
           <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-            <Icon icon="solar:compass-linear" width={20} className="text-red-400" />
+            <Icon icon="solar:compass-linear" width={20} className="text-[#f078b7]" />
             Быстрая навигация
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

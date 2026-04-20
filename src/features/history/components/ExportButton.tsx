@@ -83,7 +83,7 @@ export const ExportButton: React.FC<ExportButtonProps> = ({
             onClick={handleExportPDF}
             className="w-full flex items-center gap-3 px-4 py-3 hover:bg-zinc-900/50 transition-colors rounded-t-lg"
           >
-            <Icon icon="solar:document-text-linear" width={18} className="text-red-500" />
+            <Icon icon="solar:document-text-linear" width={18} className="text-[#f0047f]" />
             <span>Экспорт в PDF</span>
           </button>
 

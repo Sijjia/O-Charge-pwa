@@ -122,7 +122,7 @@ export function TariffsPage() {
             <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-md">
               Заряжайтесь без регистрации. Оплата картой. Минимальная сумма пополнения — 200 сом.
             </p>
-            <div className="flex items-center gap-2 text-xs text-red-500 mt-2">
+            <div className="flex items-center gap-2 text-xs text-[#f0047f] mt-2">
               <Icon icon="solar:danger-circle-linear" width={14} />
               <span>Ночной тариф недоступен для гостей</span>
             </div>
@@ -143,7 +143,7 @@ export function TariffsPage() {
         <div className="relative overflow-hidden bg-zinc-900 dark:bg-white rounded-2xl p-8 text-white dark:text-zinc-900 shadow-2xl">
           {/* Decorative background elements */}
           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-zinc-800 dark:bg-zinc-200 rounded-full opacity-20 blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-red-600 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-[#f0047f] rounded-full opacity-20 blur-3xl"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-4 max-w-lg">

@@ -90,7 +90,7 @@ export function CorporateEmployeesPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка сотрудников...</p>
         </div>
       </div>
@@ -100,9 +100,9 @@ export function CorporateEmployeesPage() {
   if (error) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">
             {error instanceof Error ? error.message : "Не удалось загрузить сотрудников"}
           </p>
         </div>
@@ -126,7 +126,7 @@ export function CorporateEmployeesPage() {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
+          className="flex items-center gap-2 px-4 py-2.5 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
         >
           <Icon icon="solar:user-plus-linear" width={18} />
           <span className="hidden sm:inline">Добавить</span>
@@ -147,7 +147,7 @@ export function CorporateEmployeesPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Поиск по имени или телефону..."
-              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-600 focus:outline-none focus:border-red-500/50 transition-colors"
+              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#f0047f]/50 transition-colors"
             />
           </div>
         </div>
@@ -229,11 +229,11 @@ export function CorporateEmployeesPage() {
                   <button
                     onClick={() => handleRemove(emp)}
                     disabled={removingId === emp.id}
-                    className="w-8 h-8 rounded-lg hover:bg-red-500/10 flex items-center justify-center text-zinc-500 hover:text-red-400 transition-colors"
+                    className="w-8 h-8 rounded-lg hover:bg-[#f0047f]/10 flex items-center justify-center text-zinc-500 hover:text-[#f078b7] transition-colors"
                     title="Удалить"
                   >
                     {removingId === emp.id ? (
-                      <div className="w-4 h-4 border-2 border-red-400/30 border-t-red-400 rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-[#f078b7]/30 border-t-[#f078b7] rounded-full animate-spin" />
                     ) : (
                       <Icon icon="solar:trash-bin-minimalistic-linear" width={16} />
                     )}
@@ -269,7 +269,7 @@ export function CorporateEmployeesPage() {
             </p>
             <button
               onClick={() => setShowAddModal(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
+              className="flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
             >
               <Icon icon="solar:user-plus-linear" width={18} />
               Добавить сотрудника

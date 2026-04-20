@@ -86,7 +86,7 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
-            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm">
+            <div className="p-3 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg text-[#f078b7] text-sm">
               {error}
             </div>
           )}
@@ -94,14 +94,14 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
           {/* Email */}
           <div>
             <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-              Email <span className="text-red-500">*</span>
+              Email <span className="text-[#f0047f]">*</span>
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="user@example.com"
-              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
+              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
               required
             />
           </div>
@@ -109,7 +109,7 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
           {/* Password */}
           <div>
             <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-              Пароль <span className="text-red-500">*</span>
+              Пароль <span className="text-[#f0047f]">*</span>
             </label>
             <div className="relative">
               <input
@@ -117,7 +117,7 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Минимум 8 символов"
-                className="w-full px-4 py-2.5 pr-12 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                className="w-full px-4 py-2.5 pr-12 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
                 required
                 minLength={8}
               />
@@ -145,19 +145,19 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Иван Иванов"
-              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
+              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
             />
           </div>
 
           {/* Role */}
           <div>
             <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-              Роль <span className="text-red-500">*</span>
+              Роль <span className="text-[#f0047f]">*</span>
             </label>
             <select
               value={role}
               onChange={(e) => setRole(e.target.value as OwnerRole)}
-              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white dark:bg-zinc-900"
+              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] bg-white dark:bg-zinc-900"
             >
               <option value="operator">Оператор</option>
               <option value="admin">Администратор</option>
@@ -184,7 +184,7 @@ export function CreateUserModal({ isOpen, onClose }: CreateUserModalProps) {
             <button
               type="submit"
               disabled={createUserMutation.isPending}
-              className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-2.5 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {createUserMutation.isPending && (
                 <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />

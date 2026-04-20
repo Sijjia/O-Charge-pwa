@@ -143,7 +143,7 @@ export function TopupSuccessPage() {
               </div>
 
               {/* Timer */}
-              <div className="flex items-center gap-2 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 px-4 py-2 rounded-full text-xs font-semibold border border-red-100/50 dark:border-red-500/10 transition-colors duration-300">
+              <div className="flex items-center gap-2 bg-[#fff0f7] dark:bg-[#f0047f]/10 text-[#f0047f] dark:text-[#f078b7] px-4 py-2 rounded-full text-xs font-semibold border border-[#ffe0ef]/50 dark:border-[#f0047f]/10 transition-colors duration-300">
                 <Icon icon="solar:clock-circle-linear" width={16} />
                 <span className="tabular-nums tracking-wide">
                   {isDemoPayment ? "Тестовая оплата..." : "Ожидание оплаты..."}
@@ -157,7 +157,7 @@ export function TopupSuccessPage() {
               href={paymentUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-red-500 hover:text-red-400 text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-1.5 text-[#f0047f] hover:text-[#f078b7] text-sm font-medium transition-colors"
             >
               <Icon icon="solar:link-round-linear" width={14} />
               Открыть в Namba One
@@ -172,8 +172,8 @@ export function TopupSuccessPage() {
   if (paymentState === "failed") {
     return (
       <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col items-center justify-center px-6 select-none transition-colors duration-300">
-        <div className="w-20 h-20 rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center mb-6">
-          <Icon icon="solar:close-circle-linear" className="text-red-500" width={36} />
+        <div className="w-20 h-20 rounded-full bg-[#fff0f7] dark:bg-[#f0047f]/10 flex items-center justify-center mb-6">
+          <Icon icon="solar:close-circle-linear" className="text-[#f0047f]" width={36} />
         </div>
         <h2 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Платёж не прошёл</h2>
         <p className="text-sm text-zinc-500 dark:text-zinc-400 text-center mb-8">
@@ -182,7 +182,7 @@ export function TopupSuccessPage() {
         <div className="w-full max-w-sm flex gap-3">
           <button
             onClick={() => navigate("/topup")}
-            className="flex-1 py-3.5 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium transition-colors"
+            className="flex-1 py-3.5 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium transition-colors"
           >
             Попробовать снова
           </button>
@@ -202,7 +202,7 @@ export function TopupSuccessPage() {
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Ambient Glow */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0">
-        <div className="w-64 h-64 bg-red-500/20 dark:bg-red-500/40 blur-[100px] rounded-full" />
+        <div className="w-64 h-64 bg-[#f0047f]/20 dark:bg-[#f0047f]/40 blur-[100px] rounded-full" />
       </div>
 
       {/* Main Content */}
@@ -224,7 +224,7 @@ export function TopupSuccessPage() {
         {/* Amount (Red) */}
         {amount > 0 && (
           <div className="mb-8">
-            <div className="text-5xl font-semibold tracking-tighter text-red-500 flex items-center justify-center gap-1">
+            <div className="text-5xl font-semibold tracking-tighter text-[#f0047f] flex items-center justify-center gap-1">
               <span>+{amount}</span>
               <span className="text-2xl font-medium mt-3">сом</span>
             </div>

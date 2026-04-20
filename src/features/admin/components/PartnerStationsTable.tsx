@@ -10,7 +10,7 @@ export function PartnerStationsTable({ stations }: PartnerStationsTableProps) {
       case "active":
         return "bg-emerald-100/50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400";
       case "inactive":
-        return "bg-red-100/50 dark:bg-red-500/10 text-red-700 dark:text-red-400";
+        return "bg-[#ffe0ef]/50 dark:bg-[#f0047f]/10 text-[#c00366] dark:text-[#f078b7]";
       case "maintenance":
         return "bg-amber-100/50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400";
       default:

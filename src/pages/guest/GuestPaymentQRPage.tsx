@@ -80,7 +80,7 @@ export function GuestPaymentQRPage() {
   return (
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Ambient */}
-      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 dark:bg-red-600/10 blur-[90px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[90px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="px-5 pt-8 pb-4 flex items-center z-20 shrink-0 relative">
@@ -141,17 +141,17 @@ export function GuestPaymentQRPage() {
 
         {/* Error */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-4 w-full">
+          <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 mb-4 w-full">
             <div className="flex items-center gap-2 mb-3">
-              <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-              <p className="text-red-400 text-sm">{error}</p>
+              <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+              <p className="text-[#f078b7] text-sm">{error}</p>
             </div>
             <button
               onClick={() => {
                 stopPolling();
                 navigate("/guest/payment", { replace: true });
               }}
-              className="w-full py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-medium transition-colors"
+              className="w-full py-2.5 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-lg text-sm font-medium transition-colors"
             >
               Попробовать снова
             </button>
@@ -164,7 +164,7 @@ export function GuestPaymentQRPage() {
             href={paymentUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-red-400 hover:text-red-300 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#f078b7] hover:text-[#f078b7] text-sm font-medium transition-colors"
           >
             <Icon icon="solar:link-round-linear" width={14} />
             Открыть в Namba One
@@ -188,7 +188,7 @@ export function GuestPaymentQRPage() {
             stopPolling();
             navigate("/");
           }}
-          className="flex-1 py-3 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-colors"
+          className="flex-1 py-3 bg-[#f0047f] text-white rounded-xl font-medium hover:bg-[#c00366] transition-colors"
         >
           Закрыть
         </button>

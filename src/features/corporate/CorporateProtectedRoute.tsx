@@ -37,7 +37,7 @@ export function CorporateProtectedRoute() {
           <Icon
             icon="solar:refresh-linear"
             width={48}
-            className="text-red-500 animate-spin mx-auto mb-4"
+            className="text-[#f0047f] animate-spin mx-auto mb-4"
           />
           <p className="text-zinc-500 dark:text-gray-400">Проверка авторизации...</p>
         </div>
@@ -54,7 +54,7 @@ export function CorporateProtectedRoute() {
             <Icon
               icon="solar:refresh-linear"
               width={48}
-              className="text-red-500 animate-spin mx-auto mb-4"
+              className="text-[#f0047f] animate-spin mx-auto mb-4"
             />
             <p className="text-zinc-500 dark:text-gray-400">Инициализация демо...</p>
           </div>

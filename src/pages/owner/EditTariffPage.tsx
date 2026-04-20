@@ -99,7 +99,7 @@ export function EditTariffPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка...</p>
         </div>
       </div>
@@ -109,16 +109,16 @@ export function EditTariffPage() {
   if (error || !plan) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error instanceof Error ? error.message : "Тарифный план не найден"}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error instanceof Error ? error.message : "Тарифный план не найден"}</p>
         </div>
       </div>
     );
   }
 
   const rules = plan.rules || [];
-  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
   return (
     <div className="p-6 lg:p-8 max-w-3xl">
@@ -137,9 +137,9 @@ export function EditTariffPage() {
       </div>
 
       {formError && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{formError}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{formError}</p>
         </div>
       )}
 
@@ -159,7 +159,7 @@ export function EditTariffPage() {
             <label className="flex items-center gap-3 cursor-pointer">
               <div
                 onClick={() => setIsDefault(!isDefault)}
-                className={`w-10 h-6 rounded-full transition-colors relative cursor-pointer ${isDefault ? "bg-red-600" : "bg-zinc-300 dark:bg-zinc-700"}`}
+                className={`w-10 h-6 rounded-full transition-colors relative cursor-pointer ${isDefault ? "bg-[#f0047f]" : "bg-zinc-300 dark:bg-zinc-700"}`}
               >
                 <div className={`w-4 h-4 bg-white rounded-full absolute top-1 transition-transform ${isDefault ? "translate-x-5" : "translate-x-1"}`} />
               </div>
@@ -185,7 +185,7 @@ export function EditTariffPage() {
           {!showRuleForm && !editingRule && (
             <button
               onClick={() => setShowRuleForm(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-red-600 hover:bg-red-500/10 rounded-lg transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors"
             >
               <Icon icon="solar:add-circle-linear" width={16} />
               Добавить
@@ -232,9 +232,9 @@ export function EditTariffPage() {
                   <button
                     onClick={() => handleDeleteRule(rule.id)}
                     disabled={deleteRuleMut.isPending}
-                    className="p-1.5 hover:bg-red-500/10 rounded-lg transition-colors"
+                    className="p-1.5 hover:bg-[#f0047f]/10 rounded-lg transition-colors"
                   >
-                    <Icon icon="solar:trash-bin-minimalistic-linear" width={16} className="text-zinc-400 hover:text-red-400" />
+                    <Icon icon="solar:trash-bin-minimalistic-linear" width={16} className="text-zinc-400 hover:text-[#f078b7]" />
                   </button>
                 </div>
               </div>
@@ -255,7 +255,7 @@ export function EditTariffPage() {
       <div className="flex items-center justify-between">
         <button
           onClick={() => setShowDeleteConfirm(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 text-sm text-red-500 hover:bg-red-500/10 rounded-xl transition-colors"
+          className="flex items-center gap-1.5 px-4 py-2.5 text-sm text-[#f0047f] hover:bg-[#f0047f]/10 rounded-xl transition-colors"
         >
           <Icon icon="solar:trash-bin-minimalistic-linear" width={16} />
           Удалить план
@@ -270,7 +270,7 @@ export function EditTariffPage() {
           <button
             onClick={handleSavePlan}
             disabled={updatePlanMut.isPending}
-            className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
+            className="flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
           >
             {updatePlanMut.isPending && <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />}
             Сохранить
@@ -283,8 +283,8 @@ export function EditTariffPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={() => setShowDeleteConfirm(false)}>
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-xl w-full max-w-sm mx-4 p-6" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
-                <Icon icon="solar:trash-bin-minimalistic-linear" width={20} className="text-red-500" />
+              <div className="w-10 h-10 rounded-full bg-[#f0047f]/10 flex items-center justify-center">
+                <Icon icon="solar:trash-bin-minimalistic-linear" width={20} className="text-[#f0047f]" />
               </div>
               <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Удалить план?</h3>
             </div>
@@ -298,7 +298,7 @@ export function EditTariffPage() {
               <button
                 onClick={handleDelete}
                 disabled={deletePlanMut.isPending}
-                className="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center gap-1.5 px-4 py-2 bg-[#f0047f] hover:bg-[#f0047f] text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
               >
                 {deletePlanMut.isPending && <Icon icon="solar:refresh-linear" width={14} className="animate-spin" />}
                 Удалить

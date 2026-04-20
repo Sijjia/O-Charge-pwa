@@ -100,7 +100,7 @@ export function BookingModal({
                   onClick={() => setDuration(opt.value)}
                   className={`py-2.5 rounded-xl text-sm font-medium transition-all ${
                     duration === opt.value
-                      ? "bg-red-600 text-white shadow-sm"
+                      ? "bg-[#f0047f] text-white shadow-sm"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                   }`}
                 >
@@ -120,8 +120,8 @@ export function BookingModal({
 
           {/* Error */}
           {error && (
-            <div className="rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 p-3">
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+            <div className="rounded-xl bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 p-3">
+              <p className="text-sm text-[#f0047f] dark:text-[#f078b7]">{error}</p>
             </div>
           )}
         </div>
@@ -137,7 +137,7 @@ export function BookingModal({
           <button
             onClick={handleBook}
             disabled={createBooking.isPending}
-            className="flex-1 py-3 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition-colors disabled:opacity-50"
+            className="flex-1 py-3 rounded-xl bg-[#f0047f] text-white text-sm font-semibold hover:bg-[#f0047f] transition-colors disabled:opacity-50"
           >
             {createBooking.isPending ? "Бронирую..." : "Забронировать"}
           </button>

@@ -40,7 +40,7 @@ export function CorporateBlockModal({ groupId, companyName, isBlocked, onClose }
   };
 
   const isPending = blockMutation.isPending || unblockMutation.isPending;
-  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors";
+  const inputCls = "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -65,9 +65,9 @@ export function CorporateBlockModal({ groupId, companyName, isBlocked, onClose }
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 flex items-start gap-2">
-              <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={16} />
-              <p className="text-red-400 text-sm">{error}</p>
+            <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl px-4 py-3 flex items-start gap-2">
+              <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={16} />
+              <p className="text-[#f078b7] text-sm">{error}</p>
             </div>
           )}
 
@@ -115,7 +115,7 @@ export function CorporateBlockModal({ groupId, companyName, isBlocked, onClose }
             <button
               onClick={handleBlock}
               disabled={isPending}
-              className="flex items-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
+              className="flex items-center gap-2 px-4 py-2.5 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all disabled:opacity-50 active:scale-[0.98]"
             >
               {isPending && <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />}
               Заблокировать

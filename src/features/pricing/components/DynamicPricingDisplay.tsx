@@ -179,7 +179,7 @@ export function DynamicPricingDisplay({
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center gap-2">
           <Icon icon="solar:bolt-linear" width={16} className="text-yellow-500" />
-          <span className="text-lg font-bold text-red-500">
+          <span className="text-lg font-bold text-[#f0047f]">
             {currentPricing.rate_per_kwh} {currentPricing.currency}/кВт·ч
           </span>
         </div>
@@ -203,7 +203,7 @@ export function DynamicPricingDisplay({
               Текущий тариф
             </h3>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-red-500">
+              <span className="text-3xl font-bold text-[#f0047f]">
                 {currentPricing.rate_per_kwh}
               </span>
               <span className="text-lg text-gray-400">

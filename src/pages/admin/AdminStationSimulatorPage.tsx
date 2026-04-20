@@ -166,7 +166,7 @@ function ConnectorCard({
             <button
               onClick={onStopCharging}
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-colors"
+              className="w-full flex items-center justify-center gap-2 bg-[#f0047f] hover:bg-[#c00366] disabled:opacity-50 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-colors"
             >
               <Icon icon="solar:stop-circle-bold-duotone" width={18} />
               Остановить
@@ -373,7 +373,7 @@ export function AdminStationSimulatorPage() {
               onChange={(e) => setStationId(e.target.value)}
               disabled={isActive}
               placeholder="e.g. STATION-001"
-              className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-red-500 disabled:opacity-50"
+              className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#f0047f] disabled:opacity-50"
             />
           </div>
 
@@ -386,7 +386,7 @@ export function AdminStationSimulatorPage() {
               value={isActive ? connectors.length : numConnectors}
               onChange={(e) => setNumConnectors(Number(e.target.value))}
               disabled={isActive}
-              className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-red-500 disabled:opacity-50"
+              className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#f0047f] disabled:opacity-50"
             >
               <option value={1}>1</option>
               <option value={2}>2</option>
@@ -410,7 +410,7 @@ export function AdminStationSimulatorPage() {
               <button
                 onClick={handleStop}
                 disabled={stopMutation.isPending}
-                className="flex items-center gap-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-colors whitespace-nowrap"
+                className="flex items-center gap-2 bg-[#f0047f] hover:bg-[#c00366] disabled:opacity-50 text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-colors whitespace-nowrap"
               >
                 <Icon icon="solar:logout-2-bold-duotone" width={18} />
                 {stopMutation.isPending ? "Отключение..." : "Отключить"}
@@ -428,7 +428,7 @@ export function AdminStationSimulatorPage() {
         </div>
 
         {startMutation.isError && (
-          <div className="mt-3 text-sm text-red-600 dark:text-red-400">
+          <div className="mt-3 text-sm text-[#f0047f] dark:text-[#f078b7]">
             {(startMutation.error as Error)?.message || "Connection failed"}
           </div>
         )}

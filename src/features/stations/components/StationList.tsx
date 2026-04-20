@@ -133,7 +133,7 @@ export function StationList({
             onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
             className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
               showOnlyFavorites
-                ? "bg-red-500/10 text-red-600 border-2 border-red-500/20"
+                ? "bg-[#f0047f]/10 text-[#f0047f] border-2 border-[#f0047f]/20"
                 : "bg-zinc-900/50 text-gray-300 border-2 border-zinc-800 hover:bg-zinc-800"
             }`}
           >
@@ -159,7 +159,7 @@ export function StationList({
                 onClick={() => setFilterStatus(status)}
                 className={`flex-shrink-0 px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   filterStatus === status
-                    ? "bg-red-600 text-white"
+                    ? "bg-[#f0047f] text-white"
                     : "bg-zinc-800 text-gray-400 hover:bg-zinc-700"
                 }`}
               >
@@ -180,7 +180,7 @@ export function StationList({
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-            className="text-sm border border-zinc-700 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="text-sm border border-zinc-700 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#f0047f]"
           >
             <option value="distance">По расстоянию</option>
             <option value="name">По названию</option>

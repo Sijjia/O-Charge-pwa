@@ -20,7 +20,7 @@ import { AdminStatCard } from "@/features/admin/components/AdminStatCard";
 import { AdminStatusBadge } from "@/features/admin/components/AdminStatusBadge";
 
 const inputCls =
-  "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:border-red-500/50 transition-colors";
+  "w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:border-[#f0047f]/50 transition-colors";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const get = (obj: unknown, key: string): any => (obj as Record<string, unknown>)?.[key];
@@ -28,7 +28,7 @@ const get = (obj: unknown, key: string): any => (obj as Record<string, unknown>)
 const CONFIDENCE_COLORS: Record<string, string> = {
   high: "text-green-600",
   medium: "text-amber-600",
-  low: "text-red-500",
+  low: "text-[#f0047f]",
 };
 
 const CONFIDENCE_LABELS: Record<string, string> = {
@@ -98,7 +98,7 @@ function StationRecRow({
           </div>
           {diff !== null && (
             <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
-              diff > 0 ? "bg-green-500/10 text-green-600" : diff < 0 ? "bg-red-500/10 text-red-500" : "bg-zinc-100 text-zinc-500"
+              diff > 0 ? "bg-green-500/10 text-green-600" : diff < 0 ? "bg-[#f0047f]/10 text-[#f0047f]" : "bg-zinc-100 text-zinc-500"
             }`}>
               {diff > 0 ? "+" : ""}{diff.toFixed(1)} ({diffPct != null ? `${diffPct > 0 ? "+" : ""}${diffPct.toFixed(1)}%` : ""})
             </span>
@@ -177,7 +177,7 @@ function LocationGroup({
           onChange={() => onToggleAll(stationIds, !allSelected)}
           className="w-4 h-4 rounded border-zinc-300 text-violet-600 focus:ring-violet-500"
         />
-        <Icon icon="solar:map-point-linear" width={16} className="text-red-500" />
+        <Icon icon="solar:map-point-linear" width={16} className="text-[#f0047f]" />
         <div className="flex-1 min-w-0">
           <span className="text-sm font-semibold text-zinc-900 dark:text-white">{location.location_name}</span>
           {location.location_city && (
@@ -323,7 +323,7 @@ export function OwnerTariffsPage() {
     return (
       <div className="p-6 lg:p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin mx-auto mb-3" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin mx-auto mb-3" />
           <p className="text-zinc-500 text-sm">Загрузка тарифов...</p>
         </div>
       </div>
@@ -333,9 +333,9 @@ export function OwnerTariffsPage() {
   if (error) {
     return (
       <div className="p-6 lg:p-8">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">{error instanceof Error ? error.message : "Не удалось загрузить тарифы"}</p>
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">{error instanceof Error ? error.message : "Не удалось загрузить тарифы"}</p>
         </div>
       </div>
     );
@@ -469,7 +469,7 @@ export function OwnerTariffsPage() {
             </div>
             <div className="bg-white dark:bg-zinc-900 rounded-xl p-3 border border-zinc-200 dark:border-zinc-800">
               <p className="text-xs text-zinc-500">Ошибок</p>
-              <p className="text-xl font-bold text-red-500">{autoResult.summary.error_count}</p>
+              <p className="text-xl font-bold text-[#f0047f]">{autoResult.summary.error_count}</p>
             </div>
           </div>
 
@@ -491,7 +491,7 @@ export function OwnerTariffsPage() {
                       <Icon icon="solar:arrow-right-linear" width={12} className="text-zinc-400" />
                       <span className="text-sm font-bold text-green-600">{item.new_price.toFixed(1)} KGS</span>
                       <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-full ${
-                        item.change_pct > 0 ? "bg-green-500/10 text-green-600" : "bg-red-500/10 text-red-500"
+                        item.change_pct > 0 ? "bg-green-500/10 text-green-600" : "bg-[#f0047f]/10 text-[#f0047f]"
                       }`}>
                         {item.change_pct > 0 ? "+" : ""}{item.change_pct.toFixed(1)}%
                       </span>
@@ -631,7 +631,7 @@ export function OwnerTariffsPage() {
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500">{c.source}</span>
                   <button
                     onClick={() => deleteCompetitor.mutate(c.id)}
-                    className="p-1 hover:bg-red-500/10 rounded text-zinc-400 hover:text-red-500 transition-colors"
+                    className="p-1 hover:bg-[#f0047f]/10 rounded text-zinc-400 hover:text-[#f0047f] transition-colors"
                   >
                     <Icon icon="solar:trash-bin-trash-linear" width={14} />
                   </button>
@@ -666,7 +666,7 @@ export function OwnerTariffsPage() {
             type="checkbox"
             checked={showInactive}
             onChange={(e) => setShowInactive(e.target.checked)}
-            className="w-4 h-4 rounded border-zinc-300 text-red-600 focus:ring-red-500"
+            className="w-4 h-4 rounded border-zinc-300 text-[#f0047f] focus:ring-[#f0047f]"
           />
           <span className="text-sm text-zinc-600 dark:text-zinc-300 whitespace-nowrap">Неактивные</span>
         </label>
@@ -737,7 +737,7 @@ export function OwnerTariffsPage() {
             <p className="text-sm text-zinc-500 max-w-sm mb-6">Создайте первый тарифный план для ваших зарядных станций</p>
             <button
               onClick={() => navigate(`${base}/tariffs/create`)}
-              className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
+              className="flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
             >
               <Icon icon="solar:add-circle-linear" width={18} />
               Создать план

@@ -92,7 +92,7 @@ export function GuestPaymentPage() {
   return (
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Ambient Background */}
-      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 dark:bg-red-600/10 blur-[90px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[90px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="px-5 pt-8 pb-4 flex items-center z-20 shrink-0 relative">
@@ -114,7 +114,7 @@ export function GuestPaymentPage() {
         {/* Icon Header */}
         <div className="flex justify-center mb-6">
           <div className="w-20 h-20 rounded-full bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-xl dark:shadow-xl flex items-center justify-center relative">
-            <div className="absolute inset-0 bg-red-500/10 dark:bg-red-500/20 rounded-full blur-xl" />
+            <div className="absolute inset-0 bg-[#f0047f]/10 dark:bg-[#f0047f]/20 rounded-full blur-xl" />
             <Icon
               icon="solar:wallet-money-linear"
               width={40}
@@ -138,7 +138,7 @@ export function GuestPaymentPage() {
               }}
               className={`relative p-4 rounded-xl transition-all duration-300 flex items-center justify-between group backdrop-blur-sm ${
                 selectedAmount === preset.value
-                  ? "bg-red-50 dark:bg-red-500/10 border border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.1)] dark:shadow-[0_0_20px_rgba(239,68,68,0.15)]"
+                  ? "bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#f0047f]/50 shadow-[0_0_20px_rgba(239,68,68,0.1)] dark:shadow-[0_0_20px_rgba(239,68,68,0.15)]"
                   : "bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/[0.08] hover:bg-zinc-50 dark:hover:bg-zinc-800/40 shadow-sm dark:shadow-none"
               }`}
             >
@@ -146,7 +146,7 @@ export function GuestPaymentPage() {
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center ${
                     selectedAmount === preset.value
-                      ? "bg-red-100 dark:bg-red-500/20 text-red-500 dark:text-red-400"
+                      ? "bg-[#ffe0ef] dark:bg-[#f0047f]/20 text-[#f0047f] dark:text-[#f078b7]"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500"
                   }`}
                 >
@@ -159,7 +159,7 @@ export function GuestPaymentPage() {
               <div
                 className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
                   selectedAmount === preset.value
-                    ? "border-red-500 bg-red-500"
+                    ? "border-[#f0047f] bg-[#f0047f]"
                     : "border-zinc-600"
                 }`}
               >
@@ -196,9 +196,9 @@ export function GuestPaymentPage() {
 
         {/* Error */}
         {error && (
-          <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-            <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-            <p className="text-red-400 text-sm">{error}</p>
+          <div className="mt-4 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+            <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+            <p className="text-[#f078b7] text-sm">{error}</p>
           </div>
         )}
       </div>
@@ -206,11 +206,11 @@ export function GuestPaymentPage() {
       {/* Sticky Bottom Action */}
       <div className="fixed bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-zinc-50 via-zinc-50 dark:from-[#0A0E17] dark:via-[#0A0E17] to-transparent z-40 flex justify-center backdrop-blur-sm">
         <div className="w-full max-w-md relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f0047f] to-[#f078b7] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
           <button
             onClick={handlePay}
             disabled={isLoading}
-            className="relative w-full py-4 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold text-base transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl"
+            className="relative w-full py-4 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-bold text-base transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl"
           >
             {isLoading ? (
               <span className="flex items-center gap-2">

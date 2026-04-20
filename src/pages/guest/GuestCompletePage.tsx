@@ -134,7 +134,7 @@ export function GuestCompletePage() {
             Зарядка завершена!
           </h2>
           <p className="text-zinc-500 dark:text-zinc-400 text-sm text-center">
-            Спасибо, что выбрали Red Petroleum
+            Спасибо, что выбрали O!Charge
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export function GuestCompletePage() {
             <Icon
               icon="solar:user-plus-linear"
               width={28}
-              className="text-red-400 mx-auto mb-3"
+              className="text-[#f078b7] mx-auto mb-3"
             />
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white mb-1">
               Создайте аккаунт
@@ -205,7 +205,7 @@ export function GuestCompletePage() {
             </p>
             <button
               onClick={() => navigate("/auth/phone")}
-              className="w-full py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
+              className="w-full py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-medium text-sm transition-all active:scale-[0.98]"
             >
               Зарегистрироваться
             </button>

@@ -171,7 +171,7 @@ export function InstallPrompt() {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-white">
-                Установите Red Petroleum
+                Установите O!Charge
               </h3>
               <p className="mt-1 text-sm text-gray-400">{instructions.text}</p>
             </div>
@@ -239,7 +239,7 @@ export function InstallPrompt() {
         <div className="flex items-start gap-3 p-4">
           <div className="flex-1">
             <h3 className="text-sm font-semibold text-white">
-              Установите Red Petroleum как приложение
+              Установите O!Charge как приложение
             </h3>
             <p className="mt-1 text-sm text-gray-400">
               Быстрый доступ с домашнего экрана, оффлайн‑режим и
@@ -249,7 +249,7 @@ export function InstallPrompt() {
               <button
                 type="button"
                 onClick={onInstall}
-                className="inline-flex items-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="inline-flex items-center rounded-md bg-[#f0047f] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#c00366] focus:outline-none focus:ring-2 focus:ring-[#f0047f]"
               >
                 Установить
               </button>

@@ -99,7 +99,7 @@ export function AdminDashboardPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400">Загрузка статистики...</p>
         </div>
       </div>
@@ -212,7 +212,7 @@ export function AdminDashboardPage() {
               <h3 className="text-lg sm:text-xl font-bold font-display tracking-tight text-zinc-900 dark:text-white">Критические алерты</h3>
               <button
                 onClick={() => navigate('/admin/alerts')}
-                className="shrink-0 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 rounded-xl hover:bg-red-100 dark:hover:bg-red-500/20 transition-colors active:scale-95"
+                className="shrink-0 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 bg-[#fff0f7] dark:bg-[#f0047f]/10 text-[#f0047f] dark:text-[#f078b7] rounded-xl hover:bg-[#ffe0ef] dark:hover:bg-[#f0047f]/20 transition-colors active:scale-95"
               >
                 Все алерты
               </button>
@@ -230,13 +230,13 @@ export function AdminDashboardPage() {
                 {alerts.slice(0, 5).map((alert: any) => (
                   <div
                     key={alert.id}
-                    className="p-4 bg-red-50/50 dark:bg-red-500/5 border border-red-100 dark:border-red-500/10 rounded-2xl flex items-start gap-3 transition-colors hover:bg-red-50 dark:hover:bg-red-500/10"
+                    className="p-4 bg-[#fff0f7]/50 dark:bg-[#f0047f]/5 border border-[#ffe0ef] dark:border-[#f0047f]/10 rounded-2xl flex items-start gap-3 transition-colors hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10"
                   >
                     <div className="flex items-start gap-2">
-                      <Icon icon="solar:danger-circle-bold" width={18} className="text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                      <Icon icon="solar:danger-circle-bold" width={18} className="text-[#f0047f] dark:text-[#f078b7] flex-shrink-0 mt-0.5" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-red-900 dark:text-red-200">{alert.title || 'Алерт'}</p>
-                        <p className="text-xs text-red-700 dark:text-red-300 mt-1">{alert.description}</p>
+                        <p className="text-sm font-medium text-[#5c0030] dark:text-[#ffc2df]">{alert.title || 'Алерт'}</p>
+                        <p className="text-xs text-[#c00366] dark:text-[#f078b7] mt-1">{alert.description}</p>
                       </div>
                     </div>
                   </div>
@@ -315,7 +315,7 @@ export function AdminDashboardPage() {
               onClick={() => navigate('/admin/alerts')}
               className="flex flex-col items-center gap-3 p-4 bg-zinc-50 dark:bg-[#1C212B] rounded-2xl hover:bg-zinc-100 dark:hover:bg-white/5 border border-transparent hover:border-zinc-200 dark:hover:border-white/10 transition-all active:scale-95 group"
             >
-              <div className="w-12 h-12 bg-red-50 dark:bg-red-500/10 rounded-xl flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-[#fff0f7] dark:bg-[#f0047f]/10 rounded-xl flex items-center justify-center text-[#f0047f] group-hover:scale-110 transition-transform">
                 <Icon icon="solar:bell-bing-bold-duotone" width={28} />
               </div>
               <span className="text-sm font-semibold text-zinc-900 dark:text-white mt-1">Алерты</span>

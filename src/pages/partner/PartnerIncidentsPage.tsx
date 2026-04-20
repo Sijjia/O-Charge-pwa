@@ -14,10 +14,10 @@ interface Incident {
 const SEVERITY_CONFIG = {
   critical: {
     label: "Критично",
-    bg: "bg-red-500/10 border-red-500/20",
-    text: "text-red-500",
+    bg: "bg-[#f0047f]/10 border-[#f0047f]/20",
+    text: "text-[#f0047f]",
     icon: "solar:danger-triangle-bold-duotone",
-    badge: "bg-red-500/20 text-red-400",
+    badge: "bg-[#f0047f]/20 text-[#f078b7]",
   },
   warning: {
     label: "Предупреждение",
@@ -120,7 +120,7 @@ export function PartnerIncidentsPage() {
             {incidents.length > 0 && (
               <div className="flex items-center gap-2">
                 {critical.length > 0 && (
-                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-500/10 text-red-500 text-sm font-medium">
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f0047f]/10 text-[#f0047f] text-sm font-medium">
                     <Icon icon="solar:danger-triangle-bold-duotone" width={16} />
                     {critical.length} критичных
                   </span>
@@ -142,7 +142,7 @@ export function PartnerIncidentsPage() {
         {/* Loading */}
         {isLoading && (
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-16 text-center">
-            <Icon icon="solar:refresh-linear" width={40} className="text-red-500 animate-spin mx-auto mb-3" />
+            <Icon icon="solar:refresh-linear" width={40} className="text-[#f0047f] animate-spin mx-auto mb-3" />
             <p className="text-zinc-500 dark:text-gray-400 text-sm">Загрузка данных...</p>
           </div>
         )}
@@ -236,7 +236,7 @@ export function PartnerIncidentsPage() {
               <div className="flex items-start gap-3">
                 <Icon icon="solar:info-circle-bold-duotone" width={22} className="text-blue-400 shrink-0 mt-0.5" />
                 <p className="text-sm text-blue-400">
-                  Для устранения неисправностей обратитесь в службу поддержки Red Petroleum.
+                  Для устранения неисправностей обратитесь в службу поддержки O!Charge.
                   Данные обновляются автоматически при изменении статуса станций.
                 </p>
               </div>

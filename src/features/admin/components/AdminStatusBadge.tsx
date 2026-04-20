@@ -39,9 +39,9 @@ const variants: Record<
     icon: "solar:check-circle-linear",
   },
   error: {
-    bg: "bg-red-50 dark:bg-red-500/10",
-    text: "text-red-600 dark:text-red-400",
-    border: "border-red-200 dark:border-red-900/30",
+    bg: "bg-[#fff0f7] dark:bg-[#f0047f]/10",
+    text: "text-[#f0047f] dark:text-[#f078b7]",
+    border: "border-[#ffc2df] dark:border-[#5c0030]/30",
     icon: "solar:close-circle-linear",
   },
   warning: {

@@ -168,13 +168,13 @@ export function CreateLocationPage() {
       <form onSubmit={handleSubmit} className="bg-white dark:bg-zinc-900 rounded-lg shadow-sm dark:shadow-none p-6">
         {/* Submit Error */}
         {submitError && (
-          <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3">
-            <Icon icon="solar:danger-circle-linear" width={20} className="text-red-600 flex-shrink-0 mt-0.5" />
+          <div className="mb-6 p-4 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg flex items-start gap-3">
+            <Icon icon="solar:danger-circle-linear" width={20} className="text-[#f0047f] flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-medium text-red-400">
+              <p className="text-sm font-medium text-[#f078b7]">
                 Ошибка при создании локации
               </p>
-              <p className="text-sm text-red-400 mt-1">{submitError}</p>
+              <p className="text-sm text-[#f078b7] mt-1">{submitError}</p>
             </div>
           </div>
         )}
@@ -183,21 +183,21 @@ export function CreateLocationPage() {
           {/* Basic Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
-              <Icon icon="solar:map-point-linear" width={20} className="text-red-500" />
+              <Icon icon="solar:map-point-linear" width={20} className="text-[#f0047f]" />
               Основная информация
             </h3>
 
             {/* Name */}
             <div>
               <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-                Название локации <span className="text-red-500">*</span>
+                Название локации <span className="text-[#f0047f]">*</span>
               </label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-red-500 focus:border-transparent ${errors['name'] ? 'border-red-500' : 'border-zinc-300 dark:border-zinc-700'
+                className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-[#f0047f] focus:border-transparent ${errors['name'] ? 'border-[#f0047f]' : 'border-zinc-300 dark:border-zinc-700'
                   }`}
                 placeholder="Например: ТЦ Bishkek Park"
               />
@@ -207,14 +207,14 @@ export function CreateLocationPage() {
             {/* Address */}
             <div>
               <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-                Адрес <span className="text-red-500">*</span>
+                Адрес <span className="text-[#f0047f]">*</span>
               </label>
               <input
                 type="text"
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
-                className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-red-500 focus:border-transparent ${errors['address'] ? 'border-red-500' : 'border-zinc-300 dark:border-zinc-700'
+                className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-[#f0047f] focus:border-transparent ${errors['address'] ? 'border-[#f0047f]' : 'border-zinc-300 dark:border-zinc-700'
                   }`}
                 placeholder="Например: ул. Исанова 42"
               />
@@ -232,7 +232,7 @@ export function CreateLocationPage() {
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-red-500 focus:border-transparent ${errors['city'] ? 'border-red-500' : 'border-zinc-300 dark:border-zinc-700'
+                  className={`w-full px-3 py-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border rounded-lg transition-colors focus:ring-2 focus:ring-[#f0047f] focus:border-transparent ${errors['city'] ? 'border-[#f0047f]' : 'border-zinc-300 dark:border-zinc-700'
                     }`}
                   placeholder="Например: Бишкек"
                 />
@@ -248,7 +248,7 @@ export function CreateLocationPage() {
                   name="country"
                   value={formData.country}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-transparent"
                 />
               </div>
             </div>
@@ -265,7 +265,7 @@ export function CreateLocationPage() {
           {/* Coordinates (Map Picker) */}
           <div className="space-y-4">
             <h3 className="text-lg font-display font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
-              <Icon icon="solar:map-linear" width={20} className="text-red-500" />
+              <Icon icon="solar:map-linear" width={20} className="text-[#f0047f]" />
               Координаты на карте
             </h3>
             <p className="text-sm text-zinc-500 dark:text-gray-400">
@@ -319,13 +319,13 @@ export function CreateLocationPage() {
           {/* Status */}
           <div>
             <label className="block text-sm font-medium text-zinc-600 dark:text-gray-300 mb-1">
-              Статус <span className="text-red-500">*</span>
+              Статус <span className="text-[#f0047f]">*</span>
             </label>
             <select
               name="status"
               value={formData.status}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-transparent"
             >
               <option value="active">Активна</option>
               <option value="inactive">Неактивна</option>
@@ -347,7 +347,7 @@ export function CreateLocationPage() {
             <button
               type="submit"
               disabled={createLocation.isPending}
-              className="flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-6 py-2 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
             >
               {createLocation.isPending ? (
                 <>

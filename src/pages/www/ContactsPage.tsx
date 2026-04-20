@@ -20,8 +20,8 @@ export function ContactsPage() {
       <style>{`
         .input-linear { transition: all 0.2s ease; }
         .input-linear:focus {
-          box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
-          border-color: #DC2626;
+          box-shadow: 0 0 0 4px rgba(240, 4, 127, 0.1);
+          border-color: #f0047f;
         }
       `}</style>
 
@@ -47,7 +47,7 @@ export function ContactsPage() {
             <div className="flex flex-col gap-5">
               {/* Phone */}
               <div className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-red-50 dark:group-hover:bg-red-900/20 group-hover:text-red-600 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-[#fff0f7] dark:group-hover:bg-[#5c0030]/20 group-hover:text-[#f0047f] transition-colors">
                   <Icon icon="solar:phone-calling-linear" width={20} />
                 </div>
                 <div>
@@ -56,7 +56,7 @@ export function ContactsPage() {
                   </p>
                   <a
                     href="tel:+996555000000"
-                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 transition-colors"
+                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-[#f0047f] dark:hover:text-[#f0047f] transition-colors"
                   >
                     +996 555 000 000
                   </a>
@@ -65,7 +65,7 @@ export function ContactsPage() {
 
               {/* Email */}
               <div className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-red-50 dark:group-hover:bg-red-900/20 group-hover:text-red-600 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-[#fff0f7] dark:group-hover:bg-[#5c0030]/20 group-hover:text-[#f0047f] transition-colors">
                   <Icon icon="solar:letter-linear" width={20} />
                 </div>
                 <div>
@@ -74,7 +74,7 @@ export function ContactsPage() {
                   </p>
                   <a
                     href="mailto:info@rp.kg"
-                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 transition-colors"
+                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-[#f0047f] dark:hover:text-[#f0047f] transition-colors"
                   >
                     info@rp.kg
                   </a>
@@ -83,7 +83,7 @@ export function ContactsPage() {
 
               {/* Telegram */}
               <div className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-red-50 dark:group-hover:bg-red-900/20 group-hover:text-red-600 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 group-hover:bg-[#fff0f7] dark:group-hover:bg-[#5c0030]/20 group-hover:text-[#f0047f] transition-colors">
                   <Icon icon="solar:chat-round-linear" width={20} />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export function ContactsPage() {
                   </p>
                   <a
                     href="#"
-                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 transition-colors"
+                    className="text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-[#f0047f] dark:hover:text-[#f0047f] transition-colors"
                   >
                     @rpev_support
                   </a>
@@ -145,7 +145,7 @@ export function ContactsPage() {
               href="#"
               className="mt-8 w-full flex items-center justify-center gap-2 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white py-3 rounded-xl text-xs font-semibold transition-all group"
             >
-              <Icon icon="solar:map-arrow-right-bold" width={16} className="text-red-600" />
+              <Icon icon="solar:map-arrow-right-bold" width={16} className="text-[#f0047f]" />
               Показать на карте 2ГИС
             </a>
           </div>
@@ -219,7 +219,7 @@ export function ContactsPage() {
               <div className="pt-2">
                 <button
                   type="button"
-                  className="w-full md:w-auto md:px-8 bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-red-600/20 flex items-center justify-center gap-2"
+                  className="w-full md:w-auto md:px-8 bg-[#f0047f] hover:bg-[#c00366] text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-[#f0047f]/20 flex items-center justify-center gap-2"
                 >
                   <span>Отправить сообщение</span>
                   <Icon icon="solar:plain-linear" width={18} />

@@ -101,7 +101,7 @@ export function OwnerDashboardPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400">Загрузка статистики...</p>
         </div>
       </div>
@@ -224,7 +224,7 @@ export function OwnerDashboardPage() {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="text-center border border-zinc-200 dark:border-zinc-800 rounded-lg p-3">
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">Offline</p>
-                    <p className="text-lg font-semibold text-red-600 dark:text-red-400">
+                    <p className="text-lg font-semibold text-[#f0047f] dark:text-[#f078b7]">
                       {locations.filter((l) => l.status === 'offline').length}
                     </p>
                   </div>
@@ -270,7 +270,7 @@ export function OwnerDashboardPage() {
               <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Последние сессии</h3>
               <button
                 onClick={() => navigate(`${base}/sessions`)}
-                className="text-sm text-red-500 hover:text-red-400 font-medium"
+                className="text-sm text-[#f0047f] hover:text-[#f078b7] font-medium"
               >
                 Все сессии
               </button>
@@ -343,9 +343,9 @@ export function OwnerDashboardPage() {
               <button
                 key={item.path}
                 onClick={() => navigate(`${base}/${item.path}`)}
-                className="p-4 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-red-500 hover:bg-red-500/10 transition-colors text-left"
+                className="p-4 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-[#f0047f] hover:bg-[#f0047f]/10 transition-colors text-left"
               >
-                <Icon icon={item.icon} width={22} className="text-red-500 mb-2" />
+                <Icon icon={item.icon} width={22} className="text-[#f0047f] mb-2" />
                 <p className="font-medium text-zinc-900 dark:text-white text-sm">{item.label}</p>
               </button>
             ))}

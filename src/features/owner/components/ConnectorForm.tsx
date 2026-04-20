@@ -118,7 +118,7 @@ export function ConnectorForm({
           type="button"
           onClick={handleAddConnector}
           disabled={disabled || connectors.length >= maxConnectors}
-          className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-300 text-white rounded-lg font-medium transition-colors disabled:cursor-not-allowed"
+          className="flex items-center gap-2 px-4 py-2 bg-[#f0047f] hover:bg-[#c00366] disabled:bg-gray-300 text-white rounded-lg font-medium transition-colors disabled:cursor-not-allowed"
         >
           <Icon icon="solar:add-circle-linear" width={16} />
           Добавить разъём
@@ -159,7 +159,7 @@ export function ConnectorForm({
                         handleConnectorChange(index, 'connector_type', e.target.value)
                       }
                       disabled={disabled}
-                      className="w-full px-3 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-800 disabled:cursor-not-allowed"
+                      className="w-full px-3 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] disabled:bg-zinc-100 dark:disabled:bg-zinc-800 disabled:cursor-not-allowed"
                     >
                       {CONNECTOR_TYPES.map((type) => (
                         <option key={type.value} value={type.value}>
@@ -189,7 +189,7 @@ export function ConnectorForm({
                       min="0"
                       max="500"
                       step="0.1"
-                      className="w-full px-3 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-800 disabled:cursor-not-allowed"
+                      className="w-full px-3 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] disabled:bg-zinc-100 dark:disabled:bg-zinc-800 disabled:cursor-not-allowed"
                       placeholder="50"
                     />
                   </div>
@@ -200,7 +200,7 @@ export function ConnectorForm({
                   type="button"
                   onClick={() => handleRemoveConnector(index)}
                   disabled={disabled}
-                  className="flex-shrink-0 p-2 text-red-600 hover:bg-red-500/10 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-shrink-0 p-2 text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   title="Удалить разъём"
                 >
                   <Icon icon="solar:trash-bin-trash-linear" width={20} />
@@ -209,7 +209,7 @@ export function ConnectorForm({
 
               {/* Error Message */}
               {errors[index] && (
-                <div className="mt-2 flex items-center gap-2 text-sm text-red-600">
+                <div className="mt-2 flex items-center gap-2 text-sm text-[#f0047f]">
                   <Icon icon="solar:danger-circle-linear" width={16} />
                   {errors[index]}
                 </div>

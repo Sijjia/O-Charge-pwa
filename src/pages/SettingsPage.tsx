@@ -169,7 +169,7 @@ export function SettingsPage() {
         <div className={`fixed top-4 left-4 right-4 z-50 px-4 py-3 rounded-xl text-sm font-medium text-center ${
           notification.type === "success"
             ? "bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 text-green-600 dark:text-green-400"
-            : "bg-red-50 dark:bg-red-500/20 border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400"
+            : "bg-[#fff0f7] dark:bg-[#f0047f]/20 border border-[#ffc2df] dark:border-[#f0047f]/30 text-[#f0047f] dark:text-[#f078b7]"
         }`}>
           {notification.message}
         </div>
@@ -190,7 +190,7 @@ export function SettingsPage() {
               </button>
               <button
                 onClick={handleClearCache}
-                className="flex-1 py-2.5 rounded-xl bg-red-600 text-white text-sm font-medium hover:bg-red-500 transition-colors"
+                className="flex-1 py-2.5 rounded-xl bg-[#f0047f] text-white text-sm font-medium hover:bg-[#f0047f] transition-colors"
               >
                 Очистить
               </button>

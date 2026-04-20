@@ -76,7 +76,7 @@ export default function PaymentsPage() {
       className="min-h-screen bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 relative overflow-x-hidden transition-colors duration-300 pb-[calc(var(--nav-height)+16px)]"
     >
       {/* Ambient Glows */}
-      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-red-600/10 dark:bg-red-600/15 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#f0047f]/10 dark:bg-[#f0047f]/15 blur-[120px] rounded-full pointer-events-none z-0" />
       <div className="fixed bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-blue-600/5 blur-[100px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
@@ -96,14 +96,14 @@ export default function PaymentsPage() {
         </div>
         <button className="w-10 h-10 rounded-full bg-white dark:bg-transparent border border-zinc-200 dark:border-transparent hover:bg-zinc-50 dark:hover:bg-zinc-800/50 flex items-center justify-center text-zinc-600 dark:text-zinc-400 transition-colors relative shadow-sm dark:shadow-none">
           <Icon icon="solar:bell-linear" width={24} />
-          <div className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-[#0A0E17]" />
+          <div className="absolute top-2.5 right-2.5 w-2 h-2 bg-[#f0047f] rounded-full border-2 border-white dark:border-[#0A0E17]" />
         </button>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto p-5 flex flex-col gap-8 z-10 relative w-full max-w-md mx-auto">
         {/* Wallet Card (RED) */}
-        <div className="relative w-full rounded-3xl p-6 overflow-hidden shadow-2xl shadow-red-900/20 dark:shadow-none group transition-transform active:scale-[0.99]">
+        <div className="relative w-full rounded-3xl p-6 overflow-hidden shadow-2xl shadow-[#5c0030]/20 dark:shadow-none group transition-transform active:scale-[0.99]">
           {/* Red Gradient Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#D92323] to-[#A31616] z-0" />
           {/* Grain Texture */}
@@ -137,7 +137,7 @@ export default function PaymentsPage() {
           <div className="grid grid-cols-2 gap-3 mt-8 relative z-10">
             <button
               onClick={() => setShowQRTopup(true)}
-              className="btn bg-white text-red-700 shadow-lg w-full gap-2"
+              className="btn bg-white text-[#c00366] shadow-lg w-full gap-2"
             >
               <Icon icon="solar:wallet-add-linear" width={20} />
               <span>Пополнить</span>
@@ -173,7 +173,7 @@ export default function PaymentsPage() {
             </h2>
             <button
               onClick={() => navigate("/history")}
-              className="text-xs text-red-600 dark:text-red-500 font-medium hover:opacity-80 transition-colors"
+              className="text-xs text-[#f0047f] dark:text-[#f0047f] font-medium hover:opacity-80 transition-colors"
             >
               Все
             </button>
@@ -182,16 +182,16 @@ export default function PaymentsPage() {
           {transactionsLoading ? (
             <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 rounded-3xl p-8 backdrop-blur-sm shadow-sm dark:shadow-none">
               <div className="flex flex-col items-center gap-3">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-500" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f0047f]" />
                 <p className="text-sm text-zinc-500">Загрузка...</p>
               </div>
             </div>
           ) : paymentHistory.length === 0 ? (
             <div className="card flex flex-col items-center text-center rounded-3xl p-8">
               <div className="relative w-24 h-24 mb-4">
-                <div className="absolute inset-0 bg-red-100 dark:bg-red-500/10 rounded-full animate-pulse-glow" />
-                <div className="absolute inset-2 bg-red-200 dark:bg-red-500/20 rounded-full" />
-                <div className="absolute inset-0 flex items-center justify-center text-red-600 dark:text-red-500">
+                <div className="absolute inset-0 bg-[#ffe0ef] dark:bg-[#f0047f]/10 rounded-full animate-pulse-glow" />
+                <div className="absolute inset-2 bg-[#ffc2df] dark:bg-[#f0047f]/20 rounded-full" />
+                <div className="absolute inset-0 flex items-center justify-center text-[#f0047f] dark:text-[#f0047f]">
                   <Icon icon="solar:wallet-money-bold-duotone" width={48} />
                 </div>
               </div>
@@ -222,8 +222,8 @@ export default function PaymentsPage() {
 
                 if (isCharge) {
                   iconName = "solar:bolt-linear";
-                  iconColorClass = "text-red-600 dark:text-red-500";
-                  bgColorClass = "bg-red-100/50 border-red-200 dark:bg-red-500/10 dark:border-red-500/20";
+                  iconColorClass = "text-[#f0047f] dark:text-[#f0047f]";
+                  bgColorClass = "bg-[#ffe0ef]/50 border-[#ffc2df] dark:bg-[#f0047f]/10 dark:border-[#f0047f]/20";
                   amountColorClass = "text-zinc-900 dark:text-zinc-200";
                 }
 

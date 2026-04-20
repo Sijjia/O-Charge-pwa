@@ -19,7 +19,7 @@ const PAGE_SIZE = 20;
 const SuccessSchema = z.object({ success: z.boolean() }).passthrough();
 
 const inputCls =
-  "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors text-sm";
+  "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors text-sm";
 
 /* ------------------------------------------------------------------ */
 /*  Overlay wrapper                                                    */
@@ -155,7 +155,7 @@ function EditModal({ partner, onClose }: { partner: Partner | null; onClose: () 
     <Overlay onClose={onClose}>
       <ModalHeader title={isCreate ? "Добавить партнёра" : "Редактировать партнёра"} onClose={onClose} />
       <div className="p-5 space-y-4">
-        {error && <div className="px-4 py-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm">{error}</div>}
+        {error && <div className="px-4 py-3 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl text-[#f0047f] text-sm">{error}</div>}
         <div>
           <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Имя партнёра *</label>
           <input value={form.name} onChange={(e) => set("name", e.target.value)} className={inputCls} placeholder="Азамат Бейшеналиев" />
@@ -212,8 +212,8 @@ function DeleteModal({ partner, onClose }: { partner: Partner; onClose: () => vo
   return (
     <Overlay onClose={onClose}>
       <div className="p-8 text-center space-y-4">
-        <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto">
-          <Icon icon="solar:trash-bin-trash-bold-duotone" width={32} className="text-red-500" />
+        <div className="w-16 h-16 bg-[#ffe0ef] dark:bg-[#5c0030]/30 rounded-full flex items-center justify-center mx-auto">
+          <Icon icon="solar:trash-bin-trash-bold-duotone" width={32} className="text-[#f0047f]" />
         </div>
         <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">Удалить партнёра?</h2>
         <p className="text-sm text-zinc-500">
@@ -272,7 +272,7 @@ export function AdminPartnersPage() {
     { key: "phone" as keyof Partner, header: "Телефон", render: (row) => <span className="text-sm text-zinc-500">{row.phone || "—"}</span> },
     { key: "stations", header: "Станции", helpText: "Количество зарядных станций принадлежащих этому партнёру.", render: (row) => <span className="text-sm font-medium text-zinc-900 dark:text-white">{row.station_count}</span> },
     { key: "revenue", header: "Доход", helpText: "Сколько денег заработал партнёр со всех своих станций.", render: (row) => <span className="text-sm font-medium text-zinc-900 dark:text-white">{row.total_revenue.toLocaleString()} сом</span> },
-    { key: "commission", header: "Комиссия", helpText: "Процент от каждой зарядки который получает партнёр. Остальное — комиссия Red Petroleum.", render: (row) => <span className="text-sm text-zinc-500">{row.commission_rate}%</span> },
+    { key: "commission", header: "Комиссия", helpText: "Процент от каждой зарядки который получает партнёр. Остальное — комиссия O!Charge.", render: (row) => <span className="text-sm text-zinc-500">{row.commission_rate}%</span> },
     { key: "status", header: "Статус", render: (row) => <AdminStatusBadge variant={row.is_active ? "online" : "offline"} label={row.is_active ? "Активен" : "Неактивен"} /> },
     {
       key: "actions" as keyof Partner,
@@ -282,7 +282,7 @@ export function AdminPartnersPage() {
           <button onClick={() => setModal({ type: "edit", partner: row })} className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-blue-500 transition-colors" title="Редактировать">
             <Icon icon="solar:pen-linear" width={16} />
           </button>
-          <button onClick={() => setModal({ type: "delete", partner: row })} className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-red-500 transition-colors" title="Удалить">
+          <button onClick={() => setModal({ type: "delete", partner: row })} className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-[#f0047f] transition-colors" title="Удалить">
             <Icon icon="solar:trash-bin-trash-linear" width={16} />
           </button>
         </div>
@@ -295,7 +295,7 @@ export function AdminPartnersPage() {
       <div className="p-4 md:p-8 space-y-6">
         <AdminPageHeader title="Партнёры" subtitle="Управление партнёрами" helpText="Партнёры — это компании или ИП, которые устанавливают зарядные станции. Они получают процент от выручки. Здесь можно добавлять, редактировать и удалять партнёров." />
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 text-center">
-          <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-500 mx-auto mb-4" />
+          <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f0047f] mx-auto mb-4" />
           <p className="text-sm text-zinc-500">{error instanceof Error ? error.message : "Ошибка загрузки"}</p>
         </div>
       </div>
@@ -310,7 +310,7 @@ export function AdminPartnersPage() {
         <AdminStatCard label="Партнёров" helpText="Количество зарегистрированных партнёров-владельцев станций" value={total} icon="solar:buildings-linear" />
         <AdminStatCard label="Станций" helpText="Суммарное количество станций всех партнёров" value={totalStations} icon="solar:ev-station-linear" />
         <AdminStatCard label="Доход" helpText="Суммарный доход всех партнёров от зарядных сессий" value={`${totalRevenue.toLocaleString()} сом`} icon="solar:wallet-linear" />
-        <AdminStatCard label="Средняя комиссия" helpText="Средний процент который партнёры получают от каждой зарядки. Остальное — комиссия Red Petroleum" value={`${partners.length ? (partners.reduce((s, p) => s + p.commission_rate, 0) / partners.length).toFixed(0) : 0}%`} icon="solar:chart-square-linear" />
+        <AdminStatCard label="Средняя комиссия" helpText="Средний процент который партнёры получают от каждой зарядки. Остальное — комиссия O!Charge" value={`${partners.length ? (partners.reduce((s, p) => s + p.commission_rate, 0) / partners.length).toFixed(0) : 0}%`} icon="solar:chart-square-linear" />
       </div>
 
       <AdminFilterBar>

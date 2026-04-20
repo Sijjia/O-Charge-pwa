@@ -43,7 +43,7 @@ export function OwnerLocationsListPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-gray-400">Загрузка локаций...</p>
         </div>
       </div>
@@ -53,12 +53,12 @@ export function OwnerLocationsListPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center p-4">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-6 max-w-md">
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg p-6 max-w-md">
           <div className="flex items-start gap-3">
-            <Icon icon="solar:danger-circle-linear" width={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+            <Icon icon="solar:danger-circle-linear" width={24} className="text-[#f0047f] flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-red-700 dark:text-red-400 mb-1">Ошибка загрузки</h3>
-              <p className="text-sm text-red-400">
+              <h3 className="font-semibold text-[#c00366] dark:text-[#f078b7] mb-1">Ошибка загрузки</h3>
+              <p className="text-sm text-[#f078b7]">
                 Не удалось загрузить список локаций. Попробуйте обновить страницу.
               </p>
             </div>
@@ -102,7 +102,7 @@ export function OwnerLocationsListPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Поиск по названию, адресу, городу..."
-              className="w-full pl-10 pr-4 py-3 border border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors shadow-sm"
+              className="w-full pl-10 pr-4 py-3 border border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] transition-colors shadow-sm"
             />
           </div>
 
@@ -111,7 +111,7 @@ export function OwnerLocationsListPage() {
             <select
               value={filterOwner}
               onChange={(e) => setFilterOwner(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors shadow-sm appearance-none"
+              className="w-full pl-10 pr-4 py-3 border border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] transition-colors shadow-sm appearance-none"
             >
               <option value="all">Все владельцы</option>
               <option value="1">Компания 1 (Mock)</option>
@@ -153,7 +153,7 @@ export function OwnerLocationsListPage() {
             />
             <div className="absolute top-4 left-4 bg-white/90 dark:bg-zinc-900/90 backdrop-blur px-4 py-2 rounded-xl shadow-lg border border-zinc-200 dark:border-zinc-800 z-10">
               <p className="text-sm font-semibold text-zinc-900 dark:text-white">
-                Показано локаций: <span className="font-mono text-red-500">{filteredLocations?.length || 0}</span>
+                Показано локаций: <span className="font-mono text-[#f0047f]">{filteredLocations?.length || 0}</span>
               </p>
             </div>
           </div>

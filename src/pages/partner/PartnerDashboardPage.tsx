@@ -13,7 +13,7 @@ interface KPICardProps {
   color?: string;
 }
 
-function KPICard({ icon, label, value, sub, color = "text-red-400" }: KPICardProps) {
+function KPICard({ icon, label, value, sub, color = "text-[#f078b7]" }: KPICardProps) {
   return (
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm dark:shadow-none transition-colors">
       <div className="flex items-center gap-3 mb-2">
@@ -34,7 +34,7 @@ export function PartnerDashboardPage() {
   if (isLoading) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[60vh]">
-        <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin" />
+        <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin" />
       </div>
     );
   }
@@ -42,7 +42,7 @@ export function PartnerDashboardPage() {
   if (isError || !data) {
     return (
       <div className="p-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
-        <Icon icon="solar:danger-triangle-bold-duotone" width={48} className="text-red-400 mb-3" />
+        <Icon icon="solar:danger-triangle-bold-duotone" width={48} className="text-[#f078b7] mb-3" />
         <p className="text-zinc-400 text-sm">{(error as Error)?.message || "Не удалось загрузить данные партнёра"}</p>
       </div>
     );

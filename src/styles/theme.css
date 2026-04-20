@@ -1,6 +1,6 @@
 /* ===========================================
-   Red Petroleum EV Design System v3.0
-   Dark theme, red accents
+   O!Charge × O!Bank Design System v4.0
+   Magenta accents, dual theme
 
    Единая дизайн-система для всего приложения.
    Все компоненты должны использовать эти переменные.
@@ -9,7 +9,7 @@
 :root {
   /* ========== ЦВЕТОВАЯ ПАЛИТРА ========== */
 
-  /* Primary Brand Color - зелёный (legacy, для станций) */
+  /* Primary Brand Color - зелёный (для статусов станций) */
   --ev-green-50: #ecfdf5;
   --ev-green-100: #d1fae5;
   --ev-green-200: #a7f3d0;
@@ -28,10 +28,11 @@
   /* Main */
   --ev-cyan-600: #0891b2;
 
-  /* Accent - Red (new primary) */
-  --ev-accent: #dc2626;
-  --ev-accent-hover: #ef4444;
-  --ev-accent-glow: rgba(220, 38, 38, 0.2);
+  /* Accent - O!Bank Magenta (primary) */
+  --ev-accent: #f0047f;
+  --ev-accent-hover: #c00366;
+  --ev-accent-light: #f078b7;
+  --ev-accent-glow: rgba(240, 4, 127, 0.2);
 
   /* Status Colors - для коннекторов и станций */
   --ev-status-available: #10b981;
@@ -115,8 +116,8 @@
     0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
 
   /* ========== TYPOGRAPHY ========== */
-  --ev-font-family: "Inter", system-ui, -apple-system, sans-serif;
-  --ev-font-display: "Manrope", "Inter", system-ui, sans-serif;
+  --ev-font-family: "Golos Text", "Inter", system-ui, -apple-system, sans-serif;
+  --ev-font-display: "Manrope", "Golos Text", system-ui, sans-serif;
   --ev-font-mono: "JetBrains Mono", monospace;
 
   /* Font sizes */
@@ -370,8 +371,8 @@ body {
 }
 
 .ev-input:focus {
-  border-color: rgba(239, 68, 68, 0.5);
-  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+  border-color: rgba(240, 4, 127, 0.5);
+  box-shadow: 0 0 0 1px rgba(240, 4, 127, 0.2);
 }
 
 /* Touch targets - минимум 44px для мобильных */

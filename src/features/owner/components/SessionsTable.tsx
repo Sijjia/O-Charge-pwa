@@ -78,7 +78,7 @@ export function SessionsTable({
       case 'stopped':
         return 'bg-zinc-800 text-gray-100 border-zinc-800';
       case 'error':
-        return 'bg-red-500/15 text-red-400 border-red-500/20';
+        return 'bg-[#f0047f]/15 text-[#f078b7] border-[#f0047f]/20';
       default:
         return 'bg-zinc-800 text-gray-100 border-zinc-800';
     }
@@ -114,7 +114,7 @@ export function SessionsTable({
     return (
       <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-black/20 border border-zinc-200 dark:border-zinc-800 overflow-hidden">
         <div className="p-8 text-center">
-          <div className="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-8 h-8 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-zinc-500 dark:text-gray-400">Загрузка сессий...</p>
         </div>
       </div>

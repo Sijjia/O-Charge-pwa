@@ -147,10 +147,10 @@ export function OTPInput({
               text-center text-xl font-mono text-white
               border rounded-lg
               transition-all
-              focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50
-              caret-red-500 shadow-none placeholder-white/10
+              focus:outline-none focus:border-[#f0047f] focus:ring-1 focus:ring-[#f0047f]/50
+              caret-[#f0047f] shadow-none placeholder-white/10
               ${disabled ? "bg-zinc-800 cursor-not-allowed" : "bg-dark-card border-dark-border"}
-              ${error ? "border-red-500 ring-1 ring-red-500/30" : ""}
+              ${error ? "border-[#f0047f] ring-1 ring-[#f0047f]/30" : ""}
             `
                 : `
               w-12 h-14 sm:w-14 sm:h-16
@@ -159,10 +159,10 @@ export function OTPInput({
               border-2 rounded-xl
               shadow-sm shadow-black/20
               transition-all duration-200
-              focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500
+              focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]
               placeholder:text-zinc-400 dark:placeholder:text-gray-300
               ${disabled ? "bg-zinc-100 dark:bg-zinc-800 cursor-not-allowed" : "bg-white dark:bg-zinc-900"}
-              ${error ? "border-red-500 ring-1 ring-red-200" : activeIndex === index ? "border-green-500 shadow-md" : "border-zinc-300 dark:border-zinc-700"}
+              ${error ? "border-[#f0047f] ring-1 ring-[#ffc2df]" : activeIndex === index ? "border-green-500 shadow-md" : "border-zinc-300 dark:border-zinc-700"}
             `
             }
             aria-label={`Цифра ${index + 1} из ${length}`}
@@ -171,7 +171,7 @@ export function OTPInput({
       </div>
 
       {error && (
-        <p className={`mt-3 text-sm font-medium ${isDark ? "text-red-500" : "text-red-600"}`} role="alert">
+        <p className={`mt-3 text-sm font-medium ${isDark ? "text-[#f0047f]" : "text-[#f0047f]"}`} role="alert">
           {error}
         </p>
       )}

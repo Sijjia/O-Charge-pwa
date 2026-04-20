@@ -37,7 +37,7 @@ export const ChargingHistoryCard = memo(function ChargingHistoryCard({
     const colorMap = {
       completed: { color: "bg-green-500/15 text-green-400", text: "Завершена" },
       stopped: { color: "bg-orange-500/15 text-orange-400", text: "Остановлена" },
-      failed: { color: "bg-red-500/15 text-red-400", text: "Ошибка" },
+      failed: { color: "bg-[#f0047f]/15 text-[#f078b7]", text: "Ошибка" },
       in_progress: { color: "bg-blue-500/15 text-blue-400", text: "Заряжается" },
     };
     return (

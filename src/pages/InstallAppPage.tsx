@@ -17,7 +17,7 @@ export function InstallAppPage() {
             Установка приложения
           </h1>
           <p className="text-zinc-500 dark:text-gray-400 mt-1">
-            Установите Red Petroleum на устройство для быстрого доступа,
+            Установите O!Charge на устройство для быстрого доступа,
             оффлайн‑режима и авто‑обновлений.
           </p>
         </div>
@@ -31,7 +31,7 @@ export function InstallAppPage() {
             </h2>
             <button
               onClick={onInstall}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg"
             >
               <Icon icon="solar:alt-arrow-down-linear" width={20} />
               Установить приложение
@@ -51,29 +51,29 @@ export function InstallAppPage() {
             {isIOS ? (
               <div className="space-y-2 text-sm text-zinc-600 dark:text-gray-300">
                 <div className="flex items-center gap-2">
-                  <Icon icon="solar:share-linear" width={16} className="text-red-500" />
+                  <Icon icon="solar:share-linear" width={16} className="text-[#f0047f]" />
                   <span>Откройте меню «Поделиться» в Safari.</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon icon="solar:smartphone-linear" width={16} className="text-red-500" />
+                  <Icon icon="solar:smartphone-linear" width={16} className="text-[#f0047f]" />
                   <span>Выберите «На экран Домой».</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon icon="solar:alt-arrow-down-linear" width={16} className="text-red-500" />
+                  <Icon icon="solar:alt-arrow-down-linear" width={16} className="text-[#f0047f]" />
                   <span>Подтвердите добавление ярлыка.</span>
                 </div>
               </div>
             ) : (
               <div className="space-y-2 text-sm text-zinc-600 dark:text-gray-300">
                 <div className="flex items-center gap-2">
-                  <Icon icon="solar:smartphone-linear" width={16} className="text-red-500" />
+                  <Icon icon="solar:smartphone-linear" width={16} className="text-[#f0047f]" />
                   <span>
                     В Chrome/Edge нажмите «Установить приложение» в адресной
                     строке.
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon icon="solar:alt-arrow-down-linear" width={16} className="text-red-500" />
+                  <Icon icon="solar:alt-arrow-down-linear" width={16} className="text-[#f0047f]" />
                   <span>Подтвердите установку.</span>
                 </div>
               </div>

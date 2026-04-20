@@ -237,7 +237,7 @@ export function OwnerSessionsPage() {
       render: (session) => (
         <span className="text-sm text-zinc-900 dark:text-white">
           {session.partner_name || (
-            <span className="text-zinc-400 dark:text-zinc-500">Red Petroleum</span>
+            <span className="text-zinc-400 dark:text-zinc-500">O!Charge</span>
           )}
         </span>
       ),
@@ -308,7 +308,7 @@ export function OwnerSessionsPage() {
       render: (session) => (
         <button
           onClick={(e) => { e.stopPropagation(); handleViewSession(session); }}
-          className="text-red-500 hover:text-red-400 font-medium text-sm hover:underline"
+          className="text-[#f0047f] hover:text-[#f078b7] font-medium text-sm hover:underline"
         >
           Детали
         </button>
@@ -414,8 +414,8 @@ export function OwnerSessionsPage() {
         {/* Sessions Table */}
         {loadError ? (
           <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-12 text-center">
-            <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-400 mx-auto mb-3" />
-            <p className="text-red-500 dark:text-red-400">
+            <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f078b7] mx-auto mb-3" />
+            <p className="text-[#f0047f] dark:text-[#f078b7]">
               {loadError instanceof Error ? loadError.message : 'Ошибка загрузки сессий'}
             </p>
           </div>

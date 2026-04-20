@@ -49,7 +49,7 @@ export function ChargingSessionDetailsModal({
       case "stopped":
         return "bg-orange-500/15 text-orange-400";
       case "failed":
-        return "bg-red-500/15 text-red-400";
+        return "bg-[#f0047f]/15 text-[#f078b7]";
       default:
         return "bg-zinc-800 text-gray-300";
     }
@@ -257,8 +257,8 @@ export function ChargingSessionDetailsModal({
 
                 {/* Error Info */}
                 {session.errorCode && (
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
-                    <p className="text-sm text-red-400">
+                  <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4">
+                    <p className="text-sm text-[#f078b7]">
                       <span className="font-medium">Ошибка:</span>{" "}
                       {session.errorCode}
                     </p>

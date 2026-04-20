@@ -64,8 +64,8 @@ export function OwnerStationCard({
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Icon icon="solar:battery-charge-linear" width={20} className="text-red-500" />
+          <div className="w-10 h-10 bg-[#f0047f]/15 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Icon icon="solar:battery-charge-linear" width={20} className="text-[#f0047f]" />
           </div>
           <div>
             <h3 className="font-semibold text-zinc-900 dark:text-white mb-1">
@@ -119,7 +119,7 @@ export function OwnerStationCard({
         </span>
 
         {station.active_sessions !== undefined && station.active_sessions > 0 && (
-          <span className="text-sm font-medium text-red-500">
+          <span className="text-sm font-medium text-[#f0047f]">
             {station.active_sessions}{' '}
             {station.active_sessions === 1 ? 'активная' : 'активных'}
           </span>

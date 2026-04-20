@@ -526,15 +526,15 @@ export const ChargingPage = () => {
         {/* ПРЕМИАЛЬНЫЙ NOT FOUND */}
         <div className="flex-1 flex flex-col items-center justify-center px-6 relative z-10 -mt-10">
           <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-            <div className="w-[300px] h-[300px] bg-red-500/10 dark:bg-red-500/5 rounded-full blur-[80px]" />
+            <div className="w-[300px] h-[300px] bg-[#f0047f]/10 dark:bg-[#f0047f]/5 rounded-full blur-[80px]" />
           </div>
 
           <div className="relative z-10 w-24 h-24 mb-6 rounded-3xl bg-white dark:bg-zinc-900/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-center transform rotate-3">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#f0047f]/10 to-transparent rounded-3xl" />
             <Icon
               icon="solar:map-point-wave-bold-duotone"
               width={48}
-              className="text-red-500 dark:text-red-400 rotate-[-3deg]"
+              className="text-[#f0047f] dark:text-[#f078b7] rotate-[-3deg]"
             />
           </div>
 
@@ -564,7 +564,7 @@ export const ChargingPage = () => {
       {/* Loading Overlay при запуске зарядки */}
       {isStarting && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center z-[100]">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-red-500 border-t-transparent" />
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-[#f0047f] border-t-transparent" />
           <p className="mt-4 text-white text-lg font-bold font-display">
             Запуск зарядки...
           </p>
@@ -575,11 +575,11 @@ export const ChargingPage = () => {
       )}
 
       {/* Премиальный фон для хидера */}
-      <div className="absolute top-0 inset-x-0 h-[120px] bg-gradient-to-b from-red-500/10 to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 inset-x-0 h-[120px] bg-gradient-to-b from-[#f0047f]/10 to-transparent pointer-events-none z-10" />
 
       {/* Header */}
       <div className="px-5 pt-6 pb-4 flex items-center justify-between shrink-0 bg-white/70 dark:bg-[#0A0E17]/70 backdrop-blur-2xl border-b border-zinc-200/80 dark:border-white/10 z-20 relative transition-colors duration-300">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 via-transparent to-red-500/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f0047f]/5 via-transparent to-[#f0047f]/5 pointer-events-none" />
         <button
           onClick={() => navigate(-1)}
           className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 transition-all shadow-sm dark:shadow-none"
@@ -627,7 +627,7 @@ export const ChargingPage = () => {
                 station &&
                   station.location_id &&
                   isFavorite(station.location_id)
-                  ? "text-red-500"
+                  ? "text-[#f0047f]"
                   : "text-zinc-400",
                 heartbeatKey > 0 ? "animate-heartbeat" : "",
               ].join(" ")}
@@ -640,14 +640,14 @@ export const ChargingPage = () => {
       <div className="flex-1 overflow-y-auto px-5 pb-8">
         {/* Active Charging Session Banner */}
         {activeSession && (
-          <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-red-600/20 to-red-700/10 border border-red-500/30">
+          <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-[#f0047f]/20 to-[#c00366]/10 border border-[#f0047f]/30">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-[#f0047f]/20 rounded-full flex items-center justify-center">
                   <Icon
                     icon="solar:battery-charge-linear"
                     width={22}
-                    className="text-red-400 animate-pulse"
+                    className="text-[#f078b7] animate-pulse"
                   />
                 </div>
                 <div>
@@ -663,7 +663,7 @@ export const ChargingPage = () => {
                 onClick={() => {
                   navigate(`/charging-process/${activeSession}`);
                 }}
-                className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-sm font-semibold transition-colors"
+                className="px-4 py-2 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl text-sm font-semibold transition-colors"
               >
                 Вернуться
               </button>
@@ -687,21 +687,21 @@ export const ChargingPage = () => {
               <div
                 className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${station.is_available
                   ? "bg-emerald-500/10 border-emerald-500/20"
-                  : "bg-red-500/10 border-red-500/20"
+                  : "bg-[#f0047f]/10 border-[#f0047f]/20"
                   }`}
               >
                 <span className="relative flex h-2 w-2">
                   <span
-                    className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${station.is_available ? "bg-emerald-400" : "bg-red-400"
+                    className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${station.is_available ? "bg-emerald-400" : "bg-[#f078b7]"
                       }`}
                   />
                   <span
-                    className={`relative inline-flex rounded-full h-2 w-2 ${station.is_available ? "bg-emerald-500" : "bg-red-500"
+                    className={`relative inline-flex rounded-full h-2 w-2 ${station.is_available ? "bg-emerald-500" : "bg-[#f0047f]"
                       }`}
                   />
                 </span>
                 <span
-                  className={`text-[11px] font-bold uppercase tracking-wide ${station.is_available ? "text-emerald-500" : "text-red-500"
+                  className={`text-[11px] font-bold uppercase tracking-wide ${station.is_available ? "text-emerald-500" : "text-[#f0047f]"
                     }`}
                 >
                   {station.is_available ? "Доступна" : "Офлайн"}
@@ -738,7 +738,7 @@ export const ChargingPage = () => {
           </div>
           <button
             onClick={() => setShowTopup(true)}
-            className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center text-red-500 hover:bg-red-600/20 transition-colors"
+            className="w-8 h-8 rounded-full bg-[#f0047f]/10 flex items-center justify-center text-[#f0047f] hover:bg-[#f0047f]/20 transition-colors"
           >
             <Icon icon="solar:add-circle-linear" width={20} />
           </button>
@@ -767,7 +767,7 @@ export const ChargingPage = () => {
                     onClick={() => setSelectedConnector(connector.id)}
                     disabled={!isAvailable}
                     className={`w-full p-4 rounded-2xl border transition-all text-left ${isSelected
-                      ? "border-red-600 bg-white dark:bg-zinc-900/50 shadow-[0_0_0_1px_rgba(220,38,38,0.2)]"
+                      ? "border-[#f0047f] bg-white dark:bg-zinc-900/50 shadow-[0_0_0_1px_rgba(220,38,38,0.2)]"
                       : "border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                       } ${!isAvailable ? "opacity-60 cursor-not-allowed" : "cursor-pointer active:scale-[0.98]"} shadow-sm dark:shadow-none`}
                   >
@@ -775,7 +775,7 @@ export const ChargingPage = () => {
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-10 h-10 rounded-xl flex items-center justify-center ${isSelected
-                            ? "bg-red-600/10 text-red-500"
+                            ? "bg-[#f0047f]/10 text-[#f0047f]"
                             : isAvailable
                               ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white"
                               : "bg-zinc-100 dark:bg-zinc-800 text-zinc-400"
@@ -817,7 +817,7 @@ export const ChargingPage = () => {
                               ? "text-emerald-500"
                               : isOccupied
                                 ? "text-amber-500"
-                                : "text-red-500"
+                                : "text-[#f0047f]"
                               }`}
                           >
                             {isAvailable
@@ -850,7 +850,7 @@ export const ChargingPage = () => {
                             }
                             width={24}
                             className={
-                              isSelected ? "text-red-500" : "text-zinc-700"
+                              isSelected ? "text-[#f0047f]" : "text-zinc-700"
                             }
                           />
                         )}
@@ -865,7 +865,7 @@ export const ChargingPage = () => {
                           <Icon
                             icon="solar:danger-triangle-linear"
                             width={24}
-                            className="text-red-500"
+                            className="text-[#f0047f]"
                           />
                         )}
                       </div>
@@ -901,17 +901,17 @@ export const ChargingPage = () => {
               prechecks.warnings.length > 0) && (
                 <div className="mb-4 space-y-3">
                   {prechecks.issues.length > 0 && (
-                    <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex items-start gap-3">
+                    <div className="p-3 rounded-xl bg-[#f0047f]/10 border border-[#f0047f]/20 flex items-start gap-3">
                       <Icon
                         icon="solar:danger-triangle-linear"
                         width={18}
-                        className="text-red-400 shrink-0 mt-0.5"
+                        className="text-[#f078b7] shrink-0 mt-0.5"
                       />
                       <div>
-                        <p className="text-xs font-semibold text-red-400 mb-1">
+                        <p className="text-xs font-semibold text-[#f078b7] mb-1">
                           Проблемы для старта:
                         </p>
-                        <ul className="list-disc pl-4 text-xs text-red-400 space-y-0.5">
+                        <ul className="list-disc pl-4 text-xs text-[#f078b7] space-y-0.5">
                           {prechecks.issues.map((msg) => (
                             <li key={msg}>{msg}</li>
                           ))}
@@ -942,13 +942,13 @@ export const ChargingPage = () => {
               )}
 
             {chargingError && (
-              <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex items-start gap-3">
+              <div className="mb-4 p-3 rounded-xl bg-[#f0047f]/10 border border-[#f0047f]/20 flex items-start gap-3">
                 <Icon
                   icon="solar:close-circle-linear"
                   width={18}
-                  className="text-red-400 shrink-0 mt-0.5"
+                  className="text-[#f078b7] shrink-0 mt-0.5"
                 />
-                <p className="text-xs text-red-400 font-medium leading-relaxed">
+                <p className="text-xs text-[#f078b7] font-medium leading-relaxed">
                   {chargingError}
                 </p>
               </div>
@@ -963,7 +963,7 @@ export const ChargingPage = () => {
                     onClick={() => setChargeMode("amount")}
                     disabled={isStarting}
                     className={`flex-1 py-2 px-3 rounded-lg text-sm font-semibold transition-all ${chargeMode === "amount"
-                      ? "bg-white dark:bg-zinc-700 text-red-500 shadow-sm"
+                      ? "bg-white dark:bg-zinc-700 text-[#f0047f] shadow-sm"
                       : "text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
                       }`}
                   >
@@ -973,7 +973,7 @@ export const ChargingPage = () => {
                     onClick={() => setChargeMode("full")}
                     disabled={isStarting}
                     className={`flex-1 py-2 px-3 rounded-lg text-sm font-semibold transition-all ${chargeMode === "full"
-                      ? "bg-white dark:bg-zinc-700 text-red-500 shadow-sm"
+                      ? "bg-white dark:bg-zinc-700 text-[#f0047f] shadow-sm"
                       : "text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
                       }`}
                   >
@@ -984,7 +984,7 @@ export const ChargingPage = () => {
                 {/* Amount display — only when По сумме */}
                 {chargeMode === "amount" && (
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center text-red-500">
+                    <div className="w-10 h-10 rounded-full bg-[#f0047f]/10 flex items-center justify-center text-[#f0047f]">
                       <Icon icon="solar:tag-price-linear" width={22} />
                     </div>
                     <div className="flex-1">
@@ -1028,9 +1028,9 @@ export const ChargingPage = () => {
                             });
                           }}
                           disabled={isStarting}
-                          className="w-full h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-red-500 [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(220,38,38,0.4)]"
+                          className="w-full h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#f0047f] [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(220,38,38,0.4)]"
                           style={{
-                            background: `linear-gradient(to right, #dc2626 0%, #dc2626 ${(((chargingLimits.amount_som || 100) - 50) /
+                            background: `linear-gradient(to right, #f0047f 0%, #f0047f ${(((chargingLimits.amount_som || 100) - 50) /
                               (Math.min(2000, balance?.balance || 0) - 50)) *
                               100
                               }%, #3f3f46 ${(((chargingLimits.amount_som || 100) - 50) /
@@ -1078,7 +1078,7 @@ export const ChargingPage = () => {
                                 isStarting || (balance?.balance || 0) < amount
                               }
                               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${(chargingLimits.amount_som || 100) === amount
-                                ? "bg-red-600 text-white shadow-lg shadow-red-600/20"
+                                ? "bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/20"
                                 : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 disabled:opacity-40"
                                 }`}
                             >
@@ -1142,13 +1142,13 @@ export const ChargingPage = () => {
 
                     {(balance?.balance || 0) <
                       (chargingLimits.amount_som || 100) && (
-                        <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex items-start gap-3">
+                        <div className="p-3 rounded-xl bg-[#f0047f]/10 border border-[#f0047f]/20 flex items-start gap-3">
                           <Icon
                             icon="solar:wallet-money-linear"
                             width={16}
-                            className="text-red-400 shrink-0 mt-0.5"
+                            className="text-[#f078b7] shrink-0 mt-0.5"
                           />
-                          <p className="text-[11px] leading-relaxed text-red-400 font-medium">
+                          <p className="text-[11px] leading-relaxed text-[#f078b7] font-medium">
                             Недостаточно средств на балансе
                           </p>
                         </div>
@@ -1206,7 +1206,7 @@ export const ChargingPage = () => {
               <span>Забронировать</span>
             </button>
             <button
-              className="flex-1 py-4 bg-red-600 hover:bg-red-500 active:scale-[0.98] rounded-2xl text-white font-bold text-base shadow-[0_0_20px_rgba(220,38,38,0.3)] transition-all flex items-center justify-center gap-2.5 group overflow-hidden relative disabled:opacity-50 disabled:shadow-none"
+              className="flex-1 py-4 bg-[#f0047f] hover:bg-[#f0047f] active:scale-[0.98] rounded-2xl text-white font-bold text-base shadow-[0_0_20px_rgba(220,38,38,0.3)] transition-all flex items-center justify-center gap-2.5 group overflow-hidden relative disabled:opacity-50 disabled:shadow-none"
               onClick={() => openGuided(chargeMode)}
               disabled={
                 isStarting ||

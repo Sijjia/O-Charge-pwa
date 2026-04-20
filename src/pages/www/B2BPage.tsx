@@ -7,7 +7,7 @@ export function B2BPage() {
       {/* Header Section */}
       <div className="mb-12 text-center animate-enter" style={{ animationDelay: "0s" }}>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 mb-4">
-          <span className="w-2 h-2 rounded-full bg-red-500"></span>
+          <span className="w-2 h-2 rounded-full bg-[#f0047f]"></span>
           <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400 uppercase tracking-wide">Для бизнеса</span>
         </div>
         <h1 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-zinc-900 dark:text-white">Растите вместе с нами</h1>
@@ -29,7 +29,7 @@ export function B2BPage() {
           {/* Benefits List */}
           <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 mb-8 border border-zinc-100 dark:border-zinc-800/50">
             <h3 className="text-sm font-medium text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-              <Icon icon="solar:star-linear" width={16} className="text-red-500" />
+              <Icon icon="solar:star-linear" width={16} className="text-[#f0047f]" />
               Преимущества
             </h3>
             <ul className="space-y-3">
@@ -60,7 +60,7 @@ export function B2BPage() {
                 <input
                   type="text"
                   placeholder="ОсОО 'Example'"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
               <div className="space-y-1.5">
@@ -68,7 +68,7 @@ export function B2BPage() {
                 <input
                   type="text"
                   placeholder="1234567890"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ export function B2BPage() {
                 <input
                   type="tel"
                   placeholder="+996 555 000 000"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
               <div className="space-y-1.5">
@@ -86,7 +86,7 @@ export function B2BPage() {
                 <input
                   type="email"
                   placeholder="corp@company.com"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
             </div>
@@ -97,7 +97,7 @@ export function B2BPage() {
                 <input
                   type="number"
                   placeholder="5"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl pl-11 pr-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl pl-11 pr-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
             </div>
@@ -114,12 +114,12 @@ export function B2BPage() {
         </div>
 
         {/* Partners Section */}
-        <div className="bg-white dark:bg-zinc-900 border border-red-100 dark:border-red-900/20 rounded-3xl p-6 lg:p-8 flex flex-col animate-enter relative overflow-hidden group" style={{ animationDelay: "0.2s" }}>
+        <div className="bg-white dark:bg-zinc-900 border border-[#ffe0ef] dark:border-[#5c0030]/20 rounded-3xl p-6 lg:p-8 flex flex-col animate-enter relative overflow-hidden group" style={{ animationDelay: "0.2s" }}>
           {/* Decorative BG */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#f0047f]/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
           <div className="mb-8 relative z-10">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-red-600 dark:text-red-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 rounded-2xl bg-[#fff0f7] dark:bg-[#f0047f]/10 flex items-center justify-center text-[#f0047f] dark:text-[#f0047f] mb-6 group-hover:scale-110 transition-transform duration-300">
               <Icon icon="solar:hand-shake-linear" width={24} />
             </div>
             <h2 className="text-2xl font-semibold mb-2 text-zinc-900 dark:text-white">Стать партнёром</h2>
@@ -127,26 +127,26 @@ export function B2BPage() {
           </div>
 
           {/* Benefits List */}
-          <div className="bg-red-50/50 dark:bg-red-900/5 rounded-2xl p-5 mb-8 border border-red-100 dark:border-red-500/10 relative z-10">
+          <div className="bg-[#fff0f7]/50 dark:bg-[#5c0030]/5 rounded-2xl p-5 mb-8 border border-[#ffe0ef] dark:border-[#f0047f]/10 relative z-10">
             <h3 className="text-sm font-medium text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-              <Icon icon="solar:wallet-money-linear" width={16} className="text-red-500" />
+              <Icon icon="solar:wallet-money-linear" width={16} className="text-[#f0047f]" />
               Ваша выгода
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-                <Icon icon="solar:check-circle-bold" width={16} className="text-red-500 mt-0.5 shrink-0" />
+                <Icon icon="solar:check-circle-bold" width={16} className="text-[#f0047f] mt-0.5 shrink-0" />
                 <span>Доход <strong className="text-zinc-900 dark:text-white">до 80%</strong> от каждой зарядки</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-                <Icon icon="solar:check-circle-bold" width={16} className="text-red-500 mt-0.5 shrink-0" />
+                <Icon icon="solar:check-circle-bold" width={16} className="text-[#f0047f] mt-0.5 shrink-0" />
                 <span>Мы берём на себя обслуживание</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-                <Icon icon="solar:check-circle-bold" width={16} className="text-red-500 mt-0.5 shrink-0" />
+                <Icon icon="solar:check-circle-bold" width={16} className="text-[#f0047f] mt-0.5 shrink-0" />
                 <span>Мгновенная интеграция в сеть</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-                <Icon icon="solar:check-circle-bold" width={16} className="text-red-500 mt-0.5 shrink-0" />
+                <Icon icon="solar:check-circle-bold" width={16} className="text-[#f0047f] mt-0.5 shrink-0" />
                 <span>Личный кабинет владельца</span>
               </li>
             </ul>
@@ -160,7 +160,7 @@ export function B2BPage() {
                 <input
                   type="text"
                   placeholder="Иван Иванов"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
               <div className="space-y-1.5">
@@ -168,7 +168,7 @@ export function B2BPage() {
                 <input
                   type="tel"
                   placeholder="+996 555 000 000"
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl px-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
             </div>
@@ -179,14 +179,14 @@ export function B2BPage() {
                 <input
                   type="text"
                   placeholder="г. Бишкек, ул. ..."
-                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-red-500 text-zinc-900 dark:text-white text-sm rounded-xl pl-11 pr-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  className="w-full bg-zinc-100 dark:bg-zinc-900 border border-transparent focus:border-[#f0047f] text-zinc-900 dark:text-white text-sm rounded-xl pl-11 pr-4 py-3 outline-none transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 />
               </div>
             </div>
 
             <button
               type="button"
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3.5 rounded-xl mt-2 active:scale-[0.98] transition-all shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.23)] flex items-center justify-center gap-2"
+              className="w-full bg-[#f0047f] hover:bg-[#c00366] text-white font-medium py-3.5 rounded-xl mt-2 active:scale-[0.98] transition-all shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.23)] flex items-center justify-center gap-2"
             >
               <span>Оставить заявку</span>
               <Icon icon="solar:letter-linear" width={18} />

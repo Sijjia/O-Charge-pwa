@@ -73,7 +73,7 @@ export function RevenueBreakdownTable({
     return (
       <div className={`bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-black/20 border border-zinc-200 dark:border-zinc-800 ${className}`}>
         <div className="p-8 text-center">
-          <div className="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-8 h-8 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-zinc-500 dark:text-gray-400">Загрузка данных...</p>
         </div>
       </div>
@@ -225,7 +225,7 @@ export function RevenueBreakdownTable({
                       <div className="flex items-center gap-2">
                         <div className="flex-1 bg-zinc-200 dark:bg-zinc-700 rounded-full h-2 overflow-hidden">
                           <div
-                            className="bg-red-600 h-full rounded-full transition-all"
+                            className="bg-[#f0047f] h-full rounded-full transition-all"
                             style={{ width: `${percentage}%` }}
                           ></div>
                         </div>

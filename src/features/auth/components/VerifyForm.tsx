@@ -48,7 +48,7 @@ export function VerifyForm({ phoneNumber, onVerify, onBack, isLoading, error }: 
         </div>
 
         {error && (
-          <div className="text-red-600 text-sm text-center">
+          <div className="text-[#f0047f] text-sm text-center">
             {error}
           </div>
         )}

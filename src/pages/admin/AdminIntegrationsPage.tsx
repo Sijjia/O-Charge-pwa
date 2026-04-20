@@ -132,8 +132,8 @@ function IntegrationCard({ integration }: { integration: MapIntegration }) {
         </div>
         {integration.locations_error > 0 && (
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-red-500" />
-            <span className="text-xs text-red-500">
+            <span className="w-2 h-2 rounded-full bg-[#f0047f]" />
+            <span className="text-xs text-[#f0047f]">
               Ошибки: {integration.locations_error}
             </span>
           </div>
@@ -202,7 +202,7 @@ export function AdminIntegrationsPage() {
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-2xl font-bold text-zinc-900 dark:text-white">{p.synced}</span>
                 {p.errors > 0 && (
-                  <span className="text-xs text-red-500">+{p.errors} ош.</span>
+                  <span className="text-xs text-[#f0047f]">+{p.errors} ош.</span>
                 )}
               </div>
               <p className="text-[11px] text-zinc-400 mt-0.5">

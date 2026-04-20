@@ -17,7 +17,7 @@ import type { Manufacturer, EquipmentModel } from "@/features/admin/services/adm
 import { ImageUploader } from "@/features/admin/components/ImageUploader";
 
 const inputCls =
-  "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500/50 transition-colors text-sm";
+  "w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#f0047f]/50 transition-colors text-sm";
 
 const selectCls =
   "px-3 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-900 dark:text-white";
@@ -225,7 +225,7 @@ export function AdminEquipmentPage() {
                 setPriceMin("");
                 setPriceMax("");
               }}
-              className="px-3 py-2 text-xs text-red-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+              className="px-3 py-2 text-xs text-[#f0047f] hover:text-[#f078b7] hover:bg-[#f0047f]/10 rounded-lg transition-colors"
             >
               Сбросить
             </button>
@@ -235,7 +235,7 @@ export function AdminEquipmentPage() {
         {/* Content: Grouped by manufacturer */}
         {loading ? (
           <div className="flex justify-center py-16">
-            <div className="w-8 h-8 border-3 border-red-600 border-t-transparent rounded-full animate-spin" />
+            <div className="w-8 h-8 border-3 border-[#f0047f] border-t-transparent rounded-full animate-spin" />
           </div>
         ) : filteredModels.length === 0 ? (
           <AdminEmptyState
@@ -358,7 +358,7 @@ function ModelCard({
           <button onClick={onEdit} className="p-1 rounded-md bg-white/90 dark:bg-zinc-900/90 hover:bg-white dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 shadow-sm">
             <Icon icon="solar:pen-2-linear" width={12} />
           </button>
-          <button onClick={() => deleteModel.mutate(m.id)} className="p-1 rounded-md bg-white/90 dark:bg-zinc-900/90 hover:bg-red-50 dark:hover:bg-red-900/20 text-zinc-600 dark:text-zinc-400 hover:text-red-500 shadow-sm">
+          <button onClick={() => deleteModel.mutate(m.id)} className="p-1 rounded-md bg-white/90 dark:bg-zinc-900/90 hover:bg-[#fff0f7] dark:hover:bg-[#5c0030]/20 text-zinc-600 dark:text-zinc-400 hover:text-[#f0047f] shadow-sm">
             <Icon icon="solar:trash-bin-trash-linear" width={12} />
           </button>
         </div>

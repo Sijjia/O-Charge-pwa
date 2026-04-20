@@ -46,8 +46,8 @@ export function ChargingControl({ onChargingStart }: ChargingControlProps) {
         <QRScanner onScan={handleQRScan} onError={handleScanError} />
 
         {scanError && (
-          <div className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-            <p className="text-red-400 text-sm">{scanError}</p>
+          <div className="mt-4 p-3 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg">
+            <p className="text-[#f078b7] text-sm">{scanError}</p>
           </div>
         )}
 
@@ -75,7 +75,7 @@ export function ChargingControl({ onChargingStart }: ChargingControlProps) {
           <button
             onClick={() => setShowQRScanner(true)}
             disabled={isStarting}
-            className="w-full px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 transition-colors flex items-center justify-center"
+            className="w-full px-6 py-3 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] disabled:opacity-50 transition-colors flex items-center justify-center"
           >
             {isStarting ? (
               <>

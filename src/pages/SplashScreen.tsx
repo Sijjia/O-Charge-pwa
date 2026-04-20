@@ -35,24 +35,24 @@ export function SplashScreen() {
   }, [handleLoadComplete]);
 
   return (
-    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-sans selection:bg-red-500/20">
+    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-sans selection:bg-[#f0047f]/20">
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center w-full max-w-xs px-6">
         {/* Logo Container with Energy Pulse */}
         <div className="relative mb-10 group">
           {/* Energy Pulse Background */}
-          <div className="absolute inset-0 rounded-full bg-[#D31010]/20 dark:bg-[#D31010]/30 blur-2xl animate-pulse w-32 h-32 -left-4 -top-2 z-0" />
+          <div className="absolute inset-0 rounded-full bg-[#f0047f]/20 dark:bg-[#f0047f]/30 blur-2xl animate-pulse w-32 h-32 -left-4 -top-2 z-0" />
 
-          {/* RP Logo Image */}
+          {/* O!Bank Logo */}
           <div className="relative z-10 w-28 h-28 drop-shadow-2xl animate-fade-in overflow-hidden rounded-[24px]">
-            <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover" />
+            <img src={rpLogo} alt="O!Charge Logo" className="w-full h-full object-cover" />
           </div>
         </div>
 
         {/* App Name */}
         <div className="text-center mb-16">
           <h1 className="text-2xl font-semibold tracking-tight dark:text-white text-zinc-900">
-            Red Charge
+            O!Charge
           </h1>
           <p className="text-xs font-medium text-zinc-500 dark:text-zinc-500 mt-1 uppercase tracking-widest opacity-80">
             Зарядные станции
@@ -65,14 +65,14 @@ export function SplashScreen() {
             <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
               Загрузка данных...
             </span>
-            <span className="text-xs font-medium text-[#D31010]">
+            <span className="text-xs font-medium text-[#f0047f]">
               {progress}%
             </span>
           </div>
 
           <div className="h-1.5 w-full bg-zinc-200 dark:bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#D31010] rounded-full shadow-[0_0_10px_rgba(211,16,16,0.5)] transition-all duration-100 ease-out"
+              className="h-full bg-[#f0047f] rounded-full shadow-[0_0_10px_rgba(240,4,127,0.5)] transition-all duration-100 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -82,14 +82,14 @@ export function SplashScreen() {
       {/* Version Footer */}
       <footer className="absolute bottom-8 text-center w-full opacity-60">
         <p className="text-[10px] font-mono text-zinc-400 dark:text-zinc-600 tracking-widest">
-          v1.1.0
+          v2.0.0
         </p>
       </footer>
 
       {/* Background Decor */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#D31010]/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#f0047f]/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#7825ff]/5 rounded-full blur-[100px]" />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export function PartnerStationsPage() {
   if (isLoading) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[60vh]">
-        <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin" />
+        <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin" />
       </div>
     );
   }
@@ -90,7 +90,7 @@ export function PartnerStationsPage() {
                     <Icon icon="solar:clock-circle-linear" width={14} />
                     <span>SN: {station.serial_number}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-red-500 dark:text-red-400 font-medium">
+                  <div className="flex items-center gap-1 text-[#f0047f] dark:text-[#f078b7] font-medium">
                     <span>Подробнее</span>
                     <Icon icon="solar:arrow-right-linear" width={14} />
                   </div>

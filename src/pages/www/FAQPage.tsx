@@ -16,11 +16,11 @@ export function FAQPage() {
         {/* Header Section */}
         <div className="mb-10 text-center animate-enter" style={{ animationDelay: "0s" }}>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 mb-4">
-            <span className="w-2 h-2 rounded-full bg-red-500"></span>
+            <span className="w-2 h-2 rounded-full bg-[#f0047f]"></span>
             <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400 uppercase tracking-wide">Поддержка</span>
           </div>
           <h1 className="text-3xl lg:text-4xl font-semibold tracking-tight mb-3 text-zinc-900 dark:text-white">Частые вопросы</h1>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-lg mx-auto">Найдите ответы на самые популярные вопросы о работе сервиса Red Petroleum EV.</p>
+          <p className="text-zinc-500 dark:text-zinc-400 max-w-lg mx-auto">Найдите ответы на самые популярные вопросы о работе сервиса O!Charge EV.</p>
         </div>
 
         {/* FAQ List */}
@@ -30,13 +30,13 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300" open>
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Как начать зарядку?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
             <div className="px-5 pb-6 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-dashed border-zinc-200 dark:border-zinc-800/50 mt-1 pt-4">
               <ol className="space-y-3 list-decimal list-inside marker:text-zinc-400 dark:marker:text-zinc-600 marker:font-medium">
-                <li className="pl-1">Скачайте приложение <strong className="text-zinc-900 dark:text-white font-medium">Red Petroleum EV</strong> в App Store или Google Play.</li>
+                <li className="pl-1">Скачайте приложение <strong className="text-zinc-900 dark:text-white font-medium">O!Charge EV</strong> в App Store или Google Play.</li>
                 <li className="pl-1">Зарегистрируйтесь используя ваш номер телефона.</li>
                 <li className="pl-1">Пополните баланс через кошелек <span className="text-zinc-900 dark:text-white">Namba One</span> или банковской картой.</li>
                 <li className="pl-1">Найдите свободную станцию на карте в приложении или отсканируйте QR-код на самом терминале.</li>
@@ -49,7 +49,7 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Какие коннекторы поддерживаются?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
@@ -62,7 +62,7 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Что такое резервирование средств?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
@@ -75,7 +75,7 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Как работает ночной тариф?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
@@ -88,12 +88,12 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Можно ли зарядиться без приложения?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
             <div className="px-5 pb-6 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-dashed border-zinc-200 dark:border-zinc-800/50 mt-1 pt-4">
-              <p>На данный момент запуск сессии возможен только через мобильное приложение Red Petroleum EV. Это необходимо для корректного учета потребленной энергии, безопасной оплаты и сохранения истории ваших зарядок.</p>
+              <p>На данный момент запуск сессии возможен только через мобильное приложение O!Charge EV. Это необходимо для корректного учета потребленной энергии, безопасной оплаты и сохранения истории ваших зарядок.</p>
             </div>
           </details>
 
@@ -101,12 +101,12 @@ export function FAQPage() {
           <details className="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden [&[open]]:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
             <summary className="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors">
               <h3 className="text-base font-medium text-zinc-900 dark:text-white pr-4">Как стать корпоративным клиентом?</h3>
-              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-red-50 dark:group-open:bg-red-500/10 group-open:text-red-600 dark:group-open:text-red-500 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-open:bg-[#fff0f7] dark:group-open:bg-[#f0047f]/10 group-open:text-[#f0047f] dark:group-open:text-[#f0047f] transition-all duration-300">
                 <Icon icon="solar:alt-arrow-down-linear" width={18} className="transition-transform duration-300 group-open:rotate-180" />
               </div>
             </summary>
             <div className="px-5 pb-6 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-dashed border-zinc-200 dark:border-zinc-800/50 mt-1 pt-4">
-              <p>Для подключения B2B-аккаунта перейдите в раздел <Link to="/www/b2b" className="text-red-600 dark:text-red-500 hover:underline">B2B</Link> на нашем сайте и заполните форму заявки. Наш менеджер свяжется с вами для заключения договора. Корпоративным клиентам доступны постоплата, единый баланс и закрывающие документы.</p>
+              <p>Для подключения B2B-аккаунта перейдите в раздел <Link to="/www/b2b" className="text-[#f0047f] dark:text-[#f0047f] hover:underline">B2B</Link> на нашем сайте и заполните форму заявки. Наш менеджер свяжется с вами для заключения договора. Корпоративным клиентам доступны постоплата, единый баланс и закрывающие документы.</p>
             </div>
           </details>
         </div>

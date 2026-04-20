@@ -86,7 +86,7 @@ export function BottomNavigation() {
       {/* Active charging banner */}
       {hasActiveSession && (
         <div
-          className="bg-gradient-to-r from-red-600 to-red-700 px-4 py-2.5 cursor-pointer shadow-lg relative overflow-hidden"
+          className="bg-gradient-to-r from-[#f0047f] to-[#c00366] px-4 py-2.5 cursor-pointer shadow-lg relative overflow-hidden"
           onClick={handleChargingClick}
         >
           <div className="absolute inset-0 bg-white/10 w-full h-full animate-pulse z-0" />
@@ -123,7 +123,7 @@ export function BottomNavigation() {
         <div className="relative -top-5 flex flex-col items-center z-10">
           <Link
             to="/qr-scanner"
-            className="flex items-center justify-center w-14 h-14 bg-red-600 rounded-full text-white shadow-[0_8px_20px_-4px_rgba(220,38,38,0.6)] hover:bg-red-700 hover:scale-105 active:scale-95 transition-all duration-300"
+            className="flex items-center justify-center w-14 h-14 bg-[#f0047f] rounded-full text-white shadow-[0_8px_20px_-4px_rgba(220,38,38,0.6)] hover:bg-[#c00366] hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <Icon icon="solar:scanner-line-duotone" width={28} />
           </Link>
@@ -156,7 +156,7 @@ function NavItem({ item, location, isAuthenticated }: { item: NavItem, location:
       aria-current={isActive ? "page" : undefined}
       aria-label={item.label}
       className={`flex flex-col items-center justify-center gap-1.5 w-[20%] transition-all duration-300 group active:scale-90 ${isActive
-        ? "text-red-600"
+        ? "text-[#f0047f]"
         : "text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300"
         }`}
     >
@@ -167,7 +167,7 @@ function NavItem({ item, location, isAuthenticated }: { item: NavItem, location:
           className={`transition-all duration-300 ${isActive ? "scale-110 drop-shadow-md" : "group-active:scale-90"}`}
         />
         {isActive && (
-          <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-red-600 rounded-full shadow-[0_0_8px_rgba(220,38,38,0.6)]" />
+          <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#f0047f] rounded-full shadow-[0_0_8px_rgba(220,38,38,0.6)]" />
         )}
       </div>
       <span className={`text-[10px] tracking-wide transition-all ${isActive ? "font-semibold" : "font-medium"}`}>

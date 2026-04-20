@@ -78,7 +78,7 @@ export function EditUserModal({ user, isOpen, onClose }: EditUserModalProps) {
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
-            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm">
+            <div className="p-3 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-lg text-[#f078b7] text-sm">
               {error}
             </div>
           )}
@@ -107,7 +107,7 @@ export function EditUserModal({ user, isOpen, onClose }: EditUserModalProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Иван Иванов"
-              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
+              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
             />
           </div>
 
@@ -119,7 +119,7 @@ export function EditUserModal({ user, isOpen, onClose }: EditUserModalProps) {
             <select
               value={role}
               onChange={(e) => setRole(e.target.value as OwnerRole)}
-              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white dark:bg-zinc-900"
+              className="w-full px-4 py-2.5 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f] bg-white dark:bg-zinc-900"
             >
               <option value="operator">Оператор</option>
               <option value="admin">Администратор</option>
@@ -166,7 +166,7 @@ export function EditUserModal({ user, isOpen, onClose }: EditUserModalProps) {
             <button
               type="submit"
               disabled={updateUserMutation.isPending}
-              className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-2.5 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {updateUserMutation.isPending && (
                 <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />

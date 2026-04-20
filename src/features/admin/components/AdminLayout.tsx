@@ -144,7 +144,7 @@ export function AdminLayout() {
                     onClick={onItemClick}
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm transition-all duration-300 relative overflow-hidden group ${isActive
-                        ? "text-red-600 dark:text-red-500 font-bold bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-600 dark:border-red-500"
+                        ? "text-[#f0047f] dark:text-[#f0047f] font-bold bg-gradient-to-r from-[#f0047f]/10 to-transparent border-l-4 border-[#f0047f] dark:border-[#f0047f]"
                         : "text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-white/5 hover:text-zinc-900 dark:hover:text-white border-l-4 border-transparent"
                       }`
                     }
@@ -168,7 +168,7 @@ export function AdminLayout() {
         {/* Logo */}
         <div className="h-16 flex items-center px-5 border-b border-zinc-200 dark:border-zinc-800">
           <div className="flex items-center gap-2.5 flex-1">
-            <div className="w-9 h-9 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-red-500 to-red-600 shadow-lg shadow-red-600/20">
+            <div className="w-9 h-9 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-[#f0047f] to-[#c00366] shadow-lg shadow-[#f0047f]/20">
               <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
             </div>
             <div>
@@ -210,7 +210,7 @@ export function AdminLayout() {
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2 px-3 py-2.5 text-red-600 hover:bg-red-500/10 rounded-lg transition-colors text-sm"
+            className="w-full flex items-center gap-2 px-3 py-2.5 text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors text-sm"
           >
             <Icon icon="solar:logout-2-bold-duotone" width={18} />
             <span className="font-medium">Выйти</span>
@@ -230,7 +230,7 @@ export function AdminLayout() {
           </button>
 
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 overflow-hidden rounded-lg bg-red-600 flex items-center justify-center">
+            <div className="w-7 h-7 overflow-hidden rounded-lg bg-[#f0047f] flex items-center justify-center">
               <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
             </div>
             <div>
@@ -275,7 +275,7 @@ export function AdminLayout() {
             >
               <div className="h-14 flex items-center justify-between px-5 border-b border-zinc-200 dark:border-zinc-800">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl overflow-hidden bg-red-600 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl overflow-hidden bg-[#f0047f] flex items-center justify-center">
                     <img src={rpLogo} alt="RP Logo" className="w-full h-full object-cover scale-[1.2]" />
                   </div>
                   <span className="font-bold text-zinc-900 dark:text-white">O!Charge</span>
@@ -315,7 +315,7 @@ export function AdminLayout() {
 
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-3 px-4 py-3.5 text-red-600 hover:bg-red-500/10 rounded-xl transition-colors"
+                  className="w-full flex items-center gap-3 px-4 py-3.5 text-[#f0047f] hover:bg-[#f0047f]/10 rounded-xl transition-colors"
                 >
                   <Icon icon="solar:logout-2-bold-duotone" width={20} />
                   <span className="font-medium">Выйти</span>

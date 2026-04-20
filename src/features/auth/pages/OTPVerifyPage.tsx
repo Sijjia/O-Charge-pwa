@@ -51,7 +51,7 @@ export function OTPVerifyPage() {
   if (!phone) return null;
 
   return (
-    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white h-screen flex flex-col relative overflow-hidden selection:bg-red-500/30">
+    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white h-screen flex flex-col relative overflow-hidden selection:bg-[#f0047f]/30">
       {/* Nav */}
       <nav className="p-6 w-full z-10 flex justify-between items-center">
         <button
@@ -141,7 +141,7 @@ export function OTPVerifyPage() {
             className={`group w-full py-4 rounded-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 font-medium ${
               otpCode.length !== 6 || isLoading
                 ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-500 text-white shadow-[0_4px_14px_rgba(220,38,38,0.3)] dark:shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.4)] dark:hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]"
+                : "bg-[#f0047f] hover:bg-[#f0047f] text-white shadow-[0_4px_14px_rgba(220,38,38,0.3)] dark:shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.4)] dark:hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]"
             }`}
           >
             {isLoading ? (
@@ -179,7 +179,7 @@ export function OTPVerifyPage() {
       </main>
 
       {/* Ambient Background */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/20 dark:bg-red-600/10 blur-[120px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-normal" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#f0047f]/20 dark:bg-[#f0047f]/10 blur-[120px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-normal" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 dark:bg-blue-600/10 blur-[120px] rounded-full pointer-events-none mix-blend-multiply dark:mix-blend-normal" />
     </div>
   );

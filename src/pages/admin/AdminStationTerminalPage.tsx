@@ -47,13 +47,13 @@ const SEVERITY_STYLES: Record<string, { bg: string; text: string; icon: string }
     icon: "solar:warning-circle-linear",
   },
   error: {
-    bg: "bg-red-500/10 border-red-500/20",
-    text: "text-red-400",
+    bg: "bg-[#f0047f]/10 border-[#f0047f]/20",
+    text: "text-[#f078b7]",
     icon: "solar:danger-circle-linear",
   },
   critical: {
-    bg: "bg-red-600/20 border-red-600/30",
-    text: "text-red-300",
+    bg: "bg-[#f0047f]/20 border-[#f0047f]/30",
+    text: "text-[#f078b7]",
     icon: "solar:fire-bold",
   },
 };
@@ -264,7 +264,7 @@ export function AdminStationTerminalPage() {
     if (s === "Available") return "text-emerald-400";
     if (s === "Preparing") return "text-amber-400";
     if (s === "Charging") return "text-cyan-400";
-    if (s === "Faulted") return "text-red-400";
+    if (s === "Faulted") return "text-[#f078b7]";
     return "text-zinc-400";
   };
 
@@ -288,7 +288,7 @@ export function AdminStationTerminalPage() {
       <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <Icon icon="solar:cpu-bolt-bold-duotone" width={20} className="text-red-400" />
+            <Icon icon="solar:cpu-bolt-bold-duotone" width={20} className="text-[#f078b7]" />
             <span className="text-sm font-bold text-white">Симулятор OCPP</span>
             {sim.active && (
               <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
@@ -300,7 +300,7 @@ export function AdminStationTerminalPage() {
             <button
               onClick={handleStartSim}
               disabled={simLoading !== null}
-              className="px-4 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold rounded-lg transition-colors disabled:opacity-50 flex items-center gap-1.5"
+              className="px-4 py-1.5 bg-[#f0047f] hover:bg-[#c00366] text-white text-xs font-semibold rounded-lg transition-colors disabled:opacity-50 flex items-center gap-1.5"
             >
               {simLoading === "start" ? (
                 <Icon icon="svg-spinners:ring-resize" width={14} />
@@ -371,7 +371,7 @@ export function AdminStationTerminalPage() {
                     <button
                       onClick={() => handleStopCharging(conn.id)}
                       disabled={simLoading !== null}
-                      className="px-2.5 py-1 bg-red-600/20 text-red-400 text-[10px] font-bold rounded-md hover:bg-red-600/30 transition-colors disabled:opacity-50"
+                      className="px-2.5 py-1 bg-[#f0047f]/20 text-[#f078b7] text-[10px] font-bold rounded-md hover:bg-[#f0047f]/30 transition-colors disabled:opacity-50"
                     >
                       Stop
                     </button>
@@ -435,7 +435,7 @@ export function AdminStationTerminalPage() {
         {/* Connection status */}
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3">
           <div className="flex items-center gap-3">
-            <div className={`w-3 h-3 rounded-full ${isConnected ? "bg-emerald-500 animate-pulse" : "bg-red-500"}`} />
+            <div className={`w-3 h-3 rounded-full ${isConnected ? "bg-emerald-500 animate-pulse" : "bg-[#f0047f]"}`} />
             <div>
               <div className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">SSE</div>
               <div className="text-sm font-bold text-zinc-900 dark:text-white">
@@ -451,7 +451,7 @@ export function AdminStationTerminalPage() {
             onClick={() => setAutoScroll(!autoScroll)}
             className={`flex-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all flex items-center justify-center gap-1 ${
               autoScroll
-                ? "bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-400"
+                ? "bg-[#ffe0ef] dark:bg-[#f0047f]/20 text-[#c00366] dark:text-[#f078b7]"
                 : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300"
             }`}
           >
@@ -473,7 +473,7 @@ export function AdminStationTerminalPage() {
         <div className="bg-zinc-900 border-b border-zinc-800 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
+              <div className="w-3 h-3 rounded-full bg-[#f0047f]" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
@@ -534,7 +534,7 @@ export function AdminStationTerminalPage() {
                       <span className="text-zinc-600 flex-shrink-0">{evt.processing_time_ms}ms</span>
                     )}
                     {evt.error_message && (
-                      <span className="text-red-400 truncate flex-1">{evt.error_message}</span>
+                      <span className="text-[#f078b7] truncate flex-1">{evt.error_message}</span>
                     )}
                     <Icon
                       icon={isExpanded ? "solar:alt-arrow-up-linear" : "solar:alt-arrow-down-linear"}
@@ -572,7 +572,7 @@ export function AdminStationTerminalPage() {
         {/* Status bar */}
         <div className="border-t border-zinc-800 px-4 py-2 bg-zinc-900 text-[10px] text-zinc-500 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className={`w-1.5 h-1.5 rounded-full ${isConnected ? "bg-emerald-500 animate-pulse" : "bg-red-500"}`} />
+            <div className={`w-1.5 h-1.5 rounded-full ${isConnected ? "bg-emerald-500 animate-pulse" : "bg-[#f0047f]"}`} />
             {isConnected ? "CONNECTED" : "DISCONNECTED"}
           </div>
           <div className="flex items-center gap-4">

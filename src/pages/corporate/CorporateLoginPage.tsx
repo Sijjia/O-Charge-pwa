@@ -17,19 +17,19 @@ export function CorporateLoginPage() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#0A0E17] flex items-center justify-center p-4 transition-colors">
       {/* Ambient glows */}
-      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-red-600/5 dark:bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg dark:shadow-red-900/30">
+          <div className="w-16 h-16 bg-[#f0047f] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg dark:shadow-[#5c0030]/30">
             <Icon icon="solar:buildings-2-linear" width={32} className="text-white" />
           </div>
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display tracking-tight">
             Корпоративный кабинет
           </h1>
           <p className="text-sm text-zinc-500 mt-2">
-            Red Petroleum EV Charging
+            O!Charge EV Charging
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export function CorporateLoginPage() {
         {/* Login Button */}
         <button
           onClick={() => navigate("/auth/phone", { state: { redirect: "/corporate/dashboard" } })}
-          className="w-full h-14 rounded-xl font-semibold text-base transition-all active:scale-[0.98] flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white shadow-lg dark:shadow-red-900/20"
+          className="w-full h-14 rounded-xl font-semibold text-base transition-all active:scale-[0.98] flex items-center justify-center gap-2 bg-[#f0047f] hover:bg-[#f0047f] text-white shadow-lg dark:shadow-[#5c0030]/20"
         >
           <Icon icon="solar:phone-linear" width={20} />
           Войти через SMS

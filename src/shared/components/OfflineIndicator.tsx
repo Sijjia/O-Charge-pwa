@@ -32,7 +32,7 @@ export function OfflineIndicator() {
         className={`px-4 py-2 text-sm font-medium text-white cursor-pointer transition-colors ${
           isOnline 
             ? 'bg-amber-500/100 hover:bg-amber-600' 
-            : 'bg-red-500/100 hover:bg-red-600'
+            : 'bg-[#f0047f]/100 hover:bg-[#f0047f]'
         }`}
         onClick={() => setShowDetails(!showDetails)}
       >
@@ -76,7 +76,7 @@ export function OfflineIndicator() {
       {/* Detailed view */}
       {showDetails && (
         <div className={`px-4 py-3 text-sm ${
-          isOnline ? 'bg-amber-500/10 border-amber-500/20' : 'bg-red-500/10 border-red-500/20'
+          isOnline ? 'bg-amber-500/10 border-amber-500/20' : 'bg-[#f0047f]/10 border-[#f0047f]/20'
         } border-b`}>
           <div className="max-w-7xl mx-auto">
             {isOnline ? (
@@ -100,7 +100,7 @@ export function OfflineIndicator() {
                 )}
               </div>
             ) : (
-              <div className="space-y-2 text-red-400">
+              <div className="space-y-2 text-[#f078b7]">
                 <div className="flex items-center space-x-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -109,7 +109,7 @@ export function OfflineIndicator() {
                   <span>Приложение работает в офлайн режиме</span>
                 </div>
                 
-                <div className="text-red-400">
+                <div className="text-[#f078b7]">
                   <p>Доступны следующие функции:</p>
                   <ul className="mt-1 ml-4 space-y-1">
                     <li>• Просмотр ранее загруженных данных</li>
@@ -132,7 +132,7 @@ export function OfflineIndicator() {
                 className={`px-3 py-1 rounded text-xs font-medium ${
                   isOnline 
                     ? 'bg-amber-600 hover:bg-amber-700 text-white'
-                    : 'bg-red-600 hover:bg-red-700 text-white'
+                    : 'bg-[#f0047f] hover:bg-[#c00366] text-white'
                 }`}
               >
                 Обновить приложение

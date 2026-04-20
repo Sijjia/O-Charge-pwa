@@ -260,7 +260,7 @@ export function AdminLocationDetailPage() {
   if (error || !data?.location) {
     return (
       <div className="p-6 text-center">
-        <Icon icon="solar:danger-triangle-bold-duotone" width={48} className="text-red-500 mx-auto mb-3" />
+        <Icon icon="solar:danger-triangle-bold-duotone" width={48} className="text-[#f0047f] mx-auto mb-3" />
         <p className="text-zinc-600 dark:text-zinc-400">Локация не найдена</p>
         <button
           onClick={() => navigate("/admin/locations")}
@@ -300,7 +300,7 @@ export function AdminLocationDetailPage() {
         {isEditing && (
           <button
             onClick={() => setShowDeleteConfirm(true)}
-            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors shadow-sm"
+            className="flex items-center gap-2 bg-[#f0047f] hover:bg-[#c00366] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors shadow-sm"
           >
             <Icon icon="solar:trash-bin-trash-bold" width={18} />
             Удалить
@@ -379,7 +379,7 @@ export function AdminLocationDetailPage() {
                 {isEditing && (
                   <button
                     onClick={() => { handleFieldChange("lat", null); handleFieldChange("lng", null); }}
-                    className="ml-auto text-xs text-red-500 hover:text-red-600 transition-colors"
+                    className="ml-auto text-xs text-[#f0047f] hover:text-[#f0047f] transition-colors"
                   >
                     Сбросить
                   </button>
@@ -411,7 +411,7 @@ export function AdminLocationDetailPage() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleFieldChange("name", e.target.value)}
-                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500"
+                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]"
                   placeholder="Название локации"
                 />
                 <AnimatedError error={errors["name"]} />
@@ -424,7 +424,7 @@ export function AdminLocationDetailPage() {
                   type="text"
                   value={formData.address}
                   onChange={(e) => handleFieldChange("address", e.target.value)}
-                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500"
+                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]"
                   placeholder="Адрес"
                 />
                 <AnimatedError error={errors["address"]} />
@@ -437,7 +437,7 @@ export function AdminLocationDetailPage() {
                   type="text"
                   value={formData.city || ""}
                   onChange={(e) => handleFieldChange("city", e.target.value)}
-                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500"
+                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]"
                   placeholder="Город"
                 />
                 <AnimatedError error={errors["city"]} />
@@ -449,7 +449,7 @@ export function AdminLocationDetailPage() {
                 <select
                   value={formData.status}
                   onChange={(e) => handleFieldChange("status", e.target.value)}
-                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500"
+                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]"
                 >
                   {STATUS_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>{o.label}</option>
@@ -463,9 +463,9 @@ export function AdminLocationDetailPage() {
                 <select
                   value={formData.partner_id || ""}
                   onChange={(e) => handleFieldChange("partner_id", e.target.value || null)}
-                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500"
+                  className="w-full px-3 py-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]"
                 >
-                  <option value="">Red Petroleum (без партнёра)</option>
+                  <option value="">O!Charge (без партнёра)</option>
                   {partnersData?.partners?.map((p) => (
                     <option key={p.id} value={p.user_id}>{p.label}</option>
                   ))}
@@ -490,7 +490,7 @@ export function AdminLocationDetailPage() {
                         <img src={img.url} alt={img.caption || ""} className="w-20 h-20 rounded-lg object-cover border border-zinc-200 dark:border-zinc-700" />
                         <button
                           onClick={() => deleteImageMutation.mutate(img.id)}
-                          className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                          className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#f0047f] text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                         >
                           <Icon icon="solar:close-circle-bold" width={14} />
                         </button>
@@ -565,8 +565,8 @@ export function AdminLocationDetailPage() {
               </div>
             ) : (
               <div>
-                <p className="text-sm font-semibold text-red-600 dark:text-red-500">Red Petroleum</p>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium">
+                <p className="text-sm font-semibold text-[#f0047f] dark:text-[#f0047f]">O!Charge</p>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[#ffe0ef] dark:bg-[#5c0030]/30 text-[#c00366] dark:text-[#f078b7] font-medium">
                   100%
                 </span>
               </div>
@@ -614,7 +614,7 @@ export function AdminLocationDetailPage() {
             </div>
             <div>
               <p className="text-xs text-zinc-400">Доля RP ({platformShare}%)</p>
-              <p className="text-lg font-bold text-red-600 dark:text-red-500">
+              <p className="text-lg font-bold text-[#f0047f] dark:text-[#f0047f]">
                 {revenue.platform_share.toLocaleString("ru-RU")} KGS
               </p>
             </div>
@@ -626,13 +626,13 @@ export function AdminLocationDetailPage() {
               style={{ width: `${partnerShare}%` }}
             />
             <div
-              className="h-full bg-red-500 rounded-r-full"
+              className="h-full bg-[#f0047f] rounded-r-full"
               style={{ width: `${platformShare}%` }}
             />
           </div>
           <div className="flex justify-between mt-1 text-[10px] text-zinc-400">
             <span>{location.partner_name} — {partnerShare}%</span>
-            <span>Red Petroleum — {platformShare}%</span>
+            <span>O!Charge — {platformShare}%</span>
           </div>
         </div>
       )}
@@ -664,7 +664,7 @@ export function AdminLocationDetailPage() {
                         </a>
                       )}
                       {sp.sync_error && (
-                        <p className="text-[11px] text-red-500 truncate max-w-xs">{sp.sync_error}</p>
+                        <p className="text-[11px] text-[#f0047f] truncate max-w-xs">{sp.sync_error}</p>
                       )}
                     </div>
                   </div>
@@ -739,8 +739,8 @@ export function AdminLocationDetailPage() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowDeleteConfirm(false)} />
           <div className="relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 max-w-md w-full shadow-xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-                <Icon icon="solar:trash-bin-trash-bold" width={20} className="text-red-600 dark:text-red-400" />
+              <div className="w-10 h-10 rounded-full bg-[#ffe0ef] dark:bg-[#5c0030]/30 flex items-center justify-center">
+                <Icon icon="solar:trash-bin-trash-bold" width={20} className="text-[#f0047f] dark:text-[#f078b7]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Удалить локацию?</h3>
@@ -771,7 +771,7 @@ export function AdminLocationDetailPage() {
               <button
                 onClick={() => deleteMutation.mutate()}
                 disabled={deleteMutation.isPending}
-                className="flex-1 px-4 py-2.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                className="flex-1 px-4 py-2.5 bg-[#f0047f] hover:bg-[#c00366] disabled:opacity-50 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
               >
                 {deleteMutation.isPending ? (
                   <Icon icon="solar:refresh-linear" width={16} className="animate-spin" />
@@ -825,7 +825,7 @@ function ExpandableStationRow({
             <div>
               <button
                 onClick={(e) => { e.stopPropagation(); navigate(`/admin/stations/${s.id}`); }}
-                className="font-medium text-zinc-900 dark:text-white hover:text-red-500 transition-colors text-left"
+                className="font-medium text-zinc-900 dark:text-white hover:text-[#f0047f] transition-colors text-left"
               >
                 {s.model}
               </button>
@@ -875,7 +875,7 @@ function ExpandableStationRow({
             <span className="font-medium">{(s.month_revenue ?? 0).toLocaleString("ru-RU")} KGS</span>
             <button
               onClick={(e) => { e.stopPropagation(); navigate(`/admin/stations/${s.id}`); }}
-              className="opacity-0 group-hover:opacity-100 text-zinc-400 hover:text-red-500 transition-all"
+              className="opacity-0 group-hover:opacity-100 text-zinc-400 hover:text-[#f0047f] transition-all"
               title="Открыть станцию"
             >
               <Icon icon="solar:arrow-right-up-linear" width={16} />
@@ -938,7 +938,7 @@ function ExpandableStationRow({
           </td>
           <td className="px-5 py-2.5" />
           <td className="px-5 py-2.5 text-right">
-            <span className="text-xs text-zinc-400 hover:text-red-500 transition-colors inline-flex items-center gap-1">
+            <span className="text-xs text-zinc-400 hover:text-[#f0047f] transition-colors inline-flex items-center gap-1">
               Подробнее <Icon icon="solar:arrow-right-up-linear" width={12} />
             </span>
           </td>

@@ -75,7 +75,7 @@ export function AssignTariffModal({ planId, planName, onClose }: Props) {
         <div className="flex-1 overflow-y-auto px-6 py-4">
           {isLoading ? (
             <div className="flex items-center justify-center py-8">
-              <Icon icon="solar:refresh-linear" width={24} className="text-red-500 animate-spin" />
+              <Icon icon="solar:refresh-linear" width={24} className="text-[#f0047f] animate-spin" />
             </div>
           ) : stations.length === 0 ? (
             <p className="text-sm text-zinc-500 text-center py-8">Нет доступных станций</p>
@@ -87,7 +87,7 @@ export function AssignTariffModal({ planId, planName, onClose }: Props) {
               >
                 <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                   selected.size === stations.length
-                    ? "bg-red-600 border-red-600"
+                    ? "bg-[#f0047f] border-[#f0047f]"
                     : "border-zinc-300 dark:border-zinc-600"
                 }`}>
                   {selected.size === stations.length && <Icon icon="solar:check-read-linear" width={14} className="text-white" />}
@@ -103,7 +103,7 @@ export function AssignTariffModal({ planId, planName, onClose }: Props) {
                 >
                   <div className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
                     selected.has(station.id)
-                      ? "bg-red-600 border-red-600"
+                      ? "bg-[#f0047f] border-[#f0047f]"
                       : "border-zinc-300 dark:border-zinc-600"
                   }`}>
                     {selected.has(station.id) && <Icon icon="solar:check-read-linear" width={14} className="text-white" />}
@@ -132,7 +132,7 @@ export function AssignTariffModal({ planId, planName, onClose }: Props) {
             <button
               onClick={handleAssign}
               disabled={selected.size === 0 || assignMutation.isPending}
-              className="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#f0047f] hover:bg-[#f0047f] text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
             >
               {assignMutation.isPending && <Icon icon="solar:refresh-linear" width={14} className="animate-spin" />}
               Назначить

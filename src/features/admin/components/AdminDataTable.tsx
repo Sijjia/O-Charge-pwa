@@ -90,7 +90,7 @@ export function AdminDataTable<T>({
               })}
             </div>
             {onRowClick && (
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-zinc-400 group-active:text-red-500 group-active:bg-red-50 dark:group-active:bg-red-500/10 transition-colors">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-zinc-400 group-active:text-[#f0047f] group-active:bg-[#fff0f7] dark:group-active:bg-[#f0047f]/10 transition-colors">
                 <Icon icon="solar:alt-arrow-right-linear" width={18} />
               </div>
             )}
@@ -145,7 +145,7 @@ export function AdminDataTable<T>({
                 ))}
                 {onRowClick && (
                   <td className="py-4 px-6 text-center align-middle">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 dark:text-zinc-600 group-hover:bg-white dark:group-hover:bg-[#1C212B] group-hover:text-red-500 group-hover:shadow-sm border border-transparent group-hover:border-zinc-200 dark:group-hover:border-white/5 transition-all opacity-0 group-hover:opacity-100 -ml-2">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 dark:text-zinc-600 group-hover:bg-white dark:group-hover:bg-[#1C212B] group-hover:text-[#f0047f] group-hover:shadow-sm border border-transparent group-hover:border-zinc-200 dark:group-hover:border-white/5 transition-all opacity-0 group-hover:opacity-100 -ml-2">
                       <Icon icon="solar:alt-arrow-right-linear" width={18} />
                     </div>
                   </td>

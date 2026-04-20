@@ -43,7 +43,7 @@ function ErrorCard({ error, expanded, onToggle, onSimulate }: { error: OcppError
             <span className="text-sm font-semibold text-zinc-900 dark:text-white">{error.title}</span>
             <code className="text-[10px] px-1.5 py-0.5 bg-zinc-100 dark:bg-zinc-800 rounded text-zinc-500 font-mono">{error.code}</code>
             {error.callSupport && (
-              <span className="text-[10px] px-1.5 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded font-medium">
+              <span className="text-[10px] px-1.5 py-0.5 bg-[#ffe0ef] dark:bg-[#5c0030]/30 text-[#f0047f] dark:text-[#f078b7] rounded font-medium">
                 📞 Звонить
               </span>
             )}
@@ -75,10 +75,10 @@ function ErrorCard({ error, expanded, onToggle, onSimulate }: { error: OcppError
             </div>
           </div>
           {error.callSupport && (
-            <div className="flex items-center gap-2 p-3 bg-red-100 dark:bg-red-900/20 rounded-lg">
-              <Icon icon="solar:phone-calling-bold-duotone" width={18} className="text-red-500" />
-              <p className="text-sm font-medium text-red-700 dark:text-red-400">
-                Требуется обращение в поддержку Red Petroleum
+            <div className="flex items-center gap-2 p-3 bg-[#ffe0ef] dark:bg-[#5c0030]/20 rounded-lg">
+              <Icon icon="solar:phone-calling-bold-duotone" width={18} className="text-[#f0047f]" />
+              <p className="text-sm font-medium text-[#c00366] dark:text-[#f078b7]">
+                Требуется обращение в поддержку O!Charge
               </p>
             </div>
           )}
@@ -157,9 +157,9 @@ export function AdminErrorGuidePage() {
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-center">
-          <p className="text-2xl font-bold text-red-600">{criticalCount}</p>
-          <p className="text-xs text-red-500">Критических</p>
+        <div className="bg-[#fff0f7] dark:bg-[#3d0020]/20 border border-[#ffc2df] dark:border-[#7a013f] rounded-xl p-4 text-center">
+          <p className="text-2xl font-bold text-[#f0047f]">{criticalCount}</p>
+          <p className="text-xs text-[#f0047f]">Критических</p>
         </div>
         <div className="bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-xl p-4 text-center">
           <p className="text-2xl font-bold text-yellow-600">{warningCount}</p>
@@ -179,7 +179,7 @@ export function AdminErrorGuidePage() {
             onClick={() => setCategory(c.value)}
             className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               category === c.value
-                ? "bg-red-600 text-white shadow-lg shadow-red-600/25"
+                ? "bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/25"
                 : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200"
             }`}
           >
@@ -197,7 +197,7 @@ export function AdminErrorGuidePage() {
             placeholder="Поиск по коду, названию или описанию..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white rounded-xl text-sm border-none focus:ring-2 focus:ring-red-500"
+            className="w-full pl-9 pr-4 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white rounded-xl text-sm border-none focus:ring-2 focus:ring-[#f0047f]"
           />
         </div>
         <div className="flex gap-1.5">

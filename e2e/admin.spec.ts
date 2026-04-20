@@ -10,7 +10,7 @@ test.describe("Admin Panel — Business Processes", () => {
   test("dashboard loads with overview", async ({ page }) => {
     await page.goto("/admin/dashboard");
     await page.waitForLoadState("networkidle");
-    await expect(page.getByText("Red Charge").first()).toBeVisible({ timeout: NAV_TIMEOUT });
+    await expect(page.getByText("O!Charge").first()).toBeVisible({ timeout: NAV_TIMEOUT });
     await expect(page.locator("main")).toBeVisible();
   });
 

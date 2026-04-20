@@ -83,7 +83,7 @@ export const ToastContainer = () => {
       case 'success':
         return <Icon icon="solar:check-circle-linear" width={20} className="text-green-500" />;
       case 'error':
-        return <Icon icon="solar:close-circle-linear" width={20} className="text-red-500" />;
+        return <Icon icon="solar:close-circle-linear" width={20} className="text-[#f0047f]" />;
       case 'warning':
         return <Icon icon="solar:danger-circle-linear" width={20} className="text-orange-500" />;
       case 'info':
@@ -98,7 +98,7 @@ export const ToastContainer = () => {
       case 'success':
         return `${base} border-green-500/20`;
       case 'error':
-        return `${base} border-red-500/20`;
+        return `${base} border-[#f0047f]/20`;
       case 'warning':
         return `${base} border-orange-500/20`;
       case 'info':

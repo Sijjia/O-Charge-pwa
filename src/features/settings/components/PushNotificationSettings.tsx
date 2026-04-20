@@ -46,7 +46,7 @@ const notificationOptions: NotificationOption[] = [
     key: "lowBalance",
     label: "Низкий баланс",
     description: "Когда баланс ниже 50 сом",
-    icon: <Icon icon="solar:wallet-linear" width={16} className="text-red-600" />,
+    icon: <Icon icon="solar:wallet-linear" width={16} className="text-[#f0047f]" />,
   },
   {
     key: "chargingLimits",
@@ -85,9 +85,9 @@ function ToggleSwitch({
       className={`
         relative inline-flex ${sizeClasses.container} items-center rounded-full
         transition-colors duration-200 ease-in-out
-        focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2
+        focus:outline-none focus:ring-2 focus:ring-[#f0047f] focus:ring-offset-2
         disabled:opacity-50 disabled:cursor-not-allowed
-        ${enabled ? "bg-red-600" : "bg-zinc-700"}
+        ${enabled ? "bg-[#f0047f]" : "bg-zinc-700"}
       `}
       aria-pressed={enabled}
     >
@@ -196,7 +196,7 @@ export function PushNotificationSettings() {
                 Найдите раздел &ldquo;Уведомления&rdquo; или
                 &ldquo;Разрешения&rdquo;
               </li>
-              <li>Разрешите уведомления для o.asystem.kg</li>
+              <li>Разрешите уведомления для ocharge.kg</li>
               <li>Обновите страницу</li>
             </ol>
           </div>
@@ -236,8 +236,8 @@ export function PushNotificationSettings() {
 
       {/* Error message */}
       {error && (
-        <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-3">
-          <p className="text-sm text-red-400">{error}</p>
+        <div className="rounded-lg border border-[#f0047f]/20 bg-[#f0047f]/10 p-3">
+          <p className="text-sm text-[#f078b7]">{error}</p>
         </div>
       )}
 
@@ -295,7 +295,7 @@ export function PushNotificationSettings() {
                   value="immediate"
                   checked={notificationPreferences.deliveryTiming === "immediate"}
                   onChange={() => setDeliveryTiming("immediate")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">Немедленно</span>
               </label>
@@ -306,7 +306,7 @@ export function PushNotificationSettings() {
                   value="quiet-hours"
                   checked={notificationPreferences.deliveryTiming === "quiet-hours"}
                   onChange={() => setDeliveryTiming("quiet-hours")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">В тихие часы</span>
               </label>
@@ -317,7 +317,7 @@ export function PushNotificationSettings() {
                   value="scheduled"
                   checked={notificationPreferences.deliveryTiming === "scheduled"}
                   onChange={() => setDeliveryTiming("scheduled")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">По расписанию</span>
               </label>
@@ -344,7 +344,7 @@ export function PushNotificationSettings() {
                   onChange={(e) =>
                     setQuietHours(e.target.value, notificationPreferences.quietHoursTo)
                   }
-                  className="w-full rounded border border-zinc-700 bg-zinc-800 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full rounded border border-zinc-700 bg-zinc-800 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#f0047f]"
                 />
               </div>
               <div>
@@ -357,7 +357,7 @@ export function PushNotificationSettings() {
                   onChange={(e) =>
                     setQuietHours(notificationPreferences.quietHoursFrom, e.target.value)
                   }
-                  className="w-full rounded border border-zinc-700 bg-zinc-800 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full rounded border border-zinc-700 bg-zinc-800 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#f0047f]"
                 />
               </div>
             </div>
@@ -383,7 +383,7 @@ export function PushNotificationSettings() {
                   value="high"
                   checked={notificationPreferences.frequency === "high"}
                   onChange={() => setFrequency("high")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">Высокая (все уведомления)</span>
               </label>
@@ -394,7 +394,7 @@ export function PushNotificationSettings() {
                   value="medium"
                   checked={notificationPreferences.frequency === "medium"}
                   onChange={() => setFrequency("medium")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">Средняя (сгруппированные)</span>
               </label>
@@ -405,7 +405,7 @@ export function PushNotificationSettings() {
                   value="low"
                   checked={notificationPreferences.frequency === "low"}
                   onChange={() => setFrequency("low")}
-                  className="w-4 h-4 text-red-600 cursor-pointer"
+                  className="w-4 h-4 text-[#f0047f] cursor-pointer"
                 />
                 <span className="text-sm font-medium text-white">Низкая (только критичные)</span>
               </label>
@@ -453,7 +453,7 @@ export function PushNotificationSettings() {
                 chargingStart: "text-green-600",
                 chargingComplete: "text-blue-600",
                 chargingError: "text-amber-600",
-                lowBalance: "text-red-600",
+                lowBalance: "text-[#f0047f]",
                 chargingLimits: "text-orange-600",
                 paymentAlert: "text-cyan-600",
               };
@@ -483,7 +483,7 @@ export function PushNotificationSettings() {
                       <p className={`text-sm font-medium ${notification.read ? "text-gray-400" : "text-white"}`}>
                         {notification.title}
                       </p>
-                      {!notification.read && <div className="w-2 h-2 rounded-full bg-red-600 flex-shrink-0 mt-1" />}
+                      {!notification.read && <div className="w-2 h-2 rounded-full bg-[#f0047f] flex-shrink-0 mt-1" />}
                     </div>
                     <p className="text-xs text-gray-500 line-clamp-2">{notification.body}</p>
                     <p className="text-xs text-gray-600 mt-1">{timeStr}</p>
@@ -499,7 +499,7 @@ export function PushNotificationSettings() {
       {isSubscribed && (
         <button
           onClick={handleTestNotification}
-          className="w-full rounded-lg bg-gradient-to-r from-red-600 to-orange-600 px-4 py-3 text-white font-medium text-sm flex items-center justify-center gap-2 hover:from-red-700 hover:to-orange-700 transition-colors"
+          className="w-full rounded-lg bg-gradient-to-r from-[#f0047f] to-orange-600 px-4 py-3 text-white font-medium text-sm flex items-center justify-center gap-2 hover:from-[#c00366] hover:to-orange-700 transition-colors"
         >
           <Icon icon="solar:bell-linear" width={18} />
           Отправить тестовое уведомление

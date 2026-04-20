@@ -115,7 +115,7 @@ export function CorporateReportsPage() {
             onClick={() => setPeriod(item.key)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               period === item.key
-                ? "bg-red-600 text-white"
+                ? "bg-[#f0047f] text-white"
                 : "bg-white dark:bg-zinc-900 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800"
             }`}
           >
@@ -126,9 +126,9 @@ export function CorporateReportsPage() {
 
       {/* Error */}
       {error && (
-        <div className="mb-6 bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-          <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
-          <p className="text-red-400 text-sm">
+        <div className="mb-6 bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 flex items-start gap-3">
+          <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
+          <p className="text-[#f078b7] text-sm">
             {error instanceof Error ? error.message : "Не удалось загрузить отчёт"}
           </p>
         </div>
@@ -159,7 +159,7 @@ export function CorporateReportsPage() {
 
         {isLoading ? (
           <div className="flex items-center justify-center py-12">
-            <Icon icon="solar:refresh-linear" width={24} className="text-red-500 animate-spin" />
+            <Icon icon="solar:refresh-linear" width={24} className="text-[#f0047f] animate-spin" />
           </div>
         ) : report && report.by_employee.length > 0 ? (
           <div className="space-y-2">
@@ -188,7 +188,7 @@ export function CorporateReportsPage() {
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-red-600 rounded-full transition-all"
+                          className="h-full bg-[#f0047f] rounded-full transition-all"
                           style={{ width: `${Math.min(pct, 100)}%` }}
                         />
                       </div>

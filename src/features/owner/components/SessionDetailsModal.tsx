@@ -70,7 +70,7 @@ export function SessionDetailsModal({ session, isOpen, onClose }: SessionDetails
       case 'stopped':
         return 'bg-yellow-500/15 text-yellow-400';
       case 'failed':
-        return 'bg-red-500/15 text-red-400';
+        return 'bg-[#f0047f]/15 text-[#f078b7]';
       default:
         return 'bg-zinc-800 text-gray-300';
     }
@@ -300,12 +300,12 @@ export function SessionDetailsModal({ session, isOpen, onClose }: SessionDetails
 
           {/* Force Stop Confirmation */}
           {showForceStopConfirm && (
-            <div className="mx-6 mb-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-              <p className="text-sm text-red-300 mb-3">
+            <div className="mx-6 mb-4 p-4 bg-[#f0047f]/10 border border-[#f0047f]/30 rounded-lg">
+              <p className="text-sm text-[#f078b7] mb-3">
                 Принудительно остановить зарядку? Команда RemoteStopTransaction будет отправлена на станцию.
               </p>
               {forceStopMutation.error && (
-                <p className="text-sm text-red-400 mb-3">
+                <p className="text-sm text-[#f078b7] mb-3">
                   {forceStopMutation.error instanceof Error ? forceStopMutation.error.message : 'Ошибка остановки'}
                 </p>
               )}
@@ -313,7 +313,7 @@ export function SessionDetailsModal({ session, isOpen, onClose }: SessionDetails
                 <button
                   onClick={() => forceStopMutation.mutate(session.id)}
                   disabled={forceStopMutation.isPending}
-                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 font-medium text-sm"
+                  className="px-4 py-2 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] disabled:opacity-50 font-medium text-sm"
                 >
                   {forceStopMutation.isPending ? 'Останавливаю...' : 'Да, остановить'}
                 </button>
@@ -332,7 +332,7 @@ export function SessionDetailsModal({ session, isOpen, onClose }: SessionDetails
             {session.status === 'active' && !showForceStopConfirm ? (
               <button
                 onClick={() => setShowForceStopConfirm(true)}
-                className="px-4 py-2 bg-red-600/15 border border-red-500/30 text-red-500 rounded-lg hover:bg-red-600/25 transition-colors font-medium flex items-center gap-2"
+                className="px-4 py-2 bg-[#f0047f]/15 border border-[#f0047f]/30 text-[#f0047f] rounded-lg hover:bg-[#f0047f]/25 transition-colors font-medium flex items-center gap-2"
               >
                 <Icon icon="solar:stop-circle-linear" width={18} />
                 Принудительная остановка

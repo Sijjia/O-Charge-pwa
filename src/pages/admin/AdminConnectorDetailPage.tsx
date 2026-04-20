@@ -138,7 +138,7 @@ function formatDuration(minutes: number | null | undefined): string {
 function logSeverityBadge(severity: string | null | undefined) {
   switch (severity) {
     case 'error': case 'critical':
-      return <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-red-500/10 text-red-500">error</span>;
+      return <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-[#f0047f]/10 text-[#f0047f]">error</span>;
     case 'warning':
       return <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-yellow-500/10 text-yellow-500">warn</span>;
     default:
@@ -230,7 +230,7 @@ export function AdminConnectorDetailPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400">Загрузка данных разъёма...</p>
         </div>
       </div>
@@ -248,7 +248,7 @@ export function AdminConnectorDetailPage() {
           </p>
           <button
             onClick={() => navigate(`${base}/stations/${stationId}`)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg transition-colors"
           >
             <Icon icon="solar:arrow-left-linear" width={20} />
             <span>К станции</span>
@@ -290,7 +290,7 @@ export function AdminConnectorDetailPage() {
                   <>
                     <button
                       onClick={() => navigate(`${base}/locations/${station.location!.id}`)}
-                      className="hover:text-red-500 transition-colors"
+                      className="hover:text-[#f0047f] transition-colors"
                     >
                       {station.location.name}
                     </button>
@@ -299,7 +299,7 @@ export function AdminConnectorDetailPage() {
                 )}
                 <button
                   onClick={() => navigate(`${base}/stations/${stationId}`)}
-                  className="hover:text-red-500 transition-colors"
+                  className="hover:text-[#f0047f] transition-colors"
                 >
                   {station.manufacturer} {station.model}
                 </button>
@@ -406,7 +406,7 @@ export function AdminConnectorDetailPage() {
               onClick={() => setActiveTab('sessions')}
               className={`flex-1 px-6 py-4 text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
                 activeTab === 'sessions'
-                  ? 'text-red-600 border-b-2 border-red-500 bg-red-500/5'
+                  ? 'text-[#f0047f] border-b-2 border-[#f0047f] bg-[#f0047f]/5'
                   : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
               }`}
             >
@@ -417,7 +417,7 @@ export function AdminConnectorDetailPage() {
               onClick={() => setActiveTab('logs')}
               className={`flex-1 px-6 py-4 text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
                 activeTab === 'logs'
-                  ? 'text-red-600 border-b-2 border-red-500 bg-red-500/5'
+                  ? 'text-[#f0047f] border-b-2 border-[#f0047f] bg-[#f0047f]/5'
                   : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
               }`}
             >
@@ -431,7 +431,7 @@ export function AdminConnectorDetailPage() {
             <div>
               {loadingSessions ? (
                 <div className="flex items-center justify-center py-16">
-                  <div className="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-10 h-10 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin" />
                 </div>
               ) : sessions.length === 0 ? (
                 <div className="text-center py-16">
@@ -506,7 +506,7 @@ export function AdminConnectorDetailPage() {
             <div>
               {loadingLogs ? (
                 <div className="flex items-center justify-center py-16">
-                  <div className="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-10 h-10 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin" />
                 </div>
               ) : connectorLogs.length === 0 ? (
                 <div className="text-center py-16">
@@ -554,7 +554,7 @@ export function AdminConnectorDetailPage() {
                             </div>
                           </div>
                           {log.error_message && (
-                            <p className="text-xs text-red-400 mt-1">{log.error_message}</p>
+                            <p className="text-xs text-[#f078b7] mt-1">{log.error_message}</p>
                           )}
                         </button>
 

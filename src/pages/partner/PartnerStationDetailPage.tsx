@@ -81,7 +81,7 @@ export function PartnerStationDetailPage() {
   if (stationsLoading || sessionsLoading) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[60vh]">
-        <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin" />
+        <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin" />
       </div>
     );
   }
@@ -93,7 +93,7 @@ export function PartnerStationDetailPage() {
         <p className="text-zinc-500 dark:text-zinc-400">Станция не найдена</p>
         <button
           onClick={() => navigate("/partner/stations")}
-          className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-sm"
+          className="mt-4 px-4 py-2 bg-[#f0047f] text-white rounded-lg text-sm"
         >
           Назад к станциям
         </button>
@@ -212,8 +212,8 @@ export function PartnerStationDetailPage() {
 
         {/* Total Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="bg-gradient-to-br from-red-50 to-red-100/50 dark:from-red-950/30 dark:to-red-900/10 border border-red-200/50 dark:border-red-500/10 rounded-xl p-4 text-center">
-            <Icon icon="solar:wallet-money-linear" width={24} className="text-red-500 mx-auto mb-2" />
+          <div className="bg-gradient-to-br from-[#fff0f7] to-[#ffe0ef]/50 dark:from-[#3d0020]/30 dark:to-[#5c0030]/10 border border-[#ffc2df]/50 dark:border-[#f0047f]/10 rounded-xl p-4 text-center">
+            <Icon icon="solar:wallet-money-linear" width={24} className="text-[#f0047f] mx-auto mb-2" />
             <p className="text-xl font-bold text-zinc-900 dark:text-white">{stats.partnerShareAll.toLocaleString()}</p>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Ваш доход (сом)</p>
           </div>
@@ -268,7 +268,7 @@ export function PartnerStationDetailPage() {
                         </td>
                         <td className="py-4 px-6 whitespace-nowrap align-middle text-right text-zinc-700 dark:text-zinc-300">{session.energy_kwh.toFixed(1)} кВтч</td>
                         <td className="py-4 px-6 whitespace-nowrap align-middle text-right text-zinc-700 dark:text-zinc-300">{session.amount.toFixed(0)} сом</td>
-                        <td className="py-4 px-6 whitespace-nowrap align-middle text-right font-medium text-red-600 dark:text-red-400">{(session.partner_share || session.amount * 0.8).toFixed(0)} сом</td>
+                        <td className="py-4 px-6 whitespace-nowrap align-middle text-right font-medium text-[#f0047f] dark:text-[#f078b7]">{(session.partner_share || session.amount * 0.8).toFixed(0)} сом</td>
                         <td className="py-4 px-6 whitespace-nowrap align-middle text-right text-zinc-500 dark:text-zinc-400">{session.duration_minutes} мин</td>
                       </tr>
                     ))}
@@ -293,7 +293,7 @@ export function PartnerStationDetailPage() {
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-zinc-700 dark:text-zinc-300">{session.energy_kwh.toFixed(1)} кВтч / {session.duration_minutes} мин</span>
                       <div className="text-right">
-                        <span className="text-sm font-semibold text-red-600 dark:text-red-400">{(session.partner_share || session.amount * 0.8).toFixed(0)} сом</span>
+                        <span className="text-sm font-semibold text-[#f0047f] dark:text-[#f078b7]">{(session.partner_share || session.amount * 0.8).toFixed(0)} сом</span>
                         <span className="text-xs text-zinc-400 ml-1">из {session.amount.toFixed(0)}</span>
                       </div>
                     </div>

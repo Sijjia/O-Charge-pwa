@@ -35,11 +35,11 @@ export function ErrorDisplay({
         };
       case 'AUTHENTICATION':
         return {
-          bg: 'bg-red-500/10',
-          border: 'border-red-500/20',
-          text: 'text-red-900',
-          icon: 'text-red-600',
-          button: 'bg-red-600 hover:bg-red-700',
+          bg: 'bg-[#f0047f]/10',
+          border: 'border-[#f0047f]/20',
+          text: 'text-[#5c0030]',
+          icon: 'text-[#f0047f]',
+          button: 'bg-[#f0047f] hover:bg-[#c00366]',
         };
       case 'VALIDATION':
         return {
@@ -99,7 +99,7 @@ export function ErrorDisplay({
  */
 export function InlineError({ message }: { message: string }) {
   return (
-    <div className="flex items-center gap-2 mt-1 text-red-600 text-sm">
+    <div className="flex items-center gap-2 mt-1 text-[#f0047f] text-sm">
       <Icon icon="solar:danger-circle-linear" width={16} className="flex-shrink-0" />
       <span>{message}</span>
     </div>
@@ -124,8 +124,8 @@ export function FullPageError({
     <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="bg-zinc-900 rounded-2xl shadow-lg shadow-black/40 p-8 text-center">
-          <div className="w-16 h-16 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon icon="solar:danger-circle-linear" width={32} className="text-red-600" />
+          <div className="w-16 h-16 bg-[#f0047f]/15 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon icon="solar:danger-circle-linear" width={32} className="text-[#f0047f]" />
           </div>
           <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{message}</h2>
           {suggestion && (
@@ -143,7 +143,7 @@ export function FullPageError({
             {onRetry && (
               <button
                 onClick={onRetry}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#f0047f] text-white rounded-lg font-medium hover:bg-[#c00366] transition-colors"
               >
                 <Icon icon="solar:refresh-linear" width={20} />
                 Попробовать снова

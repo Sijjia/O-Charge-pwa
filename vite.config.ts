@@ -22,9 +22,9 @@ export default defineConfig(() => {
         },
         includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
         manifest: {
-          name: "Red Petroleum EV",
-          short_name: "Red Petroleum",
-          description: "Red Petroleum EV — зарядка электромобилей в Кыргызстане",
+          name: "O!Charge",
+          short_name: "O!Charge",
+          description: "O!Charge — зарядка электромобилей в Кыргызстане",
           theme_color: "#050507",
           background_color: "#0A0E17",
           display: "standalone",

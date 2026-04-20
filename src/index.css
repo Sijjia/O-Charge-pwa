@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Golos+Text:wght@400;500;600;700&display=swap");
 @import "./styles/theme.css";
 
 @tailwind base;
@@ -22,7 +22,7 @@
   }
 
   body {
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Golos Text", "Inter", system-ui, sans-serif;
     background-color: #fafafa;
     color: #18181b;
     padding-top: env(safe-area-inset-top);
@@ -109,7 +109,7 @@
   input[type="password"]:focus,
   input[type="email"]:focus,
   textarea:focus {
-    @apply outline-none ring-2 ring-red-500/50 border-red-500/50 shadow-[0_0_12px_rgb(239_68_68/0.15)];
+    @apply outline-none ring-2 ring-[#f0047f]/50 border-[#f0047f]/50 shadow-[0_0_12px_rgb(240_4_127/0.15)];
   }
 
   .dark .tech-input:focus,
@@ -119,7 +119,7 @@
   .dark input[type="password"]:focus,
   .dark input[type="email"]:focus,
   .dark textarea:focus {
-    @apply ring-red-500/50 border-red-500/50 shadow-[0_0_15px_rgb(239_68_68/0.2)];
+    @apply ring-[#f0047f]/50 border-[#f0047f]/50 shadow-[0_0_15px_rgb(240_4_127/0.2)];
   }
 }
 
@@ -148,7 +148,7 @@
   }
 
   .btn-primary {
-    @apply bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/30 focus:ring-red-600 border border-transparent;
+    @apply bg-[#f0047f] text-white hover:bg-[#c00366] hover:shadow-lg hover:shadow-[#f0047f]/30 focus:ring-[#f0047f] border border-transparent;
   }
 
   .btn-secondary {
@@ -156,7 +156,7 @@
   }
 
   .btn-outline {
-    @apply border-2 border-red-500/20 text-red-600 dark:border-red-500/30 dark:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 focus:ring-red-500;
+    @apply border-2 border-[#f0047f]/20 text-[#f0047f] dark:border-[#f0047f]/30 dark:text-[#f078b7] hover:bg-[#f0047f]/5 dark:hover:bg-[#f0047f]/10 focus:ring-[#f0047f];
   }
 
   .card {
@@ -164,7 +164,7 @@
   }
 
   .input {
-    @apply block w-full px-4 py-3.5 border border-zinc-200 dark:border-white/10 rounded-[14px] bg-zinc-50 dark:bg-[#1C212B] text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 sm:text-base text-base transition-all duration-200;
+    @apply block w-full px-4 py-3.5 border border-zinc-200 dark:border-white/10 rounded-[14px] bg-zinc-50 dark:bg-[#1C212B] text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#f0047f]/50 focus:border-[#f0047f] sm:text-base text-base transition-all duration-200;
   }
 }
 
@@ -218,10 +218,10 @@
 /* Energy beam for charging animation */
 .energy-beam {
   background: linear-gradient(to top,
-      rgba(239, 68, 68, 0),
-      #ef4444,
-      rgba(239, 68, 68, 0));
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+      rgba(240, 4, 127, 0),
+      #f0047f,
+      rgba(240, 4, 127, 0));
+  box-shadow: 0 0 15px rgba(240, 4, 127, 0.6);
   position: absolute;
   bottom: 0;
   border-radius: 99px;
@@ -280,16 +280,16 @@
   animation: ripple 3s infinite cubic-bezier(0, 0.2, 0.8, 1);
 }
 
-/* Red neon glow on SVG gauge */
+/* Magenta neon glow on SVG gauge */
 @keyframes pulse-glow {
 
   0%,
   100% {
-    filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.4));
+    filter: drop-shadow(0 0 10px rgba(240, 4, 127, 0.4));
   }
 
   50% {
-    filter: drop-shadow(0 0 25px rgba(220, 38, 38, 0.7));
+    filter: drop-shadow(0 0 25px rgba(240, 4, 127, 0.7));
   }
 }
 
@@ -334,7 +334,7 @@
 
 .spinner {
   border: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: 2px solid #dc2626;
+  border-top: 2px solid #f0047f;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -343,7 +343,7 @@
 
 .dark .spinner {
   border-color: rgba(255, 255, 255, 0.1);
-  border-top-color: #dc2626;
+  border-top-color: #f0047f;
 }
 
 @keyframes spin {
@@ -556,7 +556,7 @@ details>summary::-webkit-details-marker {
 }
 
 .linear-card:hover {
-  border-color: rgba(220, 38, 38, 0.4);
+  border-color: rgba(240, 4, 127, 0.4);
   transform: translateY(-2px);
 }
 
@@ -626,14 +626,14 @@ details>summary::-webkit-details-marker {
 }
 
 .input-linear:focus {
-  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
-  border-color: #DC2626;
+  box-shadow: 0 0 0 4px rgba(240, 4, 127, 0.1);
+  border-color: #f0047f;
 }
 
 /* Custom checkbox for map filters */
 .checkbox-wrapper input:checked+div {
-  background-color: #DC2626;
-  border-color: #DC2626;
+  background-color: #f0047f;
+  border-color: #f0047f;
 }
 
 .checkbox-wrapper input:checked+div svg,
@@ -645,11 +645,11 @@ details>summary::-webkit-details-marker {
 /* Custom toggle switch */
 .toggle-checkbox:checked {
   right: 0;
-  border-color: #DC2626;
+  border-color: #f0047f;
 }
 
 .toggle-checkbox:checked+.toggle-label {
-  background-color: #DC2626;
+  background-color: #f0047f;
 }
 
 /* Custom scrollbar for map sidebar */
@@ -675,11 +675,11 @@ details>summary::-webkit-details-marker {
 
   0%,
   100% {
-    filter: drop-shadow(0 0 8px rgba(227, 6, 19, 0.4));
+    filter: drop-shadow(0 0 8px rgba(240, 4, 127, 0.4));
   }
 
   50% {
-    filter: drop-shadow(0 0 16px rgba(227, 6, 19, 0.7));
+    filter: drop-shadow(0 0 16px rgba(240, 4, 127, 0.7));
   }
 }
 

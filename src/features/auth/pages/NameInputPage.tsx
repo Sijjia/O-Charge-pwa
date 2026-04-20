@@ -41,7 +41,7 @@ export function NameInputPage() {
   };
 
   return (
-    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white min-h-screen flex flex-col relative antialiased selection:bg-red-500/30 transition-colors duration-300">
+    <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-white min-h-screen flex flex-col relative antialiased selection:bg-[#f0047f]/30 transition-colors duration-300">
       {/* Header / Back Button */}
       <header className="p-6 flex items-center">
         <button
@@ -96,7 +96,7 @@ export function NameInputPage() {
             </p>
 
             {error && (
-              <p className="text-sm text-red-500 px-1" role="alert">
+              <p className="text-sm text-[#f0047f] px-1" role="alert">
                 {error}
               </p>
             )}

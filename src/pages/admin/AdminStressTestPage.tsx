@@ -127,7 +127,7 @@ function LiveModal({
             <div className={`w-3 h-3 rounded-full ${
               phase === "running" ? "bg-yellow-500 animate-pulse" :
               phase === "done" ? "bg-emerald-500" :
-              phase === "error" ? "bg-red-500" :
+              phase === "error" ? "bg-[#f0047f]" :
               "bg-zinc-400 animate-pulse"
             }`} />
             <div>
@@ -162,9 +162,9 @@ function LiveModal({
           <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-700 ${
-                phase === "error" ? "bg-red-500" :
+                phase === "error" ? "bg-[#f0047f]" :
                 phase === "done" ? "bg-emerald-500" :
-                "bg-red-600"
+                "bg-[#f0047f]"
               }`}
               style={{ width: `${Math.min(progress, 100)}%` }}
             />
@@ -184,7 +184,7 @@ function LiveModal({
         >
           {logs.map((log, i) => (
             <div key={i} className={`${
-              log.includes("❌") ? "text-red-400" :
+              log.includes("❌") ? "text-[#f078b7]" :
               log.includes("✅") || log.includes("🏁") ? "text-emerald-400" :
               log.includes("📊") ? "text-yellow-400" :
               "text-zinc-400"
@@ -205,7 +205,7 @@ function LiveModal({
               {[
                 { label: "RPS", value: results.rps.toLocaleString(), color: "text-emerald-500", help: "Requests Per Second — сколько запросов сервер обрабатывает в секунду. Чем больше — тем лучше." },
                 { label: "Всего", value: results.total_requests.toLocaleString(), color: "text-zinc-900 dark:text-white", help: "Общее количество HTTP-запросов отправленных во время теста." },
-                { label: "Ошибки", value: `${results.error_rate}%`, color: results.error_rate > 5 ? "text-red-500" : "text-emerald-500", help: "Процент запросов которые вернули ошибку. 0% — идеально, >5% — проблема." },
+                { label: "Ошибки", value: `${results.error_rate}%`, color: results.error_rate > 5 ? "text-[#f0047f]" : "text-emerald-500", help: "Процент запросов которые вернули ошибку. 0% — идеально, >5% — проблема." },
                 { label: "Avg", value: `${results.avg_latency_ms.toFixed(1)}ms`, color: results.avg_latency_ms > 500 ? "text-yellow-500" : "text-emerald-500", help: "Среднее время ответа сервера в миллисекундах. <200мс — отлично, >1000мс — медленно." },
               ].map((m) => (
                 <div key={m.label} className="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-3 text-center">
@@ -236,7 +236,7 @@ function LiveModal({
                       className={`w-full rounded-t ${
                         p.label === "p50" ? "bg-emerald-500" :
                         p.label === "p95" ? "bg-yellow-500" :
-                        "bg-red-500"
+                        "bg-[#f0047f]"
                       }`}
                       style={{ height: `${Math.max(4, (p.value / Math.max(p.max, 1)) * 48)}px` }}
                     />
@@ -307,7 +307,7 @@ export function AdminStressTestPage() {
       {/* Config */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 space-y-5">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
-          <Icon icon="solar:settings-bold-duotone" width={18} className="text-red-500" />
+          <Icon icon="solar:settings-bold-duotone" width={18} className="text-[#f0047f]" />
           Параметры теста
         </h3>
 
@@ -324,7 +324,7 @@ export function AdminStressTestPage() {
                   onClick={() => setUsers(n)}
                   className={`px-3 py-2 rounded-xl text-xs font-medium transition-all ${
                     users === n
-                      ? "bg-red-600 text-white shadow-lg shadow-red-600/25 scale-105"
+                      ? "bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/25 scale-105"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                   }`}
                 >
@@ -346,7 +346,7 @@ export function AdminStressTestPage() {
               min={5}
               max={120}
               step={5}
-              className="w-full accent-red-600"
+              className="w-full accent-[#f0047f]"
             />
             <div className="flex justify-between text-[10px] text-zinc-400 mt-1">
               <span>5с</span>
@@ -367,7 +367,7 @@ export function AdminStressTestPage() {
                   onClick={() => setScenario(s.value)}
                   className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium transition-all ${
                     scenario === s.value
-                      ? "bg-red-600 text-white shadow-lg shadow-red-600/25"
+                      ? "bg-[#f0047f] text-white shadow-lg shadow-[#f0047f]/25"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                   }`}
                 >
@@ -381,7 +381,7 @@ export function AdminStressTestPage() {
 
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-semibold text-sm transition-all shadow-lg shadow-red-600/25 hover:shadow-red-600/40 hover:scale-[1.02] active:scale-[0.98]"
+          className="flex items-center gap-2 px-8 py-3 bg-[#f0047f] hover:bg-[#f0047f] text-white rounded-xl font-semibold text-sm transition-all shadow-lg shadow-[#f0047f]/25 hover:shadow-[#f0047f]/40 hover:scale-[1.02] active:scale-[0.98]"
         >
           <Icon icon="solar:play-bold" width={18} />
           Запустить тест

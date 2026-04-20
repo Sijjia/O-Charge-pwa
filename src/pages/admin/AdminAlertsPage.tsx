@@ -26,7 +26,7 @@ export function AdminAlertsPage() {
 
   const severityColor = (s: string) =>
     s === "critical"
-      ? "text-red-500"
+      ? "text-[#f0047f]"
       : s === "warning"
         ? "text-amber-500"
         : "text-blue-500";
@@ -80,7 +80,7 @@ export function AdminAlertsPage() {
                 <div className="flex items-center gap-2">
                   <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
                     alert.severity === "critical"
-                      ? "bg-red-100 dark:bg-red-900/30 text-red-600"
+                      ? "bg-[#ffe0ef] dark:bg-[#5c0030]/30 text-[#f0047f]"
                       : alert.severity === "warning"
                         ? "bg-amber-100 dark:bg-amber-900/30 text-amber-600"
                         : "bg-blue-100 dark:bg-blue-900/30 text-blue-600"

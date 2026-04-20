@@ -13,7 +13,7 @@ const REFRESH_TTL = 7 * 24 * 3600; // 7 дней
 function mintJwt(userId: string, ttl: number, type: string): string {
   const now = Math.floor(Date.now() / 1000);
   return jwt.sign(
-    { sub: userId, iat: now, exp: now + ttl, typ: type, iss: "redpetroleum-backend" },
+    { sub: userId, iat: now, exp: now + ttl, typ: type, iss: "ocharge-backend" },
     SECRET_KEY,
     { algorithm: "HS256" },
   );

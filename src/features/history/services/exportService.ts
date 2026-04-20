@@ -56,7 +56,7 @@ export class ExportService {
 
     // Добавляем заголовок
     doc.setFontSize(20);
-    doc.text("История зарядок Red Petroleum", 14, 20);
+    doc.text("История зарядок O!Charge", 14, 20);
 
     // Добавляем дату генерации
     doc.setFontSize(10);
@@ -231,7 +231,7 @@ export class ExportService {
 
     // Заголовок
     doc.setFontSize(20);
-    doc.text("История транзакций Red Petroleum", 14, 20);
+    doc.text("История транзакций O!Charge", 14, 20);
 
     // Дата генерации
     doc.setFontSize(10);

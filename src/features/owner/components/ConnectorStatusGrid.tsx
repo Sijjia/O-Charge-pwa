@@ -36,7 +36,7 @@ export function ConnectorStatusGrid({
       case "occupied":
         return <Icon icon="solar:record-circle-bold" width={24} className="text-blue-600" />;
       case "faulted":
-        return <Icon icon="solar:close-circle-bold" width={24} className="text-red-600" />;
+        return <Icon icon="solar:close-circle-bold" width={24} className="text-[#f0047f]" />;
       case "unavailable":
         return <Icon icon="solar:danger-triangle-linear" width={24} className="text-gray-400" />;
       default:
@@ -51,7 +51,7 @@ export function ConnectorStatusGrid({
       case "occupied":
         return "bg-blue-500/10 border-blue-500/20 hover:bg-blue-500/15";
       case "faulted":
-        return "bg-red-500/10 border-red-500/20 hover:bg-red-500/15";
+        return "bg-[#f0047f]/10 border-[#f0047f]/20 hover:bg-[#f0047f]/15";
       case "unavailable":
         return "bg-zinc-900/50 border-zinc-800 hover:bg-zinc-800";
       default:
@@ -81,7 +81,7 @@ export function ConnectorStatusGrid({
       case "occupied":
         return "bg-blue-500/15 text-blue-400 border-blue-500/20";
       case "faulted":
-        return "bg-red-500/15 text-red-400 border-red-500/20";
+        return "bg-[#f0047f]/15 text-[#f078b7] border-[#f0047f]/20";
       case "unavailable":
         return "bg-zinc-800 text-gray-100 border-zinc-800";
       default:

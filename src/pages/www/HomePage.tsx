@@ -39,7 +39,7 @@ function BrandRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
 const features = [
   {
     icon: "solar:bolt-linear",
-    iconColor: "text-red-600",
+    iconColor: "text-[#f0047f]",
     title: "Быстрая зарядка 150 кВт",
     desc: "Зарядите свой электромобиль до 80% всего за 15-30 минут. Европейское оборудование с защитой от перегрузок.",
     colSpan: "md:col-span-2",
@@ -110,8 +110,8 @@ export function HomePage() {
         .delay-3 { animation-delay: 0.3s; }
 
         @keyframes pulse-glow {
-          0%, 100% { filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.4)); }
-          50%      { filter: drop-shadow(0 0 16px rgba(220, 38, 38, 0.7)); }
+          0%, 100% { filter: drop-shadow(0 0 8px rgba(240, 4, 127, 0.4)); }
+          50%      { filter: drop-shadow(0 0 16px rgba(240, 4, 127, 0.7)); }
         }
         .neon-svg { animation: pulse-glow 3s infinite ease-in-out; }
         .progress-ring__circle {
@@ -133,8 +133,8 @@ export function HomePage() {
           100% { transform: translateY(-100px); opacity: 0; }
         }
         .energy-beam {
-          background: linear-gradient(to top, rgba(239, 68, 68, 0), #EF4444, rgba(239, 68, 68, 0));
-          box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+          background: linear-gradient(to top, rgba(240, 4, 127, 0), #f078b7, rgba(240, 4, 127, 0));
+          box-shadow: 0 0 15px rgba(240, 4, 127, 0.6);
           position: absolute;
           bottom: 0;
           border-radius: 99px;
@@ -208,7 +208,7 @@ export function HomePage() {
           }}
         />
         {/* Red glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-red-600/5 dark:bg-red-600/10 blur-[120px] rounded-full opacity-60" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[120px] rounded-full opacity-60" />
       </div>
 
       {/* ============================================================ */}
@@ -221,10 +221,10 @@ export function HomePage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] shadow-sm mb-8">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f0047f]" />
               </span>
-              <span className="text-xs font-semibold text-zinc-800 dark:text-red-400/90 tracking-tight">
+              <span className="text-xs font-semibold text-zinc-800 dark:text-[#f078b7]/90 tracking-tight">
                 Первая сеть быстрых ЭЗС в Кыргызстане
               </span>
             </div>
@@ -233,13 +233,13 @@ export function HomePage() {
             <h1 className="lg:text-7xl leading-[1.05] text-5xl font-black italic text-zinc-900 dark:text-white mb-6 tracking-tight">
               ЗАРЯЖАЙ
               <br />
-              <span className="text-red-600">БУДУЩЕЕ </span>
+              <span className="text-[#f0047f]">БУДУЩЕЕ </span>
               СЕГОДНЯ
             </h1>
 
             {/* Description */}
             <p className="leading-relaxed text-lg font-light text-zinc-600 dark:text-white/80 max-w-md mb-10">
-              Сеть быстрых зарядных станций от Red Petroleum. До 150 кВт
+              Сеть быстрых зарядных станций от O!Charge. До 150 кВт
               мощности. Зарядка любого электромобиля от 15 минут.
             </p>
 
@@ -247,19 +247,19 @@ export function HomePage() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 to="/install"
-                className="btn btn-primary shine-button h-12 px-8 !rounded-full text-[15px] shadow-[0_0_25px_rgba(220,38,38,0.5)] border-red-500"
+                className="btn btn-primary shine-button h-12 px-8 !rounded-full text-[15px] shadow-[0_0_25px_rgba(220,38,38,0.5)] border-[#f0047f]"
               >
                 Скачать приложение
               </Link>
               <Link
                 to="/www/map"
-                className="btn btn-outline h-12 px-8 !rounded-full text-[15px] gap-2 border-zinc-300 dark:border-red-500 text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-red-500/10"
+                className="btn btn-outline h-12 px-8 !rounded-full text-[15px] gap-2 border-zinc-300 dark:border-[#f0047f] text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-[#f0047f]/10"
               >
                 Найти станцию
                 <Icon
                   icon="solar:map-arrow-right-linear"
                   width={18}
-                  className="text-red-500 ml-2"
+                  className="text-[#f0047f] ml-2"
                 />
               </Link>
             </div>
@@ -289,9 +289,9 @@ export function HomePage() {
 
           {/* Right: Cashback Card */}
           <div className="relative opacity-0 animate-fade-up delay-2">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[80px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#f0047f]/10 blur-[80px] rounded-full pointer-events-none" />
 
-            <div className="relative w-full max-w-md ml-auto linear-card rounded-2xl p-8 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-900/10 transition-all duration-300">
+            <div className="relative w-full max-w-md ml-auto linear-card rounded-2xl p-8 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#5c0030]/10 transition-all duration-300">
               {/* Card Header */}
               <div className="flex justify-between items-start mb-6">
                 <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white">
@@ -318,7 +318,7 @@ export function HomePage() {
                   <span className="text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
                     15%
                   </span>
-                  <span className="text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/20 px-1.5 py-0.5 rounded rotate-[-6deg]">
+                  <span className="text-xs font-bold text-[#f0047f] bg-[#f0047f]/10 border border-[#f0047f]/20 px-1.5 py-0.5 rounded rotate-[-6deg]">
                     MAX
                   </span>
                 </div>
@@ -363,7 +363,7 @@ export function HomePage() {
                   <span>Баланс: 1,250 B</span>
                 </div>
                 <div className="h-1.5 w-full bg-zinc-100 dark:bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-[65%] bg-red-600" />
+                  <div className="h-full w-[65%] bg-[#f0047f]" />
                 </div>
               </div>
             </div>
@@ -398,12 +398,12 @@ export function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/*  FEATURES — Why Choose Red Charge?                           */}
+      {/*  FEATURES — Why Choose O!Charge?                           */}
       {/* ============================================================ */}
       <section className="max-w-7xl mx-auto pt-24 px-6 pb-24">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-4">
-            Почему выбирают Red Charge?
+            Почему выбирают O!Charge?
           </h2>
           <p className="text-lg font-light text-zinc-500 dark:text-white/60 max-w-xl">
             Мы создали сервис, который делает зарядку электромобиля такой же
@@ -416,10 +416,10 @@ export function HomePage() {
           {features.map((f) => (
             <div
               key={f.title}
-              className={`${f.colSpan} linear-card rounded-2xl p-8 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-900/10 transition-all duration-300`}
+              className={`${f.colSpan} linear-card rounded-2xl p-8 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#5c0030]/10 transition-all duration-300`}
             >
               {f.colSpan && (
-                <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 blur-[80px] rounded-full group-hover:bg-red-600/10 transition-colors duration-500" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#f0047f]/5 blur-[80px] rounded-full group-hover:bg-[#f0047f]/10 transition-colors duration-500" />
               )}
               <div className="relative z-10">
                 <div
@@ -438,9 +438,9 @@ export function HomePage() {
           ))}
 
           {/* Payment Card (wide) */}
-          <div className="md:col-span-2 linear-card rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-900/10 transition-all duration-300">
+          <div className="md:col-span-2 linear-card rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#5c0030]/10 transition-all duration-300">
             <div className="flex-1">
-              <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-6 text-red-600">
+              <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-6 text-[#f0047f]">
                 <Icon icon="solar:card-linear" width={28} />
               </div>
               <h3 className="text-xl text-zinc-900 dark:text-white font-bold mb-2">
@@ -461,7 +461,7 @@ export function HomePage() {
                   Visa &bull;&bull; 4242
                 </span>
               </div>
-              <button className="w-full bg-red-600 text-white text-xs py-2.5 rounded-lg font-bold hover:bg-red-500 transition-colors">
+              <button className="w-full bg-[#f0047f] text-white text-xs py-2.5 rounded-lg font-bold hover:bg-[#f0047f] transition-colors">
                 Оплатить 588 сом
               </button>
             </div>
@@ -505,33 +505,33 @@ export function HomePage() {
 
             {/* Charging point pins */}
             <div className="absolute top-[30%] left-[30%] group-hover:scale-110 transition-transform duration-300">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75 animate-ping" />
               <Icon
                 icon="solar:map-point-bold"
                 width={30}
-                className="relative text-red-600 drop-shadow-md"
+                className="relative text-[#f0047f] drop-shadow-md"
               />
             </div>
             <div className="absolute top-[20%] right-[25%] group-hover:scale-110 transition-transform duration-300">
               <span
-                className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping"
+                className="absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75 animate-ping"
                 style={{ animationDuration: "2s" }}
               />
               <Icon
                 icon="solar:map-point-bold"
                 width={30}
-                className="relative text-red-600 drop-shadow-md"
+                className="relative text-[#f0047f] drop-shadow-md"
               />
             </div>
             <div className="absolute bottom-[25%] left-[45%] group-hover:scale-110 transition-transform duration-300">
               <span
-                className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping"
+                className="absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75 animate-ping"
                 style={{ animationDuration: "1.5s" }}
               />
               <Icon
                 icon="solar:map-point-bold"
                 width={30}
-                className="relative text-red-600 drop-shadow-md"
+                className="relative text-[#f0047f] drop-shadow-md"
               />
             </div>
 
@@ -559,18 +559,18 @@ export function HomePage() {
                 <div key={step.title} className="relative group">
                   <div
                     className={`absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-white dark:bg-black border-2 flex items-center justify-center z-10 ${step.active
-                        ? "border-red-500"
-                        : "border-zinc-300 dark:border-zinc-700 group-hover:border-red-500"
+                        ? "border-[#f0047f]"
+                        : "border-zinc-300 dark:border-zinc-700 group-hover:border-[#f0047f]"
                       } transition-colors`}
                   >
                     <div
                       className={`w-2 h-2 rounded-full ${step.active
-                          ? "bg-red-500"
-                          : "bg-zinc-300 dark:bg-zinc-700 group-hover:bg-red-500"
+                          ? "bg-[#f0047f]"
+                          : "bg-zinc-300 dark:bg-zinc-700 group-hover:bg-[#f0047f]"
                         } transition-colors`}
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-red-500 transition-colors">
+                  <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-[#f0047f] transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-zinc-500 dark:text-white/60 leading-relaxed text-sm font-medium">
@@ -674,7 +674,7 @@ export function HomePage() {
           <div className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Corporate */}
-              <div className="linear-card rounded-2xl p-8 group hover:border-red-500/40 transition-all cursor-pointer relative overflow-hidden bg-white dark:bg-zinc-900">
+              <div className="linear-card rounded-2xl p-8 group hover:border-[#f0047f]/40 transition-all cursor-pointer relative overflow-hidden bg-white dark:bg-zinc-900">
                 <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-6 text-zinc-900 dark:text-white group-hover:scale-110 transition-transform duration-300">
                   <Icon icon="solar:buildings-linear" width={24} />
                 </div>
@@ -687,7 +687,7 @@ export function HomePage() {
                 </p>
                 <Link
                   to="/www/b2b"
-                  className="flex items-center text-sm font-bold text-red-600 hover:text-red-500 transition-colors"
+                  className="flex items-center text-sm font-bold text-[#f0047f] hover:text-[#f0047f] transition-colors"
                 >
                   Узнать больше
                   <Icon
@@ -699,7 +699,7 @@ export function HomePage() {
               </div>
 
               {/* Partner */}
-              <div className="linear-card rounded-2xl p-8 group hover:border-red-500/40 transition-all cursor-pointer relative overflow-hidden bg-white dark:bg-zinc-900">
+              <div className="linear-card rounded-2xl p-8 group hover:border-[#f0047f]/40 transition-all cursor-pointer relative overflow-hidden bg-white dark:bg-zinc-900">
                 <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-6 text-zinc-900 dark:text-white group-hover:scale-110 transition-transform duration-300">
                   <Icon icon="solar:hand-shake-linear" width={24} />
                 </div>
@@ -712,7 +712,7 @@ export function HomePage() {
                 </p>
                 <Link
                   to="/www/b2b"
-                  className="flex items-center text-sm font-bold text-red-600 hover:text-red-500 transition-colors"
+                  className="flex items-center text-sm font-bold text-[#f0047f] hover:text-[#f0047f] transition-colors"
                 >
                   Оставить заявку
                   <Icon
@@ -734,7 +734,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="linear-card rounded-3xl p-8 md:p-0 backdrop-blur-md overflow-hidden relative border border-zinc-200 dark:border-white/10 shadow-2xl">
             {/* Decorative glow */}
-            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-red-600/5 dark:bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center">
               {/* Left: Phone Mockup */}
@@ -816,9 +816,9 @@ export function HomePage() {
                       {/* Gauge */}
                       <div className="relative w-full aspect-square flex items-center justify-center my-2 max-h-[200px]">
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="w-32 h-32 rounded-full border border-red-600/20 ripple-circle" />
+                          <div className="w-32 h-32 rounded-full border border-[#f0047f]/20 ripple-circle" />
                           <div
-                            className="w-32 h-32 rounded-full border border-red-600/10 ripple-circle"
+                            className="w-32 h-32 rounded-full border border-[#f0047f]/10 ripple-circle"
                             style={{ animationDelay: "1s" }}
                           />
                         </div>
@@ -837,7 +837,7 @@ export function HomePage() {
                             cy={50}
                           />
                           <circle
-                            className="text-red-600 progress-ring__circle"
+                            className="text-[#f0047f] progress-ring__circle"
                             strokeWidth={6}
                             strokeLinecap="round"
                             stroke="currentColor"
@@ -855,16 +855,16 @@ export function HomePage() {
                             <span className="text-4xl font-bold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                               65
                             </span>
-                            <span className="text-sm font-medium text-red-500/80">
+                            <span className="text-sm font-medium text-[#f0047f]/80">
                               %
                             </span>
                           </div>
-                          <div className="mt-2 flex items-center gap-1.5 px-2 py-1 rounded-full bg-red-950/30 border border-red-500/20">
+                          <div className="mt-2 flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#3d0020]/30 border border-[#f0047f]/20">
                             <span className="relative flex h-1.5 w-1.5">
-                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-600" />
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f0047f] opacity-75" />
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#f0047f]" />
                             </span>
-                            <span className="text-[10px] font-medium text-red-100 tracking-wide uppercase">
+                            <span className="text-[10px] font-medium text-[#ffe0ef] tracking-wide uppercase">
                               Зарядка...
                             </span>
                           </div>
@@ -925,7 +925,7 @@ export function HomePage() {
                         </div>
 
                         <div className="bg-zinc-900/40 rounded-xl border border-zinc-800 p-3 flex flex-col gap-1 backdrop-blur-sm relative overflow-hidden">
-                          <div className="absolute -right-3 -top-3 w-8 h-8 bg-red-500/10 blur-xl rounded-full" />
+                          <div className="absolute -right-3 -top-3 w-8 h-8 bg-[#f0047f]/10 blur-xl rounded-full" />
                           <div className="flex items-center gap-1.5 text-zinc-400">
                             <Icon
                               icon="solar:wallet-money-linear"
@@ -961,15 +961,15 @@ export function HomePage() {
                             >
                               <stop
                                 offset="0%"
-                                stopColor="rgba(220, 38, 38, 0)"
+                                stopColor="rgba(240, 4, 127, 0)"
                               />
                               <stop
                                 offset="50%"
-                                stopColor="rgba(220, 38, 38, 0.5)"
+                                stopColor="rgba(240, 4, 127, 0.5)"
                               />
                               <stop
                                 offset="100%"
-                                stopColor="rgba(220, 38, 38, 0.8)"
+                                stopColor="rgba(240, 4, 127, 0.8)"
                               />
                             </linearGradient>
                           </defs>
@@ -986,7 +986,7 @@ export function HomePage() {
 
                     {/* Bottom button */}
                     <div className="bg-[#0A0E17]/90 z-30 border-zinc-800 rounded-full border-t p-4 absolute right-0 bottom-0 left-0 backdrop-blur-md">
-                      <div className="w-full py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-red-500 font-semibold text-xs flex items-center justify-center gap-2">
+                      <div className="w-full py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-[#f0047f] font-semibold text-xs flex items-center justify-center gap-2">
                         <Icon
                           icon="solar:stop-circle-bold"
                           width={18}
@@ -1002,7 +1002,7 @@ export function HomePage() {
 
               {/* Right: Content */}
               <div className="p-10 md:p-16 flex flex-col items-start justify-center h-full">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-500/10 text-red-700 dark:text-red-400 text-xs font-bold mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffe0ef] dark:bg-[#f0047f]/10 text-[#c00366] dark:text-[#f078b7] text-xs font-bold mb-6">
                   <Icon icon="solar:smartphone-linear" width={14} />
                   Mobile App
                 </div>

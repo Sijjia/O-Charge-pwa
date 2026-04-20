@@ -227,7 +227,7 @@ export function OwnerStationDetailsPage() {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#f0047f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-zinc-500 dark:text-zinc-400">Загрузка данных станции...</p>
         </div>
       </div>
@@ -237,13 +237,13 @@ export function OwnerStationDetailsPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-[#050507] flex items-center justify-center p-4">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 max-w-md">
+        <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-6 max-w-md">
           <div className="flex items-start gap-3">
-            <Icon icon="solar:danger-circle-linear" width={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+            <Icon icon="solar:danger-circle-linear" width={24} className="text-[#f0047f] flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-red-700 dark:text-red-400 mb-1">Ошибка загрузки</h3>
-              <p className="text-sm text-red-600 dark:text-red-400/80">Не удалось загрузить данные станции.</p>
-              <button onClick={() => navigate(`${base}/stations`)} className="mt-4 text-sm text-red-500 hover:text-red-400 underline">
+              <h3 className="font-semibold text-[#c00366] dark:text-[#f078b7] mb-1">Ошибка загрузки</h3>
+              <p className="text-sm text-[#f0047f] dark:text-[#f078b7]/80">Не удалось загрузить данные станции.</p>
+              <button onClick={() => navigate(`${base}/stations`)} className="mt-4 text-sm text-[#f0047f] hover:text-[#f078b7] underline">
                 Вернуться к списку станций
               </button>
             </div>
@@ -259,7 +259,7 @@ export function OwnerStationDetailsPage() {
         <div className="text-center">
           <Icon icon="solar:battery-charge-linear" width={64} className="text-zinc-300 dark:text-zinc-600 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Станция не найдена</h3>
-          <button onClick={() => navigate(`${base}/stations`)} className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors">
+          <button onClick={() => navigate(`${base}/stations`)} className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0047f] hover:bg-[#c00366] text-white rounded-lg transition-colors">
             <Icon icon="solar:arrow-left-linear" width={20} />
             <span>Вернуться к списку</span>
           </button>
@@ -300,7 +300,7 @@ export function OwnerStationDetailsPage() {
                     <>
                       <button
                         onClick={() => navigate(`${base}/locations/${station.location!.id}`)}
-                        className="hover:text-red-500 transition-colors"
+                        className="hover:text-[#f0047f] transition-colors"
                       >
                         {station.location.name}
                       </button>
@@ -421,17 +421,17 @@ export function OwnerStationDetailsPage() {
             {/* Location Card */}
             <div
               onClick={() => station.location?.id && navigate(`${base}/locations/${station.location.id}`)}
-              className={`bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-none border border-zinc-200 dark:border-zinc-800 p-6 ${station.location?.id ? 'cursor-pointer hover:border-red-300 dark:hover:border-red-800 transition-colors group' : ''}`}
+              className={`bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-none border border-zinc-200 dark:border-zinc-800 p-6 ${station.location?.id ? 'cursor-pointer hover:border-[#f078b7] dark:hover:border-[#7a013f] transition-colors group' : ''}`}
             >
               <h3 className="font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-                <Icon icon="solar:map-point-linear" width={20} className="text-red-500" />
+                <Icon icon="solar:map-point-linear" width={20} className="text-[#f0047f]" />
                 Расположение
                 {station.location?.id && (
                   <Icon icon="solar:arrow-right-up-linear" width={16} className="text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
                 )}
               </h3>
               <div className="space-y-2">
-                <p className="text-sm font-medium text-zinc-900 dark:text-white group-hover:text-red-500 transition-colors">{station.location?.name}</p>
+                <p className="text-sm font-medium text-zinc-900 dark:text-white group-hover:text-[#f0047f] transition-colors">{station.location?.name}</p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">{station.location?.address}</p>
               </div>
             </div>
@@ -481,14 +481,14 @@ export function OwnerStationDetailsPage() {
                   </div>
                 </div>
                 {!urlEditing ? (
-                  <button onClick={() => { setCustomUrl(station.ocpp_ws_url || ""); setUrlEditing(true); }} className="text-xs text-red-500 hover:text-red-400 transition-colors">
+                  <button onClick={() => { setCustomUrl(station.ocpp_ws_url || ""); setUrlEditing(true); }} className="text-xs text-[#f0047f] hover:text-[#f078b7] transition-colors">
                     Изменить URL
                   </button>
                 ) : (
                   <div className="space-y-2">
-                    <input type="text" value={customUrl} onChange={(e) => setCustomUrl(e.target.value)} placeholder="wss://your-server.com/ws/station-id" className="w-full bg-zinc-50 dark:bg-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 font-mono border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500" />
+                    <input type="text" value={customUrl} onChange={(e) => setCustomUrl(e.target.value)} placeholder="wss://your-server.com/ws/station-id" className="w-full bg-zinc-50 dark:bg-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 font-mono border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-[#f0047f]/30 focus:border-[#f0047f]" />
                     <div className="flex gap-2">
-                      <button onClick={() => { updateStation.mutate({ ocpp_ws_url: customUrl || undefined } as any, { onSuccess: () => setUrlEditing(false) }); }} disabled={updateStation.isPending} className="px-3 py-1.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white text-xs rounded-lg transition-colors">
+                      <button onClick={() => { updateStation.mutate({ ocpp_ws_url: customUrl || undefined } as any, { onSuccess: () => setUrlEditing(false) }); }} disabled={updateStation.isPending} className="px-3 py-1.5 bg-[#f0047f] hover:bg-[#c00366] disabled:opacity-50 text-white text-xs rounded-lg transition-colors">
                         {updateStation.isPending ? "..." : "Сохранить"}
                       </button>
                       <button onClick={() => setUrlEditing(false)} className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs rounded-lg transition-colors">
@@ -569,10 +569,10 @@ export function OwnerStationDetailsPage() {
                           e.stopPropagation();
                           setDeletingConnector(conn.connector_number);
                         }}
-                        className="p-1 hover:bg-red-100 dark:hover:bg-red-900/30 rounded transition-colors opacity-0 group-hover:opacity-100"
+                        className="p-1 hover:bg-[#ffe0ef] dark:hover:bg-[#5c0030]/30 rounded transition-colors opacity-0 group-hover:opacity-100"
                         title="Удалить"
                       >
-                        <Icon icon="solar:trash-bin-trash-linear" width={14} className="text-red-500" />
+                        <Icon icon="solar:trash-bin-trash-linear" width={14} className="text-[#f0047f]" />
                       </button>
                     </div>
                   </div>
@@ -671,7 +671,7 @@ export function OwnerStationDetailsPage() {
               </button>
             </div>
             {addConnectorMutation.error && (
-              <p className="mt-3 text-xs text-red-500">{(addConnectorMutation.error as any)?.message || "Ошибка добавления"}</p>
+              <p className="mt-3 text-xs text-[#f0047f]">{(addConnectorMutation.error as any)?.message || "Ошибка добавления"}</p>
             )}
           </div>
         </div>
@@ -718,7 +718,7 @@ export function OwnerStationDetailsPage() {
               </button>
             </div>
             {editConnectorMutation.error && (
-              <p className="mt-3 text-xs text-red-500">{(editConnectorMutation.error as any)?.message || "Ошибка обновления"}</p>
+              <p className="mt-3 text-xs text-[#f0047f]">{(editConnectorMutation.error as any)?.message || "Ошибка обновления"}</p>
             )}
           </div>
         </div>
@@ -730,8 +730,8 @@ export function OwnerStationDetailsPage() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setDeletingConnector(null)} />
           <div className="relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 max-w-md w-full shadow-xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-                <Icon icon="solar:trash-bin-trash-bold" width={20} className="text-red-600 dark:text-red-400" />
+              <div className="w-10 h-10 rounded-full bg-[#ffe0ef] dark:bg-[#5c0030]/30 flex items-center justify-center">
+                <Icon icon="solar:trash-bin-trash-bold" width={20} className="text-[#f0047f] dark:text-[#f078b7]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Удалить порт #{deletingConnector}?</h3>
@@ -745,13 +745,13 @@ export function OwnerStationDetailsPage() {
               <button
                 onClick={() => deleteConnectorMutation.mutate()}
                 disabled={deleteConnectorMutation.isPending}
-                className="flex-1 px-4 py-2.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white rounded-lg text-sm font-medium transition-colors"
+                className="flex-1 px-4 py-2.5 bg-[#f0047f] hover:bg-[#c00366] disabled:opacity-50 text-white rounded-lg text-sm font-medium transition-colors"
               >
                 {deleteConnectorMutation.isPending ? "Удаление..." : "Удалить"}
               </button>
             </div>
             {deleteConnectorMutation.error && (
-              <p className="mt-3 text-xs text-red-500">{(deleteConnectorMutation.error as any)?.message || "Ошибка удаления"}</p>
+              <p className="mt-3 text-xs text-[#f0047f]">{(deleteConnectorMutation.error as any)?.message || "Ошибка удаления"}</p>
             )}
           </div>
         </div>
@@ -868,7 +868,7 @@ export function OwnerStationDetailsPage() {
               </button>
             </div>
             {transferMutation.error && (
-              <p className="mt-3 text-xs text-red-500">{(transferMutation.error as any)?.message || "Ошибка переноса"}</p>
+              <p className="mt-3 text-xs text-[#f0047f]">{(transferMutation.error as any)?.message || "Ошибка переноса"}</p>
             )}
           </div>
         </div>

@@ -96,7 +96,7 @@ test.describe("Client — Info Pages", () => {
   test("about page shows app info", async ({ page }) => {
     await page.goto("/about");
     await expect(page.getByText("О приложении")).toBeVisible({ timeout: NAV_TIMEOUT });
-    await expect(page.getByText("Red Petroleum EV")).toBeVisible();
+    await expect(page.getByText("O!Charge")).toBeVisible();
   });
 
   test("support page loads", async ({ page }) => {

@@ -78,7 +78,7 @@ export function EmployeeAddModal({ onClose }: EmployeeAddModalProps) {
             <label className="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">
               Имя сотрудника
             </label>
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-red-500/50 transition-all">
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-[#f0047f]/50 transition-all">
               <label className="flex items-center h-[48px] px-4 cursor-text">
                 <Icon icon="solar:user-linear" width={18} className="text-zinc-500 mr-3" />
                 <input
@@ -101,7 +101,7 @@ export function EmployeeAddModal({ onClose }: EmployeeAddModalProps) {
             <label className="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">
               Номер телефона
             </label>
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-red-500/50 transition-all">
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-[#f0047f]/50 transition-all">
               <label className="flex items-center h-[48px] px-4 cursor-text">
                 <Icon icon="solar:smartphone-linear" width={18} className="text-zinc-500 mr-3" />
                 <span className="text-zinc-400 text-sm mr-2 select-none">+996</span>
@@ -124,7 +124,7 @@ export function EmployeeAddModal({ onClose }: EmployeeAddModalProps) {
             <label className="block text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">
               Месячный лимит (необязательно)
             </label>
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-red-500/50 transition-all">
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus-within:border-[#f0047f]/50 transition-all">
               <label className="flex items-center h-[48px] px-4 cursor-text">
                 <Icon icon="solar:wallet-money-linear" width={18} className="text-zinc-500 mr-3" />
                 <input
@@ -141,9 +141,9 @@ export function EmployeeAddModal({ onClose }: EmployeeAddModalProps) {
 
           {/* Error */}
           {error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2">
-              <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0" width={16} />
-              <p className="text-red-400 text-sm">{error}</p>
+            <div className="bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-3 flex items-center gap-2">
+              <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0" width={16} />
+              <p className="text-[#f078b7] text-sm">{error}</p>
             </div>
           )}
 
@@ -162,7 +162,7 @@ export function EmployeeAddModal({ onClose }: EmployeeAddModalProps) {
               className={`flex-1 py-3 rounded-xl font-semibold transition-all ${
                 !isValid || isLoading
                   ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed"
-                  : "bg-red-600 hover:bg-red-500 text-white"
+                  : "bg-[#f0047f] hover:bg-[#f0047f] text-white"
               }`}
             >
               {isLoading ? (

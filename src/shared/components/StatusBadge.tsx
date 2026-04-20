@@ -32,7 +32,7 @@ const CLASSES: Record<Kind, Record<string, string>> = {
   connector: {
     available: "bg-green-500/15 text-green-400",
     occupied: "bg-orange-500/15 text-orange-400",
-    error: "bg-red-500/15 text-red-400",
+    error: "bg-[#f0047f]/15 text-[#f078b7]",
     maintenance: "bg-yellow-500/15 text-yellow-400",
   },
   station: {

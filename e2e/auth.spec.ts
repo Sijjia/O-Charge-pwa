@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Authentication — Public Pages", () => {
   test("splash screen shows branding", async ({ page }) => {
     await page.goto("/splash");
-    await expect(page.getByText("Red Charge")).toBeVisible();
+    await expect(page.getByText("O!Charge")).toBeVisible();
   });
 
   test("phone auth page shows form", async ({ page }) => {

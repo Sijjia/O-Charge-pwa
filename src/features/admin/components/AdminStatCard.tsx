@@ -21,10 +21,10 @@ export function AdminStatCard({
   return (
     <div className="bg-white dark:bg-[#111621] border border-zinc-100 dark:border-white/[0.04] rounded-3xl p-5 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.4)] relative group transition-all duration-300 overflow-hidden">
       {/* Decorative gradient blob */}
-      <div className="absolute -right-8 -top-8 w-24 h-24 bg-red-500/5 dark:bg-red-500/10 rounded-full blur-2xl group-hover:bg-red-500/10 transition-colors" />
+      <div className="absolute -right-8 -top-8 w-24 h-24 bg-[#f0047f]/5 dark:bg-[#f0047f]/10 rounded-full blur-2xl group-hover:bg-[#f0047f]/10 transition-colors" />
 
       <div className="flex justify-between items-start mb-4 relative z-10">
-        <div className="w-11 h-11 rounded-2xl bg-zinc-50 dark:bg-[#1C212B] flex items-center justify-center border border-zinc-100 dark:border-white/5 text-zinc-600 dark:text-zinc-400 group-hover:text-red-500 group-hover:bg-red-50 dark:group-hover:bg-red-500/10 group-hover:border-red-100 dark:group-hover:border-red-500/20 transition-colors duration-300">
+        <div className="w-11 h-11 rounded-2xl bg-zinc-50 dark:bg-[#1C212B] flex items-center justify-center border border-zinc-100 dark:border-white/5 text-zinc-600 dark:text-zinc-400 group-hover:text-[#f0047f] group-hover:bg-[#fff0f7] dark:group-hover:bg-[#f0047f]/10 group-hover:border-[#ffe0ef] dark:group-hover:border-[#f0047f]/20 transition-colors duration-300">
           <Icon icon={icon} width={24} />
         </div>
       </div>
@@ -44,7 +44,7 @@ export function AdminStatCard({
             <div
               className={`flex shrink items-center justify-center px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold border whitespace-nowrap truncate max-w-[55%] ${trendUp
                   ? "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-100 dark:border-emerald-500/20"
-                  : "bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 border-red-100 dark:border-red-500/20"
+                  : "bg-[#fff0f7] dark:bg-[#f0047f]/10 text-[#f0047f] dark:text-[#f078b7] border-[#ffe0ef] dark:border-[#f0047f]/20"
                 }`}
             >
               <Icon

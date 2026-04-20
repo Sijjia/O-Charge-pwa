@@ -124,7 +124,7 @@ export function ChargingLimitsSelector({
           onClick={() => setLimitType('amount')}
           disabled={disabled}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-md font-medium transition-all ${limitType === 'amount'
-              ? 'bg-zinc-900 text-red-500 shadow-sm shadow-black/20'
+              ? 'bg-zinc-900 text-[#f0047f] shadow-sm shadow-black/20'
               : 'text-gray-400 hover:text-white'
             } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
@@ -136,7 +136,7 @@ export function ChargingLimitsSelector({
           onClick={() => setLimitType('energy')}
           disabled={disabled}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-md font-medium transition-all ${limitType === 'energy'
-              ? 'bg-zinc-900 text-red-500 shadow-sm shadow-black/20'
+              ? 'bg-zinc-900 text-[#f0047f] shadow-sm shadow-black/20'
               : 'text-gray-400 hover:text-white'
             } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
@@ -148,7 +148,7 @@ export function ChargingLimitsSelector({
           onClick={() => setLimitType('none')}
           disabled={disabled}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-md font-medium transition-all ${limitType === 'none'
-              ? 'bg-zinc-900 text-red-500 shadow-sm shadow-black/20'
+              ? 'bg-zinc-900 text-[#f0047f] shadow-sm shadow-black/20'
               : 'text-gray-400 hover:text-white'
             } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
@@ -182,7 +182,7 @@ export function ChargingLimitsSelector({
             </div>
             <button
               onClick={() => setShowInfo(false)}
-              className="mt-2 text-xs text-red-500 hover:text-red-400"
+              className="mt-2 text-xs text-[#f0047f] hover:text-[#f078b7]"
             >
               Закрыть
             </button>
@@ -201,7 +201,7 @@ export function ChargingLimitsSelector({
                 onClick={() => handleQuickAmountSelect(amount)}
                 disabled={disabled || amount > balance}
                 className={`py-2 px-1 rounded-lg text-sm font-medium transition-all ${selectedAmount === amount && !customValue
-                    ? 'bg-red-600 text-white'
+                    ? 'bg-[#f0047f] text-white'
                     : amount > balance
                       ? 'bg-zinc-800 text-gray-400 cursor-not-allowed'
                       : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'
@@ -216,7 +216,7 @@ export function ChargingLimitsSelector({
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-400">Сумма зарядки</span>
-              <span className="text-lg font-bold text-red-500">{selectedAmount} сом</span>
+              <span className="text-lg font-bold text-[#f0047f]">{selectedAmount} сом</span>
             </div>
 
             <input
@@ -232,7 +232,7 @@ export function ChargingLimitsSelector({
               disabled={disabled}
               className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #dc2626 0%, #dc2626 ${((selectedAmount - MIN_AMOUNT) / (MAX_AMOUNT - MIN_AMOUNT)) * 100
+                background: `linear-gradient(to right, #f0047f 0%, #f0047f ${((selectedAmount - MIN_AMOUNT) / (MAX_AMOUNT - MIN_AMOUNT)) * 100
                   }%, #e5e7eb ${((selectedAmount - MIN_AMOUNT) / (MAX_AMOUNT - MIN_AMOUNT)) * 100
                   }%, #e5e7eb 100%)`
               }}
@@ -256,7 +256,7 @@ export function ChargingLimitsSelector({
                 onChange={(e) => handleCustomValueChange(e.target.value)}
                 placeholder={`${MIN_AMOUNT}-${MAX_AMOUNT}`}
                 disabled={disabled}
-                className="flex-1 px-3 py-2 border border-zinc-700 rounded-lg focus:ring-red-500 focus:border-red-500"
+                className="flex-1 px-3 py-2 border border-zinc-700 rounded-lg focus:ring-[#f0047f] focus:border-[#f0047f]"
               />
               <span className="flex items-center px-3 text-gray-500">сом</span>
             </div>
@@ -274,7 +274,7 @@ export function ChargingLimitsSelector({
                 onClick={() => handleQuickEnergySelect(energy)}
                 disabled={disabled || energy * pricePerKwh > balance}
                 className={`py-2 px-1 rounded-lg text-sm font-medium transition-all ${selectedEnergy === energy && !customValue
-                    ? 'bg-red-600 text-white'
+                    ? 'bg-[#f0047f] text-white'
                     : energy * pricePerKwh > balance
                       ? 'bg-zinc-800 text-gray-400 cursor-not-allowed'
                       : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'
@@ -292,7 +292,7 @@ export function ChargingLimitsSelector({
                 Количество энергии
                 <HelpTip text="кВт·ч (киловатт-часы) — единица энергии. Это как «литры» для EV. 1 кВт·ч ≈ 6–8 км пробега на среднем автомобиле." />
               </span>
-              <span className="text-lg font-bold text-red-500">{selectedEnergy} кВт·ч</span>
+              <span className="text-lg font-bold text-[#f0047f]">{selectedEnergy} кВт·ч</span>
             </div>
 
             <input
@@ -308,7 +308,7 @@ export function ChargingLimitsSelector({
               disabled={disabled}
               className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #dc2626 0%, #dc2626 ${((selectedEnergy - MIN_ENERGY) / (MAX_ENERGY - MIN_ENERGY)) * 100
+                background: `linear-gradient(to right, #f0047f 0%, #f0047f ${((selectedEnergy - MIN_ENERGY) / (MAX_ENERGY - MIN_ENERGY)) * 100
                   }%, #e5e7eb ${((selectedEnergy - MIN_ENERGY) / (MAX_ENERGY - MIN_ENERGY)) * 100
                   }%, #e5e7eb 100%)`
               }}
@@ -332,7 +332,7 @@ export function ChargingLimitsSelector({
                 onChange={(e) => handleCustomValueChange(e.target.value)}
                 placeholder={`${MIN_ENERGY}-${MAX_ENERGY}`}
                 disabled={disabled}
-                className="flex-1 px-3 py-2 border border-zinc-700 rounded-lg focus:ring-red-500 focus:border-red-500"
+                className="flex-1 px-3 py-2 border border-zinc-700 rounded-lg focus:ring-[#f0047f] focus:border-[#f0047f]"
               />
               <span className="flex items-center px-3 text-gray-500">кВт·ч</span>
             </div>

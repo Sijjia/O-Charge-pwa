@@ -127,21 +127,21 @@ export function GuestChargingPage() {
   return (
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Ambient */}
-      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 dark:bg-red-600/10 blur-[90px] rounded-full pointer-events-none z-0 animate-pulse" />
+      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[90px] rounded-full pointer-events-none z-0 animate-pulse" />
 
       {/* Energy Flow Stripes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[0, 0.5, 1.2, 0.8, 1.5, 0.3].map((delay, i) => (
           <div
             key={i}
-            className="absolute bg-gradient-to-t from-transparent via-red-600 to-transparent rounded-full opacity-0"
+            className="absolute bg-gradient-to-t from-transparent via-[#f0047f] to-transparent rounded-full opacity-0"
             style={{
               left: `${[48, 52, 35, 65, 42, 58][i]}%`,
               width: `${[3, 2, 3, 3, 3, 3][i]}px`,
               height: `${[150, 200, 120, 140, 180, 160][i]}px`,
               animation: `flow-up-target ${[2, 2.3, 2.5, 2.1, 1.8, 2.2][i]}s infinite linear`,
               animationDelay: `${delay}s`,
-              boxShadow: "0 0 15px rgba(220, 38, 38, 0.8)",
+              boxShadow: "0 0 15px rgba(240, 4, 127, 0.8)",
             }}
           />
         ))}
@@ -157,7 +157,7 @@ export function GuestChargingPage() {
         </button>
         <div className="flex-1 text-center pr-10">
           <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center justify-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#f0047f] animate-pulse" />
             Зарядка идет
           </span>
         </div>
@@ -167,13 +167,13 @@ export function GuestChargingPage() {
       <div className="flex-1 flex flex-col px-6 pt-8 pb-32 z-10 w-full max-w-md mx-auto relative overflow-y-auto items-center">
         {/* Error State */}
         {error && (
-          <div className="w-full bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-6 flex items-start gap-3">
-            <Icon icon="solar:danger-triangle-linear" className="text-red-400 shrink-0 mt-0.5" width={18} />
+          <div className="w-full bg-[#f0047f]/10 border border-[#f0047f]/20 rounded-xl p-4 mb-6 flex items-start gap-3">
+            <Icon icon="solar:danger-triangle-linear" className="text-[#f078b7] shrink-0 mt-0.5" width={18} />
             <div className="flex-1">
-              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-[#f078b7] text-sm">{error}</p>
               <button
                 onClick={() => navigate("/")}
-                className="mt-2 text-xs text-red-400/70 underline hover:text-red-300"
+                className="mt-2 text-xs text-[#f078b7]/70 underline hover:text-[#f078b7]"
               >
                 Вернуться на главную
               </button>
@@ -201,14 +201,14 @@ export function GuestChargingPage() {
               cy="50"
               r="42"
               fill="none"
-              stroke="#DC2626"
+              stroke="#f0047f"
               strokeWidth="8"
               strokeDasharray={circumference}
               strokeDashoffset={dashOffset}
               strokeLinecap="round"
               className="transition-all duration-1000"
               style={{
-                filter: "drop-shadow(0 0 8px rgba(220, 38, 38, 0.4))",
+                filter: "drop-shadow(0 0 8px rgba(240, 4, 127, 0.4))",
               }}
             />
           </svg>
@@ -216,12 +216,12 @@ export function GuestChargingPage() {
           {/* Inner Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
             <div className="relative mb-3">
-              <div className="absolute inset-0 bg-red-600/20 blur-xl rounded-full" />
-              <div className="w-16 h-16 rounded-full bg-white dark:bg-zinc-900 flex items-center justify-center relative border border-red-200 dark:border-red-600/30 shadow-[0_0_20px_rgba(220,38,38,0.1)] dark:shadow-[0_0_20px_rgba(220,38,38,0.2)]">
+              <div className="absolute inset-0 bg-[#f0047f]/20 blur-xl rounded-full" />
+              <div className="w-16 h-16 rounded-full bg-white dark:bg-zinc-900 flex items-center justify-center relative border border-[#ffc2df] dark:border-[#f0047f]/30 shadow-[0_0_20px_rgba(220,38,38,0.1)] dark:shadow-[0_0_20px_rgba(220,38,38,0.2)]">
                 <Icon
                   icon="solar:bolt-linear"
                   width={32}
-                  className="text-red-600 animate-pulse"
+                  className="text-[#f0047f] animate-pulse"
                 />
               </div>
             </div>
@@ -256,10 +256,10 @@ export function GuestChargingPage() {
           {/* Progress Bar */}
           <div className="h-2.5 w-full bg-zinc-200 dark:bg-zinc-800/80 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/20">
             <div
-              className="h-full bg-red-600 rounded-full transition-all duration-1000 relative"
+              className="h-full bg-[#f0047f] rounded-full transition-all duration-1000 relative"
               style={{
                 width: `${progressPercent}%`,
-                boxShadow: "0 0 12px rgba(220, 38, 38, 0.6)",
+                boxShadow: "0 0 12px rgba(240, 4, 127, 0.6)",
               }}
             >
               <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-white/40 blur-[2px]" />
@@ -289,12 +289,12 @@ export function GuestChargingPage() {
           <button
             onClick={handleStop}
             disabled={isStopping}
-            className="group relative w-full overflow-hidden rounded-xl bg-white dark:bg-zinc-900 border border-red-200 dark:border-red-600/40 p-4 transition-all hover:bg-red-50 dark:hover:bg-red-600/10 active:scale-[0.98] shadow-sm dark:shadow-none"
+            className="group relative w-full overflow-hidden rounded-xl bg-white dark:bg-zinc-900 border border-[#ffc2df] dark:border-[#f0047f]/40 p-4 transition-all hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 active:scale-[0.98] shadow-sm dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="flex items-center justify-center gap-3 text-red-600 group-hover:text-red-500 transition-colors">
+            <div className="absolute inset-0 bg-[#f0047f]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="flex items-center justify-center gap-3 text-[#f0047f] group-hover:text-[#f0047f] transition-colors">
               {isStopping ? (
-                <div className="w-5 h-5 border-2 border-red-500/30 border-t-red-500 rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-[#f0047f]/30 border-t-[#f0047f] rounded-full animate-spin" />
               ) : (
                 <Icon icon="solar:stop-circle-linear" width={22} />
               )}

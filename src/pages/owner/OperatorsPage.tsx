@@ -140,7 +140,7 @@ export function OperatorsPage() {
       {/* Create Form */}
       <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm dark:shadow-black/20 border border-zinc-200 dark:border-zinc-800 p-6 mb-6">
         <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-          <Icon icon="solar:user-plus-linear" width={20} className="text-red-500" />
+          <Icon icon="solar:user-plus-linear" width={20} className="text-[#f0047f]" />
           Добавить оператора
         </h2>
 
@@ -157,7 +157,7 @@ export function OperatorsPage() {
                 value={phone}
                 onChange={handlePhoneChange}
                 placeholder="+996 XXX XXX XXX"
-                className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
               />
             </div>
           </div>
@@ -171,17 +171,17 @@ export function OperatorsPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Имя оператора"
-              className="w-full px-4 py-2.5 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:border-red-500"
+              className="w-full px-4 py-2.5 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-white focus:ring-2 focus:ring-[#f0047f] focus:border-[#f0047f]"
             />
           </div>
         </div>
 
-        {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+        {error && <p className="text-[#f0047f] text-sm mb-4">{error}</p>}
 
         <button
           onClick={handleCreate}
           disabled={createMutation.isPending}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#f0047f] text-white rounded-lg hover:bg-[#c00366] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {createMutation.isPending ? (
             <Icon icon="solar:refresh-linear" width={20} className="animate-spin" />
@@ -208,7 +208,7 @@ export function OperatorsPage() {
           </div>
         ) : loadError ? (
           <div className="text-center py-12">
-            <p className="text-red-600">
+            <p className="text-[#f0047f]">
               {loadError instanceof Error
                 ? loadError.message
                 : "Ошибка загрузки"}
@@ -251,7 +251,7 @@ export function OperatorsPage() {
                       <button
                         onClick={() => handleDeactivate(op)}
                         disabled={deactivateMutation.isPending}
-                        className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors"
+                        className="p-2 text-[#f0047f] hover:bg-[#f0047f]/10 rounded-lg transition-colors"
                         title="Деактивировать"
                       >
                         <Icon icon="solar:trash-bin-2-linear" width={20} />
@@ -291,8 +291,8 @@ export function OperatorsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
-                <Icon icon="solar:trash-bin-2-linear" width={24} className="text-red-500" />
+              <div className="w-12 h-12 rounded-full bg-[#f0047f]/10 flex items-center justify-center">
+                <Icon icon="solar:trash-bin-2-linear" width={24} className="text-[#f0047f]" />
               </div>
             </div>
             <h3 className="text-lg font-semibold text-zinc-900 dark:text-white text-center mb-2">Деактивировать оператора?</h3>
@@ -309,7 +309,7 @@ export function OperatorsPage() {
               <button
                 onClick={confirmDeactivate}
                 disabled={deactivateMutation.isPending}
-                className="flex-1 py-2.5 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-500 transition-colors disabled:opacity-50"
+                className="flex-1 py-2.5 rounded-lg bg-[#f0047f] text-white text-sm font-medium hover:bg-[#f0047f] transition-colors disabled:opacity-50"
               >
                 {deactivateMutation.isPending ? "..." : "Деактивировать"}
               </button>

@@ -84,7 +84,7 @@ export function GuestLandingPage() {
     return (
       <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen flex items-center justify-center transition-colors">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500 mx-auto" />
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#f0047f] mx-auto" />
           <p className="mt-4 text-zinc-500 dark:text-zinc-400">Загрузка станции...</p>
         </div>
       </div>
@@ -94,9 +94,9 @@ export function GuestLandingPage() {
   return (
     <div className="bg-zinc-50 dark:bg-[#0A0E17] text-zinc-900 dark:text-zinc-100 h-screen w-full flex flex-col relative overflow-hidden select-none transition-colors duration-300">
       {/* Pulsing Ambient Background */}
-      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 dark:bg-red-600/20 blur-[90px] rounded-full pointer-events-none z-0 animate-pulse" />
+      <div className="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#f0047f]/5 dark:bg-[#f0047f]/20 blur-[90px] rounded-full pointer-events-none z-0 animate-pulse" />
       <div
-        className="fixed bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-800/5 dark:bg-red-800/20 blur-[100px] rounded-full pointer-events-none z-0 animate-pulse"
+        className="fixed bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#7a013f]/5 dark:bg-[#7a013f]/20 blur-[100px] rounded-full pointer-events-none z-0 animate-pulse"
         style={{ animationDelay: "2s" }}
       />
 
@@ -112,7 +112,7 @@ export function GuestLandingPage() {
         {/* Charger Visual */}
         <div className="relative w-full h-[320px] mx-auto mb-8 flex items-center justify-center">
           {/* Red Central Glow */}
-          <div className="absolute w-28 h-28 bg-red-600 rounded-full z-0 mix-blend-screen opacity-30 blur-[35px] animate-pulse" />
+          <div className="absolute w-28 h-28 bg-[#f0047f] rounded-full z-0 mix-blend-screen opacity-30 blur-[35px] animate-pulse" />
 
           {/* Static Structure Rings */}
           <div className="absolute w-72 h-72 border border-zinc-300/40 dark:border-zinc-700/40 rounded-full z-0" />
@@ -120,11 +120,11 @@ export function GuestLandingPage() {
 
           {/* Main Red Icon */}
           <div className="relative z-20 flex items-center justify-center w-28 h-28 rounded-full">
-            <div className="absolute inset-0 bg-red-500/40 blur-xl rounded-full" />
+            <div className="absolute inset-0 bg-[#f0047f]/40 blur-xl rounded-full" />
             <Icon
               icon="solar:bolt-circle-linear"
               width={100}
-              className="text-red-500 drop-shadow-[0_0_25px_rgba(220,38,38,1)]"
+              className="text-[#f0047f] drop-shadow-[0_0_25px_rgba(220,38,38,1)]"
             />
           </div>
 
@@ -211,17 +211,17 @@ export function GuestLandingPage() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-3 ml-1 text-center font-display">Как это работает</h3>
             <div className="flex bg-white/60 dark:bg-zinc-900/40 rounded-2xl p-4 border border-zinc-200 dark:border-white/[0.08] backdrop-blur-sm shadow-sm justify-between">
               <div className="flex flex-col items-center gap-2 flex-1 relative">
-                <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400 flex items-center justify-center font-bold text-sm z-10 shadow-inner">1</div>
+                <div className="w-8 h-8 rounded-full bg-[#ffe0ef] text-[#f0047f] dark:bg-[#f0047f]/20 dark:text-[#f078b7] flex items-center justify-center font-bold text-sm z-10 shadow-inner">1</div>
                 <span className="text-[11px] font-medium text-zinc-500 text-center leading-tight">Номер<br />телефона</span>
                 <div className="absolute top-4 left-1/2 w-full h-px bg-zinc-200 dark:bg-zinc-700/50 -z-0"></div>
               </div>
               <div className="flex flex-col items-center gap-2 flex-1 relative">
-                <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400 flex items-center justify-center font-bold text-sm z-10 shadow-inner">2</div>
+                <div className="w-8 h-8 rounded-full bg-[#ffe0ef] text-[#f0047f] dark:bg-[#f0047f]/20 dark:text-[#f078b7] flex items-center justify-center font-bold text-sm z-10 shadow-inner">2</div>
                 <span className="text-[11px] font-medium text-zinc-500 text-center leading-tight">Оплата<br />картой</span>
                 <div className="absolute top-4 left-1/2 w-full h-px bg-zinc-200 dark:bg-zinc-700/50 -z-0"></div>
               </div>
               <div className="flex flex-col items-center gap-2 flex-1">
-                <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400 flex items-center justify-center font-bold text-sm z-10 shadow-inner">3</div>
+                <div className="w-8 h-8 rounded-full bg-[#ffe0ef] text-[#f0047f] dark:bg-[#f0047f]/20 dark:text-[#f078b7] flex items-center justify-center font-bold text-sm z-10 shadow-inner">3</div>
                 <span className="text-[11px] font-medium text-zinc-500 text-center leading-tight">Быстрая<br />зарядка</span>
               </div>
             </div>
@@ -229,17 +229,17 @@ export function GuestLandingPage() {
 
           {/* Benefits Banner */}
           <div
-            className="bg-gradient-to-r from-red-600/10 to-red-600/5 border border-red-600/20 rounded-2xl p-4 flex items-center gap-3 relative z-20 mb-6 cursor-pointer hover:bg-red-600/10 transition-colors shadow-sm"
+            className="bg-gradient-to-r from-[#f0047f]/10 to-[#c00366]/5 border border-[#f0047f]/20 rounded-2xl p-4 flex items-center gap-3 relative z-20 mb-6 cursor-pointer hover:bg-[#f0047f]/10 transition-colors shadow-sm"
             onClick={() => navigate("/auth")}
           >
-            <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
-              <Icon icon="solar:star-fall-bold-duotone" className="text-red-500 text-xl drop-shadow-sm" />
+            <div className="w-10 h-10 rounded-full bg-[#f0047f]/20 flex items-center justify-center shrink-0">
+              <Icon icon="solar:star-fall-bold-duotone" className="text-[#f0047f] text-xl drop-shadow-sm" />
             </div>
             <div className="flex-1">
               <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Используйте аккаунт</h4>
               <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Получайте бонусы, сохраняйте историю и любимые станции</p>
             </div>
-            <Icon icon="solar:alt-arrow-right-linear" className="text-red-500 text-xl" />
+            <Icon icon="solar:alt-arrow-right-linear" className="text-[#f0047f] text-xl" />
           </div>
         </div>
 
@@ -249,8 +249,8 @@ export function GuestLandingPage() {
             <button
               onClick={handleStart}
               disabled={!station?.available}
-              className={`relative w-full py-4 rounded-xl font-bold text-base transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl shadow-red-900/20 hover:shadow-red-900/40 border border-transparent ${station?.available
-                ? "bg-red-600 hover:bg-red-500 text-white"
+              className={`relative w-full py-4 rounded-xl font-bold text-base transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl shadow-[#5c0030]/20 hover:shadow-[#5c0030]/40 border border-transparent ${station?.available
+                ? "bg-[#f0047f] hover:bg-[#f0047f] text-white"
                 : "bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 cursor-not-allowed border-zinc-300 dark:border-zinc-700"
                 }`}
             >

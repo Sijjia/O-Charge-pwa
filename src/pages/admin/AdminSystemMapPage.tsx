@@ -77,7 +77,7 @@ const NODE_DEFS: NodeDef[] = [
   { id: "stations", label: "Зарядные станции", icon: "solar:charging-socket-bold-duotone", iconColor: "text-emerald-500", x: 85, y: 26 },
   { id: "nginx", label: "Nginx Прокси", icon: "solar:shield-network-bold-duotone", iconColor: "text-emerald-500", x: 48, y: 42 },
   { id: "api", label: "FastAPI", icon: "solar:server-bold-duotone", iconColor: "text-amber-500", x: 15, y: 60 },
-  { id: "redis", label: "Redis", icon: "solar:database-bold-duotone", iconColor: "text-red-500", x: 48, y: 60 },
+  { id: "redis", label: "Redis", icon: "solar:database-bold-duotone", iconColor: "text-[#f0047f]", x: 48, y: 60 },
   { id: "ocpp", label: "OCPP Сервер", icon: "solar:bolt-circle-bold-duotone", iconColor: "text-yellow-500", x: 82, y: 60 },
   { id: "postgres", label: "PostgreSQL", icon: "solar:database-bold-duotone", iconColor: "text-blue-600", x: 48, y: 80 },
   { id: "payment", label: "Оплата API", icon: "solar:card-bold-duotone", iconColor: "text-green-500", x: 15, y: 94 },
@@ -147,7 +147,7 @@ const CONNECTION_DEFS: ConnectionDef[] = [
   {
     id: "api-redis", from: "api", to: "redis",
     label: "Кэш & Шина", protocol: "RESPv3",
-    color: "#ef4444", packetCount: 3, bidirectional: true,
+    color: "#f078b7", packetCount: 3, bidirectional: true,
     samples: [
       { method: "PUB", path: "ocpp:cmd:EVP-001", status: 200, time: "2ms" },
       { method: "GET", path: "session:active", status: 200, time: "1ms" },
@@ -156,7 +156,7 @@ const CONNECTION_DEFS: ConnectionDef[] = [
   {
     id: "ocpp-redis", from: "ocpp", to: "redis",
     label: "Команды", protocol: "RESPv3",
-    color: "#ef4444", packetCount: 2, bidirectional: true,
+    color: "#f078b7", packetCount: 2, bidirectional: true,
     samples: [
       { method: "SUB", path: "ocpp:cmd:*", status: 200, time: "1ms" },
       { method: "SET", path: "station:online", status: 200, time: "1ms" },
@@ -333,7 +333,7 @@ function useCanvasScale() {
 const statusColors: Record<string, string> = {
   online: "bg-emerald-500",
   warning: "bg-amber-500",
-  error: "bg-red-500",
+  error: "bg-[#f0047f]",
   neutral: "bg-zinc-400",
 };
 
@@ -375,7 +375,7 @@ function SystemNode({
   const borderClass =
     status === "online" ? "border-emerald-500/40 dark:border-emerald-500/30" :
       status === "warning" ? "border-amber-500/40 dark:border-amber-500/30" :
-        status === "error" ? "border-red-500/40 dark:border-red-500/30" :
+        status === "error" ? "border-[#f0047f]/40 dark:border-[#f0047f]/30" :
           "border-zinc-300 dark:border-zinc-700";
 
   return (

@@ -32,13 +32,13 @@ export function AdminPartnerDetailPage() {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <button
           onClick={() => navigate("/admin/partners")}
-          className="flex items-center gap-2 px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors mb-6"
+          className="flex items-center gap-2 px-4 py-2 text-[#f0047f] dark:text-[#f078b7] hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 rounded-lg transition-colors mb-6"
         >
           <Icon icon="solar:arrow-left-linear" width={18} />
           Назад к партнёрам
         </button>
-        <div className="bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 rounded-lg p-4">
-          <p className="text-red-700 dark:text-red-400">
+        <div className="bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 rounded-lg p-4">
+          <p className="text-[#c00366] dark:text-[#f078b7]">
             Ошибка загрузки данных партнёра
           </p>
         </div>

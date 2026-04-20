@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
 const COLORS = [
-    "#dc2626", // red
-    "#ef4444", // light red
+    "#f0047f", // red
+    "#f078b7", // light red
     "#f59e0b", // amber
     "#10b981", // emerald
     "#3b82f6", // blue

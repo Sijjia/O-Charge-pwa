@@ -71,7 +71,7 @@ const LEVEL_META: Record<Level, { color: string; bar: string; bg: string; icon: 
   DEBUG: { color: "text-sky-400", bar: "bg-sky-500", bg: "bg-sky-500/5  hover:bg-sky-500/10", icon: "solar:bug-linear", label: "DEBUG" },
   INFO: { color: "text-emerald-400", bar: "bg-emerald-500", bg: "bg-emerald-500/5 hover:bg-emerald-500/10", icon: "solar:info-circle-linear", label: "INFO" },
   WARNING: { color: "text-amber-400", bar: "bg-amber-500", bg: "bg-amber-500/5  hover:bg-amber-500/10", icon: "solar:warning-circle-linear", label: "WARN" },
-  ERROR: { color: "text-red-400", bar: "bg-red-500", bg: "bg-red-500/5    hover:bg-red-500/10", icon: "solar:danger-circle-linear", label: "ERROR" },
+  ERROR: { color: "text-[#f078b7]", bar: "bg-[#f0047f]", bg: "bg-[#f0047f]/5    hover:bg-[#f0047f]/10", icon: "solar:danger-circle-linear", label: "ERROR" },
 };
 
 function fmt(ts: string) {
@@ -413,7 +413,7 @@ export function AdminLogsPage() {
             placeholder="Поиск по логам..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500/40 text-zinc-900 dark:text-white placeholder-zinc-400 transition-all"
+            className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f0047f]/40 text-zinc-900 dark:text-white placeholder-zinc-400 transition-all"
           />
         </div>
 
@@ -465,7 +465,7 @@ export function AdminLogsPage() {
         <button
           onClick={() => setAutoScroll(!autoScroll)}
           className={`px-3 py-2 text-xs font-semibold rounded-xl transition-all flex items-center gap-1.5 ${autoScroll
-              ? "bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-500/30"
+              ? "bg-[#ffe0ef] dark:bg-[#f0047f]/20 text-[#c00366] dark:text-[#f078b7] border border-[#ffc2df] dark:border-[#f0047f]/30"
               : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
             }`}
         >
@@ -474,7 +474,7 @@ export function AdminLogsPage() {
         </button>
         <button
           onClick={() => { setLogs([]); setExpandedIds(new Set()); }}
-          className="p-2 rounded-xl text-zinc-500 hover:text-red-500 dark:hover:text-red-400 bg-zinc-100 dark:bg-zinc-800 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all"
+          className="p-2 rounded-xl text-zinc-500 hover:text-[#f0047f] dark:hover:text-[#f078b7] bg-zinc-100 dark:bg-zinc-800 hover:bg-[#fff0f7] dark:hover:bg-[#f0047f]/10 transition-all"
           title="Очистить логи"
         >
           <Icon icon="solar:trash-bin-linear" width={16} />

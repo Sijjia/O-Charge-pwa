@@ -5,32 +5,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark theme base colors (from OTP design)
+        // Dark theme base colors
         dark: {
           bg: "#0A0E17",
           card: "#111621",
           border: "#1C1C1F",
         },
-        // EVPower Brand Colors
+        // O!Bank Brand Colors
+        obank: {
+          magenta: {
+            DEFAULT: "#f0047f",
+            50: "#fff0f7",
+            100: "#ffe0ef",
+            200: "#ffc2df",
+            300: "#f078b7",
+            400: "#f0047f",
+            500: "#f0047f",
+            600: "#c00366",
+            700: "#9a024f",
+            800: "#7a013f",
+            900: "#5c0030",
+          },
+          purple: "#7825ff",
+          blue: "#00a3ff",
+        },
+        // EV Status colors (semantic, not branded)
         ev: {
-          green: {
-            50: "#ECFDF5",
-            100: "#D1FAE5",
-            200: "#A7F3D0",
-            300: "#6EE7B7",
-            400: "#34D399",
-            500: "#10B981",
-            600: "#059669",
-            700: "#047857",
-          },
-          cyan: {
-            50: "#ECFEFF",
-            100: "#CFFAFE",
-            400: "#22D3EE",
-            500: "#06B6D4",
-            600: "#0891B2",
-          },
-          // Status colors
           status: {
             available: "#10B981",
             charging: "#3B82F6",
@@ -40,35 +40,23 @@ export default {
             maintenance: "#8B5CF6",
           },
         },
-        // Legacy aliases
+        // Primary alias → magenta
         primary: {
-          50: "#ECFDF5",
-          100: "#D1FAE5",
-          200: "#A7F3D0",
-          300: "#6EE7B7",
-          400: "#34D399",
-          500: "#10B981",
-          600: "#059669",
-          700: "#047857",
-          800: "#065F46",
-          900: "#064E3B",
-        },
-        cyan: {
-          50: "#ECFEFF",
-          100: "#CFFAFE",
-          200: "#A5F3FC",
-          300: "#67E8F9",
-          400: "#22D3EE",
-          500: "#06B6D4",
-          600: "#0891B2",
-          700: "#0E7490",
-          800: "#155E75",
-          900: "#164E63",
+          50: "#fff0f7",
+          100: "#ffe0ef",
+          200: "#ffc2df",
+          300: "#f078b7",
+          400: "#f0047f",
+          500: "#f0047f",
+          600: "#c00366",
+          700: "#9a024f",
+          800: "#7a013f",
+          900: "#5c0030",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Manrope", "Inter", "system-ui", "sans-serif"],
+        sans: ["Golos Text", "Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Manrope", "Golos Text", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       spacing: {
@@ -132,10 +120,10 @@ export default {
         },
         "charge-glow": {
           "0%, 100%": {
-            filter: "drop-shadow(0 0 10px rgba(220, 38, 38, 0.4))",
+            filter: "drop-shadow(0 0 10px rgba(240, 4, 127, 0.4))",
           },
           "50%": {
-            filter: "drop-shadow(0 0 25px rgba(220, 38, 38, 0.7))",
+            filter: "drop-shadow(0 0 25px rgba(240, 4, 127, 0.7))",
           },
         },
         "breathing-glow": {

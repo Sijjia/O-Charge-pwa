@@ -34,7 +34,7 @@ const HEATMAP_COLORS = [
   "bg-emerald-100 dark:bg-emerald-900/40",
   "bg-emerald-200 dark:bg-emerald-800/50",
   "bg-amber-200 dark:bg-amber-700/50",
-  "bg-red-300 dark:bg-red-700/50",
+  "bg-[#f078b7] dark:bg-[#c00366]/50",
 ];
 
 function getHeatColor(value: number, max: number): string {
@@ -71,7 +71,7 @@ export function AdminAnalyticsPage() {
       <div className="p-4 md:p-8 space-y-6">
         <AdminPageHeader title="Аналитика" helpText="Графики и статистика по всей сети: выручка, количество зарядок, рост пользователей, тепловая карта нагрузки, аптайм станций." subtitle="Обзор показателей" />
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 text-center">
-          <Icon icon="solar:danger-triangle-linear" width={48} className="text-red-500 mx-auto mb-4" />
+          <Icon icon="solar:danger-triangle-linear" width={48} className="text-[#f0047f] mx-auto mb-4" />
           <p className="text-sm text-zinc-500">
             {overviewErr instanceof Error
               ? overviewErr.message
@@ -201,8 +201,8 @@ export function AdminAnalyticsPage() {
             <AreaChart data={chartRows} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
               <defs>
                 <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#f078b7" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#f078b7" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorSessions" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
@@ -242,7 +242,7 @@ export function AdminAnalyticsPage() {
                 yAxisId="left"
                 type="monotone"
                 dataKey="revenue"
-                stroke="#ef4444"
+                stroke="#f078b7"
                 fillOpacity={1}
                 fill="url(#colorRevenue)"
                 name="Доход (сом)"
@@ -399,7 +399,7 @@ export function AdminAnalyticsPage() {
                 header: "Uptime %",
                 sortable: true,
                 render: (row) => (
-                  <span className={`text-sm font-semibold ${row.uptime_pct >= 99 ? "text-emerald-500" : row.uptime_pct >= 95 ? "text-amber-500" : "text-red-500"}`}>
+                  <span className={`text-sm font-semibold ${row.uptime_pct >= 99 ? "text-emerald-500" : row.uptime_pct >= 95 ? "text-amber-500" : "text-[#f0047f]"}`}>
                     {row.uptime_pct}%
                   </span>
                 ),

@@ -69,8 +69,8 @@ export const ProfilePage = () => {
       style={{ paddingBottom: "calc(var(--nav-height) + 16px)" }}
     >
       {/* Ambient Background Glows */}
-      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-red-600/5 dark:bg-red-600/10 blur-[100px] rounded-full pointer-events-none z-0" />
-      <div className="fixed bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-800/3 dark:bg-red-800/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#f0047f]/5 dark:bg-[#f0047f]/10 blur-[100px] rounded-full pointer-events-none z-0" />
+      <div className="fixed bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#7a013f]/3 dark:bg-[#7a013f]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
       {/* Header */}
       <div className="sticky top-0 z-30 bg-white/80 dark:bg-[#0A0E17]/80 backdrop-blur-md border-b border-zinc-200 dark:border-white/5 px-5 py-4 flex items-center justify-between transition-colors duration-300">
@@ -96,7 +96,7 @@ export const ProfilePage = () => {
         <div className={`fixed top-4 left-4 right-4 z-50 px-4 py-3 rounded-xl text-sm font-medium text-center animate-fade-in ${
           notification.type === "success"
             ? "bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 text-green-600 dark:text-green-400"
-            : "bg-red-50 dark:bg-red-500/20 border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400"
+            : "bg-[#fff0f7] dark:bg-[#f0047f]/20 border border-[#ffc2df] dark:border-[#f0047f]/30 text-[#f0047f] dark:text-[#f078b7]"
         }`}>
           {notification.message}
         </div>
@@ -109,7 +109,7 @@ export const ProfilePage = () => {
           <div className="flex flex-col items-center pt-4 pb-8">
             <div className="relative mb-4 group cursor-pointer">
               <div className="w-24 h-24 rounded-full p-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden relative z-10 flex items-center justify-center shadow-sm dark:shadow-none transition-colors">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#f0047f] to-[#c00366] flex items-center justify-center">
                   <Icon
                     icon="solar:user-bold"
                     width={40}
@@ -122,7 +122,7 @@ export const ProfilePage = () => {
                 <div className="w-4 h-4 bg-emerald-500 rounded-full border-2 border-zinc-50 dark:border-[#0A0E17]" />
               </div>
               {/* Red Glow */}
-              <div className="absolute inset-0 bg-red-600/10 dark:bg-red-600/20 blur-xl rounded-full z-0 transform translate-y-2" />
+              <div className="absolute inset-0 bg-[#f0047f]/10 dark:bg-[#f0047f]/20 blur-xl rounded-full z-0 transform translate-y-2" />
             </div>
             <h1 className="text-xl font-semibold text-zinc-900 dark:text-white tracking-tight font-display text-center">
               {user.name || "Пользователь"}
@@ -131,7 +131,7 @@ export const ProfilePage = () => {
               {formatPhone(user.phone) || user.email}
             </p>
             {isOwner && (
-              <span className="mt-2 px-3 py-1 bg-red-50 dark:bg-red-600/10 text-red-600 dark:text-red-400 text-xs font-semibold rounded-full border border-red-200 dark:border-red-500/20 transition-colors">
+              <span className="mt-2 px-3 py-1 bg-[#fff0f7] dark:bg-[#f0047f]/10 text-[#f0047f] dark:text-[#f078b7] text-xs font-semibold rounded-full border border-[#ffc2df] dark:border-[#f0047f]/20 transition-colors">
                 Партнёр
               </span>
             )}
@@ -151,7 +151,7 @@ export const ProfilePage = () => {
             </div>
             <button
               onClick={() => navigate("/auth")}
-              className="text-base font-semibold text-zinc-900 dark:text-white hover:text-red-500 dark:hover:text-red-400 transition-colors"
+              className="text-base font-semibold text-zinc-900 dark:text-white hover:text-[#f0047f] dark:hover:text-[#f078b7] transition-colors"
             >
               Войти в аккаунт
             </button>
@@ -185,7 +185,7 @@ export const ProfilePage = () => {
               </div>
               <button
                 onClick={() => setShowTopupModal(true)}
-                className="flex items-center gap-1.5 px-4 py-2.5 bg-red-600 text-white text-sm font-medium rounded-xl hover:bg-red-700 active:scale-95 transition-all"
+                className="flex items-center gap-1.5 px-4 py-2.5 bg-[#f0047f] text-white text-sm font-medium rounded-xl hover:bg-[#c00366] active:scale-95 transition-all"
               >
                 <Icon icon="solar:add-circle-linear" width={18} />
                 <span>Пополнить</span>
@@ -249,17 +249,17 @@ export const ProfilePage = () => {
         {/* Section 2: Partner Cabinet (Red Branding) */}
         {isOwner && (
           <div className="mb-6">
-            <h2 className="px-2 mb-3 text-xs font-semibold text-red-500 uppercase tracking-wider flex items-center gap-1.5">
+            <h2 className="px-2 mb-3 text-xs font-semibold text-[#f0047f] uppercase tracking-wider flex items-center gap-1.5">
               Партнёрский кабинет
             </h2>
-            <div className="flex flex-col divide-y divide-red-100 dark:divide-red-500/10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm dark:shadow-none transition-colors">
+            <div className="flex flex-col divide-y divide-[#ffe0ef] dark:divide-[#f0047f]/10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm dark:shadow-none transition-colors">
               {/* Мои станции */}
               <button
                 onClick={() => navigate("/owner/stations")}
-                className="flex items-center justify-between w-full p-4 hover:bg-red-50/50 dark:hover:bg-zinc-800/80 active:bg-red-50 dark:active:bg-zinc-800 transition-colors group"
+                className="flex items-center justify-between w-full p-4 hover:bg-[#fff0f7]/50 dark:hover:bg-zinc-800/80 active:bg-[#fff0f7] dark:active:bg-zinc-800 transition-colors group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-full bg-red-50 dark:bg-red-600/10 border border-red-200 dark:border-red-500/20 flex items-center justify-center text-red-500 group-hover:text-red-400 transition-colors">
+                  <div className="w-9 h-9 rounded-full bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 flex items-center justify-center text-[#f0047f] group-hover:text-[#f078b7] transition-colors">
                     <Icon icon="solar:ev-station-linear" width={20} />
                   </div>
                   <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200 group-hover:text-zinc-900 dark:group-hover:text-white">
@@ -283,10 +283,10 @@ export const ProfilePage = () => {
               {/* Мой доход */}
               <button
                 onClick={() => navigate("/owner/revenue")}
-                className="flex items-center justify-between w-full p-4 hover:bg-red-50/50 dark:hover:bg-zinc-800/80 active:bg-red-50 dark:active:bg-zinc-800 transition-colors group"
+                className="flex items-center justify-between w-full p-4 hover:bg-[#fff0f7]/50 dark:hover:bg-zinc-800/80 active:bg-[#fff0f7] dark:active:bg-zinc-800 transition-colors group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-full bg-red-50 dark:bg-red-600/10 border border-red-200 dark:border-red-500/20 flex items-center justify-center text-red-500 group-hover:text-red-400 transition-colors">
+                  <div className="w-9 h-9 rounded-full bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 flex items-center justify-center text-[#f0047f] group-hover:text-[#f078b7] transition-colors">
                     <Icon icon="solar:wallet-money-linear" width={20} />
                   </div>
                   <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200 group-hover:text-zinc-900 dark:group-hover:text-white">
@@ -303,10 +303,10 @@ export const ProfilePage = () => {
               {/* Статистика */}
               <button
                 onClick={() => navigate("/owner/dashboard")}
-                className="flex items-center justify-between w-full p-4 hover:bg-red-50/50 dark:hover:bg-zinc-800/80 active:bg-red-50 dark:active:bg-zinc-800 transition-colors group"
+                className="flex items-center justify-between w-full p-4 hover:bg-[#fff0f7]/50 dark:hover:bg-zinc-800/80 active:bg-[#fff0f7] dark:active:bg-zinc-800 transition-colors group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-full bg-red-50 dark:bg-red-600/10 border border-red-200 dark:border-red-500/20 flex items-center justify-center text-red-500 group-hover:text-red-400 transition-colors">
+                  <div className="w-9 h-9 rounded-full bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 flex items-center justify-center text-[#f0047f] group-hover:text-[#f078b7] transition-colors">
                     <Icon icon="solar:graph-new-linear" width={20} />
                   </div>
                   <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200 group-hover:text-zinc-900 dark:group-hover:text-white">
@@ -323,10 +323,10 @@ export const ProfilePage = () => {
               {/* Акты сверки */}
               <button
                 onClick={() => navigate("/owner/sessions")}
-                className="flex items-center justify-between w-full p-4 hover:bg-red-50/50 dark:hover:bg-zinc-800/80 active:bg-red-50 dark:active:bg-zinc-800 transition-colors group"
+                className="flex items-center justify-between w-full p-4 hover:bg-[#fff0f7]/50 dark:hover:bg-zinc-800/80 active:bg-[#fff0f7] dark:active:bg-zinc-800 transition-colors group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-full bg-red-50 dark:bg-red-600/10 border border-red-200 dark:border-red-500/20 flex items-center justify-center text-red-500 group-hover:text-red-400 transition-colors">
+                  <div className="w-9 h-9 rounded-full bg-[#fff0f7] dark:bg-[#f0047f]/10 border border-[#ffc2df] dark:border-[#f0047f]/20 flex items-center justify-center text-[#f0047f] group-hover:text-[#f078b7] transition-colors">
                     <Icon icon="solar:document-text-linear" width={20} />
                   </div>
                   <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200 group-hover:text-zinc-900 dark:group-hover:text-white">
@@ -354,7 +354,7 @@ export const ProfilePage = () => {
             </button>
             <button
               onClick={() => setShowDeleteConfirm(true)}
-              className="w-full py-3 text-xs font-medium text-red-400/50 dark:text-red-500/50 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+              className="w-full py-3 text-xs font-medium text-[#f078b7]/50 dark:text-[#f0047f]/50 hover:text-[#f0047f] dark:hover:text-[#f078b7] transition-colors"
             >
               Удалить аккаунт
             </button>

@@ -41,7 +41,7 @@ export function PartnerRevenuePage() {
             key={p}
             onClick={() => setPeriod(p)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${period === p
-                ? "bg-red-600 text-white"
+                ? "bg-[#f0047f] text-white"
                 : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-gray-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
               }`}
           >
@@ -73,7 +73,7 @@ export function PartnerRevenuePage() {
       {/* Chart */}
       {isLoading ? (
         <div className="flex items-center justify-center py-16">
-          <Icon icon="solar:refresh-linear" width={32} className="text-red-500 animate-spin" />
+          <Icon icon="solar:refresh-linear" width={32} className="text-[#f0047f] animate-spin" />
         </div>
       ) : (
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm dark:shadow-none transition-colors">
@@ -86,7 +86,7 @@ export function PartnerRevenuePage() {
                 <span className="text-xs text-zinc-500 dark:text-gray-400 w-16 flex-shrink-0 text-right">{item.date}</span>
                 <div className="flex-1 h-6 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-[#f0047f] to-[#f078b7] rounded-full transition-all duration-300"
                     style={{ width: `${(item.revenue / maxRevenue) * 100}%` }}
                   />
                 </div>

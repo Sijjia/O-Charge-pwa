@@ -27,8 +27,8 @@ export function FilterChip({
         "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold",
         "whitespace-nowrap border transition-all duration-200 active:scale-95",
         active
-          ? "bg-red-600 border-red-600 text-white shadow-[0_0_12px_rgba(220,38,38,0.4)]"
-          : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-red-500/40 hover:text-red-500",
+          ? "bg-[#f0047f] border-[#f0047f] text-white shadow-[0_0_12px_rgba(220,38,38,0.4)]"
+          : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-[#f0047f]/40 hover:text-[#f0047f]",
         className,
       ].join(" ")}
       aria-pressed={active}

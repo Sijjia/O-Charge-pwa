@@ -179,7 +179,7 @@ export function AdminRevenuePage() {
           </span>
           <div className="w-20 h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
             <div
-              className="h-full bg-red-500 rounded-full"
+              className="h-full bg-[#f0047f] rounded-full"
               style={{ width: `${(row.total_revenue / maxPartnerRevenue) * 100}%` }}
             />
           </div>
@@ -352,7 +352,7 @@ export function AdminRevenuePage() {
           label="Доля платформы"
           value={`${fmtMoney(totals.platform_share)} сом`}
           icon="solar:hand-money-linear"
-          helpText="Комиссия платформы Red Charge за период"
+          helpText="Комиссия платформы O!Charge за период"
         />
         <AdminStatCard
           label="Доля партнёров"
@@ -398,8 +398,8 @@ export function AdminRevenuePage() {
             <ComposedChart data={chartData}>
               <defs>
                 <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#ef4444" stopOpacity={0.15} />
-                  <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#f078b7" stopOpacity={0.15} />
+                  <stop offset="95%" stopColor="#f078b7" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--color-zinc-200, #e4e4e7)" opacity={0.5} />
@@ -440,7 +440,7 @@ export function AdminRevenuePage() {
                 yAxisId="revenue"
                 type="monotone"
                 dataKey="revenue"
-                stroke="#ef4444"
+                stroke="#f078b7"
                 strokeWidth={2}
                 fill="url(#revenueGrad)"
               />
@@ -460,7 +460,7 @@ export function AdminRevenuePage() {
       {/* By Partners table */}
       <div>
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white mb-3 flex items-center gap-2">
-          <Icon icon="solar:handshake-bold-duotone" width={18} className="text-red-500" />
+          <Icon icon="solar:handshake-bold-duotone" width={18} className="text-[#f0047f]" />
           По партнёрам
         </h3>
         <AdminDataTable<RevenueByPartnerItem>
