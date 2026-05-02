@@ -52,8 +52,8 @@ export function getCsrfToken(): string | null {
  * Backend API домены, которым доверяем отправлять CSRF токен
  */
 const DEFAULT_CSRF_TRUSTED_ORIGINS = [
-  "https://ocpp.asystem.kg",
-  "https://o.asystem.kg",
+  "https://ocpp.asystem.ai",
+  "https://o.asystem.ai",
 ];
 
 /**

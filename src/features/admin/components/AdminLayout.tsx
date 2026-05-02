@@ -76,7 +76,7 @@ const navGroups: NavGroup[] = [
       { to: "/admin/server-logs", icon: "solar:terminal-bold-duotone", label: "Логи сервера" },
       { to: "/admin/error-guide", icon: "solar:book-bookmark-bold-duotone", label: "Справочник ошибок" },
       { to: "/admin/system-map", icon: "solar:diagram-up-bold-duotone", label: "Карта системы" },
-      { to: "#scalar", icon: "solar:code-bold-duotone", label: "API Документация", href: `${import.meta.env.VITE_API_URL || "https://ocpp.asystem.kg"}/scalar` },
+      { to: "#scalar", icon: "solar:code-bold-duotone", label: "API Документация", href: `${import.meta.env.VITE_API_URL || "https://ocpp.asystem.ai"}/scalar` },
     ],
   },
 ];

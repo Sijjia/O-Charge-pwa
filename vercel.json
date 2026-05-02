@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://ocpp.asystem.kg/api/:path*"
+      "destination": "https://ocpp.asystem.ai/api/:path*"
     },
     {
       "source": "/(.*)",

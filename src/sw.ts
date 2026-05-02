@@ -31,7 +31,7 @@ import { BackgroundSyncPlugin } from "workbox-background-sync";
 
 declare const self: ServiceWorkerGlobalScope;
 
-const API_DOMAINS = ["ocpp.asystem.kg"] as const;
+const API_DOMAINS = ["ocpp.asystem.ai"] as const;
 
 // No-op logger to avoid direct console output in production (pre-commit hook restriction)
 const swLog = (..._args: unknown[]) => {};
